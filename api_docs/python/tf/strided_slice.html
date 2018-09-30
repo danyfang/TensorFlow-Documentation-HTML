@@ -4098,11 +4098,11 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/array_ops.py"><code>tensorflow/python/ops/array_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/array_ops.md#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
+<p>See the guide: <a href="../../../api_guides/python/array_ops.html#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
 <p>Extracts a strided slice of a tensor (generalized python array indexing).</p>
 <p><strong>Instead of calling this op directly most users will want to use the
 NumPy-style slicing syntax (e.g. <code>tensor[..., 3:4:-1, tf.newaxis, 3]</code>), which
-is supported via <a href="../tf/Tensor.md#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> and <a href="../tf/Variable.md#__getitem__"><code>tf.Variable.<strong>getitem</strong></code></a>.</strong>
+is supported via <a href="../tf/Tensor.html#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> and <a href="../tf/Variable.html#__getitem__"><code>tf.Variable.<strong>getitem</strong></code></a>.</strong>
 The interface of this op is a low-level encoding of the slicing syntax.</p>
 <p>Roughly speaking, this op extracts a slice of size <code>(end-begin)/stride</code>
 from the given <code>input_</code> tensor. Starting at the location specified by <code>begin</code>

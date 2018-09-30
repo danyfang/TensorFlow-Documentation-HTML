@@ -4091,22 +4091,22 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/summary_ops_v2.py"><code>tensorflow/python/ops/summary_ops_v2.py</code></a>.</p>
 <p>Initializes summary writing for graph execution mode.</p>
 <p>This helper method provides a higher-level alternative to using
-<a href="../../../tf/contrib/summary/summary_writer_initializer_op.md"><code>tf.contrib.summary.summary_writer_initializer_op</code></a> and
-<a href="../../../tf/contrib/summary/graph.md"><code>tf.contrib.summary.graph</code></a>.</p>
-<p>Most users will also want to call <a href="../../../tf/train/create_global_step.md"><code>tf.train.create_global_step</code></a>
+<a href="../../../tf/contrib/summary/summary_writer_initializer_op.html"><code>tf.contrib.summary.summary_writer_initializer_op</code></a> and
+<a href="../../../tf/contrib/summary/graph.html"><code>tf.contrib.summary.graph</code></a>.</p>
+<p>Most users will also want to call <a href="../../../tf/train/create_global_step.html"><code>tf.train.create_global_step</code></a>
 which can happen before or after this function is called.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>graph</code></b>: A <a href="../../../tf/Graph.md"><code>tf.Graph</code></a> or <a href="../../../tf/GraphDef.md"><code>tf.GraphDef</code></a> to output to the writer.
+<li><b><code>graph</code></b>: A <a href="../../../tf/Graph.html"><code>tf.Graph</code></a> or <a href="../../../tf/GraphDef.html"><code>tf.GraphDef</code></a> to output to the writer.
 This function will not write the default graph by default. When
 writing to an event log file, the associated step will be zero.</li>
-<li><b><code>session</code></b>: So this method can call <a href="../../../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>. This defaults
-to <a href="../../../tf/get_default_session.md"><code>tf.get_default_session</code></a>.</li>
+<li><b><code>session</code></b>: So this method can call <a href="../../../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>. This defaults
+to <a href="../../../tf/get_default_session.html"><code>tf.get_default_session</code></a>.</li>
 </ul>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>RuntimeError</code></b>: If  the current thread has no default
-<a href="../../../tf/contrib/summary/SummaryWriter.md"><code>tf.contrib.summary.SummaryWriter</code></a>.</li>
+<a href="../../../tf/contrib/summary/SummaryWriter.html"><code>tf.contrib.summary.SummaryWriter</code></a>.</li>
 <li><b><code>ValueError</code></b>: If session wasn’t passed and no default session.</li>
 </ul>
 

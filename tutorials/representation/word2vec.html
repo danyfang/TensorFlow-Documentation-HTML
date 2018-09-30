@@ -4336,7 +4336,7 @@ optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0).minimize(loss)
 <h2>Training the Model</h2>
 <p>Training the model is then as simple as using a <code>feed_dict</code> to push data into
 the placeholders and calling
-<a href="../../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> with this new data
+<a href="../../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> with this new data
 in a loop.</p>
 <pre><code class="language-python">for inputs, labels in generate_batch(...):
   feed_dict = {train_inputs: inputs, train_labels: labels}
@@ -4387,12 +4387,12 @@ compromised speed because we use Python for reading and feeding data items –
 each of which require very little work on the TensorFlow back-end.  If you find
 your model is seriously bottlenecked on input data, you may want to implement a
 custom data reader for your problem, as described in
-<a href="../../extend/new_data_formats.md">New Data Formats</a>.  For the case of Skip-Gram
+<a href="../../extend/new_data_formats.html">New Data Formats</a>.  For the case of Skip-Gram
 modeling, we’ve actually already done this for you as an example in
 <a href="https://github.com/tensorflow/models/tree/master/tutorials/embedding/word2vec.py">models/tutorials/embedding/word2vec.py</a>.</p>
 <p>If your model is no longer I/O bound but you want still more performance, you
 can take things further by writing your own TensorFlow Ops, as described in
-<a href="../../extend/adding_an_op.md">Adding a New Op</a>.  Again we’ve provided an
+<a href="../../extend/adding_an_op.html">Adding a New Op</a>.  Again we’ve provided an
 example of this for the Skip-Gram case
 <a href="https://github.com/tensorflow/models/tree/master/tutorials/embedding/word2vec_optimized.py">models/tutorials/embedding/word2vec_optimized.py</a>.
 Feel free to benchmark these against each other to measure performance

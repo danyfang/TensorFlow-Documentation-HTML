@@ -4127,7 +4127,7 @@ larger problem sizes with slight performance penalty as this will avoid
 creating the worker caches and instead the relevant weight and factor values
 are looked up from parameter servers at each step.</p>
 <p>Loss computation: The loss can be computed efficiently by decomposing it into
-a sparse term and a Gramian term, see <a href="http://wals.md">wals.md</a>.
+a sparse term and a Gramian term, see <a href="http://wals.html">wals.html</a>.
 The loss is returned by the update_{col, row}_factors(sp_input), and is
 normalized as follows:
 _, _, unregularized_loss, regularization, sum_weights =

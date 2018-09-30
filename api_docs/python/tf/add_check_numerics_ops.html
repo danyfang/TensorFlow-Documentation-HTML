@@ -4086,14 +4086,14 @@
 <pre><code class="language-python">tf.add_check_numerics_ops()
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/numerics.py"><code>tensorflow/python/ops/numerics.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.md#Debugging_Operations">Control Flow &gt; Debugging Operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.html#Debugging_Operations">Control Flow &gt; Debugging Operations</a></p>
 <p>Connect a <code>check_numerics</code> to every floating point tensor.</p>
 <p><code>check_numerics</code> operations themselves are added for each <code>half</code>, <code>float</code>,
 or <code>double</code> tensor in the graph. For all ops in the graph, the
 <code>check_numerics</code> op for all of its (<code>half</code>, <code>float</code>, or <code>double</code>) inputs
 is guaranteed to run before the <code>check_numerics</code> op on any of its outputs.</p>
-<p>Note: This API is not compatible with the use of <a href="../tf/cond.md"><code>tf.cond</code></a> or
-<a href="../tf/while_loop.md"><code>tf.while_loop</code></a>, and will raise a <code>ValueError</code> if you attempt to call it
+<p>Note: This API is not compatible with the use of <a href="../tf/cond.html"><code>tf.cond</code></a> or
+<a href="../tf/while_loop.html"><code>tf.while_loop</code></a>, and will raise a <code>ValueError</code> if you attempt to call it
 in such a graph.</p>
 <h4>Returns:</h4>
 <p>A <code>group</code> op depending on all <code>check_numerics</code> ops added.</p>

@@ -4092,16 +4092,16 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/basic_loops.py"><code>tensorflow/python/training/basic_loops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Training_Utilities">Training &gt; Training Utilities</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Training_Utilities">Training &gt; Training Utilities</a></p>
 <p>Basic loop to train a model.</p>
 <p>Calls <code>train_step_fn</code> in a loop to train a model.  The function is called as:</p>
 <pre><code class="language-python">train_step_fn(session, *args, **kwargs)
 </code></pre>
-<p>It is passed a <a href="../../tf/Session.md"><code>tf.Session</code></a> in addition to <code>args</code> and <code>kwargs</code>.  The function
+<p>It is passed a <a href="../../tf/Session.html"><code>tf.Session</code></a> in addition to <code>args</code> and <code>kwargs</code>.  The function
 typically runs one training step in the session.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>supervisor</code></b>: <a href="../../tf/train/Supervisor.md"><code>tf.train.Supervisor</code></a> to run the training services.</li>
+<li><b><code>supervisor</code></b>: <a href="../../tf/train/Supervisor.html"><code>tf.train.Supervisor</code></a> to run the training services.</li>
 <li><b><code>train_step_fn</code></b>: Callable to execute one training step.  Called
 repeatedly as <code>train_step_fn(session, *args **kwargs)</code>.</li>
 <li><b><code>args</code></b>: Optional positional arguments passed to <code>train_step_fn</code>.</li>

@@ -4125,7 +4125,7 @@ guarantees about the norms.</p>
 gradients. Must be one of the Optimizer classes.</li>
 <li><b><code>vars_to_clip_dims</code></b>: A dict with keys as Variables and values as lists
 of dimensions along which to compute the L2-norm.  See
-<a href="../../../tf/clip_by_norm.md"><code>tf.clip_by_norm</code></a> for more details.</li>
+<a href="../../../tf/clip_by_norm.html"><code>tf.clip_by_norm</code></a> for more details.</li>
 <li><b><code>max_norm</code></b>: The L2-norm to clip to, for all variables specified.</li>
 <li><b><code>use_locking</code></b>: If <code>True</code> use locks for clip update operations.</li>
 <li><b><code>colocate_clip_ops_with_vars</code></b>: If <code>True</code>, try colocating the clip norm
@@ -4178,7 +4178,7 @@ given variable.</p>
 <li><b><code>loss</code></b>: A Tensor containing the value to minimize or a callable taking
 no arguments which returns the value to minimize. When eager execution
 is enabled it must be a callable.</li>
-<li><b><code>var_list</code></b>: Optional list or tuple of <a href="../../../tf/Variable.md"><code>tf.Variable</code></a> to update to minimize
+<li><b><code>var_list</code></b>: Optional list or tuple of <a href="../../../tf/Variable.html"><code>tf.Variable</code></a> to update to minimize
 <code>loss</code>.  Defaults to the list of variables collected in the graph
 under the key <code>GraphKeys.TRAINABLE_VARIABLES</code>.</li>
 <li><b><code>gate_gradients</code></b>: How to gate the computation of gradients.  Can be

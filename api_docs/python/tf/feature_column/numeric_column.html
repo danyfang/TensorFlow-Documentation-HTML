@@ -4117,11 +4117,11 @@ width. The <code>Tensor</code> representing the column will have the shape of
 <li><b><code>default_value</code></b>: A single value compatible with <code>dtype</code> or an iterable of
 values compatible with <code>dtype</code> which the column takes on during
 <code>tf.Example</code> parsing if data is missing. A default value of <code>None</code> will
-cause <a href="../../tf/parse_example.md"><code>tf.parse_example</code></a> to fail if an example does not contain this
+cause <a href="../../tf/parse_example.html"><code>tf.parse_example</code></a> to fail if an example does not contain this
 column. If a single value is provided, the same value will be applied as
 the default value for every item. If an iterable of values is provided,
 the shape of the <code>default_value</code> should be equal to the given <code>shape</code>.</li>
-<li><b><code>dtype</code></b>: defines the type of values. Default value is <a href="../../tf/float32.md"><code>tf.float32</code></a>. Must be a
+<li><b><code>dtype</code></b>: defines the type of values. Default value is <a href="../../tf/float32.html"><code>tf.float32</code></a>. Must be a
 non-quantized, real integer or floating point type.</li>
 <li><b><code>normalizer_fn</code></b>: If not <code>None</code>, a function that can be used to normalize the
 value of the tensor after <code>default_value</code> is applied for parsing.
@@ -4138,7 +4138,7 @@ can be used for any kind of Tensorflow transformations.</li>
 <li><b><code>ValueError</code></b>: if any dimension in shape is not a positive integer</li>
 <li><b><code>TypeError</code></b>: if <code>default_value</code> is an iterable but not compatible with <code>shape</code></li>
 <li><b><code>TypeError</code></b>: if <code>default_value</code> is not compatible with <code>dtype</code>.</li>
-<li><b><code>ValueError</code></b>: if <code>dtype</code> is not convertible to <a href="../../tf/float32.md"><code>tf.float32</code></a>.</li>
+<li><b><code>ValueError</code></b>: if <code>dtype</code> is not convertible to <a href="../../tf/float32.html"><code>tf.float32</code></a>.</li>
 </ul>
 
     </article>

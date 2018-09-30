@@ -4208,7 +4208,7 @@ neither.</p>
 <p>Creates the Real NVP or NICE bijector. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>num_masked</code></b>: Python <code>int</code> indicating that the first <code>d</code> units of the event
@@ -4220,7 +4220,7 @@ is the event size of the base distribution.</li>
 docstring). Suggested default
 <code>masked_autoregressive_default_template(hidden_layers=...)</code>.
 Typically the function contains <code>tf.Variables</code> and is wrapped using
-<a href="../../../../tf/make_template.md"><code>tf.make_template</code></a>. Returning <code>None</code> for either (both) <code>shift</code>,
+<a href="../../../../tf/make_template.html"><code>tf.make_template</code></a>. Returning <code>None</code> for either (both) <code>shift</code>,
 <code>log_scale</code> is equivalent to (but more efficient than) returning zero.</li>
 <li><b><code>is_constant_jacobian</code></b>: Python <code>bool</code>. Default: <code>False</code>. When <code>True</code> the
 implementation assumes <code>log_scale</code> does not depend on the forward domain

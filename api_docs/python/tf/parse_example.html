@@ -4091,7 +4091,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/parsing_ops.py"><code>tensorflow/python/ops/parsing_ops.py</code></a>.</p>
-<p>See the guides: <a href="../../../api_guides/python/io_ops.md#Converting">Inputs and Readers &gt; Converting</a>, <a href="../../../api_guides/python/reading_data.md#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a></p>
+<p>See the guides: <a href="../../../api_guides/python/io_ops.html#Converting">Inputs and Readers &gt; Converting</a>, <a href="../../../api_guides/python/reading_data.html#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a></p>
 <p>Parses <code>Example</code> protos into a <code>dict</code> of tensors.</p>
 <p>Parses a number of serialized <a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><code>Example</code></a>
 protos given in <code>serialized</code>. We refer to <code>serialized</code> as a batch with
@@ -4121,17 +4121,17 @@ batch entry) of a <code>SparseTensor</code> by dimension into different features
 <code>Example</code>. Due to its complexity a <code>VarLenFeature</code> should be preferred over a
 <code>SparseFeature</code> whenever possible.</p>
 <p>Each <code>FixedLenFeature</code> <code>df</code> maps to a <code>Tensor</code> of the specified type (or
-<a href="../tf/float32.md"><code>tf.float32</code></a> if not specified) and shape <code>(serialized.size(),) + df.shape</code>.</p>
+<a href="../tf/float32.html"><code>tf.float32</code></a> if not specified) and shape <code>(serialized.size(),) + df.shape</code>.</p>
 <p><code>FixedLenFeature</code> entries with a <code>default_value</code> are optional. With no default
 value, we will fail if that <code>Feature</code> is missing from any example in
 <code>serialized</code>.</p>
 <p>Each <code>FixedLenSequenceFeature</code> <code>df</code> maps to a <code>Tensor</code> of the specified type
-(or <a href="../tf/float32.md"><code>tf.float32</code></a> if not specified) and shape
+(or <a href="../tf/float32.html"><code>tf.float32</code></a> if not specified) and shape
 <code>(serialized.size(), None) + df.shape</code>.
 All examples in <code>serialized</code> will be padded with <code>default_value</code> along the
 second dimension.</p>
 <p>Examples:</p>
-<p>For example, if one expects a <a href="../tf/float32.md"><code>tf.float32</code></a> <code>VarLenFeature</code> <code>ft</code> and three
+<p>For example, if one expects a <a href="../tf/float32.html"><code>tf.float32</code></a> <code>VarLenFeature</code> <code>ft</code> and three
 serialized <code>Example</code>s are provided:</p>
 <pre><code>serialized = [
   features

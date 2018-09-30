@@ -4097,11 +4097,11 @@
 <h1>tf.train.ClusterSpec</h1>
 <h2>Class <code>ClusterSpec</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/server_lib.py"><code>tensorflow/python/training/server_lib.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Represents a cluster as a set of “tasks”, organized into “jobs”.</p>
-<p>A <a href="../../tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a> represents the set of processes that
+<p>A <a href="../../tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a> represents the set of processes that
 participate in a distributed TensorFlow computation. Every
-<a href="../../tf/train/Server.md"><code>tf.train.Server</code></a> is constructed in a particular cluster.</p>
+<a href="../../tf/train/Server.html"><code>tf.train.Server</code></a> is constructed in a particular cluster.</p>
 <p>To create a cluster with two jobs and five tasks, you specify the
 mapping from job names to lists of network addresses (typically
 hostname-port pairs).</p>
@@ -4133,13 +4133,13 @@ tasks:</p>
 <ul>
 <li><b><code>cluster</code></b>: A dictionary mapping one or more job names to (i) a
 list of network addresses, or (ii) a dictionary mapping integer
-task indices to network addresses; or a <a href="../../tf/train/ClusterDef.md"><code>tf.train.ClusterDef</code></a>
+task indices to network addresses; or a <a href="../../tf/train/ClusterDef.html"><code>tf.train.ClusterDef</code></a>
 protocol buffer.</li>
 </ul>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>TypeError</code></b>: If <code>cluster</code> is not a dictionary mapping strings to lists
-of strings, and not a <a href="../../tf/train/ClusterDef.md"><code>tf.train.ClusterDef</code></a> protobuf.</li>
+of strings, and not a <a href="../../tf/train/ClusterDef.html"><code>tf.train.ClusterDef</code></a> protobuf.</li>
 </ul>
 <h3 id="__bool__"><code>__bool__</code></h3>
 <pre><code class="language-python">__bool__()
@@ -4158,7 +4158,7 @@ of strings, and not a <a href="../../tf/train/ClusterDef.md"><code>tf.train.Clus
 <h3 id="as_cluster_def"><code>as_cluster_def</code></h3>
 <pre><code class="language-python">as_cluster_def()
 </code></pre>
-<p>Returns a <a href="../../tf/train/ClusterDef.md"><code>tf.train.ClusterDef</code></a> protocol buffer based on this cluster.</p>
+<p>Returns a <a href="../../tf/train/ClusterDef.html"><code>tf.train.ClusterDef</code></a> protocol buffer based on this cluster.</p>
 <h3 id="as_dict"><code>as_dict</code></h3>
 <pre><code class="language-python">as_dict()
 </code></pre>
@@ -4177,7 +4177,7 @@ describing the tasks in those jobs.</p>
 <p>NOTE: For backwards compatibility, this method returns a list. If
 the given job was defined with a sparse set of task indices, the
 length of this list may not reflect the number of tasks defined in
-this job. Use the <a href="../../tf/train/ClusterSpec.md#num_tasks"><code>tf.train.ClusterSpec.num_tasks</code></a> method
+this job. Use the <a href="../../tf/train/ClusterSpec.html#num_tasks"><code>tf.train.ClusterSpec.num_tasks</code></a> method
 to find the number of tasks defined in a particular job.</p>
 <h4>Args:</h4>
 <ul>

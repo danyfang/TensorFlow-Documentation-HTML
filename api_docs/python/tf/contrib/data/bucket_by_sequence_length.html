@@ -4101,18 +4101,18 @@ Grouping together elements that have similar lengths reduces the total
 fraction of padding in a batch which increases training step efficiency.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>element_length_func</code></b>: function from element in <code>Dataset</code> to <a href="../../../tf/int32.md"><code>tf.int32</code></a>,
+<li><b><code>element_length_func</code></b>: function from element in <code>Dataset</code> to <a href="../../../tf/int32.html"><code>tf.int32</code></a>,
 determines the length of the element, which will determine the bucket it
 goes into.</li>
 <li><b><code>bucket_boundaries</code></b>: <code>list&lt;int&gt;</code>, upper length boundaries of the buckets.</li>
 <li><b><code>bucket_batch_sizes</code></b>: <code>list&lt;int&gt;</code>, batch size per bucket. Length should be
 <code>len(bucket_boundaries) + 1</code>.</li>
-<li><b><code>padded_shapes</code></b>: Nested structure of <a href="../../../tf/TensorShape.md"><code>tf.TensorShape</code></a> to pass to
-<a href="../../../tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>. If not provided, will use
+<li><b><code>padded_shapes</code></b>: Nested structure of <a href="../../../tf/TensorShape.html"><code>tf.TensorShape</code></a> to pass to
+<a href="../../../tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>. If not provided, will use
 <code>dataset.output_shapes</code>, which will result in variable length dimensions
 being padded out to the maximum length in each batch.</li>
 <li><b><code>padding_values</code></b>: Values to pad with, passed to
-<a href="../../../tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>. Defaults to padding with 0.</li>
+<a href="../../../tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>. Defaults to padding with 0.</li>
 <li><b><code>pad_to_bucket_boundary</code></b>: bool, if <code>False</code>, will pad dimensions with unknown
 size to maximum length in batch. If <code>True</code>, will pad dimensions with
 unknown size to bucket boundary minus 1 (i.e., the maximum length in each
@@ -4121,7 +4121,7 @@ any elements with length longer than <code>max(bucket_boundaries)</code>.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a>.</p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a>.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: if <code>len(bucket_batch_sizes) != len(bucket_boundaries) + 1</code>.</li>

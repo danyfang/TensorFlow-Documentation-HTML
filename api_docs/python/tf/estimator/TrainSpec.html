@@ -4114,7 +4114,7 @@ __new__(
 <ul>
 <li>
 <p><b><code>input_fn</code></b>: A function that provides input data for training as minibatches.
-See <a href="../../../../guide/premade_estimators.md#create_input_functions">Premade Estimators</a> for more
+See <a href="../../../../guide/premade_estimators.html#create_input_functions">Premade Estimators</a> for more
 information. The function should construct and return one of
 the following:
 * A ‘tf.data.Dataset’ object: Outputs of <code>Dataset</code> object must be a
@@ -4130,7 +4130,7 @@ generate <code>OutOfRangeError</code> or <code>StopIteration</code> exceptions. 
 <code>train_and_evaluate</code> stop condition section for details.</p>
 </li>
 <li>
-<p><b><code>hooks</code></b>: Iterable of <a href="../../tf/train/SessionRunHook.md"><code>tf.train.SessionRunHook</code></a> objects to run
+<p><b><code>hooks</code></b>: Iterable of <a href="../../tf/train/SessionRunHook.html"><code>tf.train.SessionRunHook</code></a> objects to run
 on all workers (including chief) during training.</p>
 </li>
 </ul>

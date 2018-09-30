@@ -4102,10 +4102,10 @@ saved model rather than feeding into Estimator’s predict method.</p>
 evaluate method or filter_continuation. Used to determine the model
 state to make predictions starting from.</li>
 <li><b><code>signatures</code></b>: The <code>MetaGraphDef</code> protocol buffer returned from
-<a href="../../../../tf/saved_model/loader/load.md"><code>tf.saved_model.loader.load</code></a>. Used to determine the names of Tensors to
+<a href="../../../../tf/saved_model/loader/load.html"><code>tf.saved_model.loader.load</code></a>. Used to determine the names of Tensors to
 feed and fetch. Must be from the same model as <code>continue_from</code>.</li>
 <li><b><code>session</code></b>: The session to use. The session’s graph must be the one into which
-<a href="../../../../tf/saved_model/loader/load.md"><code>tf.saved_model.loader.load</code></a> loaded the model.</li>
+<a href="../../../../tf/saved_model/loader/load.html"><code>tf.saved_model.loader.load</code></a> loaded the model.</li>
 <li><b><code>steps</code></b>: The number of steps to predict (scalar), starting after the
 evaluation or filtering. If <code>times</code> is specified, <code>steps</code> must not be; one
 is required.</li>

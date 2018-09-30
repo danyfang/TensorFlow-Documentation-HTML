@@ -4083,7 +4083,7 @@
 <p>This guide contains instructions for defining and running a TensorFlow benchmark. These benchmarks store output in <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/util/test_log.proto">TestResults</a> format. If these benchmarks are added to the TensorFlow github repo, we will run them daily with our continuous build and display a graph on our dashboard: <a href="https://benchmarks-dot-tensorflow-testing.appspot.com/">https://benchmarks-dot-tensorflow-testing.appspot.com/</a>.</p>
 <p>[TOC]</p>
 <h2>Defining a Benchmark</h2>
-<p>Defining a TensorFlow benchmark requires extending the <a href="../api_docs/python/tf/test/Benchmark.md"><code>tf.test.Benchmark</code></a>
+<p>Defining a TensorFlow benchmark requires extending the <a href="../api_docs/python/tf/test/Benchmark.html"><code>tf.test.Benchmark</code></a>
 class and calling the <code>self.report_benchmark</code> method. Below, you’ll find an example of benchmark code:</p>
 <pre><code class="language-python">import time
 
@@ -4119,7 +4119,7 @@ if __name__ == &quot;__main__&quot;:
 <p>See the full example for <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/benchmark/">SampleBenchmark</a>.</p>
 <p>Key points to note in the example above:</p>
 <ul>
-<li>Benchmark class extends from <a href="../api_docs/python/tf/test/Benchmark.md"><code>tf.test.Benchmark</code></a>.</li>
+<li>Benchmark class extends from <a href="../api_docs/python/tf/test/Benchmark.html"><code>tf.test.Benchmark</code></a>.</li>
 <li>Each benchmark method should start with <code>benchmark</code> prefix.</li>
 <li>Benchmark method calls <code>report_benchmark</code> to report the metric value.</li>
 </ul>

@@ -4096,7 +4096,7 @@
 <h1>tf.contrib.seq2seq.BahdanauAttention</h1>
 <h2>Class <code>BahdanauAttention</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/seq2seq/python/ops/attention_wrapper.py"><code>tensorflow/contrib/seq2seq/python/ops/attention_wrapper.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.seq2seq.md#Attention">Seq2seq Library (contrib) &gt; Attention</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.seq2seq.html#Attention">Seq2seq Library (contrib) &gt; Attention</a></p>
 <p>Implements Bahdanau-style (additive) attention.</p>
 <p>This attention has two forms.  The first is Bahdanau attention,
 as described in:</p>
@@ -4143,8 +4143,8 @@ in memory.  If provided, the memory tensor rows are masked with zeros
 for values past the respective sequence lengths.</li>
 <li><b><code>normalize</code></b>: Python boolean.  Whether to normalize the energy term.</li>
 <li><b><code>probability_fn</code></b>: (optional) A <code>callable</code>.  Converts the score to
-probabilities.  The default is <a href="../../../tf/nn/softmax.md"><code>tf.nn.softmax</code></a>. Other options include
-<a href="../../../tf/contrib/seq2seq/hardmax.md"><code>tf.contrib.seq2seq.hardmax</code></a> and <a href="../../../tf/contrib/sparsemax/sparsemax.md"><code>tf.contrib.sparsemax.sparsemax</code></a>.
+probabilities.  The default is <a href="../../../tf/nn/softmax.html"><code>tf.nn.softmax</code></a>. Other options include
+<a href="../../../tf/contrib/seq2seq/hardmax.html"><code>tf.contrib.seq2seq.hardmax</code></a> and <a href="../../../tf/contrib/sparsemax/sparsemax.html"><code>tf.contrib.sparsemax.sparsemax</code></a>.
 Its signature should be: <code>probabilities = probability_fn(score)</code>.</li>
 <li><b><code>score_mask_value</code></b>: (optional): The mask value for score before passing into
 <code>probability_fn</code>. The default is -inf. Only used if

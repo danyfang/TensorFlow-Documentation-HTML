@@ -4115,24 +4115,24 @@
 <h2>Class <code>FixedLengthRecordDataset</code></h2>
 <p>Inherits From: <a href="../../tf/data/Dataset.html"><code>Dataset</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/data/ops/readers.py"><code>tensorflow/python/data/ops/readers.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/input_dataset.md#Reader_classes">Dataset Input Pipeline &gt; Reader classes</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/input_dataset.html#Reader_classes">Dataset Input Pipeline &gt; Reader classes</a></p>
 <p>A <code>Dataset</code> of fixed-length records from one or more binary files.</p>
 <h2>Properties</h2>
 <h3 id="output_classes"><code>output_classes</code></h3>
 <p>Returns the class of each component of an element of this dataset.</p>
-<p>The expected values are <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a> and <a href="../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>.</p>
+<p>The expected values are <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a> and <a href="../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>.</p>
 <h4>Returns:</h4>
 <p>A nested structure of Python <code>type</code> objects corresponding to each
 component of an element of this dataset.</p>
 <h3 id="output_shapes"><code>output_shapes</code></h3>
 <p>Returns the shape of each component of an element of this dataset.</p>
 <h4>Returns:</h4>
-<p>A nested structure of <a href="../../tf/TensorShape.md"><code>tf.TensorShape</code></a> objects corresponding to each
+<p>A nested structure of <a href="../../tf/TensorShape.html"><code>tf.TensorShape</code></a> objects corresponding to each
 component of an element of this dataset.</p>
 <h3 id="output_types"><code>output_types</code></h3>
 <p>Returns the type of each component of an element of this dataset.</p>
 <h4>Returns:</h4>
-<p>A nested structure of <a href="../../tf/DType.md"><code>tf.DType</code></a> objects corresponding to each component
+<p>A nested structure of <a href="../../tf/DType.html"><code>tf.DType</code></a> objects corresponding to each component
 of an element of this dataset.</p>
 <h2>Methods</h2>
 <h3 id="__init__"><code>__init__</code></h3>
@@ -4147,14 +4147,14 @@ of an element of this dataset.</p>
 <p>Creates a <code>FixedLengthRecordDataset</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>filenames</code></b>: A <a href="../../tf/string.md"><code>tf.string</code></a> tensor containing one or more filenames.</li>
-<li><b><code>record_bytes</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar representing the number of bytes in
+<li><b><code>filenames</code></b>: A <a href="../../tf/string.html"><code>tf.string</code></a> tensor containing one or more filenames.</li>
+<li><b><code>record_bytes</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar representing the number of bytes in
 each record.</li>
-<li><b><code>header_bytes</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar representing the number of
+<li><b><code>header_bytes</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar representing the number of
 bytes to skip at the start of a file.</li>
-<li><b><code>footer_bytes</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar representing the number of
+<li><b><code>footer_bytes</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar representing the number of
 bytes to ignore at the end of a file.</li>
-<li><b><code>buffer_size</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar representing the number of
+<li><b><code>buffer_size</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar representing the number of
 bytes to buffer when reading.</li>
 </ul>
 <h3 id="__iter__"><code>__iter__</code></h3>
@@ -4206,9 +4206,9 @@ batches having the same outer dimension, you should set the <code>drop_remainder
 argument to <code>True</code> to prevent the smaller batch from being produced.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>batch_size</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>batch_size</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 consecutive elements of this dataset to combine in a single batch.</li>
-<li><b><code>drop_remainder</code></b>: (Optional.) A <a href="../../tf/bool.md"><code>tf.bool</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing
+<li><b><code>drop_remainder</code></b>: (Optional.) A <a href="../../tf/bool.html"><code>tf.bool</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing
 whether the last batch should be dropped in the case its has fewer than
 <code>batch_size</code> elements; the default behavior is not to drop the smaller
 batch.</li>
@@ -4223,7 +4223,7 @@ batch.</li>
 <p>Caches the elements in this dataset.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>filename</code></b>: A <a href="../../tf/string.md"><code>tf.string</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the name of a
+<li><b><code>filename</code></b>: A <a href="../../tf/string.html"><code>tf.string</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the name of a
 directory on the filesystem to use for caching tensors in this Dataset.
 If a filename is not provided, the dataset will be cached in memory.</li>
 </ul>
@@ -4264,7 +4264,7 @@ a.concatenate(b) == { 1, 2, 3, 4, 5, 6, 7 }
 <ul>
 <li><b><code>predicate</code></b>: A function mapping a nested structure of tensors (having shapes
 and types defined by <code>self.output_shapes</code> and <code>self.output_types</code>) to a
-scalar <a href="../../tf/bool.md"><code>tf.bool</code></a> tensor.</li>
+scalar <a href="../../tf/bool.html"><code>tf.bool</code></a> tensor.</li>
 </ul>
 <h4>Returns:</h4>
 <ul>
@@ -4313,7 +4313,7 @@ sess.run(value)  # (1, array([1]))
 sess.run(value)  # (2, array([1, 1]))
 </code></pre>
 <p>NOTE: The current implementation of <code>Dataset.from_generator()</code> uses
-<a href="../../tf/py_func.md"><code>tf.py_func</code></a> and inherits the same constraints. In particular, it
+<a href="../../tf/py_func.html"><code>tf.py_func</code></a> and inherits the same constraints. In particular, it
 requires the <code>Dataset</code>- and <code>Iterator</code>-related operations to be placed
 on a device in the same process as the Python program that called
 <code>Dataset.from_generator()</code>. The body of <code>generator</code> will not be
@@ -4333,12 +4333,12 @@ cache any external state in <code>generator</code> before calling
 <code>iter()</code> protocol. If <code>args</code> is not specified, <code>generator</code> must take
 no arguments; otherwise it must take as many arguments as there are
 values in <code>args</code>.</li>
-<li><b><code>output_types</code></b>: A nested structure of <a href="../../tf/DType.md"><code>tf.DType</code></a> objects corresponding to
+<li><b><code>output_types</code></b>: A nested structure of <a href="../../tf/DType.html"><code>tf.DType</code></a> objects corresponding to
 each component of an element yielded by <code>generator</code>.</li>
-<li><b><code>output_shapes</code></b>: (Optional.) A nested structure of <a href="../../tf/TensorShape.md"><code>tf.TensorShape</code></a>
+<li><b><code>output_shapes</code></b>: (Optional.) A nested structure of <a href="../../tf/TensorShape.html"><code>tf.TensorShape</code></a>
 objects corresponding to each component of an element yielded by
 <code>generator</code>.</li>
-<li><b><code>args</code></b>: (Optional.) A tuple of <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a> objects that will be evaluated
+<li><b><code>args</code></b>: (Optional.) A tuple of <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a> objects that will be evaluated
 and passed to <code>generator</code> as NumPy-array arguments.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4348,13 +4348,13 @@ and passed to <code>generator</code> as NumPy-array arguments.</li>
 <h3 id="from_sparse_tensor_slices"><code>from_sparse_tensor_slices</code></h3>
 <pre><code class="language-python">from_sparse_tensor_slices(sparse_tensor)
 </code></pre>
-<p>Splits each rank-N <a href="../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a> in this dataset row-wise. (deprecated)</p>
+<p>Splits each rank-N <a href="../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a> in this dataset row-wise. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed in a future version.
 Instructions for updating:
 Use <code>tf.data.Dataset.from_tensor_slices()</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>sparse_tensor</code></b>: A <a href="../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>.</li>
+<li><b><code>sparse_tensor</code></b>: A <a href="../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
 <ul>
@@ -4366,10 +4366,10 @@ Use <code>tf.data.Dataset.from_tensor_slices()</code>.</p>
 <p>Creates a <code>Dataset</code> whose elements are slices of the given tensors.</p>
 <p>Note that if <code>tensors</code> contains a NumPy array, and eager execution is not
 enabled, the values will be embedded in the graph as one or more
-<a href="../../tf/constant.md"><code>tf.constant</code></a> operations. For large datasets (&gt; 1 GB), this can waste
+<a href="../../tf/constant.html"><code>tf.constant</code></a> operations. For large datasets (&gt; 1 GB), this can waste
 memory and run into byte limits of graph serialization.  If tensors contains
 one or more large NumPy arrays, consider the alternative described in
-<a href="../../../../guide/datasets.md#consuming_numpy_arrays">this guide</a>.</p>
+<a href="../../../../guide/datasets.html#consuming_numpy_arrays">this guide</a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>tensors</code></b>: A nested structure of tensors, each having the same size in the
@@ -4385,10 +4385,10 @@ one or more large NumPy arrays, consider the alternative described in
 <p>Creates a <code>Dataset</code> with a single element, comprising the given tensors.</p>
 <p>Note that if <code>tensors</code> contains a NumPy array, and eager execution is not
 enabled, the values will be embedded in the graph as one or more
-<a href="../../tf/constant.md"><code>tf.constant</code></a> operations. For large datasets (&gt; 1 GB), this can waste
+<a href="../../tf/constant.html"><code>tf.constant</code></a> operations. For large datasets (&gt; 1 GB), this can waste
 memory and run into byte limits of graph serialization.  If tensors contains
 one or more large NumPy arrays, consider the alternative described in
-<a href="../../../../guide/datasets.md#consuming_numpy_arrays">this guide</a>.</p>
+<a href="../../../../guide/datasets.html#consuming_numpy_arrays">this guide</a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>tensors</code></b>: A nested structure of tensors.</li>
@@ -4419,7 +4419,7 @@ dataset = (Dataset.from_tensor_slices(filenames)
 elements are produced. <code>cycle_length</code> controls the number of input elements
 that are processed concurrently. If you set <code>cycle_length</code> to 1, this
 transformation will handle one input element at a time, and will produce
-identical results = to <a href="../../tf/data/Dataset.md#flat_map"><code>tf.data.Dataset.flat_map</code></a>. In general,
+identical results = to <a href="../../tf/data/Dataset.html#flat_map"><code>tf.data.Dataset.flat_map</code></a>. In general,
 this transformation will apply <code>map_func</code> to <code>cycle_length</code> input elements,
 open iterators on the returned <code>Dataset</code> objects, and cycle through them
 producing <code>block_length</code> consecutive elements from each iterator, and
@@ -4485,13 +4485,13 @@ produce:
 - /path/to/dir/c.py</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>file_pattern</code></b>: A string or scalar string <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing
+<li><b><code>file_pattern</code></b>: A string or scalar string <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing
 the filename pattern that will be matched.</li>
 <li><b><code>shuffle</code></b>: (Optional.) If <code>True</code>, the file names will be shuffled randomly.
 Defaults to <code>True</code>.</li>
-<li><b><code>seed</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>seed</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 random seed that will be used to create the distribution. See
-<a href="../../tf/set_random_seed.md"><code>tf.set_random_seed</code></a> for behavior.</li>
+<a href="../../tf/set_random_seed.html"><code>tf.set_random_seed</code></a> for behavior.</li>
 </ul>
 <h4>Returns:</h4>
 <p>Dataset: A <code>Dataset</code> of strings corresponding to file names.</p>
@@ -4545,18 +4545,18 @@ a.map(lambda x: x + 1) = { 2, 3, 4, 5, 6 }
 </code></pre>
 <p>The input signature of <code>map_func</code> is determined by the structure of each
 element in this dataset. For example:</p>
-<pre><code class="language-python"># Each element is a &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; object.
+<pre><code class="language-python"># Each element is a &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; object.
 a = { 1, 2, 3, 4, 5 }
-# `map_func` takes a single argument of type &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; with the same
+# `map_func` takes a single argument of type &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; with the same
 # shape and dtype.
 result = a.map(lambda x: ...)
 
-# Each element is a tuple containing two &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
+# Each element is a tuple containing two &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
 b = { (1, &quot;foo&quot;), (2, &quot;bar&quot;), (3, &quot;baz&quot;) }
-# `map_func` takes two arguments of type &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt;.
+# `map_func` takes two arguments of type &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt;.
 result = b.map(lambda x_int, y_str: ...)
 
-# Each element is a dictionary mapping strings to &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
+# Each element is a dictionary mapping strings to &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
 c = { {&quot;a&quot;: 1, &quot;b&quot;: &quot;foo&quot;}, {&quot;a&quot;: 2, &quot;b&quot;: &quot;bar&quot;}, {&quot;a&quot;: 3, &quot;b&quot;: &quot;baz&quot;} }
 # `map_func` takes a single argument of type `dict` with the same keys as
 # the elements.
@@ -4564,7 +4564,7 @@ result = c.map(lambda d: ...)
 </code></pre>
 <p>The value or values returned by <code>map_func</code> determine the structure of each
 element in the returned dataset.</p>
-<pre><code class="language-python"># `map_func` returns a scalar &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; of type &lt;a href=&quot;../../tf/float32.md&quot;&gt;&lt;code&gt;tf.float32&lt;/code&gt;&lt;/a&gt;.
+<pre><code class="language-python"># `map_func` returns a scalar &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; of type &lt;a href=&quot;../../tf/float32.html&quot;&gt;&lt;code&gt;tf.float32&lt;/code&gt;&lt;/a&gt;.
 def f(...):
   return tf.constant(37.0)
 result = dataset.map(f)
@@ -4572,7 +4572,7 @@ result.output_classes == tf.Tensor
 result.output_types == tf.float32
 result.output_shapes == []  # scalar
 
-# `map_func` returns two &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
+# `map_func` returns two &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt; objects.
 def g(...):
   return tf.constant(37.0), tf.constant([&quot;Foo&quot;, &quot;Bar&quot;, &quot;Baz&quot;])
 result = dataset.map(g)
@@ -4581,7 +4581,7 @@ result.output_types == (tf.float32, tf.string)
 result.output_shapes == ([], [3])
 
 # Python primitives, lists, and NumPy arrays are implicitly converted to
-# &lt;a href=&quot;../../tf/Tensor.md&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt;.
+# &lt;a href=&quot;../../tf/Tensor.html&quot;&gt;&lt;code&gt;tf.Tensor&lt;/code&gt;&lt;/a&gt;.
 def h(...):
   return 37.0, [&quot;Foo&quot;, &quot;Bar&quot;, &quot;Baz&quot;], np.array([1.0, 2.0] dtype=np.float64)
 result = dataset.map(h)
@@ -4596,14 +4596,14 @@ result.output_classes == ({&quot;a&quot;: tf.Tensor, &quot;b&quot;: tf.Tensor}, 
 result.output_types == ({&quot;a&quot;: tf.float32, &quot;b&quot;: tf.int32}, tf.string)
 result.output_shapes == ({&quot;a&quot;: [], &quot;b&quot;: [2]}, [])
 </code></pre>
-<p>In addition to <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a> objects, <code>map_func</code> can accept as arguments and
-return <a href="../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a> objects.</p>
+<p>In addition to <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a> objects, <code>map_func</code> can accept as arguments and
+return <a href="../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a> objects.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>map_func</code></b>: A function mapping a nested structure of tensors (having
 shapes and types defined by <code>self.output_shapes</code> and
 <code>self.output_types</code>) to another nested structure of tensors.</li>
-<li><b><code>num_parallel_calls</code></b>: (Optional.) A <a href="../../tf/int32.md"><code>tf.int32</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>,
+<li><b><code>num_parallel_calls</code></b>: (Optional.) A <a href="../../tf/int32.html"><code>tf.int32</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>,
 representing the number elements to process in parallel. If not
 specified, elements will be processed sequentially.</li>
 </ul>
@@ -4622,14 +4622,14 @@ specified, elements will be processed sequentially.</li>
 <p>Combines consecutive elements of this dataset into padded batches.</p>
 <p>This transformation combines multiple consecutive elements of the input
 dataset into a single element.</p>
-<p>Like <a href="../../tf/data/Dataset.md#batch"><code>tf.data.Dataset.batch</code></a>, the tensors in the resulting element will
+<p>Like <a href="../../tf/data/Dataset.html#batch"><code>tf.data.Dataset.batch</code></a>, the tensors in the resulting element will
 have an additional outer dimension, which will be <code>batch_size</code> (or
 <code>N % batch_size</code> for the last element if <code>batch_size</code> does not divide the
 number of input elements <code>N</code> evenly and <code>drop_remainder</code> is <code>False</code>). If
 your program depends on the batches having the same outer dimension, you
 should set the <code>drop_remainder</code> argument to <code>True</code> to prevent the smaller
 batch from being produced.</p>
-<p>Unlike <a href="../../tf/data/Dataset.md#batch"><code>tf.data.Dataset.batch</code></a>, the input elements to be batched may have
+<p>Unlike <a href="../../tf/data/Dataset.html#batch"><code>tf.data.Dataset.batch</code></a>, the input elements to be batched may have
 different shapes, and this transformation will pad each component to the
 respective shape in <code>padding_shapes</code>. The <code>padding_shapes</code> argument
 determines the resulting shape for each dimension of each component in an
@@ -4641,24 +4641,24 @@ will be padded out to that length in that dimension.</li>
 will be padded out to the maximum length of all elements in that
 dimension.</li>
 </ul>
-<p>See also <a href="../../tf/contrib/data/dense_to_sparse_batch.md"><code>tf.contrib.data.dense_to_sparse_batch</code></a>, which combines elements
-that may have different shapes into a <a href="../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>.</p>
+<p>See also <a href="../../tf/contrib/data/dense_to_sparse_batch.html"><code>tf.contrib.data.dense_to_sparse_batch</code></a>, which combines elements
+that may have different shapes into a <a href="../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>batch_size</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>batch_size</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 consecutive elements of this dataset to combine in a single batch.</li>
-<li><b><code>padded_shapes</code></b>: A nested structure of <a href="../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or
-<a href="../../tf/int64.md"><code>tf.int64</code></a> vector tensor-like objects representing the shape
+<li><b><code>padded_shapes</code></b>: A nested structure of <a href="../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or
+<a href="../../tf/int64.html"><code>tf.int64</code></a> vector tensor-like objects representing the shape
 to which the respective component of each input element should
 be padded prior to batching. Any unknown dimensions
-(e.g. <code>tf.Dimension(None)</code> in a <a href="../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or <code>-1</code> in a
+(e.g. <code>tf.Dimension(None)</code> in a <a href="../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or <code>-1</code> in a
 tensor-like object) will be padded to the maximum size of that
 dimension in each batch.</li>
 <li><b><code>padding_values</code></b>: (Optional.) A nested structure of scalar-shaped
-<a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the padding values to use for the
+<a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the padding values to use for the
 respective components.  Defaults are <code>0</code> for numeric types and
 the empty string for string types.</li>
-<li><b><code>drop_remainder</code></b>: (Optional.) A <a href="../../tf/bool.md"><code>tf.bool</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing
+<li><b><code>drop_remainder</code></b>: (Optional.) A <a href="../../tf/bool.html"><code>tf.bool</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing
 whether the last batch should be dropped in the case its has fewer than
 <code>batch_size</code> elements; the default behavior is not to drop the smaller
 batch.</li>
@@ -4673,7 +4673,7 @@ batch.</li>
 <p>Creates a <code>Dataset</code> that prefetches elements from this dataset.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>buffer_size</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>buffer_size</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 maximum number of elements that will be buffered when prefetching.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4715,7 +4715,7 @@ len(args) == 3 -&gt; start = args[0], stop = args[1, stop = args[2]</li>
 generator), then different repetitions may produce different elements.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>count</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>count</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 number of times the dataset should be repeated. The default behavior
 (if <code>count</code> is <code>None</code> or <code>-1</code>) is for the dataset be repeated
 indefinitely.</li>
@@ -4760,9 +4760,9 @@ d = d.map(parser_fn, num_parallel_calls=FLAGS.num_map_threads)
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>num_shards</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>num_shards</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 shards operating in parallel.</li>
-<li><b><code>index</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the worker index.</li>
+<li><b><code>index</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the worker index.</li>
 </ul>
 <h4>Returns:</h4>
 <ul>
@@ -4786,12 +4786,12 @@ a session.run call.)</li>
 <p>Randomly shuffles the elements of this dataset.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>buffer_size</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>buffer_size</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 number of elements from this dataset from which the new
 dataset will sample.</li>
-<li><b><code>seed</code></b>: (Optional.) A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>seed</code></b>: (Optional.) A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 random seed that will be used to create the distribution. See
-<a href="../../tf/set_random_seed.md"><code>tf.set_random_seed</code></a> for behavior.</li>
+<a href="../../tf/set_random_seed.html"><code>tf.set_random_seed</code></a> for behavior.</li>
 <li><b><code>reshuffle_each_iteration</code></b>: (Optional.) A boolean, which if true indicates
 that the dataset should be pseudorandomly reshuffled each time it is
 iterated over. (Defaults to <code>True</code>.)</li>
@@ -4806,7 +4806,7 @@ iterated over. (Defaults to <code>True</code>.)</li>
 <p>Creates a <code>Dataset</code> that skips <code>count</code> elements from this dataset.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>count</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number
+<li><b><code>count</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number
 of elements of this dataset that should be skipped to form the
 new dataset.  If <code>count</code> is greater than the size of this
 dataset, the new dataset will contain no elements.  If <code>count</code>
@@ -4822,7 +4822,7 @@ is -1, skips the entire dataset.</li>
 <p>Creates a <code>Dataset</code> with at most <code>count</code> elements from this dataset.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>count</code></b>: A <a href="../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>count</code></b>: A <a href="../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 elements of this dataset that should be taken to form the new dataset.
 If <code>count</code> is -1, or if <code>count</code> is greater than the size of this
 dataset, the new dataset will contain all elements of this dataset.</li>

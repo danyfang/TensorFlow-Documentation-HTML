@@ -4095,15 +4095,15 @@
 )
 </code></pre>
 <p>Defined in generated file: <code>tensorflow/python/ops/gen_array_ops.py</code>.</p>
-<p>See the guide: <a href="../../../api_guides/python/array_ops.md#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
+<p>See the guide: <a href="../../../api_guides/python/array_ops.html#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
 <p>Gather slices from <code>params</code> into a Tensor with shape specified by <code>indices</code>.</p>
 <p><code>indices</code> is an K-dimensional integer tensor, best thought of as a
 (K-1)-dimensional tensor of indices into <code>params</code>, where each element defines a
 slice of <code>params</code>:</p>
 <pre><code>output[\\(i_0, ..., i_{K-2}\\)] = params[indices[\\(i_0, ..., i_{K-2}\\)]]
 </code></pre>
-<p>Whereas in <a href="../tf/gather.md"><code>tf.gather</code></a> <code>indices</code> defines slices into the first
-dimension of <code>params</code>, in <a href="../tf/gather_nd.md"><code>tf.gather_nd</code></a>, <code>indices</code> defines slices into the
+<p>Whereas in <a href="../tf/gather.html"><code>tf.gather</code></a> <code>indices</code> defines slices into the first
+dimension of <code>params</code>, in <a href="../tf/gather_nd.html"><code>tf.gather_nd</code></a>, <code>indices</code> defines slices into the
 first <code>N</code> dimensions of <code>params</code>, where <code>N = indices.shape[-1]</code>.</p>
 <p>The last dimension of <code>indices</code> can be at most the rank of
 <code>params</code>:</p>

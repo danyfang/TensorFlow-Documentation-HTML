@@ -4124,7 +4124,7 @@ op registration, which can be used directly or added to.</li>
 <li>Write a function to compute gradients for the op (optional).</li>
 <li>Test the op. We usually do this in Python for convenience, but you can also
 test the op in C++. If you define gradients, you can verify them with the
-Python <a href="../api_docs/python/tf/test/compute_gradient_error.md">gradient checker</a>.
+Python <a href="../api_docs/python/tf/test/compute_gradient_error.html">gradient checker</a>.
 See
 <a href="https://www.tensorflow.org/code/tensorflow/python/kernel_tests/relu_op_test.py"><code>relu_op_test.py</code></a> as
 an example that tests the forward functions of Relu-like operators and
@@ -4134,8 +4134,8 @@ their gradients.</li>
 <ul>
 <li>Some familiarity with C++.</li>
 <li>Must have installed the
-<a href="../install/index.md">TensorFlow binary</a>, or must have
-<a href="../install/install_sources.md">downloaded TensorFlow source</a>,
+<a href="../install/index.html">TensorFlow binary</a>, or must have
+<a href="../install/install_sources.html">downloaded TensorFlow source</a>,
 and be able to build it.</li>
 </ul>
 <p>[TOC]</p>
@@ -4426,7 +4426,7 @@ TensorFlow’s plugin loading mechanism.</p>
 </blockquote>
 <h2>Use the op in Python</h2>
 <p>TensorFlow Python API provides the
-<a href="../api_docs/python/tf/load_op_library.md"><code>tf.load_op_library</code></a> function to
+<a href="../api_docs/python/tf/load_op_library.html"><code>tf.load_op_library</code></a> function to
 load the dynamic library and register the op with the TensorFlow
 framework. <code>load_op_library</code> returns a Python module that contains the Python
 wrappers for the op and the kernel. Thus, once you have built the op, you can
@@ -4553,7 +4553,7 @@ instead of only the 0th element, you can register the op like so:</p>
     .Output(&quot;zeroed: int32&quot;);
 </code></pre>
 <p>(Note that the set of <a href="#attr_types">attribute types</a> is different from the
-<a href="../api_docs/python/tf/DType.md">tensor types</a> used for inputs and outputs.)</p>
+<a href="../api_docs/python/tf/DType.html">tensor types</a> used for inputs and outputs.)</p>
 <p>Your kernel can then access this attr in its constructor via the <code>context</code>
 parameter:</p>
 <pre><code class="language-c++">class ZeroOutOp : public OpKernel {
@@ -4622,7 +4622,7 @@ when you use this syntax.  This emulates an enum:</p>
 <li>
 <p><code>{&lt;type1&gt;, &lt;type2&gt;}</code>: The value is of type <code>type</code>, and must be one of
 <code>&lt;type1&gt;</code> or <code>&lt;type2&gt;</code>, where <code>&lt;type1&gt;</code> and <code>&lt;type2&gt;</code> are supported
-<a href="../api_docs/python/tf/DType.md">tensor types</a>.  You don’t specify
+<a href="../api_docs/python/tf/DType.html">tensor types</a>.  You don’t specify
 that the type of the attr is <code>type</code>. This is implied when you have a list of
 types in <code>{...}</code>.  For example, in this case the attr <code>t</code> is a type that must
 be an <code>int32</code>, a <code>float</code>, or a <code>bool</code>:</p>
@@ -4700,7 +4700,7 @@ representation of the resulting GraphDef definition.</p>
    .Attr(&quot;l_int: list(int) = [2, 3, 5, 7]&quot;);
 </code></pre>
 <p>Note in particular that the values of type <code>type</code>
-use <a href="../api_docs/python/tf/DType.md">the <code>DT_*</code> names for the types</a>.</p>
+use <a href="../api_docs/python/tf/DType.html">the <code>DT_*</code> names for the types</a>.</p>
 <h4>Polymorphism</h4>
 <h5>Type Polymorphism</h5>
 <p>For ops that can take different types as input or produce different output
@@ -4754,8 +4754,8 @@ Python:</p>
 
   Args:
     string_tensor: A `Tensor` of type `string`.
-    out_type: An optional &lt;a href=&quot;../api_docs/python/tf/DType.md&quot;&gt;&lt;code&gt;tf.DType&lt;/code&gt;&lt;/a&gt; from: `tf.float32, tf.int32`.
-      Defaults to &lt;a href=&quot;../api_docs/python/tf/float32.md&quot;&gt;&lt;code&gt;tf.float32&lt;/code&gt;&lt;/a&gt;.
+    out_type: An optional &lt;a href=&quot;../api_docs/python/tf/DType.html&quot;&gt;&lt;code&gt;tf.DType&lt;/code&gt;&lt;/a&gt; from: `tf.float32, tf.int32`.
+      Defaults to &lt;a href=&quot;../api_docs/python/tf/float32.html&quot;&gt;&lt;code&gt;tf.float32&lt;/code&gt;&lt;/a&gt;.
     name: A name for the operation (optional).
 
   Returns:
@@ -4986,7 +4986,7 @@ expressions:</p>
 <p><code>&lt;type&gt;</code>, where <code>&lt;type&gt;</code> is a supported input type (e.g. <code>float</code>, <code>int32</code>,
 <code>string</code>). This specifies a single tensor of the given type.</p>
 <p>See
-<a href="../api_docs/python/tf/DType.md">the list of supported Tensor types</a>.</p>
+<a href="../api_docs/python/tf/DType.html">the list of supported Tensor types</a>.</p>
 <pre><code class="language-c++">REGISTER_OP(&quot;BuiltInTypesExample&quot;)
     .Input(&quot;integers: int32&quot;)
     .Input(&quot;complex_numbers: complex64&quot;);
@@ -5023,7 +5023,7 @@ in the input <code>in</code>, since both are of type <code>T</code>.</p>
 <p>For a sequence of tensors with the same type: <code>&lt;number&gt; * &lt;type&gt;</code>, where
 <code>&lt;number&gt;</code> is the name of an <a href="#attrs">Attr</a> with type <code>int</code>.  The <code>&lt;type&gt;</code> can
 either be
-<a href="../api_docs/python/tf/DType.md">a specific type like <code>int32</code> or <code>float</code></a>,
+<a href="../api_docs/python/tf/DType.html">a specific type like <code>int32</code> or <code>float</code></a>,
 or the name of an attr with type <code>type</code>.  As an example of the first, this
 op accepts a list of <code>int32</code> tensors:</p>
 <pre><code class="language-c++">REGISTER_OP(&quot;Int32SequenceExample&quot;)
@@ -5060,7 +5060,7 @@ changes to the op in some way.</p>
 backwards-compatible: changing the specification of an op must not break prior
 serialized <code>GraphDef</code> protocol buffers constructed from older specifications.
 The details of <code>GraphDef</code> compatibility are
-<a href="../guide/version_compat.md#compatibility_of_graphs_and_checkpoints">described here</a>.</p>
+<a href="../guide/version_compat.html#compatibility_of_graphs_and_checkpoints">described here</a>.</p>
 <p>There are several ways to preserve backwards-compatibility.</p>
 <ol>
 <li>
@@ -5113,7 +5113,7 @@ callers.  The Python API may be kept compatible by careful changes in a
 hand-written Python wrapper, by keeping the old signature except possibly adding
 new optional arguments to the end.  Generally incompatible changes may only be
 made when TensorFlow’s changes major versions, and must conform to the
-<a href="../guide/version_compat.md#compatibility_of_graphs_and_checkpoints"><code>GraphDef</code> version semantics</a>.</p>
+<a href="../guide/version_compat.html#compatibility_of_graphs_and_checkpoints"><code>GraphDef</code> version semantics</a>.</p>
 <h3>GPU Support</h3>
 <p>You can implement different OpKernels and register one for CPU and another for
 GPU, just like you can <a href="#polymorphism">register kernels for different types</a>.
@@ -5121,7 +5121,7 @@ There are several examples of kernels with GPU support in
 <a href="https://www.tensorflow.org/code/tensorflow/core/kernels/"><code>tensorflow/core/kernels/</code></a>.
 Notice some kernels have a CPU version in a <code>.cc</code> file, a GPU version in a file
 ending in <code>_gpu.cu.cc</code>, and some code shared in common in a <code>.h</code> file.</p>
-<p>For example, the <a href="../api_docs/python/tf/pad.md"><code>tf.pad</code></a> has
+<p>For example, the <a href="../api_docs/python/tf/pad.html"><code>tf.pad</code></a> has
 everything but the GPU kernel in <a href="https://www.tensorflow.org/code/tensorflow/core/kernels/pad_op.cc"><code>tensorflow/core/kernels/pad_op.cc</code></a>.
 The GPU kernel is in
 <a href="https://www.tensorflow.org/code/tensorflow/core/kernels/pad_op_gpu.cu.cc"><code>tensorflow/core/kernels/pad_op_gpu.cu.cc</code></a>,
@@ -5160,7 +5160,7 @@ g++ -std=c++11 -shared -o cuda_op_kernel.so cuda_op_kernel.cc \
   cuda_op_kernel.cu.o ${TF_CFLAGS[@]} -fPIC -lcudart ${TF_LFLAGS[@]}
 </code></pre>
 <p><code>cuda_op_kernel.so</code> produced above can be loaded as usual in Python, using the
-<a href="../api_docs/python/tf/load_op_library.md"><code>tf.load_op_library</code></a> function.</p>
+<a href="../api_docs/python/tf/load_op_library.html"><code>tf.load_op_library</code></a> function.</p>
 <p>Note that if your CUDA libraries are not installed in <code>/usr/local/lib64</code>,
 you’ll need to specify the path explicitly in the second (g++) command above.
 For example, add <code>-L /usr/local/cuda-8.0/lib64/</code> if your CUDA is installed in
@@ -5172,7 +5172,7 @@ For example, add <code>-L /usr/local/cuda-8.0/lib64/</code> if your CUDA is inst
 <p>Given a graph of ops, TensorFlow uses automatic differentiation
 (backpropagation) to add new ops representing gradients with respect to the
 existing ops (see
-<a href="../api_guides/python/train.md#gradient_computation">Gradient Computation</a>).
+<a href="../api_guides/python/train.html#gradient_computation">Gradient Computation</a>).
 To make automatic differentiation work for new ops, you must register a gradient
 function which computes gradients with respect to the ops’ inputs given
 gradients with respect to the ops’ outputs.</p>
@@ -5210,17 +5210,17 @@ def _zero_out_grad(op, grad):
   return [to_zero_grad]  # List of one Tensor, since we have one input
 </code></pre>
 <p>Details about registering gradient functions with
-<a href="../api_docs/python/tf/RegisterGradient.md"><code>tf.RegisterGradient</code></a>:</p>
+<a href="../api_docs/python/tf/RegisterGradient.html"><code>tf.RegisterGradient</code></a>:</p>
 <ul>
 <li>
 <p>For an op with one output, the gradient function will take an
-<a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> <code>op</code> and a
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> <code>grad</code> and build new ops
+<a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> <code>op</code> and a
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> <code>grad</code> and build new ops
 out of the tensors
-<a href="../../api_docs/python/framework.md#Operation.inputs"><code>op.inputs[i]</code></a>,
-<a href="../../api_docs/python/framework.md#Operation.outputs"><code>op.outputs[i]</code></a>, and <code>grad</code>.  Information
+<a href="../../api_docs/python/framework.html#Operation.inputs"><code>op.inputs[i]</code></a>,
+<a href="../../api_docs/python/framework.html#Operation.outputs"><code>op.outputs[i]</code></a>, and <code>grad</code>.  Information
 about any attrs can be found via
-<a href="../api_docs/python/tf/Operation.md#get_attr"><code>tf.Operation.get_attr</code></a>.</p>
+<a href="../api_docs/python/tf/Operation.html#get_attr"><code>tf.Operation.get_attr</code></a>.</p>
 </li>
 <li>
 <p>If the op has multiple outputs, the gradient function will take <code>op</code> and

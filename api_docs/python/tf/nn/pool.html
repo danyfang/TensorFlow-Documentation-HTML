@@ -4095,7 +4095,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/nn_ops.py"><code>tensorflow/python/ops/nn_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/nn.md#Pooling">Neural Network &gt; Pooling</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/nn.html#Pooling">Neural Network &gt; Pooling</a></p>
 <p>Performs an N-D pooling operation.</p>
 <p>In the case that <code>data_format</code> does not start with “NC”, computes for
 0 &lt;= b &lt; batch_size,
@@ -4111,7 +4111,7 @@
 </code></pre>
 <p>where the reduction function REDUCE depends on the value of <code>pooling_type</code>,
 and pad_before is defined based on the value of <code>padding</code> as described in the
-<a href="../../tf/nn/convolution.md">comment here</a>.
+<a href="../../tf/nn/convolution.html">comment here</a>.
 The reduction never includes out-of-bounds positions.</p>
 <p>In the case that <code>data_format</code> starts with <code>&quot;NC&quot;</code>, the <code>input</code> and output are
 simply transposed as follows:</p>
@@ -4130,7 +4130,7 @@ with “NC”.  Pooling happens over the spatial dimensions only.</li>
 <li><b><code>window_shape</code></b>: Sequence of N ints &gt;= 1.</li>
 <li><b><code>pooling_type</code></b>: Specifies pooling operation, must be “AVG” or “MAX”.</li>
 <li><b><code>padding</code></b>: The padding algorithm, must be “SAME” or “VALID”.
-See the <a href="../../tf/nn/convolution.md">comment here</a></li>
+See the <a href="../../tf/nn/convolution.html">comment here</a></li>
 <li><b><code>dilation_rate</code></b>: Optional.  Dilation rate.  List of N ints &gt;= 1.
 Defaults to [1]*N.  If any value of dilation_rate is &gt; 1, then all values
 of strides must be 1.</li>

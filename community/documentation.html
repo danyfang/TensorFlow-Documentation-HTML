@@ -4183,11 +4183,11 @@ for a C++ symbol.</p>
 doc page. To link to</p>
 <ul>
 <li>
-<p><code>red/green/blue/index.md</code> use <code>@{$blue}</code> or
+<p><code>red/green/blue/index.html</code> use <code>@{$blue}</code> or
 <code>@{$green/blue}</code>,</p>
 </li>
 <li>
-<p><code>foo/bar/baz.md</code> use <code>@{$baz}</code> or
+<p><code>foo/bar/baz.html</code> use <code>@{$baz}</code> or
 <code>@{$bar/baz}</code>.</p>
 </li>
 </ul>
@@ -4207,7 +4207,7 @@ of the target page).</p>
 <code>https://www.tensorflow.org/code/</code>, followed by
 the file name starting at the github root. For instance, a link to the file you
 are currently reading should be written as
-<code>https://www.tensorflow.org/code/tensorflow/docs_src/community/documentation.md</code>.</p>
+<code>https://www.tensorflow.org/code/tensorflow/docs_src/community/documentation.html</code>.</p>
 <p>This URL naming scheme ensures
 that <a href="https://www.tensorflow.org/">tensorflow.org</a> can forward the link to the
 branch of the code corresponding to the version of the documentation you’re
@@ -4266,7 +4266,7 @@ the following:</p>
 <li>Some class members, such as <code>__base__</code>, <code>__class__</code>, which are dynamically
 created but generally have no useful documentation.</li>
 </ul>
-<p>Only top level modules (currently just <a href="../api_docs/python/tf.md"><code>tf</code></a> and <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a>) need to be manually
+<p>Only top level modules (currently just <a href="../api_docs/python/tf.html"><code>tf</code></a> and <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a>) need to be manually
 added to the generate script.</p>
 <h3>Sealing modules</h3>
 <p>Because the doc generator walks all visible symbols, and descends into anything
@@ -4553,7 +4553,7 @@ possible, putting code samples in the
 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/docs_src/api_guides">API guides</a>.
 Otherwise, add them to the module or class docstring where the Ops constructors
 are called out.</p>
-<p>Here’s an example from the module docstring in <code>api_guides/python/math_ops.md</code>:</p>
+<p>Here’s an example from the module docstring in <code>api_guides/python/math_ops.html</code>:</p>
 <pre><code>## Segmentation
 
 TensorFlow provides several operations that you can use to perform common
@@ -4636,14 +4636,14 @@ image: 3-D with shape `[height, width, channels]`.
 )doc&quot;);
 </code></pre>
 <p>This generates the following Args section in
-<code>api_docs/python/tf/image/decode_png.md</code>:</p>
+<code>api_docs/python/tf/image/decode_png.html</code>:</p>
 <pre><code>#### Args:
 
 * **`contents`**: A `Tensor` of type `string`. 0-D.  The PNG-encoded
   image.
 * **`channels`**: An optional `int`. Defaults to `0`. Number of color
   channels for the decoded image.
-* **`dtype`**: An optional &lt;a href=&quot;../api_docs/python/tf/DType.md&quot;&gt;&lt;code&gt;tf.DType&lt;/code&gt;&lt;/a&gt; from: `tf.uint8,
+* **`dtype`**: An optional &lt;a href=&quot;../api_docs/python/tf/DType.html&quot;&gt;&lt;code&gt;tf.DType&lt;/code&gt;&lt;/a&gt; from: `tf.uint8,
   tf.uint16`. Defaults to `tf.uint 8`.
 * **`name`**: A name for the operation (optional).
 </code></pre>

@@ -4400,13 +4400,13 @@ marked as non-trainable. <code>trainable</code> defaults to <code>True</code> un
 <li><b><code>use_resource</code></b>: Whether to use <code>ResourceVariable</code>.</li>
 <li><b><code>synchronization</code></b>: Indicates when a distributed a variable will be
 aggregated. Accepted values are constants defined in the class
-<a href="../../../tf/VariableSynchronization.md"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
+<a href="../../../tf/VariableSynchronization.html"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
 <code>AUTO</code> and the current <code>DistributionStrategy</code> chooses
 when to synchronize. If <code>synchronization</code> is set to <code>ON_READ</code>,
 <code>trainable</code> must not be set to <code>True</code>.</li>
 <li><b><code>aggregation</code></b>: Indicates how a distributed variable will be aggregated.
 Accepted values are constants defined in the class
-<a href="../../../tf/VariableAggregation.md"><code>tf.VariableAggregation</code></a>.</li>
+<a href="../../../tf/VariableAggregation.html"><code>tf.VariableAggregation</code></a>.</li>
 <li><b><code>getter</code></b>: Variable getter argument to be passed to the <code>Checkpointable</code> API.</li>
 </ul>
 <h4>Returns:</h4>

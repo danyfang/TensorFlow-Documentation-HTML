@@ -4094,7 +4094,7 @@ kernels that are actually used in the computation.</p>
 <p>The compiler is built on top of the XLA framework. The code bridging TensorFlow
 to the XLA framework resides under
 <a href="https://www.tensorflow.org/code/tensorflow/compiler/">tensorflow/compiler</a>,
-which also includes support for <a href="../../performance/xla/jit.md">just-in-time (JIT) compilation</a> of
+which also includes support for <a href="../../performance/xla/jit.html">just-in-time (JIT) compilation</a> of
 TensorFlow graphs.</p>
 <h2>What does tfcompile do?</h2>
 <p><code>tfcompile</code> takes a subgraph, identified by the TensorFlow concepts of
@@ -4182,7 +4182,7 @@ tf_library(
 <a href="%22https://www.tensorflow.org/code/tensorflow/compiler/aot/tests/make_test_graphs.py%22">make_test_graphs.py</a>
 and specify the output location with the --out_dir flag.</p>
 </blockquote>
-<p>Typical graphs contain <a href="../../api_guides/python/state_ops.md"><code>Variables</code></a>
+<p>Typical graphs contain <a href="../../api_guides/python/state_ops.html"><code>Variables</code></a>
 representing the weights that are learned via training, but <code>tfcompile</code> cannot
 compile a subgraph that contain <code>Variables</code>. The
 <a href="https://www.tensorflow.org/code/tensorflow/python/tools/freeze_graph.py">freeze_graph.py</a>

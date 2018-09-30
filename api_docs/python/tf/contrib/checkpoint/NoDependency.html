@@ -4095,7 +4095,7 @@ assert obj.no_dependency.name == &quot;nodep:0&quot;
 </code></pre>
 <p><code>obj</code> in this example has a dependency on the variable “dep”, and both
 attributes contain un-wrapped <code>Variable</code> objects.</p>
-<p><code>NoDependency</code> also works with <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>, but only for checkpoint
+<p><code>NoDependency</code> also works with <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>, but only for checkpoint
 dependencies: wrapping a <code>Layer</code> in <code>NoDependency</code> will assign the (unwrapped)
 <code>Layer</code> to the attribute without a checkpoint dependency, but the <code>Model</code> will
 still track the <code>Layer</code> (so it will appear in <code>Model.layers</code>, and its

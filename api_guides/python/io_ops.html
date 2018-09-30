@@ -4081,119 +4081,119 @@
     <article id="main" class="content">
       <h1>Inputs and Readers</h1>
 <p>Note: Functions taking <code>Tensor</code> arguments can also take anything accepted by
-<a href="../../api_docs/python/tf/convert_to_tensor.md"><code>tf.convert_to_tensor</code></a>.</p>
+<a href="../../api_docs/python/tf/convert_to_tensor.html"><code>tf.convert_to_tensor</code></a>.</p>
 <p>[TOC]</p>
 <h2 id="Placeholders">Placeholders</h2>
 <p>TensorFlow provides a placeholder operation that must be fed with data
-on execution.  For more info, see the section on <a href="../../api_guides/python/reading_data.md#Feeding">Feeding data</a>.</p>
+on execution.  For more info, see the section on <a href="../../api_guides/python/reading_data.html#Feeding">Feeding data</a>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/placeholder.md"><code>tf.placeholder</code></a></li>
-<li><a href="../../api_docs/python/tf/placeholder_with_default.md"><code>tf.placeholder_with_default</code></a></li>
+<li><a href="../../api_docs/python/tf/placeholder.html"><code>tf.placeholder</code></a></li>
+<li><a href="../../api_docs/python/tf/placeholder_with_default.html"><code>tf.placeholder_with_default</code></a></li>
 </ul>
 <p>For feeding <code>SparseTensor</code>s which are composite type,
 there is a convenience function:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/sparse_placeholder.md"><code>tf.sparse_placeholder</code></a></li>
+<li><a href="../../api_docs/python/tf/sparse_placeholder.html"><code>tf.sparse_placeholder</code></a></li>
 </ul>
 <h2 id="Readers">Readers</h2>
 <p>TensorFlow provides a set of Reader classes for reading data formats.
-For more information on inputs and readers, see <a href="../../api_guides/python/reading_data.md">Reading data</a>.</p>
+For more information on inputs and readers, see <a href="../../api_guides/python/reading_data.html">Reading data</a>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/ReaderBase.md"><code>tf.ReaderBase</code></a></li>
-<li><a href="../../api_docs/python/tf/TextLineReader.md"><code>tf.TextLineReader</code></a></li>
-<li><a href="../../api_docs/python/tf/WholeFileReader.md"><code>tf.WholeFileReader</code></a></li>
-<li><a href="../../api_docs/python/tf/IdentityReader.md"><code>tf.IdentityReader</code></a></li>
-<li><a href="../../api_docs/python/tf/TFRecordReader.md"><code>tf.TFRecordReader</code></a></li>
-<li><a href="../../api_docs/python/tf/FixedLengthRecordReader.md"><code>tf.FixedLengthRecordReader</code></a></li>
+<li><a href="../../api_docs/python/tf/ReaderBase.html"><code>tf.ReaderBase</code></a></li>
+<li><a href="../../api_docs/python/tf/TextLineReader.html"><code>tf.TextLineReader</code></a></li>
+<li><a href="../../api_docs/python/tf/WholeFileReader.html"><code>tf.WholeFileReader</code></a></li>
+<li><a href="../../api_docs/python/tf/IdentityReader.html"><code>tf.IdentityReader</code></a></li>
+<li><a href="../../api_docs/python/tf/TFRecordReader.html"><code>tf.TFRecordReader</code></a></li>
+<li><a href="../../api_docs/python/tf/FixedLengthRecordReader.html"><code>tf.FixedLengthRecordReader</code></a></li>
 </ul>
 <h2 id="Converting">Converting</h2>
 <p>TensorFlow provides several operations that you can use to convert various data
 formats into tensors.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/decode_csv.md"><code>tf.decode_csv</code></a></li>
-<li><a href="../../api_docs/python/tf/decode_raw.md"><code>tf.decode_raw</code></a></li>
+<li><a href="../../api_docs/python/tf/decode_csv.html"><code>tf.decode_csv</code></a></li>
+<li><a href="../../api_docs/python/tf/decode_raw.html"><code>tf.decode_raw</code></a></li>
 </ul>
 <hr>
 <h3>Example protocol buffer</h3>
-<p>TensorFlow’s <a href="../../api_guides/python/reading_data.md#standard_tensorflow_format">recommended format for training examples</a>
+<p>TensorFlow’s <a href="../../api_guides/python/reading_data.html#standard_tensorflow_format">recommended format for training examples</a>
 is serialized <code>Example</code> protocol buffers, <a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto">described
 here</a>.
 They contain <code>Features</code>, <a href="https://www.tensorflow.org/code/tensorflow/core/example/feature.proto">described
 here</a>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/VarLenFeature.md"><code>tf.VarLenFeature</code></a></li>
-<li><a href="../../api_docs/python/tf/FixedLenFeature.md"><code>tf.FixedLenFeature</code></a></li>
-<li><a href="../../api_docs/python/tf/FixedLenSequenceFeature.md"><code>tf.FixedLenSequenceFeature</code></a></li>
-<li><a href="../../api_docs/python/tf/SparseFeature.md"><code>tf.SparseFeature</code></a></li>
-<li><a href="../../api_docs/python/tf/parse_example.md"><code>tf.parse_example</code></a></li>
-<li><a href="../../api_docs/python/tf/parse_single_example.md"><code>tf.parse_single_example</code></a></li>
-<li><a href="../../api_docs/python/tf/parse_tensor.md"><code>tf.parse_tensor</code></a></li>
-<li><a href="../../api_docs/python/tf/decode_json_example.md"><code>tf.decode_json_example</code></a></li>
+<li><a href="../../api_docs/python/tf/VarLenFeature.html"><code>tf.VarLenFeature</code></a></li>
+<li><a href="../../api_docs/python/tf/FixedLenFeature.html"><code>tf.FixedLenFeature</code></a></li>
+<li><a href="../../api_docs/python/tf/FixedLenSequenceFeature.html"><code>tf.FixedLenSequenceFeature</code></a></li>
+<li><a href="../../api_docs/python/tf/SparseFeature.html"><code>tf.SparseFeature</code></a></li>
+<li><a href="../../api_docs/python/tf/parse_example.html"><code>tf.parse_example</code></a></li>
+<li><a href="../../api_docs/python/tf/parse_single_example.html"><code>tf.parse_single_example</code></a></li>
+<li><a href="../../api_docs/python/tf/parse_tensor.html"><code>tf.parse_tensor</code></a></li>
+<li><a href="../../api_docs/python/tf/decode_json_example.html"><code>tf.decode_json_example</code></a></li>
 </ul>
 <h2 id="Queues">Queues</h2>
 <p>TensorFlow provides several implementations of ‘Queues’, which are
 structures within the TensorFlow computation graph to stage pipelines
 of tensors together. The following describe the basic Queue interface
-and some implementations.  To see an example use, see <a href="../../api_guides/python/threading_and_queues.md">Threading and Queues</a>.</p>
+and some implementations.  To see an example use, see <a href="../../api_guides/python/threading_and_queues.html">Threading and Queues</a>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/QueueBase.md"><code>tf.QueueBase</code></a></li>
-<li><a href="../../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a></li>
-<li><a href="../../api_docs/python/tf/PaddingFIFOQueue.md"><code>tf.PaddingFIFOQueue</code></a></li>
-<li><a href="../../api_docs/python/tf/RandomShuffleQueue.md"><code>tf.RandomShuffleQueue</code></a></li>
-<li><a href="../../api_docs/python/tf/PriorityQueue.md"><code>tf.PriorityQueue</code></a></li>
+<li><a href="../../api_docs/python/tf/QueueBase.html"><code>tf.QueueBase</code></a></li>
+<li><a href="../../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a></li>
+<li><a href="../../api_docs/python/tf/PaddingFIFOQueue.html"><code>tf.PaddingFIFOQueue</code></a></li>
+<li><a href="../../api_docs/python/tf/RandomShuffleQueue.html"><code>tf.RandomShuffleQueue</code></a></li>
+<li><a href="../../api_docs/python/tf/PriorityQueue.html"><code>tf.PriorityQueue</code></a></li>
 </ul>
 <h2 id="Conditional_Accumulators">Conditional Accumulators</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/ConditionalAccumulatorBase.md"><code>tf.ConditionalAccumulatorBase</code></a></li>
-<li><a href="../../api_docs/python/tf/ConditionalAccumulator.md"><code>tf.ConditionalAccumulator</code></a></li>
-<li><a href="../../api_docs/python/tf/SparseConditionalAccumulator.md"><code>tf.SparseConditionalAccumulator</code></a></li>
+<li><a href="../../api_docs/python/tf/ConditionalAccumulatorBase.html"><code>tf.ConditionalAccumulatorBase</code></a></li>
+<li><a href="../../api_docs/python/tf/ConditionalAccumulator.html"><code>tf.ConditionalAccumulator</code></a></li>
+<li><a href="../../api_docs/python/tf/SparseConditionalAccumulator.html"><code>tf.SparseConditionalAccumulator</code></a></li>
 </ul>
 <h2 id="Dealing_with_the_filesystem">Dealing with the filesystem</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/matching_files.md"><code>tf.matching_files</code></a></li>
-<li><a href="../../api_docs/python/tf/read_file.md"><code>tf.read_file</code></a></li>
-<li><a href="../../api_docs/python/tf/write_file.md"><code>tf.write_file</code></a></li>
+<li><a href="../../api_docs/python/tf/matching_files.html"><code>tf.matching_files</code></a></li>
+<li><a href="../../api_docs/python/tf/read_file.html"><code>tf.read_file</code></a></li>
+<li><a href="../../api_docs/python/tf/write_file.html"><code>tf.write_file</code></a></li>
 </ul>
 <h2 id="Input_pipeline">Input pipeline</h2>
 <p>TensorFlow functions for setting up an input-prefetching pipeline.
-Please see the <a href="../../api_guides/python/reading_data.md">reading data how-to</a>
+Please see the <a href="../../api_guides/python/reading_data.html">reading data how-to</a>
 for context.</p>
 <h3>Beginning of an input pipeline</h3>
 <p>The “producer” functions add a queue to the graph and a corresponding
 <code>QueueRunner</code> for running the subgraph that fills that queue.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/train/match_filenames_once.md"><code>tf.train.match_filenames_once</code></a></li>
-<li><a href="../../api_docs/python/tf/train/limit_epochs.md"><code>tf.train.limit_epochs</code></a></li>
-<li><a href="../../api_docs/python/tf/train/input_producer.md"><code>tf.train.input_producer</code></a></li>
-<li><a href="../../api_docs/python/tf/train/range_input_producer.md"><code>tf.train.range_input_producer</code></a></li>
-<li><a href="../../api_docs/python/tf/train/slice_input_producer.md"><code>tf.train.slice_input_producer</code></a></li>
-<li><a href="../../api_docs/python/tf/train/string_input_producer.md"><code>tf.train.string_input_producer</code></a></li>
+<li><a href="../../api_docs/python/tf/train/match_filenames_once.html"><code>tf.train.match_filenames_once</code></a></li>
+<li><a href="../../api_docs/python/tf/train/limit_epochs.html"><code>tf.train.limit_epochs</code></a></li>
+<li><a href="../../api_docs/python/tf/train/input_producer.html"><code>tf.train.input_producer</code></a></li>
+<li><a href="../../api_docs/python/tf/train/range_input_producer.html"><code>tf.train.range_input_producer</code></a></li>
+<li><a href="../../api_docs/python/tf/train/slice_input_producer.html"><code>tf.train.slice_input_producer</code></a></li>
+<li><a href="../../api_docs/python/tf/train/string_input_producer.html"><code>tf.train.string_input_producer</code></a></li>
 </ul>
 <h3>Batching at the end of an input pipeline</h3>
 <p>These functions add a queue to the graph to assemble a batch of
 examples, with possible shuffling.  They also add a <code>QueueRunner</code> for
 running the subgraph that fills that queue.</p>
-<p>Use <a href="../../api_docs/python/tf/train/batch.md"><code>tf.train.batch</code></a> or <a href="../../api_docs/python/tf/train/batch_join.md"><code>tf.train.batch_join</code></a> for batching
+<p>Use <a href="../../api_docs/python/tf/train/batch.html"><code>tf.train.batch</code></a> or <a href="../../api_docs/python/tf/train/batch_join.html"><code>tf.train.batch_join</code></a> for batching
 examples that have already been well shuffled.  Use
-<a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a> or
-<a href="../../api_docs/python/tf/train/shuffle_batch_join.md"><code>tf.train.shuffle_batch_join</code></a> for examples that would
+<a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a> or
+<a href="../../api_docs/python/tf/train/shuffle_batch_join.html"><code>tf.train.shuffle_batch_join</code></a> for examples that would
 benefit from additional shuffling.</p>
-<p>Use <a href="../../api_docs/python/tf/train/batch.md"><code>tf.train.batch</code></a> or <a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a> if you want a
+<p>Use <a href="../../api_docs/python/tf/train/batch.html"><code>tf.train.batch</code></a> or <a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a> if you want a
 single thread producing examples to batch, or if you have a
 single subgraph producing examples but you want to run it in <em>N</em> threads
 (where you increase <em>N</em> until it can keep the queue full).  Use
-<a href="../../api_docs/python/tf/train/batch_join.md"><code>tf.train.batch_join</code></a> or <a href="../../api_docs/python/tf/train/shuffle_batch_join.md"><code>tf.train.shuffle_batch_join</code></a>
+<a href="../../api_docs/python/tf/train/batch_join.html"><code>tf.train.batch_join</code></a> or <a href="../../api_docs/python/tf/train/shuffle_batch_join.html"><code>tf.train.shuffle_batch_join</code></a>
 if you have <em>N</em> different subgraphs producing examples to batch and you
 want them run by <em>N</em> threads. Use <code>maybe_*</code> to enqueue conditionally.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/train/batch.md"><code>tf.train.batch</code></a></li>
-<li><a href="../../api_docs/python/tf/train/maybe_batch.md"><code>tf.train.maybe_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/train/batch_join.md"><code>tf.train.batch_join</code></a></li>
-<li><a href="../../api_docs/python/tf/train/maybe_batch_join.md"><code>tf.train.maybe_batch_join</code></a></li>
-<li><a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/train/maybe_shuffle_batch.md"><code>tf.train.maybe_shuffle_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/train/shuffle_batch_join.md"><code>tf.train.shuffle_batch_join</code></a></li>
-<li><a href="../../api_docs/python/tf/train/maybe_shuffle_batch_join.md"><code>tf.train.maybe_shuffle_batch_join</code></a></li>
+<li><a href="../../api_docs/python/tf/train/batch.html"><code>tf.train.batch</code></a></li>
+<li><a href="../../api_docs/python/tf/train/maybe_batch.html"><code>tf.train.maybe_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/train/batch_join.html"><code>tf.train.batch_join</code></a></li>
+<li><a href="../../api_docs/python/tf/train/maybe_batch_join.html"><code>tf.train.maybe_batch_join</code></a></li>
+<li><a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/train/maybe_shuffle_batch.html"><code>tf.train.maybe_shuffle_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/train/shuffle_batch_join.html"><code>tf.train.shuffle_batch_join</code></a></li>
+<li><a href="../../api_docs/python/tf/train/maybe_shuffle_batch_join.html"><code>tf.train.maybe_shuffle_batch_join</code></a></li>
 </ul>
 
     </article>

@@ -4093,11 +4093,11 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/interleave_ops.py"><code>tensorflow/contrib/data/python/ops/interleave_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
 <p>A parallel version of the <code>Dataset.interleave()</code> transformation.</p>
 <p><code>parallel_interleave()</code> maps <code>map_func</code> across its input to produce nested
 datasets, and outputs their elements interleaved. Unlike
-<a href="../../../tf/data/Dataset.md#interleave"><code>tf.data.Dataset.interleave</code></a>, it gets elements from <code>cycle_length</code> nested
+<a href="../../../tf/data/Dataset.html#interleave"><code>tf.data.Dataset.interleave</code></a>, it gets elements from <code>cycle_length</code> nested
 datasets in parallel, which increases the throughput, especially in the
 presence of stragglers. Furthermore, the <code>sloppy</code> argument can be used to
 improve performance, by relaxing the requirement that the outputs are produced
@@ -4130,7 +4130,7 @@ iterators before they are needed for interleaving.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a>.</p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a>.</p>
 
     </article>
   </div>

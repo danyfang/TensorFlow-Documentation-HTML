@@ -4112,7 +4112,7 @@ int. The target represents the true class at each timestep.</li>
 <li><b><code>weights</code></b>: A Tensor of shape <code>[batch_size, sequence_length]</code> and dtype
 float. <code>weights</code> constitutes the weighting of each prediction in the
 sequence. When using <code>weights</code> as masking, set all valid timesteps to 1
-and all padded timesteps to 0, e.g. a mask returned by <a href="../../../tf/sequence_mask.md"><code>tf.sequence_mask</code></a>.</li>
+and all padded timesteps to 0, e.g. a mask returned by <a href="../../../tf/sequence_mask.html"><code>tf.sequence_mask</code></a>.</li>
 <li><b><code>average_across_timesteps</code></b>: If set, sum the cost across the sequence
 dimension and divide the cost by the total label weight across timesteps.</li>
 <li><b><code>average_across_batch</code></b>: If set, sum the cost across the batch dimension and

@@ -4083,45 +4083,45 @@
 <p>[TOC]</p>
 <p>Training and input utilities.</p>
 <h2 id="Splitting_sequence_inputs_into_minibatches_with_state_saving">Splitting sequence inputs into minibatches with state saving</h2>
-<p>Use <a href="../../api_docs/python/tf/contrib/training/SequenceQueueingStateSaver.md"><code>tf.contrib.training.SequenceQueueingStateSaver</code></a> or
-its wrapper <a href="../../api_docs/python/tf/contrib/training/batch_sequences_with_states.md"><code>tf.contrib.training.batch_sequences_with_states</code></a> if
+<p>Use <a href="../../api_docs/python/tf/contrib/training/SequenceQueueingStateSaver.html"><code>tf.contrib.training.SequenceQueueingStateSaver</code></a> or
+its wrapper <a href="../../api_docs/python/tf/contrib/training/batch_sequences_with_states.html"><code>tf.contrib.training.batch_sequences_with_states</code></a> if
 you have input data with a dynamic primary time / frame count axis which
 you’d like to convert into fixed size segments during minibatching, and would
 like to store state in the forward direction across segments of an example.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/training/batch_sequences_with_states.md"><code>tf.contrib.training.batch_sequences_with_states</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/NextQueuedSequenceBatch.md"><code>tf.contrib.training.NextQueuedSequenceBatch</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/SequenceQueueingStateSaver.md"><code>tf.contrib.training.SequenceQueueingStateSaver</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/batch_sequences_with_states.html"><code>tf.contrib.training.batch_sequences_with_states</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/NextQueuedSequenceBatch.html"><code>tf.contrib.training.NextQueuedSequenceBatch</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/SequenceQueueingStateSaver.html"><code>tf.contrib.training.SequenceQueueingStateSaver</code></a></li>
 </ul>
 <h2 id="Online_data_resampling">Online data resampling</h2>
 <p>To resample data with replacement on a per-example basis, use
-<a href="../../api_docs/python/tf/contrib/training/rejection_sample.md"><code>tf.contrib.training.rejection_sample</code></a> or
-<a href="../../api_docs/python/tf/contrib/training/resample_at_rate.md"><code>tf.contrib.training.resample_at_rate</code></a>. For <code>rejection_sample</code>, provide
+<a href="../../api_docs/python/tf/contrib/training/rejection_sample.html"><code>tf.contrib.training.rejection_sample</code></a> or
+<a href="../../api_docs/python/tf/contrib/training/resample_at_rate.html"><code>tf.contrib.training.resample_at_rate</code></a>. For <code>rejection_sample</code>, provide
 a boolean Tensor describing whether to accept or reject. Resulting batch sizes
 are always the same. For <code>resample_at_rate</code>, provide the desired rate for each
 example. Resulting batch sizes may vary. If you wish to specify relative
-rates, rather than absolute ones, use <a href="../../api_docs/python/tf/contrib/training/weighted_resample.md"><code>tf.contrib.training.weighted_resample</code></a>
+rates, rather than absolute ones, use <a href="../../api_docs/python/tf/contrib/training/weighted_resample.html"><code>tf.contrib.training.weighted_resample</code></a>
 (which also returns the actual resampling rate used for each output example).</p>
-<p>Use <a href="../../api_docs/python/tf/contrib/training/stratified_sample.md"><code>tf.contrib.training.stratified_sample</code></a> to resample without replacement
+<p>Use <a href="../../api_docs/python/tf/contrib/training/stratified_sample.html"><code>tf.contrib.training.stratified_sample</code></a> to resample without replacement
 from the data to achieve a desired mix of class proportions that the Tensorflow
 graph sees. For instance, if you have a binary classification dataset that is
 99.9% class 1, a common approach is to resample from the data so that the data
 is more balanced.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/training/rejection_sample.md"><code>tf.contrib.training.rejection_sample</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/resample_at_rate.md"><code>tf.contrib.training.resample_at_rate</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/stratified_sample.md"><code>tf.contrib.training.stratified_sample</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/weighted_resample.md"><code>tf.contrib.training.weighted_resample</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/rejection_sample.html"><code>tf.contrib.training.rejection_sample</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/resample_at_rate.html"><code>tf.contrib.training.resample_at_rate</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/stratified_sample.html"><code>tf.contrib.training.stratified_sample</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/weighted_resample.html"><code>tf.contrib.training.weighted_resample</code></a></li>
 </ul>
 <h2 id="Bucketing">Bucketing</h2>
-<p>Use <a href="../../api_docs/python/tf/contrib/training/bucket.md"><code>tf.contrib.training.bucket</code></a> or
-<a href="../../api_docs/python/tf/contrib/training/bucket_by_sequence_length.md"><code>tf.contrib.training.bucket_by_sequence_length</code></a> to stratify
+<p>Use <a href="../../api_docs/python/tf/contrib/training/bucket.html"><code>tf.contrib.training.bucket</code></a> or
+<a href="../../api_docs/python/tf/contrib/training/bucket_by_sequence_length.html"><code>tf.contrib.training.bucket_by_sequence_length</code></a> to stratify
 minibatches into groups (“buckets”).  Use <code>bucket_by_sequence_length</code>
 with the argument <code>dynamic_pad=True</code> to receive minibatches of similarly
 sized sequences for efficient training via <code>dynamic_rnn</code>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/training/bucket.md"><code>tf.contrib.training.bucket</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/training/bucket_by_sequence_length.md"><code>tf.contrib.training.bucket_by_sequence_length</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/bucket.html"><code>tf.contrib.training.bucket</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/training/bucket_by_sequence_length.html"><code>tf.contrib.training.bucket_by_sequence_length</code></a></li>
 </ul>
 
     </article>

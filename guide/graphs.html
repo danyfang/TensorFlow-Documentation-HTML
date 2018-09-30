@@ -4086,7 +4086,7 @@ programming model in which you first define the dataflow graph, then create a
 TensorFlow <strong>session</strong> to run parts of the graph across a set of local and
 remote devices.</p>
 <p>This guide will be most useful if you intend to use the low-level programming
-model directly. Higher-level APIs such as <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> and Keras
+model directly. Higher-level APIs such as <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> and Keras
 hide the details of graphs and sessions from the end user, but this guide may
 also be useful if you want to understand how these APIs are implemented.</p>
 <h2>Why dataflow graphs?</h2>
@@ -4094,11 +4094,11 @@ also be useful if you want to understand how these APIs are implemented.</p>
 <p><a href="https://en.wikipedia.org/wiki/Dataflow_programming">Dataflow</a> is a common
 programming model for parallel computing. In a dataflow graph, the nodes
 represent units of computation, and the edges represent the data consumed or
-produced by a computation. For example, in a TensorFlow graph, the <a href="../api_docs/python/tf/matmul.md"><code>tf.matmul</code></a>
+produced by a computation. For example, in a TensorFlow graph, the <a href="../api_docs/python/tf/matmul.html"><code>tf.matmul</code></a>
 operation would correspond to a single node with two incoming edges (the
 matrices to be multiplied) and one outgoing edge (the result of the
 multiplication).</p>
-<!-- TODO(barryr): Add a diagram to illustrate the <a href="../api_docs/python/tf/matmul.md"><code>tf.matmul</code></a> graph. -->
+<!-- TODO(barryr): Add a diagram to illustrate the <a href="../api_docs/python/tf/matmul.html"><code>tf.matmul</code></a> graph. -->
 <p>Dataflow has several advantages that TensorFlow leverages when executing your
 programs:</p>
 <ul>
@@ -4115,19 +4115,19 @@ machines. TensorFlow inserts the necessary communication and coordination
 between devices.</p>
 </li>
 <li>
-<p><strong>Compilation.</strong> TensorFlow’s <a href="../performance/xla/index.md">XLA compiler</a> can
+<p><strong>Compilation.</strong> TensorFlow’s <a href="../performance/xla/index.html">XLA compiler</a> can
 use the information in your dataflow graph to generate faster code, for
 example, by fusing together adjacent operations.</p>
 </li>
 <li>
 <p><strong>Portability.</strong> The dataflow graph is a language-independent representation
 of the code in your model. You can build a dataflow graph in Python, store it
-in a <a href="../guide/saved_model.md">SavedModel</a>, and restore it in a C++ program for
+in a <a href="../guide/saved_model.html">SavedModel</a>, and restore it in a C++ program for
 low-latency inference.</p>
 </li>
 </ul>
-<h2>What is a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>?</h2>
-<p>A <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> contains two relevant kinds of information:</p>
+<h2>What is a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>?</h2>
+<p>A <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> contains two relevant kinds of information:</p>
 <ul>
 <li>
 <p><strong>Graph structure.</strong> The nodes and edges of the graph, indicating how
@@ -4138,81 +4138,81 @@ context that source code conveys.</p>
 </li>
 <li>
 <p><strong>Graph collections.</strong> TensorFlow provides a general mechanism for storing
-collections of metadata in a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>. The <a href="../api_docs/python/tf/add_to_collection.md"><code>tf.add_to_collection</code></a> function
-enables you to associate a list of objects with a key (where <a href="../api_docs/python/tf/GraphKeys.md"><code>tf.GraphKeys</code></a>
-defines some of the standard keys), and <a href="../api_docs/python/tf/get_collection.md"><code>tf.get_collection</code></a> enables you to
+collections of metadata in a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>. The <a href="../api_docs/python/tf/add_to_collection.html"><code>tf.add_to_collection</code></a> function
+enables you to associate a list of objects with a key (where <a href="../api_docs/python/tf/GraphKeys.html"><code>tf.GraphKeys</code></a>
+defines some of the standard keys), and <a href="../api_docs/python/tf/get_collection.html"><code>tf.get_collection</code></a> enables you to
 look up all objects associated with a key. Many parts of the TensorFlow
-library use this facility: for example, when you create a <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a>, it
+library use this facility: for example, when you create a <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a>, it
 is added by default to collections representing “global variables” and
-“trainable variables”. When you later come to create a <a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> or
-<a href="../api_docs/python/tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>, the variables in these collections are used as the
+“trainable variables”. When you later come to create a <a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> or
+<a href="../api_docs/python/tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>, the variables in these collections are used as the
 default arguments.</p>
 </li>
 </ul>
-<h2>Building a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a></h2>
+<h2>Building a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a></h2>
 <p>Most TensorFlow programs start with a dataflow graph construction phase. In this
-phase, you invoke TensorFlow API functions that construct new <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a>
-(node) and <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> (edge) objects and add them to a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>
+phase, you invoke TensorFlow API functions that construct new <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a>
+(node) and <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> (edge) objects and add them to a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>
 instance. TensorFlow provides a <strong>default graph</strong> that is an implicit argument
 to all API functions in the same context.  For example:</p>
 <ul>
 <li>
-<p>Calling <code>tf.constant(42.0)</code> creates a single <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> that produces the
-value <code>42.0</code>, adds it to the default graph, and returns a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> that
+<p>Calling <code>tf.constant(42.0)</code> creates a single <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> that produces the
+value <code>42.0</code>, adds it to the default graph, and returns a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> that
 represents the value of the constant.</p>
 </li>
 <li>
-<p>Calling <code>tf.matmul(x, y)</code> creates a single <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> that multiplies
-the values of <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects <code>x</code> and <code>y</code>, adds it to the default graph,
-and returns a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> that represents the result of the multiplication.</p>
+<p>Calling <code>tf.matmul(x, y)</code> creates a single <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> that multiplies
+the values of <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects <code>x</code> and <code>y</code>, adds it to the default graph,
+and returns a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> that represents the result of the multiplication.</p>
 </li>
 <li>
-<p>Executing <code>v = tf.Variable(0)</code> adds to the graph a <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> that will
-store a writeable tensor value that persists between <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> calls.
-The <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a> object wraps this operation, and can be used <a href="#tensor-like_objects">like a
+<p>Executing <code>v = tf.Variable(0)</code> adds to the graph a <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> that will
+store a writeable tensor value that persists between <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> calls.
+The <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a> object wraps this operation, and can be used <a href="#tensor-like_objects">like a
 tensor</a>, which will read the current value of the
-stored value. The <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a> object also has methods such as
-<a href="../api_docs/python/tf/Variable.md#assign"><code>assign</code></a> and <a href="../api_docs/python/tf/Variable.md#assign_add"><code>assign_add</code></a> that
-create <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> objects that, when executed, update the stored value.
-(See <a href="../guide/variables.md">Variables</a> for more information about variables.)</p>
+stored value. The <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a> object also has methods such as
+<a href="../api_docs/python/tf/Variable.html#assign"><code>assign</code></a> and <a href="../api_docs/python/tf/Variable.html#assign_add"><code>assign_add</code></a> that
+create <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> objects that, when executed, update the stored value.
+(See <a href="../guide/variables.html">Variables</a> for more information about variables.)</p>
 </li>
 <li>
-<p>Calling <a href="../api_docs/python/tf/train/AdadeltaOptimizer.md#minimize"><code>tf.train.Optimizer.minimize</code></a> will add operations and tensors to the
-default graph that calculates gradients, and return a <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> that,
+<p>Calling <a href="../api_docs/python/tf/train/AdadeltaOptimizer.html#minimize"><code>tf.train.Optimizer.minimize</code></a> will add operations and tensors to the
+default graph that calculates gradients, and return a <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> that,
 when run, will apply those gradients to a set of variables.</p>
 </li>
 </ul>
 <p>Most programs rely solely on the default graph. However,
 see <a href="#programming_with_multiple_graphs">Dealing with multiple graphs</a> for more
-advanced use cases. High-level APIs such as the <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> API
+advanced use cases. High-level APIs such as the <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> API
 manage the default graph on your behalf, and–for example–may create different
 graphs for training and evaluation.</p>
 <p>Note: Calling most functions in the TensorFlow API merely adds operations
 and tensors to the default graph, but <strong>does not</strong> perform the actual
-computation. Instead, you compose these functions until you have a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a>
-or <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> that represents the overall computation–such as performing
-one step of gradient descent–and then pass that object to a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> to
-perform the computation. See the section “Executing a graph in a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>”
+computation. Instead, you compose these functions until you have a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a>
+or <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> that represents the overall computation–such as performing
+one step of gradient descent–and then pass that object to a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> to
+perform the computation. See the section “Executing a graph in a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>”
 for more details.</p>
 <h2>Naming operations</h2>
-<p>A <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> object defines a <strong>namespace</strong> for the <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> objects it
+<p>A <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> object defines a <strong>namespace</strong> for the <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> objects it
 contains. TensorFlow automatically chooses a unique name for each operation in
 your graph, but giving operations descriptive names can make your program easier
 to read and debug. The TensorFlow API provides two ways to override the name of
 an operation:</p>
 <ul>
 <li>
-<p>Each API function that creates a new <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> or returns a new
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> accepts an optional <code>name</code> argument. For example,
-<code>tf.constant(42.0, name=&quot;answer&quot;)</code> creates a new <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> named
-<code>&quot;answer&quot;</code> and returns a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> named <code>&quot;answer:0&quot;</code>. If the default graph
+<p>Each API function that creates a new <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> or returns a new
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> accepts an optional <code>name</code> argument. For example,
+<code>tf.constant(42.0, name=&quot;answer&quot;)</code> creates a new <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> named
+<code>&quot;answer&quot;</code> and returns a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> named <code>&quot;answer:0&quot;</code>. If the default graph
 already contains an operation named <code>&quot;answer&quot;</code>, then TensorFlow would append
 <code>&quot;_1&quot;</code>, <code>&quot;_2&quot;</code>, and so on to the name, in order to make it unique.</p>
 </li>
 <li>
-<p>The <a href="../api_docs/python/tf/name_scope.md"><code>tf.name_scope</code></a> function makes it possible to add a <strong>name scope</strong> prefix
+<p>The <a href="../api_docs/python/tf/name_scope.html"><code>tf.name_scope</code></a> function makes it possible to add a <strong>name scope</strong> prefix
 to all operations created in a particular context. The current name scope
-prefix is a <code>&quot;/&quot;</code>-delimited list of the names of all active <a href="../api_docs/python/tf/name_scope.md"><code>tf.name_scope</code></a>
+prefix is a <code>&quot;/&quot;</code>-delimited list of the names of all active <a href="../api_docs/python/tf/name_scope.html"><code>tf.name_scope</code></a>
 context managers. If a name scope has already been used in the current
 context, TensorFlow appends <code>&quot;_1&quot;</code>, <code>&quot;_2&quot;</code>, and so on. For example:</p>
 <pre><code class="language-python">c_0 = tf.constant(0, name=&quot;c&quot;)  # =&gt; operation named &quot;c&quot;
@@ -4240,7 +4240,7 @@ with tf.name_scope(&quot;outer&quot;):
 <p>The graph visualizer uses name scopes to group operations and reduce the visual
 complexity of a graph. See <a href="#visualizing-your-graph">Visualizing your graph</a> for
 more information.</p>
-<p>Note that <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects are implicitly named after the <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a>
+<p>Note that <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects are implicitly named after the <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a>
 that produces the tensor as output. A tensor name has the form <code>&quot;&lt;OP_NAME&gt;:&lt;i&gt;&quot;</code>
 where:</p>
 <ul>
@@ -4250,7 +4250,7 @@ operation’s outputs.</li>
 </ul>
 <h2>Placing operations on different devices</h2>
 <p>If you want your TensorFlow program to use multiple different devices, the
-<a href="../api_docs/python/tf/device.md"><code>tf.device</code></a> function provides a convenient way to request that all operations
+<a href="../api_docs/python/tf/device.html"><code>tf.device</code></a> function provides a convenient way to request that all operations
 created in a particular context are placed on the same device (or type of
 device).</p>
 <p>A <strong>device specification</strong> has the following form:</p>
@@ -4261,7 +4261,7 @@ device).</p>
 <li><code>&lt;JOB_NAME&gt;</code> is an alpha-numeric string that does not start with a number.</li>
 <li><code>&lt;DEVICE_TYPE&gt;</code> is a registered device type (such as <code>GPU</code> or <code>CPU</code>).</li>
 <li><code>&lt;TASK_INDEX&gt;</code> is a non-negative integer representing the index of the task
-in the job named <code>&lt;JOB_NAME&gt;</code>. See <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a> for an explanation
+in the job named <code>&lt;JOB_NAME&gt;</code>. See <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a> for an explanation
 of jobs and tasks.</li>
 <li><code>&lt;DEVICE_INDEX&gt;</code> is a non-negative integer representing the index of the
 device, for example, to distinguish between different GPU devices used in the
@@ -4269,7 +4269,7 @@ same process.</li>
 </ul>
 <p>You do not need to specify every part of a device specification. For example,
 if you are running in a single-machine configuration with a single GPU, you
-might use <a href="../api_docs/python/tf/device.md"><code>tf.device</code></a> to pin some operations to the CPU and GPU:</p>
+might use <a href="../api_docs/python/tf/device.html"><code>tf.device</code></a> to pin some operations to the CPU and GPU:</p>
 <pre><code class="language-python"># Operations created outside either context will run on the &quot;best possible&quot;
 # device. For example, if you have a GPU and a CPU available, and the operation
 # has a GPU implementation, TensorFlow will choose the GPU.
@@ -4283,7 +4283,7 @@ with tf.device(&quot;/device:GPU:0&quot;):
   # Operations created in this context will be pinned to the GPU.
   result = tf.matmul(weights, img)
 </code></pre>
-<p>If you are deploying TensorFlow in a <a href="../deploy/distributed.md">typical distributed configuration</a>,
+<p>If you are deploying TensorFlow in a <a href="../deploy/distributed.html">typical distributed configuration</a>,
 you might specify the job name and task ID to place variables on
 a task in the parameter server job (<code>&quot;/job:ps&quot;</code>), and the other operations on
 task in the worker job (<code>&quot;/job:worker&quot;</code>):</p>
@@ -4299,13 +4299,13 @@ with tf.device(&quot;/job:worker&quot;):
   layer_1 = tf.matmul(train_batch, weights_1) + biases_1
   layer_2 = tf.matmul(train_batch, weights_2) + biases_2
 </code></pre>
-<p><a href="../api_docs/python/tf/device.md"><code>tf.device</code></a> gives you a lot of flexibility to choose placements for individual
+<p><a href="../api_docs/python/tf/device.html"><code>tf.device</code></a> gives you a lot of flexibility to choose placements for individual
 operations or broad regions of a TensorFlow graph. In many cases, there are
 simple heuristics that work well. For example, the
-<a href="../api_docs/python/tf/train/replica_device_setter.md"><code>tf.train.replica_device_setter</code></a> API can be used with <a href="../api_docs/python/tf/device.md"><code>tf.device</code></a> to place
+<a href="../api_docs/python/tf/train/replica_device_setter.html"><code>tf.train.replica_device_setter</code></a> API can be used with <a href="../api_docs/python/tf/device.html"><code>tf.device</code></a> to place
 operations for <strong>data-parallel distributed training</strong>. For example, the
-following code fragment shows how <a href="../api_docs/python/tf/train/replica_device_setter.md"><code>tf.train.replica_device_setter</code></a> applies
-different placement policies to <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a> objects and other operations:</p>
+following code fragment shows how <a href="../api_docs/python/tf/train/replica_device_setter.html"><code>tf.train.replica_device_setter</code></a> applies
+different placement policies to <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a> objects and other operations:</p>
 <pre><code class="language-python">with tf.device(tf.train.replica_device_setter(ps_tasks=3)):
   # tf.Variable objects are, by default, placed on tasks in &quot;/job:ps&quot; in a
   # round-robin fashion.
@@ -4319,36 +4319,36 @@ different placement policies to <a href="../api_docs/python/tf/Variable.md"><cod
   layer_1 = tf.matmul(layer_0, w_1) + b_1     # placed on &quot;/job:worker&quot;
 </code></pre>
 <h2>Tensor-like objects</h2>
-<p>Many TensorFlow operations take one or more <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects as arguments.
-For example, <a href="../api_docs/python/tf/matmul.md"><code>tf.matmul</code></a> takes two <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects, and <a href="../api_docs/python/tf/add_n.md"><code>tf.add_n</code></a> takes
-a list of <code>n</code> <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects. For convenience, these functions will accept
-a <strong>tensor-like object</strong> in place of a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a>, and implicitly convert it
-to a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> using the <a href="../api_docs/python/tf/convert_to_tensor.md"><code>tf.convert_to_tensor</code></a> method. Tensor-like objects
+<p>Many TensorFlow operations take one or more <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects as arguments.
+For example, <a href="../api_docs/python/tf/matmul.html"><code>tf.matmul</code></a> takes two <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects, and <a href="../api_docs/python/tf/add_n.html"><code>tf.add_n</code></a> takes
+a list of <code>n</code> <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects. For convenience, these functions will accept
+a <strong>tensor-like object</strong> in place of a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a>, and implicitly convert it
+to a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> using the <a href="../api_docs/python/tf/convert_to_tensor.html"><code>tf.convert_to_tensor</code></a> method. Tensor-like objects
 include elements of the following types:</p>
 <ul>
-<li><a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a></li>
-<li><a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a></li>
+<li><a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a></li>
+<li><a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a></li>
 <li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html"><code>numpy.ndarray</code></a></li>
 <li><code>list</code> (and lists of tensor-like objects)</li>
 <li>Scalar Python types: <code>bool</code>, <code>float</code>, <code>int</code>, <code>str</code></li>
 </ul>
 <p>You can register additional tensor-like types using
-<a href="../api_docs/python/tf/register_tensor_conversion_function.md"><code>tf.register_tensor_conversion_function</code></a>.</p>
-<p>Note: By default, TensorFlow will create a new <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> each time you use
+<a href="../api_docs/python/tf/register_tensor_conversion_function.html"><code>tf.register_tensor_conversion_function</code></a>.</p>
+<p>Note: By default, TensorFlow will create a new <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> each time you use
 the same tensor-like object. If the tensor-like object is large (e.g. a
 <code>numpy.ndarray</code> containing a set of training examples) and you use it multiple
 times, you may run out of memory. To avoid this, manually call
-<a href="../api_docs/python/tf/convert_to_tensor.md"><code>tf.convert_to_tensor</code></a> on the tensor-like object once and use the returned
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> instead.</p>
-<h2>Executing a graph in a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a></h2>
-<p>TensorFlow uses the <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> class to represent a connection between the
+<a href="../api_docs/python/tf/convert_to_tensor.html"><code>tf.convert_to_tensor</code></a> on the tensor-like object once and use the returned
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> instead.</p>
+<h2>Executing a graph in a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a></h2>
+<p>TensorFlow uses the <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> class to represent a connection between the
 client program—typically a Python program, although a similar interface is
-available in other languages—and the C++ runtime. A <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> object
+available in other languages—and the C++ runtime. A <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> object
 provides access to devices in the local machine, and remote devices using the
 distributed TensorFlow runtime. It also caches information about your
-<a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> so that you can efficiently run the same computation multiple times.</p>
-<h3>Creating a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a></h3>
-<p>If you are using the low-level TensorFlow API, you can create a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>
+<a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> so that you can efficiently run the same computation multiple times.</p>
+<h3>Creating a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a></h3>
+<p>If you are using the low-level TensorFlow API, you can create a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>
 for the current default graph as follows:</p>
 <pre><code class="language-python"># Create a default in-process session.
 with tf.Session() as sess:
@@ -4358,45 +4358,45 @@ with tf.Session() as sess:
 with tf.Session(&quot;grpc://example.org:2222&quot;):
   # ...
 </code></pre>
-<p>Since a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> owns physical resources (such as GPUs and
+<p>Since a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> owns physical resources (such as GPUs and
 network connections), it is typically used as a context manager (in a <code>with</code>
 block) that automatically closes the session when you exit the block. It is
 also possible to create a session without using a <code>with</code> block, but you should
-explicitly call <a href="../api_docs/python/tf/Session.md#close"><code>tf.Session.close</code></a> when you are finished with it to free the
+explicitly call <a href="../api_docs/python/tf/Session.html#close"><code>tf.Session.close</code></a> when you are finished with it to free the
 resources.</p>
-<p>Note: Higher-level APIs such as <a href="../api_docs/python/tf/train/MonitoredTrainingSession.md"><code>tf.train.MonitoredTrainingSession</code></a> or
-<a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> will create and manage a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> for you. These
+<p>Note: Higher-level APIs such as <a href="../api_docs/python/tf/train/MonitoredTrainingSession.html"><code>tf.train.MonitoredTrainingSession</code></a> or
+<a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> will create and manage a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> for you. These
 APIs accept optional <code>target</code> and <code>config</code> arguments (either directly, or as
-part of a <a href="../api_docs/python/tf/estimator/RunConfig.md"><code>tf.estimator.RunConfig</code></a> object), with the same meaning as
+part of a <a href="../api_docs/python/tf/estimator/RunConfig.html"><code>tf.estimator.RunConfig</code></a> object), with the same meaning as
 described below.</p>
-<p><a href="../api_docs/python/tf/Session.md#__init__"><code>tf.Session.<strong>init</strong></code></a> accepts three optional arguments:</p>
+<p><a href="../api_docs/python/tf/Session.html#__init__"><code>tf.Session.<strong>init</strong></code></a> accepts three optional arguments:</p>
 <ul>
 <li>
 <p><strong><code>target</code>.</strong> If this argument is left empty (the default), the session will
 only use devices in the local machine. However, you may also specify a
 <code>grpc://</code> URL to specify the address of a TensorFlow server, which gives the
 session access to all devices on machines that this server controls. See
-<a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a> for details of how to create a TensorFlow
+<a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a> for details of how to create a TensorFlow
 server. For example, in the common <strong>between-graph replication</strong>
-configuration, the <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> connects to a <a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a> in the same
+configuration, the <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> connects to a <a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a> in the same
 process as the client. The <a href="../deploy/distributed.html">distributed TensorFlow</a>
 deployment guide describes other common scenarios.</p>
 </li>
 <li>
-<p><strong><code>graph</code>.</strong> By default, a new <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> will be bound to—and only able
+<p><strong><code>graph</code>.</strong> By default, a new <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> will be bound to—and only able
 to run operations in—the current default graph. If you are using multiple
 graphs in your program (see <a href="#programming_with_multiple_graphs">Programming with multiple
 graphs</a> for more details), you can specify
-an explicit <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> when you construct the session.</p>
+an explicit <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> when you construct the session.</p>
 </li>
 <li>
-<p><strong><code>config</code>.</strong> This argument allows you to specify a <a href="../api_docs/python/tf/ConfigProto.md"><code>tf.ConfigProto</code></a> that
+<p><strong><code>config</code>.</strong> This argument allows you to specify a <a href="../api_docs/python/tf/ConfigProto.html"><code>tf.ConfigProto</code></a> that
 controls the behavior of the session. For example, some of the configuration
 options include:</p>
 <ul>
 <li>
 <p><code>allow_soft_placement</code>. Set this to <code>True</code> to enable a “soft” device
-placement algorithm, which ignores <a href="../api_docs/python/tf/device.md"><code>tf.device</code></a> annotations that attempt
+placement algorithm, which ignores <a href="../api_docs/python/tf/device.html"><code>tf.device</code></a> annotations that attempt
 to place CPU-only operations on a GPU device, and places them on the CPU
 instead.</p>
 </li>
@@ -4404,7 +4404,7 @@ instead.</p>
 <p><code>cluster_def</code>. When using distributed TensorFlow, this option allows you
 to specify what machines to use in the computation, and provide a mapping
 between job names, task indices, and network addresses. See
-<a href="../api_docs/python/tf/train/ClusterSpec.md#as_cluster_def"><code>tf.train.ClusterSpec.as_cluster_def</code></a> for details.</p>
+<a href="../api_docs/python/tf/train/ClusterSpec.html#as_cluster_def"><code>tf.train.ClusterSpec.as_cluster_def</code></a> for details.</p>
 </li>
 <li>
 <p><code>graph_options.optimizer_options</code>. Provides control over the optimizations
@@ -4418,19 +4418,19 @@ rather than allocating most of the memory at startup.</p>
 </ul>
 </li>
 </ul>
-<h3>Using <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> to execute operations</h3>
-<p>The <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> method is the main mechanism for running a <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a>
-or evaluating a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a>. You can pass one or more <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> or
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects to <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>, and TensorFlow will execute the
+<h3>Using <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> to execute operations</h3>
+<p>The <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> method is the main mechanism for running a <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a>
+or evaluating a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a>. You can pass one or more <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> or
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects to <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>, and TensorFlow will execute the
 operations that are needed to compute the result.</p>
-<p><a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> requires you to specify a list of <strong>fetches</strong>, which determine
-the return values, and may be a <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a>, a <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a>, or
-a <a href="#tensor-like_objects">tensor-like type</a> such as <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a>. These fetches
-determine what <strong>subgraph</strong> of the overall <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> must be executed to
+<p><a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> requires you to specify a list of <strong>fetches</strong>, which determine
+the return values, and may be a <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a>, a <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a>, or
+a <a href="#tensor-like_objects">tensor-like type</a> such as <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a>. These fetches
+determine what <strong>subgraph</strong> of the overall <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> must be executed to
 produce the result: this is the subgraph that contains all operations named in
 the fetch list, plus all operations whose outputs are used to compute the value
 of the fetches. For example, the following code fragment shows how different
-arguments to <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> cause different subgraphs to be executed:</p>
+arguments to <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> cause different subgraphs to be executed:</p>
 <pre><code class="language-python">x = tf.constant([[37.0, -23.0], [1.0, 4.0]])
 w = tf.Variable(tf.random_uniform([2, 2]))
 y = tf.matmul(x, w)
@@ -4450,8 +4450,8 @@ with tf.Session() as sess:
   # op. Both `y_val` and `output_val` will be NumPy arrays.
   y_val, output_val = sess.run([y, output])
 </code></pre>
-<p><a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> also optionally takes a dictionary of <strong>feeds</strong>, which is a
-mapping from <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects (typically <a href="../api_docs/python/tf/placeholder.md"><code>tf.placeholder</code></a> tensors) to
+<p><a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> also optionally takes a dictionary of <strong>feeds</strong>, which is a
+mapping from <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects (typically <a href="../api_docs/python/tf/placeholder.html"><code>tf.placeholder</code></a> tensors) to
 values (typically Python scalars, lists, or NumPy arrays) that will be
 substituted for those tensors in the execution. For example:</p>
 <pre><code class="language-python"># Define a placeholder that expects a vector of three floating-point values,
@@ -4464,7 +4464,7 @@ with tf.Session() as sess:
   print(sess.run(y, {x: [1.0, 2.0, 3.0]}))  # =&gt; &quot;[1.0, 4.0, 9.0]&quot;
   print(sess.run(y, {x: [0.0, 0.0, 5.0]}))  # =&gt; &quot;[0.0, 0.0, 25.0]&quot;
 
-  # Raises &lt;a href=&quot;../api_docs/python/tf/errors/InvalidArgumentError.md&quot;&gt;&lt;code&gt;tf.errors.InvalidArgumentError&lt;/code&gt;&lt;/a&gt;, because you must feed a value for
+  # Raises &lt;a href=&quot;../api_docs/python/tf/errors/InvalidArgumentError.html&quot;&gt;&lt;code&gt;tf.errors.InvalidArgumentError&lt;/code&gt;&lt;/a&gt;, because you must feed a value for
   # a `tf.placeholder()` when evaluating a tensor that depends on it.
   sess.run(y)
 
@@ -4472,7 +4472,7 @@ with tf.Session() as sess:
   # of placeholder `x`.
   sess.run(y, {x: 37.0})
 </code></pre>
-<p><a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> also accepts an optional <code>options</code> argument that enables you
+<p><a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> also accepts an optional <code>options</code> argument that enables you
 to specify options about the call, and an optional <code>run_metadata</code> argument that
 enables you to collect metadata about the execution. For example, you can use
 these options together to collect tracing information about the execution:</p>
@@ -4499,8 +4499,8 @@ with tf.Session() as sess:
 <p>TensorFlow includes tools that can help you to understand the code in a graph.
 The <strong>graph visualizer</strong> is a component of TensorBoard that renders the
 structure of your graph visually in a browser. The easiest way to create a
-visualization is to pass a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> when creating the
-<a href="../api_docs/python/tf/summary/FileWriter.md"><code>tf.summary.FileWriter</code></a>:</p>
+visualization is to pass a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> when creating the
+<a href="../api_docs/python/tf/summary/FileWriter.html"><code>tf.summary.FileWriter</code></a>:</p>
 <pre><code class="language-python"># Build your graph.
 x = tf.constant([[37.0, -23.0], [1.0, 4.0]])
 w = tf.Variable(tf.random_uniform([2, 2]))
@@ -4510,7 +4510,7 @@ loss = ...
 train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
 
 with tf.Session() as sess:
-  # `sess.graph` provides access to the graph used in a &lt;a href=&quot;../api_docs/python/tf/Session.md&quot;&gt;&lt;code&gt;tf.Session&lt;/code&gt;&lt;/a&gt;.
+  # `sess.graph` provides access to the graph used in a &lt;a href=&quot;../api_docs/python/tf/Session.html&quot;&gt;&lt;code&gt;tf.Session&lt;/code&gt;&lt;/a&gt;.
   writer = tf.summary.FileWriter(&quot;/tmp/log/...&quot;, sess.graph)
 
   # Perform your computation...
@@ -4520,7 +4520,7 @@ with tf.Session() as sess:
 
   writer.close()
 </code></pre>
-<p>Note: If you are using a <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>, the graph (and any
+<p>Note: If you are using a <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>, the graph (and any
 summaries) will be logged automatically to the <code>model_dir</code> that you specified
 when creating the estimator.</p>
 <p>You can then open the log in <code>tensorboard</code>, navigate to the “Graph” tab, and
@@ -4539,8 +4539,8 @@ graph for training your model, and a separate graph for evaluating or performing
 inference with a trained model. In many cases, the inference graph will be
 different from the training graph: for example, techniques like dropout and
 batch normalization use different operations in each case. Furthermore, by
-default utilities like <a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> use the names of <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a> objects
-(which have names based on an underlying <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a>) to identify each
+default utilities like <a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> use the names of <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a> objects
+(which have names based on an underlying <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a>) to identify each
 variable in a saved checkpoint. When programming this way, you can either use
 completely separate Python processes to build and execute the graphs, or you can
 use multiple graphs in the same process. This section describes how to use
@@ -4551,7 +4551,7 @@ is sufficient. However, TensorFlow also provides methods for manipulating
 the default graph, which can be useful in more advanced use cases. For example:</p>
 <ul>
 <li>
-<p>A <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> defines the namespace for <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> objects: each
+<p>A <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> defines the namespace for <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> objects: each
 operation in a single graph must have a unique name. TensorFlow will
 “uniquify” the names of operations by appending <code>&quot;_1&quot;</code>, <code>&quot;_2&quot;</code>, and so on to
 their names if the requested name is already taken. Using multiple explicitly
@@ -4559,15 +4559,15 @@ created graphs gives you more control over what name is given to each
 operation.</p>
 </li>
 <li>
-<p>The default graph stores information about every <a href="../api_docs/python/tf/Operation.md"><code>tf.Operation</code></a> and
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> that was ever added to it. If your program creates a large number
+<p>The default graph stores information about every <a href="../api_docs/python/tf/Operation.html"><code>tf.Operation</code></a> and
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> that was ever added to it. If your program creates a large number
 of unconnected subgraphs, it may be more efficient to use a different
-<a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> to build each subgraph, so that unrelated state can be garbage
+<a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> to build each subgraph, so that unrelated state can be garbage
 collected.</p>
 </li>
 </ul>
-<p>You can install a different <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> as the default graph, using the
-<a href="../api_docs/python/tf/Graph.md#as_default"><code>tf.Graph.as_default</code></a> context manager:</p>
+<p>You can install a different <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> as the default graph, using the
+<a href="../api_docs/python/tf/Graph.html#as_default"><code>tf.Graph.as_default</code></a> context manager:</p>
 <pre><code class="language-python">g_1 = tf.Graph()
 with g_1.as_default():
   # Operations created in this scope will be added to `g_1`.
@@ -4581,7 +4581,7 @@ with g_2.as_default():
   # Operations created in this scope will be added to `g_2`.
   d = tf.constant(&quot;Node in g_2&quot;)
 
-# Alternatively, you can pass a graph when constructing a &lt;a href=&quot;../api_docs/python/tf/Session.md&quot;&gt;&lt;code&gt;tf.Session&lt;/code&gt;&lt;/a&gt;:
+# Alternatively, you can pass a graph when constructing a &lt;a href=&quot;../api_docs/python/tf/Session.html&quot;&gt;&lt;code&gt;tf.Session&lt;/code&gt;&lt;/a&gt;:
 # `sess_2` will run operations from `g_2`.
 sess_2 = tf.Session(graph=g_2)
 
@@ -4591,8 +4591,8 @@ assert sess_1.graph is g_1
 assert d.graph is g_2
 assert sess_2.graph is g_2
 </code></pre>
-<p>To inspect the current default graph, call <a href="../api_docs/python/tf/get_default_graph.md"><code>tf.get_default_graph</code></a>, which
-returns a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> object:</p>
+<p>To inspect the current default graph, call <a href="../api_docs/python/tf/get_default_graph.html"><code>tf.get_default_graph</code></a>, which
+returns a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> object:</p>
 <pre><code class="language-python"># Print all of the operations in the default graph.
 g = tf.get_default_graph()
 print(g.get_operations())

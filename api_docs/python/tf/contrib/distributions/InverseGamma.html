@@ -4146,7 +4146,7 @@ rate = beta = mean / stddev**2
 <p>Distribution parameters are automatically broadcast in all functions; see
 examples for details.</p>
 <p>WARNING: This distribution may draw 0-valued samples for small concentration
-values. See note in <a href="../../../tf/random_gamma.md"><code>tf.random_gamma</code></a> docstring.</p>
+values. See note in <a href="../../../tf/random_gamma.html"><code>tf.random_gamma</code></a> docstring.</p>
 <h4>Examples</h4>
 <pre><code class="language-python">tfd = tf.contrib.distributions
 dist = tfd.InverseGamma(concentration=3.0, rate=2.0)
@@ -4214,7 +4214,7 @@ or <code>distributions.NOT_REPARAMETERIZED</code>.</p>
 <p>Construct InverseGamma with <code>concentration</code> and <code>rate</code> parameters. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <p>The parameters <code>concentration</code> and <code>rate</code> must be shaped in a way that
 supports broadcasting (e.g. <code>concentration + rate</code> is a valid operation).</p>
 <h4>Args:</h4>
@@ -4334,7 +4334,7 @@ cross entropy is defined as:</p>
 <p>where <code>F</code> denotes the support of the random variable <code>X ~ P</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4400,7 +4400,7 @@ measure <code>r</code>, the KL divergence is defined as:</p>
 denotes (Shanon) cross entropy, and <code>H[.]</code> denotes (Shanon) entropy.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>

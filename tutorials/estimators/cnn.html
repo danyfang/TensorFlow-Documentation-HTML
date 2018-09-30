@@ -4080,7 +4080,7 @@
     </nav>
     <article id="main" class="content">
       <h1>Build a Convolutional Neural Network using Estimators</h1>
-<p>The TensorFlow <a href="../../api_docs/python/tf/layers.md"><code>layers</code> module</a> provides a high-level API that makes
+<p>The TensorFlow <a href="../../api_docs/python/tf/layers.html"><code>layers</code> module</a> provides a high-level API that makes
 it easy to construct a neural network. It provides methods that facilitate the
 creation of dense (fully connected) layers and convolutional layers, adding
 activation functions, and applying dropout regularization. In this tutorial,
@@ -4174,7 +4174,7 @@ stride of 2</li>
 <li><strong>Dense Layer #2 (Logits Layer)</strong>: 10 neurons, one for each digit target
 class (0–9).</li>
 </ol>
-<p>The <a href="../../api_docs/python/tf/layers.md"><code>tf.layers</code></a> module contains methods to create each of the three layer types
+<p>The <a href="../../api_docs/python/tf/layers.html"><code>tf.layers</code></a> module contains methods to create each of the three layer types
 above:</p>
 <ul>
 <li><code>conv2d()</code>. Constructs a two-dimensional convolutional layer. Takes number
@@ -4192,7 +4192,7 @@ output from one layer-creation method and supply it as input to another.</p>
 conforms to the interface expected by TensorFlow’s Estimator API (more on this
 later in <a href="#create-the-estimator">Create the Estimator</a>). <code>cnn_mnist.py</code> takes
 MNIST feature data, labels, and
-<a href="../../api_docs/python/tf/estimator/ModeKeys.md">model mode</a> (<code>TRAIN</code>, <code>EVAL</code>, <code>PREDICT</code>) as arguments;
+<a href="../../api_docs/python/tf/estimator/ModeKeys.html">model mode</a> (<code>TRAIN</code>, <code>EVAL</code>, <code>PREDICT</code>) as arguments;
 configures the CNN; and returns predictions, loss, and a training operation:</p>
 <pre><code class="language-python">def cnn_model_fn(features, labels, mode):
   &quot;&quot;&quot;Model function for CNN.&quot;&quot;&quot;
@@ -4258,9 +4258,9 @@ configures the CNN; and returns predictions, loss, and a training operation:</p>
       mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
 </code></pre>
 <p>The following sections (with headings corresponding to each code block above)
-dive deeper into the <a href="../../api_docs/python/tf/layers.md"><code>tf.layers</code></a> code used to create each layer, as well as how
+dive deeper into the <a href="../../api_docs/python/tf/layers.html"><code>tf.layers</code></a> code used to create each layer, as well as how
 to calculate loss, configure the training op, and generate predictions. If
-you’re already experienced with CNNs and <a href="../../guide/custom_estimators.md">TensorFlow <code>Estimator</code>s</a>,
+you’re already experienced with CNNs and <a href="../../guide/custom_estimators.html">TensorFlow <code>Estimator</code>s</a>,
 and find the above code intuitive, you may want to skim these sections or just
 skip ahead to <a href="#train_eval_mnist">“Training and Evaluating the CNN MNIST Classifier”</a>.</p>
 <h3>Input Layer</h3>
@@ -4332,7 +4332,7 @@ a 5x5 convolution over a 28x28 tensor will produce a 24x24 tensor, as there are
 24x24 locations to extract a 5x5 tile from a 28x28 grid.)</p>
 <p>The <code>activation</code> argument specifies the activation function to apply to the
 output of the convolution. Here, we specify ReLU activation with
-<a href="../../api_docs/python/tf/nn/relu.md"><code>tf.nn.relu</code></a>.</p>
+<a href="../../api_docs/python/tf/nn/relu.html"><code>tf.nn.relu</code></a>.</p>
 <p>Our output tensor produced by <code>conv2d()</code> has a shape of
 <code>[<em>batch_size</em>, 28, 28, 32]</code>: the same height and width
 dimensions as the input, but now with 32 channels holding the output from each
@@ -4407,7 +4407,7 @@ follows:</p>
 <p>The <code>inputs</code> argument specifies the input tensor: our flattened feature map,
 <code>pool2_flat</code>. The <code>units</code> argument specifies the number of neurons in the dense
 layer (1,024). The <code>activation</code> argument takes the activation function; again,
-we’ll use <a href="../../api_docs/python/tf/nn/relu.md"><code>tf.nn.relu</code></a> to add ReLU activation.</p>
+we’ll use <a href="../../api_docs/python/tf/nn/relu.html"><code>tf.nn.relu</code></a> to add ReLU activation.</p>
 <p>To help improve the results of our model, we also apply dropout regularization
 to our dense layer, using the <code>dropout</code> method in <code>layers</code>:</p>
 <pre><code class="language-python">dropout = tf.layers.dropout(
@@ -4441,7 +4441,7 @@ probability that the example is a 0, is a 1, is a 2, etc.</li>
 </ul>
 <p>For a given example, our predicted class is the element in the corresponding row
 of the logits tensor with the highest raw value. We can find the index of this
-element using the <a href="../../api_docs/python/tf/argmax.md"><code>tf.argmax</code></a>
+element using the <a href="../../api_docs/python/tf/argmax.html"><code>tf.argmax</code></a>
 function:</p>
 <pre><code class="language-python">tf.argmax(input=logits, axis=1)
 </code></pre>
@@ -4452,7 +4452,7 @@ value along the dimension with index of 1, which corresponds to our predictions
 (recall that our logits tensor has shape <code>[<em>batch_size</em>,
 10]</code>).</p>
 <p>We can derive probabilities from our logits layer by applying softmax activation
-using <a href="../../api_docs/python/tf/nn/softmax.md"><code>tf.nn.softmax</code></a>:</p>
+using <a href="../../api_docs/python/tf/nn/softmax.html"><code>tf.nn.softmax</code></a>:</p>
 <pre><code class="language-python">tf.nn.softmax(logits, name=&quot;softmax_tensor&quot;)
 </code></pre>
 <blockquote>
@@ -4480,7 +4480,7 @@ runs in either <code>TRAIN</code> or <code>EVAL</code> mode:</p>
 </code></pre>
 <p>Let’s take a closer look at what’s happening above.</p>
 <p>Our <code>labels</code> tensor contains a list of prediction indices for our examples, e.g. <code>[1, 9, ...]</code>. <code>logits</code> contains the linear outputs of our last layer.</p>
-<p><a href="../../api_docs/python/tf/losses/sparse_softmax_cross_entropy.md"><code>tf.losses.sparse_softmax_cross_entropy</code></a>, calculates the softmax crossentropy
+<p><a href="../../api_docs/python/tf/losses/sparse_softmax_cross_entropy.html"><code>tf.losses.sparse_softmax_cross_entropy</code></a>, calculates the softmax crossentropy
 (aka: categorical crossentropy, negative log-likelihood) from these two inputs
 in an efficient, numerically stable way.</p>
 <h3>Configure the Training Op</h3>
@@ -4498,8 +4498,8 @@ as the optimization algorithm:</p>
 </code></pre>
 <blockquote>
 <p>Note: For a more in-depth look at configuring training ops for Estimator model
-functions, see <a href="../../guide/custom_estimators.md#defining-the-training-op-for-the-model">“Defining the training op for the model”</a>
-in the <a href="../../guide/custom_estimators.md">“Creating Estimations in tf.estimator”</a> tutorial.</p>
+functions, see <a href="../../guide/custom_estimators.html#defining-the-training-op-for-the-model">“Defining the training op for the model”</a>
+in the <a href="../../guide/custom_estimators.html">“Creating Estimations in tf.estimator”</a> tutorial.</p>
 </blockquote>
 <h3>Add evaluation metrics</h3>
 <p>To add accuracy metric in our model, we define <code>eval_metric_ops</code> dict in EVAL
@@ -4548,12 +4548,12 @@ be saved (here, we specify the temp directory <code>/tmp/mnist_convnet_model</co
 feel free to change to another directory of your choice).</p>
 <blockquote>
 <p>Note: For an in-depth walkthrough of the TensorFlow <code>Estimator</code> API, see the
-tutorial <a href="../../guide/custom_estimators.md">“Creating Estimators in tf.estimator.”</a></p>
+tutorial <a href="../../guide/custom_estimators.html">“Creating Estimators in tf.estimator.”</a></p>
 </blockquote>
 <h3>Set Up a Logging Hook {#set_up_a_logging_hook}</h3>
 <p>Since CNNs can take a while to train, let’s set up some logging so we can track
-progress during training. We can use TensorFlow’s <a href="../../api_docs/python/tf/train/SessionRunHook.md"><code>tf.train.SessionRunHook</code></a> to create a
-<a href="../../api_docs/python/tf/train/LoggingTensorHook.md"><code>tf.train.LoggingTensorHook</code></a>
+progress during training. We can use TensorFlow’s <a href="../../api_docs/python/tf/train/SessionRunHook.html"><code>tf.train.SessionRunHook</code></a> to create a
+<a href="../../api_docs/python/tf/train/LoggingTensorHook.html"><code>tf.train.LoggingTensorHook</code></a>
 that will log the probability values from the softmax layer of our CNN. Add the
 following to <code>main()</code>:</p>
 <pre><code class="language-python"># Set up logging for predictions
@@ -4570,8 +4570,8 @@ operation earlier when we generated the probabilities in <code>cnn_model_fn</cod
 <p>Note: If you don’t explicitly assign a name to an operation via the <code>name</code>
 argument, TensorFlow will assign a default name. A couple easy ways to
 discover the names applied to operations are to visualize your graph on
-<a href="../../guide/graph_viz.md">TensorBoard</a>) or to enable the
-<a href="../../guide/debugger.md">TensorFlow Debugger (tfdbg)</a>.</p>
+<a href="../../guide/graph_viz.html">TensorBoard</a>) or to enable the
+<a href="../../guide/debugger.html">TensorFlow Debugger (tfdbg)</a>.</p>
 </blockquote>
 <p>Next, we create the <code>LoggingTensorHook</code>, passing <code>tensors_to_log</code> to the
 <code>tensors</code> argument. We set <code>every_n_iter=50</code>, which specifies that probabilities
@@ -4646,11 +4646,11 @@ INFO:tensorflow:Saving evaluation summary for step 20000: accuracy = 0.9733, los
 <p>To learn more about TensorFlow Estimators and CNNs in TensorFlow, see the
 following resources:</p>
 <ul>
-<li><a href="../../guide/custom_estimators.md">Creating Estimators in tf.estimator</a>
+<li><a href="../../guide/custom_estimators.html">Creating Estimators in tf.estimator</a>
 provides an introduction to the TensorFlow Estimator API. It walks through
 configuring an Estimator, writing a model function, calculating loss, and
 defining a training op.</li>
-<li><a href="../../tutorials/images/deep_cnn.md">Advanced Convolutional Neural Networks</a> walks through how to build a MNIST CNN classification model
+<li><a href="../../tutorials/images/deep_cnn.html">Advanced Convolutional Neural Networks</a> walks through how to build a MNIST CNN classification model
 <em>without estimators</em> using lower-level TensorFlow operations.</li>
 </ul>
 

@@ -4126,7 +4126,7 @@ the checkpoint during validation may override the validation input
 pipeline.</li>
 </ol>
 <p>For saving the input pipeline checkpoint alongside the model weights use
-<a href="../../../tf/contrib/data/make_saveable_from_iterator.md"><code>tf.contrib.data.make_saveable_from_iterator</code></a> directly to create a
+<a href="../../../tf/contrib/data/make_saveable_from_iterator.html"><code>tf.contrib.data.make_saveable_from_iterator</code></a> directly to create a
 <code>SaveableObject</code> and add to the <code>SAVEABLE_OBJECTS</code> collection. Note, however,
 that you will need to be careful not to restore the training iterator during
 eval. You can do that by not adding the iterator to the SAVEABLE_OBJECTS

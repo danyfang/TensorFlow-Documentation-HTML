@@ -4094,7 +4094,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/device_setter.py"><code>tensorflow/python/training/device_setter.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Return a <code>device function</code> to use when building a Graph for replicas.</p>
 <p>Device Functions are used in <code>with tf.device(device_function):</code> statement to
 automatically assign devices to <code>Operation</code> objects as they are constructed,
@@ -4106,7 +4106,7 @@ Otherwise, the value of <code>ps_tasks</code> is derived from <code>cluster</cod
 <p>By default, only Variable ops are placed on ps tasks, and the placement
 strategy is round-robin over all ps tasks. A custom <code>ps_strategy</code> may be used
 to do more intelligent placement, such as
-<a href="../../tf/contrib/training/GreedyLoadBalancingStrategy.md"><code>tf.contrib.training.GreedyLoadBalancingStrategy</code></a>.</p>
+<a href="../../tf/contrib/training/GreedyLoadBalancingStrategy.html"><code>tf.contrib.training.GreedyLoadBalancingStrategy</code></a>.</p>
 <p>For example,</p>
 <pre><code class="language-python"># To build a cluster with two ps jobs on hosts ps0 and ps1, and 3 worker
 # jobs on hosts worker0, worker1 and worker2.

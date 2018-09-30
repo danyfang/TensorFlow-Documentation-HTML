@@ -4082,14 +4082,14 @@
       <h1>TensorFlow Debugger</h1>
 <!-- [comment]: TODO(barryr): Links to and from sections on "Graphs" & "Monitoring Learning". -->
 <p>[TOC]</p>
-<p><a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> is a specialized debugger for TensorFlow. It lets you view the internal
+<p><a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> is a specialized debugger for TensorFlow. It lets you view the internal
 structure and states of running TensorFlow graphs during training and inference,
 which is difficult to debug with general-purpose debuggers such as Python’s <code>pdb</code>
 due to TensorFlow’s computation-graph paradigm.</p>
-<p>This guide focuses on the command-line interface (CLI) of <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a>. For guide on
+<p>This guide focuses on the command-line interface (CLI) of <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a>. For guide on
 how to use the graphical user interface (GUI) of tfdbg, i.e., the
 <strong>TensorBoard Debugger Plugin</strong>, please visit
-<a href="https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/debugger/README.md">its README</a>.</p>
+<a href="https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/debugger/README.html">its README</a>.</p>
 <p>Note: The TensorFlow debugger uses a
 <a href="https://en.wikipedia.org/wiki/Curses_(programming_library)">curses</a>-based text
 user interface. On Mac OS X, the <code>ncurses</code> library is required and can be
@@ -4109,8 +4109,8 @@ type of bug in TensorFlow model development.
 The following example is for users who use the low-level
 <a href="https://www.tensorflow.org/api_docs/python/tf/Session"><code>Session</code></a> API of
 TensorFlow. Later sections of this document describe how to use <strong>tfdbg</strong>
-with higher-level APIs of TensorFlow, including <a href="../api_docs/python/tf/estimator.md"><code>tf.estimator</code></a>,
-<a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> / <code>keras</code> and <a href="../api_docs/python/tf/contrib/slim.md"><code>tf.contrib.slim</code></a>.
+with higher-level APIs of TensorFlow, including <a href="../api_docs/python/tf/estimator.html"><code>tf.estimator</code></a>,
+<a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> / <code>keras</code> and <a href="../api_docs/python/tf/contrib/slim.html"><code>tf.contrib.slim</code></a>.
 To <em>observe</em> such an issue, run the following command without the debugger (the
 source code can be found
 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/debug/examples/debug_mnist.py">here</a>):</p>
@@ -4153,16 +4153,16 @@ control the execution and inspect the graph’s internal state.</li>
 the diagnosis of issues.</li>
 </ul>
 <p>In this example, we have already registered a tensor filter called
-<a href="../api_docs/python/tfdbg/has_inf_or_nan.md"><code>tfdbg.has_inf_or_nan</code></a>,
+<a href="../api_docs/python/tfdbg/has_inf_or_nan.html"><code>tfdbg.has_inf_or_nan</code></a>,
 which simply determines if there are any <code>nan</code> or <code>inf</code> values in any
 intermediate tensors (tensors that are neither inputs or outputs of the
 <code>Session.run()</code> call, but are in the path leading from the inputs to the
 outputs). This filter is for <code>nan</code>s and <code>inf</code>s is a common enough use case that
 we ship it with the
-<a href="../api_guides/python/tfdbg.md#Classes_for_debug_dump_data_and_directories"><code>debug_data</code></a>
+<a href="../api_guides/python/tfdbg.html#Classes_for_debug_dump_data_and_directories"><code>debug_data</code></a>
 module.</p>
 <p>Note: You can also write your own custom filters. See
-the <a href="../api_docs/python/tfdbg/DebugDumpDir.md#find">API documentation</a>
+the <a href="../api_docs/python/tfdbg/DebugDumpDir.html#find">API documentation</a>
 of <code>DebugDumpDir.find()</code> for additional information.</p>
 <h2>Debugging Model Training with tfdbg</h2>
 <p>Let’s try training the model again, but with the <code>--debug</code> flag added this time:</p>
@@ -4727,11 +4727,11 @@ accuracy now continues to rise rather than getting stuck. Success!</p>
 APIs. Part of the convenience provided by these APIs is that
 they manage <code>Session</code>s internally. This makes the <code>LocalCLIDebugWrapperSession</code>
 described in the preceding sections inapplicable. Fortunately, you can still
-debug them by using special <code>hook</code>s provided by <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a>.</p>
-<p><a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> can debug the
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#train"><code>train()</code></a>,
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#evaluate"><code>evaluate()</code></a> and
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#predict"><code>predict()</code></a>
+debug them by using special <code>hook</code>s provided by <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a>.</p>
+<p><a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> can debug the
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#train"><code>train()</code></a>,
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#evaluate"><code>evaluate()</code></a> and
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#predict"><code>predict()</code></a>
 methods of tf-learn <code>Estimator</code>s. To debug <code>Estimator.train()</code>,
 create a <code>LocalCLIDebugHook</code> and supply it in the <code>hooks</code> argument. For example:</p>
 <pre><code class="language-python"># First, let your BUILD target depend on &quot;//tensorflow/python/debug:debug_py&quot;
@@ -4764,7 +4764,7 @@ To run this example, do:</p>
 <p>The <code>LocalCLIDebugHook</code> also allows you to configure a <code>watch_fn</code> that can be
 used to flexibly specify what <code>Tensor</code>s to watch on different <code>Session.run()</code>
 calls, as a function of the <code>fetches</code> and <code>feed_dict</code> and other states. See
-<a href="../api_docs/python/tfdbg/DumpingDebugWrapperSession.md#__init__">this API doc</a>
+<a href="../api_docs/python/tfdbg/DumpingDebugWrapperSession.html#__init__">this API doc</a>
 for more details.</p>
 <h2>Debugging Keras Models with TFDBG</h2>
 <p>To use TFDBG with
@@ -4786,7 +4786,7 @@ model.predict(...)
 </code></pre>
 <p>With minor modification, the preceding code example also works for the
 <a href="https://keras.io/">non-TensorFlow version of Keras</a> running against a
-TensorFlow backend. You just need to replace <a href="../api_docs/python/tf/keras/backend.md"><code>tf.keras.backend</code></a> with
+TensorFlow backend. You just need to replace <a href="../api_docs/python/tf/keras/backend.html"><code>tf.keras.backend</code></a> with
 <code>keras.backend</code>.</p>
 <h2>Debugging tf-slim with TFDBG</h2>
 <p>TFDBG supports debugging of training and evaluation with
@@ -4824,13 +4824,13 @@ tf.contrib.slim.evaluation.evaluate_once(
 <h2>Offline Debugging of Remotely-Running Sessions</h2>
 <p>Often, your model is running on a remote machine or a process that you don’t
 have terminal access to. To perform model debugging in such cases, you can use
-the <code>offline_analyzer</code> binary of <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> (described below). It operates on
+the <code>offline_analyzer</code> binary of <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> (described below). It operates on
 dumped data directories. This can be done to both the lower-level <code>Session</code> API
 and the higher-level <code>Estimator</code> API.</p>
 <h3>Debugging Remote tf.Sessions</h3>
-<p>If you interact directly with the <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> API in <code>python</code>, you can
+<p>If you interact directly with the <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> API in <code>python</code>, you can
 configure the <code>RunOptions</code> proto that you call your <code>Session.run()</code> method
-with, by using the method <a href="../api_docs/python/tfdbg/watch_graph.md"><code>tfdbg.watch_graph</code></a>.
+with, by using the method <a href="../api_docs/python/tfdbg/watch_graph.html"><code>tfdbg.watch_graph</code></a>.
 This will cause the intermediate tensors and runtime graphs to be dumped to a
 shared storage location of your choice when the <code>Session.run()</code> call occurs
 (at the cost of slower performance). For example:</p>
@@ -4850,7 +4850,7 @@ session.run(fetches, feed_dict=feeds, options=run_options)
 <p>Later, in an environment that you have terminal access to (for example, a local
 computer that can access the shared storage location specified in the code
 above), you can load and inspect the data in the dump directory on the shared
-storage by using the <code>offline_analyzer</code> binary of <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a>. For example:</p>
+storage by using the <code>offline_analyzer</code> binary of <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a>. For example:</p>
 <pre><code class="language-none">python -m tensorflow.python.debug.cli.offline_analyzer \
     --dump_dir=/shared/storage/location/tfdbg_dumps_1
 </code></pre>
@@ -4954,7 +4954,7 @@ You might encounter this problem in any of the following situations:</p>
 <ul>
 <li>models with many intermediate tensors</li>
 <li>very large intermediate tensors</li>
-<li>many <a href="../api_docs/python/tf/while_loop.md"><code>tf.while_loop</code></a> iterations</li>
+<li>many <a href="../api_docs/python/tf/while_loop.html"><code>tf.while_loop</code></a> iterations</li>
 </ul>
 <p>There are three possible workarounds or solutions:</p>
 <ul>
@@ -4970,7 +4970,7 @@ sess = tf_debug.LocalCLIDebugWrapperSession(dump_root=&quot;/with/lots/of/space&
 hooks = [tf_debug.LocalCLIDebugHook(dump_root=&quot;/with/lots/of/space&quot;)]
 </code></pre>
 <p>Make sure that the directory pointed to by dump_root is empty or nonexistent.
-<a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> cleans up the dump directories before exiting.</p>
+<a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> cleans up the dump directories before exiting.</p>
 <ul>
 <li>
 <p>Reduce the batch size used during the runs.</p>
@@ -5006,9 +5006,9 @@ executed TensorFlow graph is constant-folded by the TensorFlow runtime.
 In this exapmle, <code>a</code> is a constant tensor; therefore, the fetched
 tensor <code>b</code> is effectively also a constant tensor. TensorFlow’s graph
 optimization folds the graph that contains <code>a</code> and <code>b</code> into a single
-node to speed up future runs of the graph, which is why <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> does
+node to speed up future runs of the graph, which is why <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> does
 not generate any intermediate tensor dumps. However, if <code>a</code> were a
-<a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a>, as in the following example:</p>
+<a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a>, as in the following example:</p>
 <pre><code class="language-python">import numpy as np
 
 a = tf.Variable(np.ones[10], name=&quot;a&quot;)
@@ -5018,7 +5018,7 @@ sess.run(tf.global_variables_initializer())
 sess = tf_debug.LocalCLIDebugWrapperSession(sess)
 sess.run(b)
 </code></pre>
-<p>the constant-folding would not occur and <a href="../api_docs/python/tfdbg.md"><code>tfdbg</code></a> should show the intermediate
+<p>the constant-folding would not occur and <a href="../api_docs/python/tfdbg.html"><code>tfdbg</code></a> should show the intermediate
 tensor dumps.</p>
 <p><strong>Q</strong>: I am debugging a model that generates unwanted infinities or NaNs. But
 there are some nodes in my model that are known to generate infinities
@@ -5037,7 +5037,7 @@ real-time visualization of tensor values, continuation to tensor
 and conditional breakpoints, and tying tensors to their
 graph-construction source code, all in the browser environment.
 To get started, please visit
-<a href="https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/debugger/README.md">its README</a>.</p>
+<a href="https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/debugger/README.html">its README</a>.</p>
 
     </article>
   </div>

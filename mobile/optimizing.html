@@ -4145,7 +4145,7 @@ as small as possible. Furthermore, smaller neural networks can persist in and
 out of a mobile device’s memory faster.</p>
 <p>To understand how large your network will be on disk, start by looking at the
 size on disk of your <code>GraphDef</code> file after you’ve run <code>freeze_graph</code> and
-<code>strip_unused_nodes</code> on it (see <a href="../mobile/prepare_models.md">Preparing models</a> for
+<code>strip_unused_nodes</code> on it (see <a href="../mobile/prepare_models.html">Preparing models</a> for
 more details on these tools), since then it should only contain
 inference-related nodes. To double-check that your results are as expected, run
 the <code>summarize_graph</code> tool to see how many parameters are in constants:</p>
@@ -4169,7 +4169,7 @@ you multiply the number of const parameters by four, you should get something
 that’s close to the size of the file on disk. You can often get away with only
 eight-bits per parameter with very little loss of accuracy in the final result,
 so if your file size is too large you can try using
-<a href="../performance/quantization.md">quantize_weights</a> to transform the parameters down.</p>
+<a href="../performance/quantization.html">quantize_weights</a> to transform the parameters down.</p>
 <pre><code>bazel build tensorflow/tools/graph_transforms:transform_graph &amp;&amp; \
 bazel-bin/tensorflow/tools/graph_transforms/transform_graph \
 --in_graph=/tmp/tensorflow_inception_optimized.pb \
@@ -4363,7 +4363,7 @@ adb shell '/data/local/tmp/benchmark_model \
 </code></pre>
 <p>You can interpret the results in exactly the same way as the desktop version
 above. If you have any trouble figuring out what the right input and output
-names and types are, take a look at the <a href="../mobile/prepare_models.md">Preparing models</a>
+names and types are, take a look at the <a href="../mobile/prepare_models.html">Preparing models</a>
 page for details about detecting these for your model, and look at the
 <code>summarize_graph</code> tool which may give you
 helpful information.</p>

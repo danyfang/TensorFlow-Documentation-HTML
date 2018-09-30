@@ -4089,15 +4089,15 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/batching.py"><code>tensorflow/contrib/data/python/ops/batching.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
-<p>A transformation that batches ragged elements into <a href="../../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>s.</p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
+<p>A transformation that batches ragged elements into <a href="../../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>s.</p>
 <p>Like <code>Dataset.padded_batch()</code>, this transformation combines multiple
 consecutive elements of the dataset, which might have different
 shapes, into a single element. The resulting element has three
 components (<code>indices</code>, <code>values</code>, and <code>dense_shape</code>), which
-comprise a <a href="../../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a> that represents the same data. The
+comprise a <a href="../../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a> that represents the same data. The
 <code>row_shape</code> represents the dense shape of each row in the
-resulting <a href="../../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>, to which the effective batch size is
+resulting <a href="../../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>, to which the effective batch size is
 prepended. For example:</p>
 <pre><code class="language-python"># NOTE: The following examples use `{ ... }` to represent the
 # contents of a dataset.
@@ -4115,18 +4115,18 @@ a.apply(tf.contrib.data.dense_to_sparse_batch(batch_size=2, row_shape=[6])) ==
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 number of consecutive elements of this dataset to combine in a
 single batch.</li>
-<li><b><code>row_shape</code></b>: A <a href="../../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or <a href="../../../tf/int64.md"><code>tf.int64</code></a> vector tensor-like
+<li><b><code>row_shape</code></b>: A <a href="../../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or <a href="../../../tf/int64.html"><code>tf.int64</code></a> vector tensor-like
 object representing the equivalent dense shape of a row in the
-resulting <a href="../../../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>. Each element of this dataset must
+resulting <a href="../../../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>. Each element of this dataset must
 have the same rank as <code>row_shape</code>, and must have size less
 than or equal to <code>row_shape</code> in each dimension.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a>.</p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a>.</p>
 
     </article>
   </div>

@@ -4090,7 +4090,7 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/checkpointable/util.py"><code>tensorflow/python/training/checkpointable/util.py</code></a>.</p>
 <p>Saves and restores a <code>Checkpointable</code> object and its dependencies.</p>
 <p>See <code>Checkpointable</code> for details of dependency management. <code>Saver</code> wraps
-<a href="../../../tf/train/Saver.md"><code>tf.train.Saver</code></a> for saving, including extra information about the graph of
+<a href="../../../tf/train/Saver.html"><code>tf.train.Saver</code></a> for saving, including extra information about the graph of
 dependencies between Python objects. When restoring, it uses this information
 about the save-time dependency graph to more robustly match objects with their
 checkpointed values. When executing eagerly, it supports restoring variables
@@ -4100,7 +4100,7 @@ on object creation (see <code>Saver.restore</code>).</p>
 checkpoint was written. To avoid breaking existing checkpoints when modifying
 a class, dependency names (the names of attributes to which <code>Checkpointable</code>
 objects are assigned) may not change. These names are local to objects, in
-contrast to the <code>Variable.name</code>-based save/restore from <a href="../../../tf/train/Saver.md"><code>tf.train.Saver</code></a>, and
+contrast to the <code>Variable.name</code>-based save/restore from <a href="../../../tf/train/Saver.html"><code>tf.train.Saver</code></a>, and
 so allow additional program transformations.</p>
 <h2>Methods</h2>
 <h3 id="__init__"><code>__init__</code></h3>
@@ -4138,7 +4138,7 @@ run via the <code>run_restore_ops()</code> function of the status object:</p>
 </code></pre>
 <p>If the checkpoint has not been consumed completely, then the list of restore
 ops will grow as more objects are added to the dependency graph.</p>
-<p>Name-based <a href="../../../tf/train/Saver.md"><code>tf.train.Saver</code></a> checkpoints can be loaded using this
+<p>Name-based <a href="../../../tf/train/Saver.html"><code>tf.train.Saver</code></a> checkpoints can be loaded using this
 method. There is no deferred loading, and names are used to match
 variables. No restore ops are created/run until <code>run_restore_ops()</code> or
 <code>initialize_or_restore()</code> are called on the returned status object, even
@@ -4147,10 +4147,10 @@ object-based <code>Saver.save</code> as soon as possible.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>save_path</code></b>: The path to the checkpoint, as returned by <code>save</code> or
-<a href="../../../tf/train/latest_checkpoint.md"><code>tf.train.latest_checkpoint</code></a>. If None (as when there is no latest
-checkpoint for <a href="../../../tf/train/latest_checkpoint.md"><code>tf.train.latest_checkpoint</code></a> to return), returns an
+<a href="../../../tf/train/latest_checkpoint.html"><code>tf.train.latest_checkpoint</code></a>. If None (as when there is no latest
+checkpoint for <a href="../../../tf/train/latest_checkpoint.html"><code>tf.train.latest_checkpoint</code></a> to return), returns an
 object which may run initializers for objects in the dependency
-graph. If the checkpoint was written by the name-based <a href="../../../tf/train/Saver.md"><code>tf.train.Saver</code></a>,
+graph. If the checkpoint was written by the name-based <a href="../../../tf/train/Saver.html"><code>tf.train.Saver</code></a>,
 names are used to match variables.</li>
 </ul>
 <h4>Returns:</h4>

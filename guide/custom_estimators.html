@@ -4081,10 +4081,10 @@
     <article id="main" class="content">
       <h1>Creating Custom Estimators</h1>
 <p>This document introduces custom Estimators. In particular, this document
-demonstrates how to create a custom <a href="../api_docs/python/tf/estimator/Estimator.md">Estimator</a> that
+demonstrates how to create a custom <a href="../api_docs/python/tf/estimator/Estimator.html">Estimator</a> that
 mimics the behavior of the pre-made Estimator
-<a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>DNNClassifier</code></a> in solving the Iris problem. See
-the <a href="../guide/premade_estimators.md">Pre-Made Estimators chapter</a> for details
+<a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>DNNClassifier</code></a> in solving the Iris problem. See
+the <a href="../guide/premade_estimators.html">Pre-Made Estimators chapter</a> for details
 on the Iris problem.</p>
 <p>To download and access the example code invoke the following two commands:</p>
 <pre><code class="language-shell">git clone https://github.com/tensorflow/models/
@@ -4102,7 +4102,7 @@ with
 (which is in the same directory).</p>
 <h2>Pre-made vs. custom</h2>
 <p>As the following figure shows, pre-made Estimators are subclasses of the
-<a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> base class, while custom Estimators are an instance
+<a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> base class, while custom Estimators are an instance
 of tf.estimator.Estimator:</p>
 <div style="width:100%; margin:auto; margin-bottom:10px; margin-top:20px;">
 <img style="display:block; margin: 0 auto"
@@ -4145,7 +4145,7 @@ and a logits output layer.
 </div>
 <h2>Write an Input function</h2>
 <p>Our custom Estimator implementation uses the same input function as our
-<a href="../guide/premade_estimators.md">pre-made Estimator implementation</a>, from
+<a href="../guide/premade_estimators.html">pre-made Estimator implementation</a>, from
 <a href="https://github.com/tensorflow/models/blob/master/samples/core/get_started/iris_data.py"><code>iris_data.py</code></a>.
 Namely:</p>
 <pre><code class="language-python">def train_input_fn(features, labels, batch_size):
@@ -4162,8 +4162,8 @@ Namely:</p>
 <p>This input function builds an input pipeline that yields batches of
 <code>(features, labels)</code> pairs, where <code>features</code> is a dictionary features.</p>
 <h2>Create feature columns</h2>
-<p>As detailed in the <a href="../guide/premade_estimators.md">Premade Estimators</a> and
-<a href="../guide/feature_columns.md">Feature Columns</a> chapters, you must define
+<p>As detailed in the <a href="../guide/premade_estimators.html">Premade Estimators</a> and
+<a href="../guide/feature_columns.html">Feature Columns</a> chapters, you must define
 your model’s feature columns to specify how the model should use each feature.
 Whether working with pre-made Estimators or custom Estimators, you define
 feature columns in the same fashion.</p>
@@ -4191,8 +4191,8 @@ requesting training, predicting, or evaluation.</p>
 to the constructor are in turn passed on to the <code>model_fn</code>. In
 <a href="https://github.com/tensorflow/models/blob/master/samples/core/get_started/custom_estimator.py"><code>custom_estimator.py</code></a>
 the following lines create the estimator and set the params to configure the
-model. This configuration step is similar to how we configured the <a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>tf.estimator.DNNClassifier</code></a> in
-<a href="../guide/premade_estimators.md">Premade Estimators</a>.</p>
+model. This configuration step is similar to how we configured the <a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>tf.estimator.DNNClassifier</code></a> in
+<a href="../guide/premade_estimators.html">Premade Estimators</a>.</p>
 <pre><code class="language-python">classifier = tf.estimator.Estimator(
     model_fn=my_model,
     params={
@@ -4223,7 +4223,7 @@ the <a href="#modes">three different modes</a>:
 <li>An <a href="https://developers.google.com/machine-learning/glossary/#output_layer">output layer</a></li>
 </ul>
 <h3>Define the input layer</h3>
-<p>The first line of the <code>model_fn</code> calls <a href="../api_docs/python/tf/feature_column/input_layer.md"><code>tf.feature_column.input_layer</code></a> to
+<p>The first line of the <code>model_fn</code> calls <a href="../api_docs/python/tf/feature_column/input_layer.html"><code>tf.feature_column.input_layer</code></a> to
 convert the feature dictionary and <code>feature_columns</code> into input for your model,
 as follows:</p>
 <pre><code class="language-python">    # Use `input_layer` to apply the feature columns.
@@ -4240,7 +4240,7 @@ creating the model’s input layer.</p>
 <p>If you are creating a deep neural network, you must define one or more hidden
 layers. The Layers API provides a rich set of functions to define all types of
 hidden layers, including convolutional, pooling, and dropout layers. For Iris,
-we’re simply going to call <a href="../api_docs/python/tf/layers/dense.md"><code>tf.layers.dense</code></a> to create hidden layers, with
+we’re simply going to call <a href="../api_docs/python/tf/layers/dense.html"><code>tf.layers.dense</code></a> to create hidden layers, with
 dimensions defined by <code>params['hidden_layers']</code>. In a <code>dense</code> layer each node
 is connected to every node in the preceding layer.  Here’s the relevant code:</p>
 <pre><code class="language-python">    # Build the hidden layers, sized according to the 'hidden_units' param.
@@ -4255,7 +4255,7 @@ case.</li>
 </ul>
 <p>The variable <code>net</code> here signifies the current top layer of the network. During
 the first iteration, <code>net</code> signifies the input layer. On each loop iteration
-<a href="../api_docs/python/tf/layers/dense.md"><code>tf.layers.dense</code></a> creates a new layer, which takes the previous layer’s output
+<a href="../api_docs/python/tf/layers/dense.html"><code>tf.layers.dense</code></a> creates a new layer, which takes the previous layer’s output
 as its input, using the variable <code>net</code>.</p>
 <p>After creating two hidden layers, our network looks as follows. For
 simplicity, the figure does not show all the units in each layer.</p>
@@ -4264,12 +4264,12 @@ simplicity, the figure does not show all the units in each layer.</p>
   alt="The input layer with two hidden layers added."
   src="../images/custom_estimators/add_hidden_layer.png">
 </div>
-<p>Note that <a href="../api_docs/python/tf/layers/dense.md"><code>tf.layers.dense</code></a> provides many additional capabilities, including
+<p>Note that <a href="../api_docs/python/tf/layers/dense.html"><code>tf.layers.dense</code></a> provides many additional capabilities, including
 the ability to set a multitude of regularization parameters. For the sake of
 simplicity, though, we’re going to simply accept the default values of the
 other parameters.</p>
 <h3>Output Layer</h3>
-<p>We’ll define the output layer by calling <a href="../api_docs/python/tf/layers/dense.md"><code>tf.layers.dense</code></a> yet again, this
+<p>We’ll define the output layer by calling <a href="../api_docs/python/tf/layers/dense.html"><code>tf.layers.dense</code></a> yet again, this
 time without an activation function:</p>
 <pre><code class="language-python">    # Compute logits (1 per class).
     logits = tf.layers.dense(net, params['n_classes'], activation=None)
@@ -4290,7 +4290,7 @@ one output value per class. Each element of the output vector will contain the
 score, or “logit”, calculated for the associated class of Iris: Setosa,
 Versicolor, or Virginica, respectively.</p>
 <p>Later on, these logits will be transformed into probabilities by the
-<a href="../api_docs/python/tf/nn/softmax.md"><code>tf.nn.softmax</code></a> function.</p>
+<a href="../api_docs/python/tf/nn/softmax.html"><code>tf.nn.softmax</code></a> function.</p>
 <h2>Implement training, evaluation, and prediction {#modes}</h2>
 <p>The final step in creating a model function is to write branching code that
 implements prediction, evaluation, and training.</p>
@@ -4315,16 +4315,16 @@ function with the mode parameter set as follows:</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.md#train"><code>train()</code></a></td>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.md#TRAIN"><code>ModeKeys.TRAIN</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.html#train"><code>train()</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.html#TRAIN"><code>ModeKeys.TRAIN</code></a></td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.md#evaluate"><code>evaluate()</code></a></td>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.md#EVAL"><code>ModeKeys.EVAL</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.html#evaluate"><code>evaluate()</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.html#EVAL"><code>ModeKeys.EVAL</code></a></td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.md#predict"><code>predict()</code></a></td>
-<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.md#PREDICT"><code>ModeKeys.PREDICT</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/BaselineClassifier.html#predict"><code>predict()</code></a></td>
+<td style="text-align:left"><a href="../api_docs/python/tf/estimator/ModeKeys.html#PREDICT"><code>ModeKeys.PREDICT</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -4337,12 +4337,12 @@ classifier.train(input_fn=lambda: my_input_fn(FILE_TRAIN, True, 500))
 <code>ModeKeys.TRAIN</code>.</p>
 <p>Your model function must provide code to handle all three of the mode values.
 For each mode value, your code must return an instance of
-<a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a>, which contains the information the caller
+<a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a>, which contains the information the caller
 requires. Let’s examine each mode.</p>
 <h3>Predict</h3>
 <p>When the Estimator’s <code>predict</code> method is called, the <code>model_fn</code> receives
 <code>mode = ModeKeys.PREDICT</code>. In this case, the model function must return a
-<a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a> containing the prediction.</p>
+<a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a> containing the prediction.</p>
 <p>The model must have been trained prior to making a prediction. The trained model
 is stored on disk in the <code>model_dir</code> directory established when you
 instantiated the Estimator.</p>
@@ -4373,15 +4373,15 @@ and 0.03)</li>
 <li><code>logit</code> holds the raw logit values (in this example, -1.3, 2.6, and -0.9)</li>
 </ul>
 <p>We return that dictionary to the caller via the <code>predictions</code> parameter of the
-<a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a>. The Estimator’s
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#predict"><code>predict</code></a> method will yield these
+<a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a>. The Estimator’s
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#predict"><code>predict</code></a> method will yield these
 dictionaries.</p>
 <h3>Calculate the loss</h3>
 <p>For both <a href="#train">training</a> and <a href="#evaluate">evaluation</a> we need to calculate the
 model’s loss. This is the
 <a href="https://developers.google.com/machine-learning/glossary/#objective">objective</a>
 that will be optimized.</p>
-<p>We can calculate the loss by calling <a href="../api_docs/python/tf/losses/sparse_softmax_cross_entropy.md"><code>tf.losses.sparse_softmax_cross_entropy</code></a>.
+<p>We can calculate the loss by calling <a href="../api_docs/python/tf/losses/sparse_softmax_cross_entropy.html"><code>tf.losses.sparse_softmax_cross_entropy</code></a>.
 The value returned by this function will be approximately 0 at lowest,
 when the probability of the correct class (at index <code>label</code>) is near 1.0.
 The loss value returned is progressively larger as the probability of the
@@ -4393,21 +4393,21 @@ loss = tf.losses.sparse_softmax_cross_entropy(labels=labels, logits=logits)
 <h3>Evaluate</h3>
 <p>When the Estimator’s <code>evaluate</code> method is called, the <code>model_fn</code> receives
 <code>mode = ModeKeys.EVAL</code>. In this case, the model function must return a
-<a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a> containing the model’s loss and optionally one
+<a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a> containing the model’s loss and optionally one
 or more metrics.</p>
 <p>Although returning metrics is optional, most custom Estimators do return at
-least one metric. TensorFlow provides a Metrics module <a href="../api_docs/python/tf/metrics.md"><code>tf.metrics</code></a> to
+least one metric. TensorFlow provides a Metrics module <a href="../api_docs/python/tf/metrics.html"><code>tf.metrics</code></a> to
 calculate common metrics.  For brevity’s sake, we’ll only return accuracy. The
-<a href="../api_docs/python/tf/metrics/accuracy.md"><code>tf.metrics.accuracy</code></a> function compares our predictions against the
+<a href="../api_docs/python/tf/metrics/accuracy.html"><code>tf.metrics.accuracy</code></a> function compares our predictions against the
 true values, that is, against the labels provided by the input function. The
-<a href="../api_docs/python/tf/metrics/accuracy.md"><code>tf.metrics.accuracy</code></a> function requires the labels and predictions to have the
-same shape. Here’s the call to <a href="../api_docs/python/tf/metrics/accuracy.md"><code>tf.metrics.accuracy</code></a>:</p>
+<a href="../api_docs/python/tf/metrics/accuracy.html"><code>tf.metrics.accuracy</code></a> function requires the labels and predictions to have the
+same shape. Here’s the call to <a href="../api_docs/python/tf/metrics/accuracy.html"><code>tf.metrics.accuracy</code></a>:</p>
 <pre><code class="language-python"># Compute evaluation metrics.
 accuracy = tf.metrics.accuracy(labels=labels,
                                predictions=predicted_classes,
                                name='acc_op')
 </code></pre>
-<p>The <a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>EstimatorSpec</code></a> returned for evaluation
+<p>The <a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>EstimatorSpec</code></a> returned for evaluation
 typically contains the following information:</p>
 <ul>
 <li><code>loss</code>, which is the model’s loss</li>
@@ -4416,7 +4416,7 @@ typically contains the following information:</p>
 <p>So, we’ll create a dictionary containing our sole metric. If we had calculated
 other metrics, we would have added them as additional key/value pairs to that
 same dictionary.  Then, we’ll pass that dictionary in the <code>eval_metric_ops</code>
-argument of <a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a>. Here’s the code:</p>
+argument of <a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a>. Here’s the code:</p>
 <pre><code class="language-python">metrics = {'accuracy': accuracy}
 tf.summary.scalar('accuracy', accuracy[1])
 
@@ -4424,32 +4424,32 @@ if mode == tf.estimator.ModeKeys.EVAL:
     return tf.estimator.EstimatorSpec(
         mode, loss=loss, eval_metric_ops=metrics)
 </code></pre>
-<p>The <a href="../api_docs/python/tf/summary/scalar.md"><code>tf.summary.scalar</code></a> will make accuracy available to TensorBoard
+<p>The <a href="../api_docs/python/tf/summary/scalar.html"><code>tf.summary.scalar</code></a> will make accuracy available to TensorBoard
 in both <code>TRAIN</code> and <code>EVAL</code> modes. (More on this later).</p>
 <h3>Train</h3>
 <p>When the Estimator’s <code>train</code> method is called, the <code>model_fn</code> is called
 with <code>mode = ModeKeys.TRAIN</code>. In this case, the model function must return an
 <code>EstimatorSpec</code> that contains the loss and a training operation.</p>
 <p>Building the training operation will require an optimizer. We will use
-<a href="../api_docs/python/tf/train/AdagradOptimizer.md"><code>tf.train.AdagradOptimizer</code></a> because we’re mimicking the <code>DNNClassifier</code>, which
-also uses <code>Adagrad</code> by default. The <a href="../api_docs/python/tf/train.md"><code>tf.train</code></a> package provides many other
+<a href="../api_docs/python/tf/train/AdagradOptimizer.html"><code>tf.train.AdagradOptimizer</code></a> because we’re mimicking the <code>DNNClassifier</code>, which
+also uses <code>Adagrad</code> by default. The <a href="../api_docs/python/tf/train.html"><code>tf.train</code></a> package provides many other
 optimizers—feel free to experiment with them.</p>
 <p>Here is the code that builds the optimizer:</p>
 <pre><code class="language-python">optimizer = tf.train.AdagradOptimizer(learning_rate=0.1)
 </code></pre>
 <p>Next, we build the training operation using the optimizer’s
-<a href="../api_docs/python/tf/train/AdadeltaOptimizer.md#minimize"><code>minimize</code></a> method on the loss we calculated
+<a href="../api_docs/python/tf/train/AdadeltaOptimizer.html#minimize"><code>minimize</code></a> method on the loss we calculated
 earlier.</p>
 <p>The <code>minimize</code> method also takes a <code>global_step</code> parameter. TensorFlow uses this
 parameter to count the number of training steps that have been processed
 (to know when to end a training run). Furthermore, the <code>global_step</code> is
 essential for TensorBoard graphs to work correctly. Simply call
-<a href="../api_docs/python/tf/train/get_global_step.md"><code>tf.train.get_global_step</code></a> and pass the result to the <code>global_step</code>
+<a href="../api_docs/python/tf/train/get_global_step.html"><code>tf.train.get_global_step</code></a> and pass the result to the <code>global_step</code>
 argument of <code>minimize</code>.</p>
 <p>Here’s the code to train the model:</p>
 <pre><code class="language-python">train_op = optimizer.minimize(loss, global_step=tf.train.get_global_step())
 </code></pre>
-<p>The <a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>EstimatorSpec</code></a> returned for training
+<p>The <a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>EstimatorSpec</code></a> returned for training
 must have the following fields set:</p>
 <ul>
 <li><code>loss</code>, which contains the value of the loss function.</li>
@@ -4477,7 +4477,7 @@ arguments of <code>DNNClassifier</code>; that is, the <code>params</code> dictio
 configure your Estimator without modifying the code in the <code>model_fn</code>.</p>
 <p>The rest of the code to train, evaluate, and generate predictions using our
 Estimator is the same as in the
-<a href="../guide/premade_estimators.md">Premade Estimators</a> chapter. For
+<a href="../guide/premade_estimators.html">Premade Estimators</a> chapter. For
 example, the following line will train the model:</p>
 <pre><code class="language-python"># Train the Model.
 classifier.train(
@@ -4567,7 +4567,7 @@ which uses a custom estimator.</li>
 which contains more curated examples using custom estimators.</li>
 <li>This <a href="https://youtu.be/eBbEDRsCmv4">TensorBoard video</a>, which introduces
 TensorBoard.</li>
-<li>The <a href="../guide/low_level_intro.md">Low Level Introduction</a>, which demonstrates
+<li>The <a href="../guide/low_level_intro.html">Low Level Introduction</a>, which demonstrates
 how to experiment directly with TensorFlow’s low level APIs, making debugging
 easier.</li>
 </ul>

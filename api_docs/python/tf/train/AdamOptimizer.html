@@ -4097,7 +4097,7 @@
 <h2>Class <code>AdamOptimizer</code></h2>
 <p>Inherits From: <a href="../../tf/train/Optimizer.html"><code>Optimizer</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/adam.py"><code>tensorflow/python/training/adam.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Optimizers">Training &gt; Optimizers</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Optimizers">Training &gt; Optimizers</a></p>
 <p>Optimizer that implements the Adam algorithm.</p>
 <p>See <a href="http://arxiv.org/abs/1412.6980">Kingma et al., 2014</a>
 (<a href="http://arxiv.org/pdf/1412.6980.pdf">pdf</a>).</p>
@@ -4131,7 +4131,7 @@ formulation just before Section 2.1 of the Kingma and Ba paper rather than
 the formulation in Algorithm 1, the “epsilon” referred to here is “epsilon
 hat” in the paper.</p>
 <p>The sparse implementation of this algorithm (used when the gradient is an
-IndexedSlices object, typically because of <a href="../../tf/gather.md"><code>tf.gather</code></a> or an embedding
+IndexedSlices object, typically because of <a href="../../tf/gather.html"><code>tf.gather</code></a> or an embedding
 lookup in the forward pass) does apply momentum to variable slices even if
 they were not used in the forward pass (meaning they have a gradient equal
 to zero). Momentum decay (beta1) is also applied to the entire momentum
@@ -4206,7 +4206,7 @@ given variable.</p>
 <li><b><code>loss</code></b>: A Tensor containing the value to minimize or a callable taking
 no arguments which returns the value to minimize. When eager execution
 is enabled it must be a callable.</li>
-<li><b><code>var_list</code></b>: Optional list or tuple of <a href="../../tf/Variable.md"><code>tf.Variable</code></a> to update to minimize
+<li><b><code>var_list</code></b>: Optional list or tuple of <a href="../../tf/Variable.html"><code>tf.Variable</code></a> to update to minimize
 <code>loss</code>.  Defaults to the list of variables collected in the graph
 under the key <code>GraphKeys.TRAINABLE_VARIABLES</code>.</li>
 <li><b><code>gate_gradients</code></b>: How to gate the computation of gradients.  Can be

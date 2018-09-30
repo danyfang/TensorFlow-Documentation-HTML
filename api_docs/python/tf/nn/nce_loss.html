@@ -4098,7 +4098,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/nn_impl.py"><code>tensorflow/python/ops/nn_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/nn.md#Candidate_Sampling">Neural Network &gt; Candidate Sampling</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/nn.html#Candidate_Sampling">Neural Network &gt; Candidate Sampling</a></p>
 <p>Computes and returns the noise-contrastive estimation training loss.</p>
 <p>See <a href="http://www.jmlr.org/proceedings/papers/v9/gutmann10a/gutmann10a.pdf">Noise-contrastive estimation: A new estimation principle for
 unnormalized statistical
@@ -4129,7 +4129,7 @@ elif mode == &quot;eval&quot;:
 <p>Note: By default this uses a log-uniform (Zipfian) distribution for sampling,
 so your labels must be sorted in order of decreasing frequency to achieve
 good results.  For more details, see
-<a href="../../tf/nn/log_uniform_candidate_sampler.md"><code>tf.nn.log_uniform_candidate_sampler</code></a>.</p>
+<a href="../../tf/nn/log_uniform_candidate_sampler.html"><code>tf.nn.log_uniform_candidate_sampler</code></a>.</p>
 <p>Note: In the case where <code>num_true</code> &gt; 1, we assign to each target class
 the target probability 1 / <code>num_true</code> so that the target probabilities
 sum to 1 per-example.</p>
@@ -4162,7 +4162,7 @@ our [Candidate Sampling Algorithms Reference]
 Default is False.</li>
 <li><b><code>partition_strategy</code></b>: A string specifying the partitioning strategy, relevant
 if <code>len(weights) &gt; 1</code>. Currently <code>&quot;div&quot;</code> and <code>&quot;mod&quot;</code> are supported.
-Default is <code>&quot;mod&quot;</code>. See <a href="../../tf/nn/embedding_lookup.md"><code>tf.nn.embedding_lookup</code></a> for more details.</li>
+Default is <code>&quot;mod&quot;</code>. See <a href="../../tf/nn/embedding_lookup.html"><code>tf.nn.embedding_lookup</code></a> for more details.</li>
 <li><b><code>name</code></b>: A name for the operation (optional).</li>
 </ul>
 <h4>Returns:</h4>

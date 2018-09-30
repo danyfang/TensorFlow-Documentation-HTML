@@ -4156,7 +4156,7 @@ following:</p>
 <p>We will delve into the details of each below.</p>
 <h2>Graph Construction</h2>
 <h3>Scope</h3>
-<p><a href="../../api_docs/cc/class/tensorflow/scope.md"><code>tensorflow::Scope</code></a> is the main data structure that holds the current state
+<p><a href="../../api_docs/cc/class/tensorflow/scope.html"><code>tensorflow::Scope</code></a> is the main data structure that holds the current state
 of graph construction. A <code>Scope</code> acts as a handle to the graph being
 constructed, as well as storing TensorFlow operation properties. The <code>Scope</code>
 object is the first argument to operation constructors, and operations that use
@@ -4165,7 +4165,7 @@ as a common name prefix. Multiple <code>Scope</code>s can refer to the same grap
 explained further below.</p>
 <p>Create a new <code>Scope</code> object by calling <code>Scope::NewRootScope</code>. This creates
 some resources such as a graph to which operations are added. It also creates a
-<a href="../../api_docs/cc/class/tensorflow/status.md"><code>tensorflow::Status</code></a> object which will be used to indicate errors encountered
+<a href="../../api_docs/cc/class/tensorflow/status.html"><code>tensorflow::Status</code></a> object which will be used to indicate errors encountered
 when constructing operations. The <code>Scope</code> class has value semantics, thus, a
 <code>Scope</code> object can be freely copied and passed around.</p>
 <p>The <code>Scope</code> object returned by <code>Scope::NewRootScope</code> is referred
@@ -4182,7 +4182,7 @@ appends <code>name</code> to the prefix of names for operations created using th
 <li>Device placement for an operation</li>
 <li>Kernel attribute for an operation</li>
 </ul>
-<p>Please refer to <a href="../../api_docs/cc/class/tensorflow/scope.md"><code>tensorflow::Scope</code></a> for the complete list of member functions
+<p>Please refer to <a href="../../api_docs/cc/class/tensorflow/scope.html"><code>tensorflow::Scope</code></a> for the complete list of member functions
 that let you create child scopes with new properties.</p>
 <h3>Operation Constructors</h3>
 <p>You can create graph operations with operation constructors, one C++ class per
@@ -4256,7 +4256,7 @@ auto c = Concat(scope, s, 0);
 <h3>Constants</h3>
 <p>You may pass many different types of C++ values directly to tensor
 constants. You may explicitly create a tensor constant by calling the
-<a href="../../api_docs/cc/namespace/tensorflow/ops.md#const"><code>tensorflow::ops::Const</code></a> function from various kinds of C++ values. For
+<a href="../../api_docs/cc/namespace/tensorflow/ops.html#const"><code>tensorflow::ops::Const</code></a> function from various kinds of C++ values. For
 example:</p>
 <ul>
 <li>Scalars</li>
@@ -4292,7 +4292,7 @@ auto y = Add(scope, {1, 2, 3, 4}, 10);
 </code></pre>
 <h2>Graph Execution</h2>
 <p>When executing a graph, you will need a session. The C++ API provides a
-<a href="../../api_docs/cc/class/tensorflow/client-session.md"><code>tensorflow::ClientSession</code></a> class that will execute ops created by the
+<a href="../../api_docs/cc/class/tensorflow/client-session.html"><code>tensorflow::ClientSession</code></a> class that will execute ops created by the
 operation constructors. TensorFlow will automatically determine which parts of
 the graph need to be executed, and what values need feeding. For example:</p>
 <pre><code class="language-c++">Scope root = Scope::NewRootScope();
@@ -4320,7 +4320,7 @@ std::vector&lt;Tensor&gt; outputs;
 session.Run({ {a, { {1, 2}, {3, 4} } } }, {c}, &amp;outputs);
 // outputs[0] == [4 5; 6 7]
 </code></pre>
-<p>Please see the <a href="../../api_docs/cc/class/tensorflow/tensor.md"><code>tensorflow::Tensor</code></a> documentation for more information on how
+<p>Please see the <a href="../../api_docs/cc/class/tensorflow/tensor.html"><code>tensorflow::Tensor</code></a> documentation for more information on how
 to use the execution output.</p>
 
     </article>

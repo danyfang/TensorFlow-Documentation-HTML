@@ -4153,8 +4153,8 @@
 <h2>Class <code>Variable</code></h2>
 <p>Inherits From: <a href="../tf/contrib/checkpoint/CheckpointableBase.html"><code>CheckpointableBase</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/variables.py"><code>tensorflow/python/ops/variables.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/state_ops.md#Variables">Variables &gt; Variables</a></p>
-<p>See the <a href="../../../guide/variables.md">Variables How To</a> for a high level overview.</p>
+<p>See the guide: <a href="../../../api_guides/python/state_ops.html#Variables">Variables &gt; Variables</a></p>
+<p>See the <a href="../../../guide/variables.html">Variables How To</a> for a high level overview.</p>
 <p>A variable maintains state in the graph across calls to <code>run()</code>. You add a
 variable to the graph by constructing an instance of the class <code>Variable</code>.</p>
 <p>The <code>Variable()</code> constructor requires an initial value for the variable,
@@ -4229,7 +4229,7 @@ alias other Tensors in a graph. The set of operations which consume a Variable
 and can lead to aliasing is undetermined and can change across TensorFlow
 versions. Avoid writing code which relies on the value of a Variable either
 changing or not changing as other operations happen. For example, using
-Variable objects or simple functions thereof as predicates in a <a href="../tf/cond.md"><code>tf.cond</code></a> is
+Variable objects or simple functions thereof as predicates in a <a href="../tf/cond.html"><code>tf.cond</code></a> is
 dangerous and error-prone:</p>
 <pre><code>v = tf.Variable(True)
 tf.cond(v, lambda: v.assign(False), my_false_fn)  # Note: this is broken.
@@ -4239,14 +4239,14 @@ nondeterminism issues.</p>
 <p>To use the replacement for variables which does
 not have these issues:</p>
 <ul>
-<li>Replace <a href="../tf/Variable.md"><code>tf.Variable</code></a> with <a href="../tf/contrib/eager/Variable.md"><code>tf.contrib.eager.Variable</code></a>;</li>
+<li>Replace <a href="../tf/Variable.html"><code>tf.Variable</code></a> with <a href="../tf/contrib/eager/Variable.html"><code>tf.contrib.eager.Variable</code></a>;</li>
 <li>Call <code>tf.get_variable_scope().set_use_resource(True)</code> inside a
-<a href="../tf/variable_scope.md"><code>tf.variable_scope</code></a> before the <code>tf.get_variable()</code> call.</li>
+<a href="../tf/variable_scope.html"><code>tf.variable_scope</code></a> before the <code>tf.get_variable()</code> call.</li>
 </ul>
 <h4>Eager Compatibility</h4>
-<p><a href="../tf/Variable.md"><code>tf.Variable</code></a> is not compatible with eager execution.  Use
-<a href="../tf/contrib/eager/Variable.md"><code>tf.contrib.eager.Variable</code></a> instead which is compatible with both eager
-execution and graph construction.  See <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/eager/python/g3doc/guide.md#variables-and-optimizers">the TensorFlow Eager Execution
+<p><a href="../tf/Variable.html"><code>tf.Variable</code></a> is not compatible with eager execution.  Use
+<a href="../tf/contrib/eager/Variable.html"><code>tf.contrib.eager.Variable</code></a> instead which is compatible with both eager
+execution and graph construction.  See <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/eager/python/g3doc/guide.html#variables-and-optimizers">the TensorFlow Eager Execution
 guide</a>
 for details on how variables work in eager execution.</p>
 <h2>Child Classes</h2>
@@ -4355,9 +4355,9 @@ shape and <code>validate_shape</code> is <code>True</code>.</li>
 <li><b><code>RuntimeError</code></b>: If eager execution is enabled.</li>
 </ul>
 <h4>Eager Compatibility</h4>
-<p><a href="../tf/Variable.md"><code>tf.Variable</code></a> is not compatible with eager execution.  Use
+<p><a href="../tf/Variable.html"><code>tf.Variable</code></a> is not compatible with eager execution.  Use
 <code>tfe.Variable</code> instead which is compatible with both eager execution
-and graph construction.  See <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/eager/python/g3doc/guide.md#variables-and-optimizers">the TensorFlow Eager Execution
+and graph construction.  See <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/eager/python/g3doc/guide.html#variables-and-optimizers">the TensorFlow Eager Execution
 guide</a>
 for details on how variables work in eager execution.</p>
 <h3 id="__abs__"><code>__abs__</code></h3>
@@ -4487,7 +4487,7 @@ as well.</p>
 </code></pre>
 <p>Creates a slice helper object given a variable.</p>
 <p>This allows creating a sub-tensor from part of the current contents
-of a variable. See <a href="../tf/Tensor.md#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> for detailed examples
+of a variable. See <a href="../tf/Tensor.html#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> for detailed examples
 of slicing.</p>
 <p>This function in addition also allows assignment to a sliced range.
 This is similar to <code>__setitem__</code> functionality in Python. However,
@@ -5169,7 +5169,7 @@ distinct.</p>
 <p>This is not a graph construction method, it does not add ops to the graph.</p>
 <p>This convenience method requires a session where the graph
 containing this variable has been launched. If no session is
-passed, the default session is used.  See <a href="../tf/Session.md"><code>tf.Session</code></a> for more
+passed, the default session is used.  See <a href="../tf/Session.html"><code>tf.Session</code></a> for more
 information on launching a graph and on sessions.</p>
 <pre><code class="language-python">v = tf.Variable([1, 2])
 init = tf.global_variables_initializer()
@@ -5227,7 +5227,7 @@ has run.</p>
 <p>Writes new value to variable’s memory. Doesn’t add ops to the graph.</p>
 <p>This convenience method requires a session where the graph
 containing this variable has been launched. If no session is
-passed, the default session is used.  See <a href="../tf/Session.md"><code>tf.Session</code></a> for more
+passed, the default session is used.  See <a href="../tf/Session.html"><code>tf.Session</code></a> for more
 information on launching a graph and on sessions.</p>
 <pre><code class="language-python">v = tf.Variable([1, 2])
 init = tf.global_variables_initializer()

@@ -4094,7 +4094,7 @@ accelerators.</p>
 algebra that optimizes TensorFlow computations. The results are improvements in
 speed, memory usage, and portability on server and mobile platforms. Initially,
 most users will not see large benefits from XLA, but are welcome to experiment
-by using XLA via <a href="../../performance/xla/jit.md">just-in-time (JIT) compilation</a> or <a href="../../performance/xla/tfcompile.md">ahead-of-time (AOT) compilation</a>. Developers targeting new hardware accelerators are
+by using XLA via <a href="../../performance/xla/jit.html">just-in-time (JIT) compilation</a> or <a href="../../performance/xla/tfcompile.html">ahead-of-time (AOT) compilation</a>. Developers targeting new hardware accelerators are
 especially encouraged to try out XLA.</p>
 <p>The XLA framework is experimental and in active development. In particular,
 while it is unlikely that the semantics of existing operations will change, it
@@ -4136,12 +4136,12 @@ TensorFlow programs to be rewritten to make use of those Ops.</p>
 <h2>How does XLA work?</h2>
 <p>The input language to XLA is called “HLO IR”, or just HLO (High Level
 Optimizer). The semantics of HLO are described on the
-<a href="../../performance/xla/operation_semantics.md">Operation Semantics</a> page. It
+<a href="../../performance/xla/operation_semantics.html">Operation Semantics</a> page. It
 is most convenient to think of HLO as a <a href="https://en.wikipedia.org/wiki/Intermediate_representation">compiler
 IR</a>.</p>
 <p>XLA takes graphs (“computations”) defined in HLO and compiles them into machine
 instructions for various architectures. XLA is modular in the sense that it is
-easy to slot in an alternative backend to <a href="../../performance/xla/developing_new_backend.md">target some novel HW architecture</a>. The CPU backend for x64 and ARM64 as
+easy to slot in an alternative backend to <a href="../../performance/xla/developing_new_backend.html">target some novel HW architecture</a>. The CPU backend for x64 and ARM64 as
 well as the NVIDIA GPU backend are in the TensorFlow source tree.</p>
 <p>The following diagram shows the compilation process in XLA:</p>
 <div style="width:95%; margin:auto; margin-bottom:10px; margin-top:20px;">
@@ -4167,8 +4167,8 @@ code from this LLVM IR.</p>
 <p>The GPU backend currently supports NVIDIA GPUs via the LLVM NVPTX backend; the
 CPU backend supports multiple CPU ISAs.</p>
 <h2>Supported Platforms</h2>
-<p>XLA currently supports <a href="../../performance/xla/jit.md">JIT compilation</a> on x86-64 and NVIDIA GPUs; and
-<a href="../../performance/xla/tfcompile.md">AOT compilation</a> for x86-64 and ARM.</p>
+<p>XLA currently supports <a href="../../performance/xla/jit.html">JIT compilation</a> on x86-64 and NVIDIA GPUs; and
+<a href="../../performance/xla/tfcompile.html">AOT compilation</a> for x86-64 and ARM.</p>
 
     </article>
   </div>

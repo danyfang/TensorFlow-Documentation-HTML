@@ -4114,14 +4114,14 @@ worker_sessions[0].run(...)
 <li><b><code>num_workers</code></b>: Number of worker servers to start.</li>
 <li><b><code>num_ps</code></b>: Number of PS servers to start.</li>
 <li><b><code>protocol</code></b>: Communication protocol.  Allowed values are documented in
-the documentation of <a href="../../tf/train/Server.md"><code>tf.train.Server</code></a>.</li>
+the documentation of <a href="../../tf/train/Server.html"><code>tf.train.Server</code></a>.</li>
 <li><b><code>worker_config</code></b>: (optional) ConfigProto to initialize workers. Can be used
 to instantiate multiple devices etc.</li>
 <li><b><code>ps_config</code></b>: (optional) ConfigProto to initialize PS servers.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A tuple <code>(worker_servers, ps_servers)</code>.  <code>worker_servers</code> is a list
-of <code>num_workers</code> objects of type <a href="../../tf/train/Server.md"><code>tf.train.Server</code></a> (all running locally);
+of <code>num_workers</code> objects of type <a href="../../tf/train/Server.html"><code>tf.train.Server</code></a> (all running locally);
 and <code>ps_servers</code> is a list of <code>num_ps</code> objects of similar type.</p>
 <h4>Raises:</h4>
 <ul>

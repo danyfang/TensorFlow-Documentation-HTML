@@ -4086,10 +4086,10 @@
 <pre><code class="language-python">tf.contrib.data.get_single_element(dataset)
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/get_single_element.py"><code>tensorflow/contrib/data/python/ops/get_single_element.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Extra_functions_from_tf_contrib_data_">Dataset Input Pipeline &gt; Extra functions from <code>tf.contrib.data</code></a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Extra_functions_from_tf_contrib_data_">Dataset Input Pipeline &gt; Extra functions from <code>tf.contrib.data</code></a></p>
 <p>Returns the single element in <code>dataset</code> as a nested structure of tensors.</p>
-<p>This function enables you to use a <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> in a stateless
-“tensor-in tensor-out” expression, without creating a <a href="../../../tf/data/Iterator.md"><code>tf.data.Iterator</code></a>.
+<p>This function enables you to use a <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> in a stateless
+“tensor-in tensor-out” expression, without creating a <a href="../../../tf/data/Iterator.html"><code>tf.data.Iterator</code></a>.
 This can be useful when your preprocessing transformations are expressed
 as a <code>Dataset</code>, and you want to use the transformation at serving time.
 For example:</p>
@@ -4107,14 +4107,14 @@ image_batch, label_batch = tf.contrib.data.get_single_element(dataset)
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>dataset</code></b>: A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> object containing a single element.</li>
+<li><b><code>dataset</code></b>: A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> object containing a single element.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A nested structure of <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> objects, corresponding to the single
+<p>A nested structure of <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> objects, corresponding to the single
 element of <code>dataset</code>.</p>
 <h4>Raises:</h4>
 <ul>
-<li><b><code>TypeError</code></b>: if <code>dataset</code> is not a <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> object.
+<li><b><code>TypeError</code></b>: if <code>dataset</code> is not a <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> object.
 InvalidArgumentError (at runtime): if <code>dataset</code> does not contain exactly
 one element.</li>
 </ul>

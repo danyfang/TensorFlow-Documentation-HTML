@@ -4128,7 +4128,7 @@ For example, the sentence “I have a cat.” could be split into
 <code>[“I”, “have”, “a”, “cat”, “.”]</code> and then the corresponding <code>word_ids</code> tensor
 would have shape <code>[5]</code> and consist of 5 integers. To map these word ids
 to vectors, we need to create the embedding variable and use the
-<a href="../api_docs/python/tf/nn/embedding_lookup.md"><code>tf.nn.embedding_lookup</code></a> function as follows:</p>
+<a href="../api_docs/python/tf/nn/embedding_lookup.html"><code>tf.nn.embedding_lookup</code></a> function as follows:</p>
 <pre><code>word_embeddings = tf.get_variable(“word_embeddings”,
     [vocabulary_size, embedding_size])
 embedded_word_ids = tf.nn.embedding_lookup(word_embeddings, word_ids)
@@ -4141,7 +4141,7 @@ for all words in the vocabulary.</p>
 functions and data sets. For example, one could use a recurrent neural network
 to predict the next word from the previous one given a large corpus of
 sentences, or one could train two networks to do multi-lingual translation.
-These methods are described in the <a href="../tutorials/representation/word2vec.md">Vector Representations of Words</a>
+These methods are described in the <a href="../tutorials/representation/word2vec.html">Vector Representations of Words</a>
 tutorial.</p>
 <h2>Visualizing Embeddings</h2>
 <p>TensorBoard includes the <strong>Embedding Projector</strong>, a tool that lets you

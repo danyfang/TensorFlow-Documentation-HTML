@@ -4095,17 +4095,17 @@
 <h1>tf.train.SingularMonitoredSession</h1>
 <h2>Class <code>SingularMonitoredSession</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/monitored_session.py"><code>tensorflow/python/training/monitored_session.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Session-like object that handles initialization, restoring, and hooks.</p>
 <p>Please note that this utility is not recommended for distributed settings.
-For distributed settings, please use <a href="../../tf/train/MonitoredSession.md"><code>tf.train.MonitoredSession</code></a>. The
+For distributed settings, please use <a href="../../tf/train/MonitoredSession.html"><code>tf.train.MonitoredSession</code></a>. The
 differences between <code>MonitoredSession</code> and <code>SingularMonitoredSession</code> are:</p>
 <ul>
 <li><code>MonitoredSession</code> handles <code>AbortedError</code> and <code>UnavailableError</code> for
 distributed settings, but <code>SingularMonitoredSession</code> does not.</li>
 <li><code>MonitoredSession</code> can be created in <code>chief</code> or <code>worker</code> modes.
 <code>SingularMonitoredSession</code> is always created as <code>chief</code>.</li>
-<li>You can access the raw <a href="../../tf/Session.md"><code>tf.Session</code></a> object used by
+<li>You can access the raw <a href="../../tf/Session.html"><code>tf.Session</code></a> object used by
 <code>SingularMonitoredSession</code>, whereas in MonitoredSession the raw session is
 private. This can be used:
 <ul>

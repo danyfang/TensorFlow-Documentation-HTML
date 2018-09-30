@@ -4115,9 +4115,9 @@ by an invertible transformation with tractable Jacobian.”
 decomposition, <code>p(x) = prod{ p(x[i] | x[0:i]) : i=0, ..., d }</code>. The provided
 <code>shift_and_log_scale_fn</code>, <code>masked_autoregressive_default_template</code>, achieves
 this property by zeroing out weights in its <code>masked_dense</code> layers.</p>
-<p>In the <a href="../../../../tf/distributions.md"><code>tf.distributions</code></a> framework, a “normalizing flow” is implemented as a
-<a href="../../../../tf/contrib/distributions/bijectors/Bijector.md"><code>tf.contrib.distributions.bijectors.Bijector</code></a>. The <code>forward</code> “autoregression”
-is implemented using a <a href="../../../../tf/while_loop.md"><code>tf.while_loop</code></a> and a deep neural network (DNN) with
+<p>In the <a href="../../../../tf/distributions.html"><code>tf.distributions</code></a> framework, a “normalizing flow” is implemented as a
+<a href="../../../../tf/contrib/distributions/bijectors/Bijector.html"><code>tf.contrib.distributions.bijectors.Bijector</code></a>. The <code>forward</code> “autoregression”
+is implemented using a <a href="../../../../tf/while_loop.html"><code>tf.while_loop</code></a> and a deep neural network (DNN) with
 masked weights such that the autoregressive property is automatically met in
 the <code>inverse</code>.</p>
 <p>A <code>TransformedDistribution</code> using <code>MaskedAutoregressiveFlow(...)</code> uses the
@@ -4141,7 +4141,7 @@ neural network. Weights are masked to ensure the autoregressive property. It
 is possible that this architecture is suboptimal for your task. To build
 alternative networks, either change the arguments to
 <code>masked_autoregressive_default_template</code>, use the <code>masked_dense</code> function to
-roll-out your own, or use some other architecture, e.g., using <a href="../../../../tf/layers.md"><code>tf.layers</code></a>.</p>
+roll-out your own, or use some other architecture, e.g., using <a href="../../../../tf/layers.html"><code>tf.layers</code></a>.</p>
 <p>Warning: no attempt is made to validate that the <code>shift_and_log_scale_fn</code>
 enforces the “autoregressive property”.</p>
 <p>Assuming <code>shift_and_log_scale_fn</code> has valid shape and autoregressive
@@ -4180,9 +4180,9 @@ maf = tfd.TransformedDistribution(
             hidden_layers=[512, 512])),
     event_shape=[dims])
 
-x = maf.sample()  # Expensive; uses &lt;a href=&quot;../../../../tf/while_loop.md&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt;, no Bijector caching.
+x = maf.sample()  # Expensive; uses &lt;a href=&quot;../../../../tf/while_loop.html&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt;, no Bijector caching.
 maf.log_prob(x)   # Almost free; uses Bijector caching.
-maf.log_prob(0.)  # Cheap; no &lt;a href=&quot;../../../../tf/while_loop.md&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt; despite no Bijector caching.
+maf.log_prob(0.)  # Cheap; no &lt;a href=&quot;../../../../tf/while_loop.html&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt; despite no Bijector caching.
 
 # [Papamakarios et al. (2016)][3] also describe an Inverse Autoregressive
 # Flow [(Kingma et al., 2016)][2]:
@@ -4193,9 +4193,9 @@ iaf = tfd.TransformedDistribution(
             hidden_layers=[512, 512]))),
     event_shape=[dims])
 
-x = iaf.sample()  # Cheap; no &lt;a href=&quot;../../../../tf/while_loop.md&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt; despite no Bijector caching.
+x = iaf.sample()  # Cheap; no &lt;a href=&quot;../../../../tf/while_loop.html&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt; despite no Bijector caching.
 iaf.log_prob(x)   # Almost free; uses Bijector caching.
-iaf.log_prob(0.)  # Expensive; uses &lt;a href=&quot;../../../../tf/while_loop.md&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt;, no Bijector caching.
+iaf.log_prob(0.)  # Expensive; uses &lt;a href=&quot;../../../../tf/while_loop.html&quot;&gt;&lt;code&gt;tf.while_loop&lt;/code&gt;&lt;/a&gt;, no Bijector caching.
 
 # In many (if not most) cases the default `shift_and_log_scale_fn` will be a
 # poor choice. Here's an example of using a &quot;shift only&quot; version and with a
@@ -4255,7 +4255,7 @@ neither.</p>
 <p>Creates the MaskedAutoregressiveFlow bijector. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>shift_and_log_scale_fn</code></b>: Python <code>callable</code> which computes <code>shift</code> and
@@ -4264,7 +4264,7 @@ The TensorFlow Distributions library has moved to TensorFlow Probability (<a hre
 docstring). Suggested default
 <code>masked_autoregressive_default_template(hidden_layers=...)</code>.
 Typically the function contains <code>tf.Variables</code> and is wrapped using
-<a href="../../../../tf/make_template.md"><code>tf.make_template</code></a>. Returning <code>None</code> for either (both) <code>shift</code>,
+<a href="../../../../tf/make_template.html"><code>tf.make_template</code></a>. Returning <code>None</code> for either (both) <code>shift</code>,
 <code>log_scale</code> is equivalent to (but more efficient than) returning zero.</li>
 <li><b><code>is_constant_jacobian</code></b>: Python <code>bool</code>. Default: <code>False</code>. When <code>True</code> the
 implementation assumes <code>log_scale</code> does not depend on the forward domain
@@ -4273,7 +4273,7 @@ implementation assumes <code>log_scale</code> does not depend on the forward dom
 inefficient.)</li>
 <li><b><code>validate_args</code></b>: Python <code>bool</code> indicating whether arguments should be
 checked for correctness.</li>
-<li><b><code>unroll_loop</code></b>: Python <code>bool</code> indicating whether the <a href="../../../../tf/while_loop.md"><code>tf.while_loop</code></a> in
+<li><b><code>unroll_loop</code></b>: Python <code>bool</code> indicating whether the <a href="../../../../tf/while_loop.html"><code>tf.while_loop</code></a> in
 <code>_forward</code> should be replaced with a static for loop. Requires that
 the final dimension of <code>x</code> be known at graph construction time. Defaults
 to <code>False</code>.</li>

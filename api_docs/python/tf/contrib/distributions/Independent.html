@@ -4227,7 +4227,7 @@ or <code>distributions.NOT_REPARAMETERIZED</code>.</p>
 <p>Construct a <code>Independent</code> distribution. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>distribution</code></b>: The base distribution instance to transform. Typically an
@@ -4235,7 +4235,7 @@ instance of <code>Distribution</code>.</li>
 <li><b><code>reinterpreted_batch_ndims</code></b>: Scalar, integer number of rightmost batch dims
 which will be regarded as event dims. When <code>None</code> all but the first
 batch axis (batch axis 0) will be transferred to event dimensions
-(analogous to <a href="../../../tf/layers/flatten.md"><code>tf.layers.flatten</code></a>).</li>
+(analogous to <a href="../../../tf/layers/flatten.html"><code>tf.layers.flatten</code></a>).</li>
 <li><b><code>validate_args</code></b>: Python <code>bool</code>.  Whether to validate input with asserts.
 If <code>validate_args</code> is <code>False</code>, and the inputs are invalid,
 correct behavior is not guaranteed.</li>
@@ -4344,7 +4344,7 @@ cross entropy is defined as:</p>
 <p>where <code>F</code> denotes the support of the random variable <code>X ~ P</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4410,7 +4410,7 @@ measure <code>r</code>, the KL divergence is defined as:</p>
 denotes (Shanon) cross entropy, and <code>H[.]</code> denotes (Shanon) entropy.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>

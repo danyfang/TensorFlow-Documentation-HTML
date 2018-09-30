@@ -4089,7 +4089,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/estimator/python/estimator/extenders.py"><code>tensorflow/contrib/estimator/python/estimator/extenders.py</code></a>.</p>
-<p>Creates a new <a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> which has given metrics.</p>
+<p>Creates a new <a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> which has given metrics.</p>
 <p>Example:</p>
 <pre><code class="language-python">  def my_auc(labels, predictions):
     return {'auc': tf.metrics.auc(labels, predictions['logistic'])}
@@ -4111,7 +4111,7 @@
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>estimator</code></b>: A <a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> object.</li>
+<li><b><code>estimator</code></b>: A <a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> object.</li>
 <li><b><code>metric_fn</code></b>: A function which should obey the following signature:
 <ul>
 <li>Args: can only have following four arguments in any order:
@@ -4135,7 +4135,7 @@ function, namely a <code>(metric_tensor, update_op)</code> tuple.</li>
 </li>
 </ul>
 <h4>Returns:</h4>
-<p>A new <a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> which has a union of original metrics with
+<p>A new <a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> which has a union of original metrics with
 given ones.</p>
 
     </article>

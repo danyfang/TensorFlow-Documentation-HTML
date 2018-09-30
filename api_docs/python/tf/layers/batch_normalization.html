@@ -4111,14 +4111,14 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/layers/normalization.py"><code>tensorflow/python/layers/normalization.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/reading_data.md#Multiple_input_pipelines">Reading data &gt; Multiple input pipelines</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/reading_data.html#Multiple_input_pipelines">Reading data &gt; Multiple input pipelines</a></p>
 <p>Functional interface for the batch normalization layer.</p>
 <p>Reference: <a href="http://arxiv.org/abs/1502.03167">http://arxiv.org/abs/1502.03167</a></p>
 <p>“Batch Normalization: Accelerating Deep Network Training by Reducing
 Internal Covariate Shift”</p>
 <p>Sergey Ioffe, Christian Szegedy</p>
 <p>Note: when training, the moving_mean and moving_variance need to be updated.
-By default the update ops are placed in <a href="../../tf/GraphKeys.md#UPDATE_OPS"><code>tf.GraphKeys.UPDATE_OPS</code></a>, so they
+By default the update ops are placed in <a href="../../tf/GraphKeys.html#UPDATE_OPS"><code>tf.GraphKeys.UPDATE_OPS</code></a>, so they
 need to be added as a dependency to the <code>train_op</code>. Also, be sure to add
 any batch_normalization ops before getting the update_ops collection.
 Otherwise, update_ops will be empty, and training/inference will not work

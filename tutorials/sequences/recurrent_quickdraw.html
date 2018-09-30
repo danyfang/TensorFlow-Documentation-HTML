@@ -4103,7 +4103,7 @@ drawings in 345 categories.</p>
 <p>To try the code for this tutorial:</p>
 <ol>
 <li>
-<p><a href="../../install/index.md">Install TensorFlow</a> if you haven’t already.</p>
+<p><a href="../../install/index.html">Install TensorFlow</a> if you haven’t already.</p>
 </li>
 <li>
 <p>Download the [tutorial code]
@@ -4164,14 +4164,14 @@ gsutil -m cp &quot;gs://quickdraw_dataset/full/simplified/*&quot; .
 <p>This download will take a while and download a bit more than 23GB of data.</p>
 <h3>Optional: Converting the data</h3>
 <p>To convert the <code>ndjson</code> files to
-<a href="../../api_guides/python/python_io.md#TFRecords_Format_Details">TFRecord</a> files containing
-<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><a href="../../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a></a>
+<a href="../../api_guides/python/python_io.html#TFRecords_Format_Details">TFRecord</a> files containing
+<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><a href="../../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a></a>
 protos run the following command.</p>
 <pre><code class="language-shell">   python create_dataset.py --ndjson_path rnn_tutorial_data \
       --output_path rnn_tutorial_data
 </code></pre>
 <p>This will store the data in 10 shards of
-<a href="../../api_guides/python/python_io.md#TFRecords_Format_Details">TFRecord</a> files with 10000 items
+<a href="../../api_guides/python/python_io.html#TFRecords_Format_Details">TFRecord</a> files with 10000 items
 per class for the training data and 1000 items per class as eval data.</p>
 <p>This conversion process is described in more detail in the following.</p>
 <p>The original QuickDraw data is formatted as <code>ndjson</code> files where each line
@@ -4258,7 +4258,7 @@ under the key <code>ink</code>. In addition we store the <code>class_index</code
 length 2.</p>
 <h3>Defining the model</h3>
 <p>To define the model we create a new <code>Estimator</code>. If you want to read more about
-estimators, we recommend <a href="../../guide/custom_estimators.md">this tutorial</a>.</p>
+estimators, we recommend <a href="../../guide/custom_estimators.html">this tutorial</a>.</p>
 <p>To build the model, we:</p>
 <ol>
 <li>

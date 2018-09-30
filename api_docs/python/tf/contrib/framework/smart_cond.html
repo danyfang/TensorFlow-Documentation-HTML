@@ -4093,14 +4093,14 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/smart_cond.py"><code>tensorflow/python/framework/smart_cond.py</code></a>.</p>
 <p>Return either <code>true_fn()</code> if predicate <code>pred</code> is true else <code>false_fn()</code>.</p>
 <p>If <code>pred</code> is a bool or has a constant value, we return either <code>true_fn()</code>
-or <code>false_fn()</code>, otherwise we use <a href="../../../tf/cond.md"><code>tf.cond</code></a> to dynamically route to both.</p>
+or <code>false_fn()</code>, otherwise we use <a href="../../../tf/cond.html"><code>tf.cond</code></a> to dynamically route to both.</p>
 <h4>Arguments:</h4>
 <ul>
 <li><b><code>pred</code></b>: A scalar determining whether to return the result of <code>true_fn</code> or
 <code>false_fn</code>.</li>
 <li><b><code>true_fn</code></b>: The callable to be performed if pred is true.</li>
 <li><b><code>false_fn</code></b>: The callable to be performed if pred is false.</li>
-<li><b><code>name</code></b>: Optional name prefix when using <a href="../../../tf/cond.md"><code>tf.cond</code></a>.</li>
+<li><b><code>name</code></b>: Optional name prefix when using <a href="../../../tf/cond.html"><code>tf.cond</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
 <p>Tensors returned by the call to either <code>true_fn</code> or <code>false_fn</code>.</p>

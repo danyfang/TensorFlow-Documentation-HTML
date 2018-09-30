@@ -4171,7 +4171,7 @@ common set of variable checkpoints. For example, you might need a GPU and a
 CPU version of the same graph, but keep the same weights for both. You might
 also need some extra files (like label names) as part of your
 model. The
-<a href="https://www.tensorflow.org/code/tensorflow/python/saved_model/README.md">SavedModel</a> format
+<a href="https://www.tensorflow.org/code/tensorflow/python/saved_model/README.html">SavedModel</a> format
 addresses these needs by letting you save multiple versions of the same graph
 without duplicating variables, and also storing asset files in the same
 bundle. Under the hood, it uses <code>MetaGraphDef</code> and checkpoint files, along
@@ -4213,14 +4213,14 @@ your graph is going to be used, these should just be the names of the nodes you
 pass into <code>Session::Run()</code> as your fetch targets. The easiest way to find the
 node names is to inspect the Node objects while building your graph in python.
 Inspecting your graph in TensorBoard is another simple way.  You can get some
-suggestions on likely outputs by running the <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/graph_transforms/README.md#inspecting-graphs"><code>summarize_graph</code> tool</a>.</p>
+suggestions on likely outputs by running the <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/graph_transforms/README.html#inspecting-graphs"><code>summarize_graph</code> tool</a>.</p>
 <p>Because the output format for TensorFlow has changed over time, there are a
 variety of other less commonly used flags available too, like <code>input_saver</code>, but
 hopefully you shouldn’t need these on graphs trained with modern versions of the
 framework.</p>
 <h2>Using the Graph Transform Tool</h2>
 <p>A lot of the things you need to do to efficiently run a model on device are
-available through the <a href="https://www.tensorflow.org/code/tensorflow/tools/graph_transforms/README.md">Graph Transform
+available through the <a href="https://www.tensorflow.org/code/tensorflow/tools/graph_transforms/README.html">Graph Transform
 Tool</a>. This
 command-line tool takes an input <code>GraphDef</code> file, applies the set of rewriting
 rules you request, and then writes out the result as a <code>GraphDef</code>. See the
@@ -4322,7 +4322,7 @@ graphs.</p>
 <p>These ops are trimmed by default to optimize for inference on mobile, but it is
 possible to alter some build files to change the default.  After alternating the
 build files, you will need to recompile TensorFlow.  See below for more details
-on how to do this, and also see <a href="../mobile/optimizing.md#binary_size">Optimizing</a> for
+on how to do this, and also see <a href="../mobile/optimizing.html#binary_size">Optimizing</a> for
 more on reducing your binary size.</p>
 <h3>Locate the implementation</h3>
 <p>Operations are broken into two parts. The first is the op definition, which

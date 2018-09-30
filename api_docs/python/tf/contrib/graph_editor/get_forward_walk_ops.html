@@ -4093,7 +4093,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/graph_editor/select.py"><code>tensorflow/contrib/graph_editor/select.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.md#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.html#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
 <p>Do a forward graph walk and return all the visited ops.</p>
 <h4>Args:</h4>
 <ul>
@@ -4101,7 +4101,7 @@
 walk starts. If a list of tensors is given instead, the seed_ops are set
 to be the consumers of those tensors.</li>
 <li><b><code>inclusive</code></b>: if True the given seed_ops are also part of the resulting set.</li>
-<li><b><code>within_ops</code></b>: an iterable of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> within which the search is
+<li><b><code>within_ops</code></b>: an iterable of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> within which the search is
 restricted. If <code>within_ops</code> is <code>None</code>, the search is performed within
 the whole graph.</li>
 <li><b><code>within_ops_fn</code></b>: if provided, a function on ops that should return True iff
@@ -4112,11 +4112,11 @@ in which case an op is within if it is also in within_ops.</li>
 If not <code>None</code>, it will be used while walking the graph forward.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A Python set of all the <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> ahead of <code>seed_ops</code>.</p>
+<p>A Python set of all the <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> ahead of <code>seed_ops</code>.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>TypeError</code></b>: if <code>seed_ops</code> or <code>within_ops</code> cannot be converted to a list of
-<a href="../../../tf/Operation.md"><code>tf.Operation</code></a>.</li>
+<a href="../../../tf/Operation.html"><code>tf.Operation</code></a>.</li>
 </ul>
 
     </article>

@@ -4087,9 +4087,9 @@ and network topologies. The techniques in this document utilize some low-level
 TensorFlow Python primitives. In the future, many of these techniques will be
 incorporated into high-level APIs.</p>
 <h2>Input Pipeline</h2>
-<p>The <a href="../performance/performance_guide.md">Performance Guide</a> explains how to identify possible
-input pipeline issues and best practices. We found that using <a href="../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a>
-and <a href="../api_docs/python/tf/train/queue_runner.md"><code>tf.train.queue_runner</code></a> could not saturate multiple current generation GPUs
+<p>The <a href="../performance/performance_guide.html">Performance Guide</a> explains how to identify possible
+input pipeline issues and best practices. We found that using <a href="../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a>
+and <a href="../api_docs/python/tf/train/queue_runner.html"><code>tf.train.queue_runner</code></a> could not saturate multiple current generation GPUs
 when using large inputs and processing with higher samples per second, such
 as training ImageNet with <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">AlexNet</a>.
 This is due to the use of Python threads as its underlying implementation. The
@@ -4106,7 +4106,7 @@ into mini-batches.</li>
 </ul>
 <p>The dominant part of each stage is executed in parallel with the other stages
 using <code>data_flow_ops.StagingArea</code>. <code>StagingArea</code> is a queue-like operator
-similar to <a href="../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a>. The difference is that <code>StagingArea</code>  does not
+similar to <a href="../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a>. The difference is that <code>StagingArea</code>  does not
 guarantee FIFO ordering, but offers simpler functionality and can be executed
 on both CPU and GPU in parallel with other stages. Breaking the input pipeline
 into 3 stages that operate independently in parallel is scalable and takes full
@@ -4132,10 +4132,10 @@ an identical set of ops for image preprocessing that are considered independent
 and executed in parallel. The image preprocessing ops include operations such as
 image decoding, distortion, and resizing.</p>
 <p>Once the images are through preprocessing, they are concatenated together into 8
-tensors each with a batch-size of 32. Rather than using <a href="../api_docs/python/tf/concat.md"><code>tf.concat</code></a> for this
+tensors each with a batch-size of 32. Rather than using <a href="../api_docs/python/tf/concat.html"><code>tf.concat</code></a> for this
 purpose, which is implemented as a single op that waits for all the inputs to be
-ready before concatenating them together, <a href="../api_docs/python/tf/parallel_stack.md"><code>tf.parallel_stack</code></a> is used.
-<a href="../api_docs/python/tf/parallel_stack.md"><code>tf.parallel_stack</code></a> allocates an uninitialized tensor as an output, and each
+ready before concatenating them together, <a href="../api_docs/python/tf/parallel_stack.html"><code>tf.parallel_stack</code></a> is used.
+<a href="../api_docs/python/tf/parallel_stack.html"><code>tf.parallel_stack</code></a> allocates an uninitialized tensor as an output, and each
 input tensor is written to its designated portion of the output tensor as soon
 as the input is available.</p>
 <p>When all the input tensors are finished, the output tensor is passed along in
@@ -4157,7 +4157,7 @@ the GPU, all the tensors are already available.</p>
 <h3>Software Pipelining</h3>
 <p>With all the stages capable of being driven by different processors,
 <code>data_flow_ops.StagingArea</code> is used between them so they run in parallel.
-<code>StagingArea</code> is a queue-like operator similar to <a href="../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a> that offers
+<code>StagingArea</code> is a queue-like operator similar to <a href="../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a> that offers
 simpler functionalities that can be executed on both CPU and GPU.</p>
 <p>Before the model starts running all the stages, the input pipeline stages are
 warmed up to prime the staging buffers in between with one set of data.
@@ -4204,7 +4204,7 @@ weights obtained from training.</p>
 <p>The default batch-normalization in TensorFlow is implemented as composite
 operations. This is very general, but often leads to suboptimal performance. An
 alternative is to use fused batch-normalization which often has much better
-performance on GPU. Below is an example of using <a href="../api_docs/python/tf/contrib/layers/batch_norm.md"><code>tf.contrib.layers.batch_norm</code></a>
+performance on GPU. Below is an example of using <a href="../api_docs/python/tf/contrib/layers/batch_norm.html"><code>tf.contrib.layers.batch_norm</code></a>
 to implement fused batch-normalization.</p>
 <pre><code class="language-python">bn = tf.contrib.layers.batch_norm(
           input_layer, fused=True, data_format='NCHW'
@@ -4325,7 +4325,7 @@ gradients can be hidden by later computation layers.</p>
 <p>In order to broadcast variables and aggregate gradients across different GPUs
 within the same host machine, we can use the default TensorFlow implicit copy
 mechanism.</p>
-<p>However, we can instead use the optional NCCL (<a href="../api_docs/python/tf/contrib/nccl.md"><code>tf.contrib.nccl</code></a>) support. NCCL
+<p>However, we can instead use the optional NCCL (<a href="../api_docs/python/tf/contrib/nccl.html"><code>tf.contrib.nccl</code></a>) support. NCCL
 is an NVIDIA® library that can efficiently broadcast and aggregate data across
 different GPUs. It schedules a cooperating kernel on each GPU that knows how to
 best utilize the underlying hardware topology; this kernel uses a single SM of

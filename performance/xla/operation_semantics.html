@@ -4325,7 +4325,7 @@ spatial dimensions using the formulas above.</p>
 <h2>BitcastConvertType</h2>
 <p>See also
 <a href="https://www.tensorflow.org/code/tensorflow/compiler/xla/client/xla_client/xla_builder.h"><code>XlaBuilder::BitcastConvertType</code></a>.</p>
-<p>Similar to a <a href="../../api_docs/python/tf/bitcast.md"><code>tf.bitcast</code></a> in TensorFlow, performs an element-wise bitcast
+<p>Similar to a <a href="../../api_docs/python/tf/bitcast.html"><code>tf.bitcast</code></a> in TensorFlow, performs an element-wise bitcast
 operation from a data shape to a target shape. The dimensions must match, and
 the conversion is an element-wise one; e.g. <code>s32</code> elements become <code>f32</code> elements
 via bitcast routine. Bitcast is implemented as a low-level cast, so machines
@@ -4461,7 +4461,7 @@ Clamp(min, operand, max) = s32[3]{0, 5, 6};
 <h2>Collapse</h2>
 <p>See also
 <a href="https://www.tensorflow.org/code/tensorflow/compiler/xla/client/xla_client/xla_builder.h"><code>XlaBuilder::Collapse</code></a>
-and the <a href="../../api_docs/python/tf/reshape.md"><code>tf.reshape</code></a> operation.</p>
+and the <a href="../../api_docs/python/tf/reshape.html"><code>tf.reshape</code></a> operation.</p>
 <p>Collapses dimensions of an array into one dimension.</p>
 <p><b> <code>Collapse(operand, dimensions)</code> </b></p>
 <table>
@@ -4495,7 +4495,7 @@ same position in the dimension sequence as those they replace, with the new
 dimension size equal to the product of original dimension sizes. The lowest
 dimension number in <code>dimensions</code> is the slowest varying dimension (most major)
 in the loop nest which collapses these dimension, and the highest dimension
-number is fastest varying (most minor). See the <a href="../../api_docs/python/tf/reshape.md"><code>tf.reshape</code></a> operator
+number is fastest varying (most minor). See the <a href="../../api_docs/python/tf/reshape.html"><code>tf.reshape</code></a> operator
 if more general collapse ordering is needed.</p>
 <p>For example, let v be an array of 24 elements:</p>
 <pre><code>let v = f32[4x2x3] {{{10, 11, 12},  {15, 16, 17}},
@@ -4717,8 +4717,8 @@ placed between each of the entries in that dimension, increasing the size of the
 array. The holes are filled with a no-op value, which for convolution means
 zeroes.</p>
 <p>Dilation of the rhs is also called atrous convolution. For more details, see
-<a href="../../api_docs/python/tf/nn/atrous_conv2d.md"><code>tf.nn.atrous_conv2d</code></a>. Dilation of the lhs is also called transposed
-convolution. For more details, see <a href="../../api_docs/python/tf/nn/conv2d_transpose.md"><code>tf.nn.conv2d_transpose</code></a>.</p>
+<a href="../../api_docs/python/tf/nn/atrous_conv2d.html"><code>tf.nn.atrous_conv2d</code></a>. Dilation of the lhs is also called transposed
+convolution. For more details, see <a href="../../api_docs/python/tf/nn/conv2d_transpose.html"><code>tf.nn.conv2d_transpose</code></a>.</p>
 <p>The output shape has these dimensions, in this order:</p>
 <ul>
 <li><code>batch</code>: Same size as <code>batch</code> on the input (<code>lhs</code>).</li>
@@ -5248,7 +5248,7 @@ DynamicUpdateSlice(b, u, s) produces:
 </tbody>
 </table>
 <p>The arguments’ shapes have to be either similar or compatible. See the
-<a href="../../performance/xla/broadcasting.md">broadcasting</a> documentation about what it means for shapes to
+<a href="../../performance/xla/broadcasting.html">broadcasting</a> documentation about what it means for shapes to
 be compatible. The result of an operation has a shape which is the result of
 broadcasting the two input arrays. In this variant, operations between arrays of
 different ranks are <em>not</em> supported, unless one of the operands is a scalar.</p>
@@ -5267,7 +5267,7 @@ the dimensions of the higher-rank shape. The unmapped dimensions of the expanded
 shape are filled with dimensions of size one. Degenerate-dimension broadcasting
 then broadcasts the shapes along these degenerate dimensions to equalize the
 shapes of both operands. The semantics are described in detail on the
-<a href="../../performance/xla/broadcasting.md">broadcasting page</a>.</p>
+<a href="../../performance/xla/broadcasting.html">broadcasting page</a>.</p>
 <h2>Element-wise comparison operations</h2>
 <p>See also
 <a href="https://www.tensorflow.org/code/tensorflow/compiler/xla/client/xla_client/xla_builder.h"><code>XlaBuilder::Eq</code></a>.</p>
@@ -5300,7 +5300,7 @@ floating-point types.</p>
 </tbody>
 </table>
 <p>The arguments’ shapes have to be either similar or compatible. See the
-<a href="../../performance/xla/broadcasting.md">broadcasting</a> documentation about what it means for shapes to
+<a href="../../performance/xla/broadcasting.html">broadcasting</a> documentation about what it means for shapes to
 be compatible. The result of an operation has a shape which is the result of
 broadcasting the two input arrays with the element type <code>PRED</code>. In this variant,
 operations between arrays of different ranks are <em>not</em> supported, unless one of
@@ -5313,7 +5313,7 @@ for comparison operations between arrays of different ranks (such as adding a
 matrix to a vector).</p>
 <p>The additional <code>broadcast_dimensions</code> operand is a slice of integers specifying
 the dimensions to use for broadcasting the operands. The semantics are described
-in detail on the <a href="../../performance/xla/broadcasting.md">broadcasting page</a>.</p>
+in detail on the <a href="../../performance/xla/broadcasting.html">broadcasting page</a>.</p>
 <h2>Element-wise unary functions</h2>
 <p>XlaBuilder supports these element-wise unary functions:</p>
 <p><b><code>Abs(operand)</code></b> Element-wise abs <code>x -&gt; |x|</code>.</p>
@@ -5542,7 +5542,7 @@ mapping dictates how the index should be expanded to have the same rank as
 the input.</p>
 </li>
 </ol>
-<p>As a final example, we use (2) and (3) to implement <a href="../../api_docs/python/tf/gather_nd.md"><code>tf.gather_nd</code></a>:</p>
+<p>As a final example, we use (2) and (3) to implement <a href="../../api_docs/python/tf/gather_nd.html"><code>tf.gather_nd</code></a>:</p>
 <div style="width:95%; margin:auto; margin-bottom:10px; margin-top:20px;">
   <img style="width:100%" src="../../images/ops_xla_gather_2.svg">
 </div>
@@ -5557,7 +5557,7 @@ these are expanded in accordance to “Gather Index Mapping”
 [<code>X</code>,<code>W</code><sub><code>0</code></sub>].  In other words, the output index
 [<code>G</code><sub><code>0</code></sub>,<code>G</code><sub><code>1</code></sub>,<code>W</code><sub><code>0</code></sub>] maps to the input index
 [<code>GatherIndices</code>[<code>G</code><sub><code>0</code></sub>,<code>G</code><sub><code>1</code></sub>,<code>0</code>],<code>X</code>] which gives us
-the semantics for <a href="../../api_docs/python/tf/gather_nd.md"><code>tf.gather_nd</code></a>.</p>
+the semantics for <a href="../../api_docs/python/tf/gather_nd.html"><code>tf.gather_nd</code></a>.</p>
 <p><code>window_bounds</code> for this case is <code>[1,11]</code>.  Intuitively this means that every
 index <code>X</code> in the gather indices tensor picks an entire row and the result is the
 concatenation of all these rows.</p>
@@ -5573,7 +5573,7 @@ let s: s32 = 5;
 let t: (f32[10], s32) = tuple(v, s);
 let element_1: s32 = gettupleelement(t, 1);  // Inferred shape matches s32.
 </code></pre>
-<p>See also <a href="../../api_docs/python/tf/tuple.md"><code>tf.tuple</code></a>.</p>
+<p>See also <a href="../../api_docs/python/tf/tuple.html"><code>tf.tuple</code></a>.</p>
 <h2>Infeed</h2>
 <p>See also
 <a href="https://www.tensorflow.org/code/tensorflow/compiler/xla/client/xla_client/xla_builder.h"><code>XlaBuilder::Infeed</code></a>.</p>
@@ -6200,7 +6200,7 @@ shape of the output array. The array <code>pred</code> must have the same dimens
 <p>For each element <code>P</code> of <code>pred</code>, the corresponding element of the output array is
 taken from <code>on_true</code> if the value of <code>P</code> is <code>true</code>, and from <code>on_false</code> if the
 value of <code>P</code> is <code>false</code>. As a restricted form of [broadcasting]
-(<a href="http://broadcasting.md">broadcasting.md</a>), <code>pred</code> can be a scalar of type <code>PRED</code>. In this case, the
+(<a href="http://broadcasting.html">broadcasting.html</a>), <code>pred</code> can be a scalar of type <code>PRED</code>. In this case, the
 output array is taken wholly from <code>on_true</code> if <code>pred</code> is <code>true</code>, and from
 <code>on_false</code> if <code>pred</code> is <code>false</code>.</p>
 <p>Example with non-scalar <code>pred</code>:</p>
@@ -6483,7 +6483,7 @@ duplicates, the order of their corresponding values may not be preserved.</p>
 <p>The <code>keys</code> and <code>values</code> must have the same dimensions, but may have different
 element types.</p>
 <h2>Transpose</h2>
-<p>See also the <a href="../../api_docs/python/tf/reshape.md"><code>tf.reshape</code></a> operation.</p>
+<p>See also the <a href="../../api_docs/python/tf/reshape.html"><code>tf.reshape</code></a> operation.</p>
 <p><b><code>Transpose(operand)</code></b></p>
 <table>
 <thead>

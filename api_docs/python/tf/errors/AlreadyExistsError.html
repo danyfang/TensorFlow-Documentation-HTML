@@ -4091,10 +4091,10 @@
 <h2>Class <code>AlreadyExistsError</code></h2>
 <p>Inherits From: <a href="../../tf/OpError.html"><code>OpError</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/errors_impl.py"><code>tensorflow/python/framework/errors_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/client.md#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/client.html#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
 <p>Raised when an entity that we attempted to create already exists.</p>
 <p>For example, running an operation that saves a file
-(e.g. <a href="../../tf/train/Saver.md#save"><code>tf.train.Saver.save</code></a>)
+(e.g. <a href="../../tf/train/Saver.html#save"><code>tf.train.Saver.save</code></a>)
 could potentially raise this exception if an explicit filename for an
 existing file was passed.</p>
 <h2>Properties</h2>
@@ -4108,9 +4108,9 @@ existing file was passed.</p>
 <p>The operation that failed, if known.</p>
 <p><em>N.B.</em> If the failed op was synthesized at runtime, e.g. a <code>Send</code>
 or <code>Recv</code> op, there will be no corresponding
-<a href="../../tf/Operation.md"><code>tf.Operation</code></a>
+<a href="../../tf/Operation.html"><code>tf.Operation</code></a>
 object.  In that case, this will return <code>None</code>, and you should
-instead use the <a href="../../tf/OpError.md#node_def"><code>tf.OpError.node_def</code></a> to
+instead use the <a href="../../tf/OpError.html#node_def"><code>tf.OpError.node_def</code></a> to
 discover information about the op.</p>
 <h4>Returns:</h4>
 <p>The <code>Operation</code> that failed, or None.</p>

@@ -4086,14 +4086,14 @@
 <pre><code class="language-python">tf.get_seed(op_seed)
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/random_seed.py"><code>tensorflow/python/framework/random_seed.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/framework.md#Defining_new_operations">Building Graphs &gt; Defining new operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/framework.html#Defining_new_operations">Building Graphs &gt; Defining new operations</a></p>
 <p>Returns the local seeds an operation should use given an op-specific seed.</p>
 <p>Given operation-specific seed, <code>op_seed</code>, this helper function returns two
 seeds derived from graph-level and op-level seeds. Many random operations
 internally use the two seeds to allow user to change the seed globally for a
 graph, or for only specific operations.</p>
 <p>For details on how the graph-level seed interacts with op seeds, see
-<a href="../tf/set_random_seed.md"><code>tf.set_random_seed</code></a>.</p>
+<a href="../tf/set_random_seed.html"><code>tf.set_random_seed</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>op_seed</code></b>: integer.</li>

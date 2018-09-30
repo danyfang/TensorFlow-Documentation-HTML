@@ -4095,14 +4095,14 @@
 )
 </code></pre>
 <p>Defined in generated file: <code>tensorflow/python/ops/gen_string_ops.py</code>.</p>
-<p>See the guide: <a href="../../../api_guides/python/string_ops.md#Hashing">Strings &gt; Hashing</a></p>
+<p>See the guide: <a href="../../../api_guides/python/string_ops.html#Hashing">Strings &gt; Hashing</a></p>
 <p>Converts each string in the input Tensor to its hash mod by a number of buckets.</p>
 <p>The hash function is deterministic on the content of the string within the
 process and will never change. However, it is not suitable for cryptography.
 This function may be used when CPU time is scarce and inputs are trusted or
 unimportant. There is a risk of adversaries constructing inputs that all hash
 to the same bucket. To prevent this problem, use a strong hash function with
-<a href="../tf/string_to_hash_bucket_strong.md"><code>tf.string_to_hash_bucket_strong</code></a>.</p>
+<a href="../tf/string_to_hash_bucket_strong.html"><code>tf.string_to_hash_bucket_strong</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>input</code></b>: A <code>Tensor</code> of type <code>string</code>. The strings to assign a hash bucket.</li>

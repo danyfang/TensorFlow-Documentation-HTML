@@ -4099,7 +4099,7 @@
 <h1>tf.Session</h1>
 <h2>Class <code>Session</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/client/session.py"><code>tensorflow/python/client/session.py</code></a>.</p>
-<p>See the guides: <a href="../../../api_guides/python/client.md#Session_management">Running Graphs &gt; Session management</a>, <a href="../../../api_guides/python/client.html">Running Graphs</a></p>
+<p>See the guides: <a href="../../../api_guides/python/client.html#Session_management">Running Graphs &gt; Session management</a>, <a href="../../../api_guides/python/client.html">Running Graphs</a></p>
 <p>A class for running TensorFlow operations.</p>
 <p>A <code>Session</code> object encapsulates the environment in which <code>Operation</code>
 objects are executed, and <code>Tensor</code> objects are evaluated. For
@@ -4116,10 +4116,10 @@ sess = tf.Session()
 print(sess.run(c))
 </code></pre>
 <p>A session may own resources, such as
-<a href="../tf/Variable.md"><code>tf.Variable</code></a>, <a href="../tf/QueueBase.md"><code>tf.QueueBase</code></a>,
-and <a href="../tf/ReaderBase.md"><code>tf.ReaderBase</code></a>. It is important to release
+<a href="../tf/Variable.html"><code>tf.Variable</code></a>, <a href="../tf/QueueBase.html"><code>tf.QueueBase</code></a>,
+and <a href="../tf/ReaderBase.html"><code>tf.ReaderBase</code></a>. It is important to release
 these resources when they are no longer required. To do this, either
-invoke the <a href="../tf/Session.md#close"><code>tf.Session.close</code></a> method on the session, or use
+invoke the <a href="../tf/Session.html#close"><code>tf.Session.close</code></a> method on the session, or use
 the session as a context manager. The following two examples are
 equivalent:</p>
 <pre><code class="language-python"># Using the `close()` method.
@@ -4172,7 +4172,7 @@ the session constructor.</p>
 <ul>
 <li><b><code>target</code></b>: (Optional.) The execution engine to connect to.
 Defaults to using an in-process engine. See
-<a href="../../../deploy/distributed.md">Distributed TensorFlow</a>
+<a href="../../../deploy/distributed.html">Distributed TensorFlow</a>
 for more examples.</li>
 <li><b><code>graph</code></b>: (Optional.) The <code>Graph</code> to be launched (described above).</li>
 <li><b><code>config</code></b>: (Optional.) A
@@ -4194,7 +4194,7 @@ protocol buffer with configuration options for the session.</li>
 </code></pre>
 <p>Returns a context manager that makes this object the default session.</p>
 <p>Use with the <code>with</code> keyword to specify that calls to
-<a href="../tf/Operation.md#run"><code>tf.Operation.run</code></a> or <a href="../tf/Tensor.md#eval"><code>tf.Tensor.eval</code></a> should be executed in
+<a href="../tf/Operation.html#run"><code>tf.Operation.run</code></a> or <a href="../tf/Tensor.html#eval"><code>tf.Tensor.eval</code></a> should be executed in
 this session.</p>
 <pre><code class="language-python">c = tf.constant(..)
 sess = tf.Session()
@@ -4203,7 +4203,7 @@ with sess.as_default():
   assert tf.get_default_session() is sess
   print(c.eval())
 </code></pre>
-<p>To get the current default session, use <a href="../tf/get_default_session.md"><code>tf.get_default_session</code></a>.</p>
+<p>To get the current default session, use <a href="../tf/get_default_session.html"><code>tf.get_default_session</code></a>.</p>
 <p><em>N.B.</em> The <code>as_default</code> context manager <em>does not</em> close the
 session when you exit the context, and you must close the session
 explicitly.</p>
@@ -4226,7 +4226,7 @@ thread, you must explicitly add a <code>with sess.as_default():</code> in that
 thread’s function.</p>
 <p><em>N.B.</em> Entering a <code>with sess.as_default():</code> block does not affect
 the current default graph. If you are using multiple graphs, and
-<code>sess.graph</code> is different from the value of <a href="../tf/get_default_graph.md"><code>tf.get_default_graph</code></a>,
+<code>sess.graph</code> is different from the value of <a href="../tf/get_default_graph.html"><code>tf.get_default_graph</code></a>,
 you must explicitly enter a <code>with sess.graph.as_default():</code> block
 to make <code>sess.graph</code> the default graph.</p>
 <h4>Returns:</h4>
@@ -4275,24 +4275,24 @@ invalid state, or network errors occur).</li>
 <p>Returns a Python callable that runs a particular step.</p>
 <p>The returned callable will take <code>len(feed_list)</code> arguments whose types
 must be compatible feed values for the respective elements of <code>feed_list</code>.
-For example, if element <code>i</code> of <code>feed_list</code> is a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, the <code>i</code>th
+For example, if element <code>i</code> of <code>feed_list</code> is a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, the <code>i</code>th
 argument to the returned callable must be a numpy ndarray (or something
 convertible to an ndarray) with matching element type and shape. See
-<a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> for details of the allowable feed key and value types.</p>
+<a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> for details of the allowable feed key and value types.</p>
 <p>The returned callable will have the same return type as
-<code>tf.Session.run(fetches, ...)</code>. For example, if <code>fetches</code> is a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>,
-the callable will return a numpy ndarray; if <code>fetches</code> is a <a href="../tf/Operation.md"><code>tf.Operation</code></a>,
+<code>tf.Session.run(fetches, ...)</code>. For example, if <code>fetches</code> is a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>,
+the callable will return a numpy ndarray; if <code>fetches</code> is a <a href="../tf/Operation.html"><code>tf.Operation</code></a>,
 it will return <code>None</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>fetches</code></b>: A value or list of values to fetch. See <a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>
+<li><b><code>fetches</code></b>: A value or list of values to fetch. See <a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>
 for details of the allowable fetch types.</li>
 <li><b><code>feed_list</code></b>: (Optional.) A list of <code>feed_dict</code> keys. See
-<a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> for details of the allowable feed key types.</li>
+<a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> for details of the allowable feed key types.</li>
 <li><b><code>accept_options</code></b>: (Optional.) Iff <code>True</code>, the returned <code>Callable</code> will be
-able to accept <a href="../tf/RunOptions.md"><code>tf.RunOptions</code></a> and <a href="../tf/RunMetadata.md"><code>tf.RunMetadata</code></a> as optional
+able to accept <a href="../tf/RunOptions.html"><code>tf.RunOptions</code></a> and <a href="../tf/RunMetadata.html"><code>tf.RunMetadata</code></a> as optional
 keyword arguments <code>options</code> and <code>run_metadata</code>, respectively, with
-the same syntax and semantics as <a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>, which is useful
+the same syntax and semantics as <a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>, which is useful
 for certain use cases (profiling and debugging) but will result in
 measurable slowdown of the <code>Callable</code>'s performance. Default: <code>False</code>.</li>
 </ul>
@@ -4302,7 +4302,7 @@ measurable slowdown of the <code>Callable</code>'s performance. Default: <code>F
 <h4>Raises:</h4>
 <ul>
 <li><b><code>TypeError</code></b>: If <code>fetches</code> or <code>feed_list</code> cannot be interpreted
-as arguments to <a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>.</li>
+as arguments to <a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>.</li>
 </ul>
 <h3 id="partial_run"><code>partial_run</code></h3>
 <pre><code class="language-python">partial_run(
@@ -4419,14 +4419,14 @@ and evaluate every <code>Tensor</code> in <code>fetches</code>, substituting the
 nested list, tuple, namedtuple, dict, or OrderedDict containing graph
 elements at its leaves.  A graph element can be one of the following types:</p>
 <ul>
-<li>An <a href="../tf/Operation.md"><code>tf.Operation</code></a>.
+<li>An <a href="../tf/Operation.html"><code>tf.Operation</code></a>.
 The corresponding fetched value will be <code>None</code>.</li>
-<li>A <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>.
+<li>A <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>.
 The corresponding fetched value will be a numpy ndarray containing the
 value of that tensor.</li>
-<li>A <a href="../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>.
+<li>A <a href="../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>.
 The corresponding fetched value will be a
-<a href="../tf/SparseTensorValue.md"><code>tf.SparseTensorValue</code></a>
+<a href="../tf/SparseTensorValue.html"><code>tf.SparseTensorValue</code></a>
 containing the value of that sparse tensor.</li>
 <li>A <code>get_tensor_handle</code> op.  The corresponding fetched value will be a
 numpy ndarray containing the handle of that tensor.</li>
@@ -4458,16 +4458,16 @@ TensorFlow.</p>
 the value of tensors in the graph. Each key in <code>feed_dict</code> can be
 one of the following types:</p>
 <ul>
-<li>If the key is a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, the
+<li>If the key is a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, the
 value may be a Python scalar, string, list, or numpy ndarray
 that can be converted to the same <code>dtype</code> as that
 tensor. Additionally, if the key is a
-<a href="../tf/placeholder.md"><code>tf.placeholder</code></a>, the shape of
+<a href="../tf/placeholder.html"><code>tf.placeholder</code></a>, the shape of
 the value will be checked for compatibility with the placeholder.</li>
 <li>If the key is a
-<a href="../tf/SparseTensor.md"><code>tf.SparseTensor</code></a>,
+<a href="../tf/SparseTensor.html"><code>tf.SparseTensor</code></a>,
 the value should be a
-<a href="../tf/SparseTensorValue.md"><code>tf.SparseTensorValue</code></a>.</li>
+<a href="../tf/SparseTensorValue.html"><code>tf.SparseTensorValue</code></a>.</li>
 <li>If the key is a nested tuple of <code>Tensor</code>s or <code>SparseTensor</code>s, the value
 should be a nested tuple with the same structure that maps to their
 corresponding values as above.</li>

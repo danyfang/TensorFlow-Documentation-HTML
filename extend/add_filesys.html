@@ -4288,7 +4288,7 @@ it will use the <code>FooBarFileSystem</code> implementation.</p>
 <p>Next, you must build a shared object containing this implementation. An example
 of doing so using bazel’s <code>cc_binary</code> rule can be found
 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/BUILD#L244">here</a>,
-but you may use any build system to do so. See the section on <a href="../extend/adding_an_op.md#build_the_op_library">building the op library</a> for similar
+but you may use any build system to do so. See the section on <a href="../extend/adding_an_op.html#build_the_op_library">building the op library</a> for similar
 instructions.</p>
 <p>The result of building this target is a <code>.so</code> shared object file.</p>
 <p>Lastly, you must dynamically load this implementation in the process. In Python,

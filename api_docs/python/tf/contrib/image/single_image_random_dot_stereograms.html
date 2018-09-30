@@ -4152,11 +4152,11 @@ Value of bord in depth 0.0 {far} to 1.0 {near}</li>
 <li><b><code>number_colors</code></b>: An optional <code>int</code>. Defaults to <code>256</code>. 2 (Black &amp;
 White), 256 (grayscale), and Numbers &gt; 256 (Full Color) are
 supported</li>
-<li><b><code>output_image_shape</code></b>: An optional <a href="../../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or list of <code>ints</code>.
+<li><b><code>output_image_shape</code></b>: An optional <a href="../../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or list of <code>ints</code>.
 Defaults to shape <code>[1024, 768, 1]</code>. Defines output shape of returned
 image in ‘[X,Y, Channels]’ 1-grayscale, 3 color; channels will be
 updated to 3 if number_colors &gt; 256</li>
-<li><b><code>output_data_window</code></b>: An optional <a href="../../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or list of <code>ints</code>.
+<li><b><code>output_data_window</code></b>: An optional <a href="../../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or list of <code>ints</code>.
 Defaults to <code>[1022, 757]</code>. Size of “DATA” window, must be equal to or
 smaller than <code>output_image_shape</code>, will be centered and use
 <code>convergence_dots_size</code> for best fit to avoid overlap if possible</li>

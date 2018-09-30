@@ -4091,7 +4091,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/control_flow_ops.py"><code>tensorflow/python/ops/control_flow_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.md#Debugging_Operations">Control Flow &gt; Debugging Operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.html#Debugging_Operations">Control Flow &gt; Debugging Operations</a></p>
 <p>Asserts that the given condition is true.</p>
 <p>If <code>condition</code> evaluates to false, print the list of tensors in <code>data</code>.
 <code>summarize</code> determines how many entries of the tensors to print.</p>
@@ -4112,11 +4112,11 @@ with tf.control_dependencies([assert_op]):
 <h4>Returns:</h4>
 <ul>
 <li><b><code>assert_op</code></b>: An <code>Operation</code> that, when executed, raises a
-<a href="../tf/errors/InvalidArgumentError.md"><code>tf.errors.InvalidArgumentError</code></a> if <code>condition</code> is not true.
+<a href="../tf/errors/InvalidArgumentError.html"><code>tf.errors.InvalidArgumentError</code></a> if <code>condition</code> is not true.
 @compatibility{eager} returns None.</li>
 </ul>
 <h4>Raises:</h4>
-<p>@compatibility{eager} <a href="../tf/errors/InvalidArgumentError.md"><code>tf.errors.InvalidArgumentError</code></a> if <code>condition</code>
+<p>@compatibility{eager} <a href="../tf/errors/InvalidArgumentError.html"><code>tf.errors.InvalidArgumentError</code></a> if <code>condition</code>
 is not true</p>
 <p><strong>NOTE</strong> The output of this function should be used.  If it is not, a warning will be logged.  To mark the output as used, call its .mark_used() method.</p>
 

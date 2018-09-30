@@ -4086,9 +4086,9 @@
 <pre><code class="language-python">tf.contrib.image.matrices_to_flat_transforms(transform_matrices)
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/image/python/ops/image_ops.py"><code>tensorflow/contrib/image/python/ops/image_ops.py</code></a>.</p>
-<p>Converts affine matrices to <a href="../../../tf/contrib/image.md"><code>tf.contrib.image</code></a> projective transforms.</p>
+<p>Converts affine matrices to <a href="../../../tf/contrib/image.html"><code>tf.contrib.image</code></a> projective transforms.</p>
 <p>Note that we expect matrices that map output coordinates to input coordinates.
-To convert forward transformation matrices, call <a href="../../../tf/matrix_inverse.md"><code>tf.linalg.inv</code></a> on the
+To convert forward transformation matrices, call <a href="../../../tf/matrix_inverse.html"><code>tf.linalg.inv</code></a> on the
 matrices and use the result here.</p>
 <h4>Args:</h4>
 <ul>
@@ -4098,7 +4098,7 @@ reverse transformation in homogeneous coordinates. Shape <code>(3, 3)</code> or
 </ul>
 <h4>Returns:</h4>
 <p>2D tensor of flat transforms with shape <code>(N, 8)</code>, which may be passed into
-<a href="../../../tf/contrib/image/transform.md"><code>tf.contrib.image.transform</code></a>.</p>
+<a href="../../../tf/contrib/image/transform.html"><code>tf.contrib.image.transform</code></a>.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If <code>transform_matrices</code> have an invalid shape.</li>

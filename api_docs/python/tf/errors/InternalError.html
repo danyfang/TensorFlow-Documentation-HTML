@@ -4091,7 +4091,7 @@
 <h2>Class <code>InternalError</code></h2>
 <p>Inherits From: <a href="../../tf/OpError.html"><code>OpError</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/errors_impl.py"><code>tensorflow/python/framework/errors_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/client.md#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/client.html#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
 <p>Raised when the system experiences an internal error.</p>
 <p>This exception is raised when some invariant expected by the runtime
 has been broken. Catching this exception is not recommended.</p>
@@ -4106,9 +4106,9 @@ has been broken. Catching this exception is not recommended.</p>
 <p>The operation that failed, if known.</p>
 <p><em>N.B.</em> If the failed op was synthesized at runtime, e.g. a <code>Send</code>
 or <code>Recv</code> op, there will be no corresponding
-<a href="../../tf/Operation.md"><code>tf.Operation</code></a>
+<a href="../../tf/Operation.html"><code>tf.Operation</code></a>
 object.  In that case, this will return <code>None</code>, and you should
-instead use the <a href="../../tf/OpError.md#node_def"><code>tf.OpError.node_def</code></a> to
+instead use the <a href="../../tf/OpError.html#node_def"><code>tf.OpError.node_def</code></a> to
 discover information about the op.</p>
 <h4>Returns:</h4>
 <p>The <code>Operation</code> that failed, or None.</p>

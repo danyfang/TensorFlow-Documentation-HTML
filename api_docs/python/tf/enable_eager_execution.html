@@ -4098,7 +4098,7 @@
 <p>Enables eager execution for the lifetime of this program.</p>
 <p>Eager execution provides an imperative interface to TensorFlow. With eager
 execution enabled, TensorFlow functions execute operations immediately (as
-opposed to adding to a graph to be executed later in a <a href="../tf/Session.md"><code>tf.Session</code></a>) and
+opposed to adding to a graph to be executed later in a <a href="../tf/Session.html"><code>tf.Session</code></a>) and
 return concrete values (as opposed to symbolic references to a node in a
 computational graph).</p>
 <p>For example:</p>
@@ -4115,10 +4115,10 @@ at program startup and not in a library (as most libraries should be usable
 both with and without eager execution).</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>config</code></b>: (Optional.) A <a href="../tf/ConfigProto.md"><code>tf.ConfigProto</code></a> to use to configure the environment
-in which operations are executed. Note that <a href="../tf/ConfigProto.md"><code>tf.ConfigProto</code></a> is also
-used to configure graph execution (via <a href="../tf/Session.md"><code>tf.Session</code></a>) and many options
-within <a href="../tf/ConfigProto.md"><code>tf.ConfigProto</code></a> are not implemented (or are irrelevant) when
+<li><b><code>config</code></b>: (Optional.) A <a href="../tf/ConfigProto.html"><code>tf.ConfigProto</code></a> to use to configure the environment
+in which operations are executed. Note that <a href="../tf/ConfigProto.html"><code>tf.ConfigProto</code></a> is also
+used to configure graph execution (via <a href="../tf/Session.html"><code>tf.Session</code></a>) and many options
+within <a href="../tf/ConfigProto.html"><code>tf.ConfigProto</code></a> are not implemented (or are irrelevant) when
 eager execution is enabled.</li>
 <li><b><code>device_policy</code></b>: (Optional.) Policy controlling how operations requiring
 inputs on a specific device (e.g., a GPU 0) handle inputs on a different

@@ -4092,14 +4092,14 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/nn_impl.py"><code>tensorflow/python/ops/nn_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/nn.md#Normalization">Neural Network &gt; Normalization</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/nn.html#Normalization">Neural Network &gt; Normalization</a></p>
 <p>Calculate the mean and variance of <code>x</code>.</p>
 <p>The mean and variance are calculated by aggregating the contents of <code>x</code>
 across <code>axes</code>.  If <code>x</code> is 1-D and <code>axes = [0]</code> this is just the mean
 and variance of a vector.</p>
 <p>Note: shift is currently not used; the true mean is computed and used.</p>
 <p>When using these moments for batch normalization (see
-<a href="../../tf/nn/batch_normalization.md"><code>tf.nn.batch_normalization</code></a>):</p>
+<a href="../../tf/nn/batch_normalization.html"><code>tf.nn.batch_normalization</code></a>):</p>
 <ul>
 <li>for so-called “global normalization”, used with convolutional filters with
 shape <code>[batch, height, width, depth]</code>, pass <code>axes=[0, 1, 2]</code>.</li>

@@ -4529,13 +4529,13 @@ marked as non-trainable. <code>trainable</code> defaults to <code>True</code> un
 <li><b><code>use_resource</code></b>: Whether to use <code>ResourceVariable</code>.</li>
 <li><b><code>synchronization</code></b>: Indicates when a distributed a variable will be
 aggregated. Accepted values are constants defined in the class
-<a href="../../tf/VariableSynchronization.md"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
+<a href="../../tf/VariableSynchronization.html"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
 <code>AUTO</code> and the current <code>DistributionStrategy</code> chooses
 when to synchronize. If <code>synchronization</code> is set to <code>ON_READ</code>,
 <code>trainable</code> must not be set to <code>True</code>.</li>
 <li><b><code>aggregation</code></b>: Indicates how a distributed variable will be aggregated.
 Accepted values are constants defined in the class
-<a href="../../tf/VariableAggregation.md"><code>tf.VariableAggregation</code></a>.</li>
+<a href="../../tf/VariableAggregation.html"><code>tf.VariableAggregation</code></a>.</li>
 <li><b><code>getter</code></b>: Variable getter argument to be passed to the <code>Checkpointable</code> API.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4646,7 +4646,7 @@ Numpy data for these targets at training time), you
 can specify them via the <code>target_tensors</code> argument. It can be
 a single tensor (for a single-output model), a list of tensors,
 or a dict mapping output names to target tensors.</li>
-<li><b><code>**kwargs</code></b>: These arguments are passed to <a href="../../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>.</li>
+<li><b><code>**kwargs</code></b>: These arguments are passed to <a href="../../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>.</li>
 </ul>
 <h4>Raises:</h4>
 <ul>
@@ -4715,7 +4715,7 @@ instead of an integer.</li>
 (in case the model has multiple inputs).
 - A dict mapping input names to the corresponding array/tensors,
 if the model has named inputs.
-- A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+- A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 <li><b><code>y</code></b>: Target data. Like the input data <code>x</code>,
 it could be either Numpy array(s) or TensorFlow tensor(s).
 It should be consistent with <code>x</code> (you cannot have Numpy inputs and
@@ -4835,7 +4835,7 @@ the display labels for the scalar outputs.</p>
 (in case the model has multiple inputs).
 - A dict mapping input names to the corresponding array/tensors,
 if the model has named inputs.
-- A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+- A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 <li><b><code>y</code></b>: Target data. Like the input data <code>x</code>,
 it could be either Numpy array(s) or TensorFlow tensor(s).
 It should be consistent with <code>x</code> (you cannot have Numpy inputs and
@@ -5236,7 +5236,7 @@ some of the layers have changed.</p>
 <p>Only topological loading (<code>by_name=False</code>) is supported when loading weights
 from the TensorFlow format. Note that topological loading differs slightly
 between TensorFlow and HDF5 formats for user-defined classes inheriting from
-<a href="../../tf/keras/Model.md"><code>tf.keras.Model</code></a>: HDF5 loads based on a flattened list of weights, while the
+<a href="../../tf/keras/Model.html"><code>tf.keras.Model</code></a>: HDF5 loads based on a flattened list of weights, while the
 TensorFlow format loads based on the object-local names of attributes to
 which layers are assigned in the <code>Model</code>'s constructor.</p>
 <h4>Arguments:</h4>
@@ -5250,7 +5250,7 @@ TensorFlow format.</li>
 </ul>
 <h4>Returns:</h4>
 <p>When loading a weight file in TensorFlow format, returns the same status
-object as <a href="../../tf/train/Checkpoint.md#restore"><code>tf.train.Checkpoint.restore</code></a>. When graph building, restore
+object as <a href="../../tf/train/Checkpoint.html#restore"><code>tf.train.Checkpoint.restore</code></a>. When graph building, restore
 ops are run automatically as soon as the network is built (on first call
 for user-defined classes inheriting from <code>Model</code>, immediately if it is
 already built).</p>
@@ -5277,7 +5277,7 @@ format.</li>
 (in case the model has multiple inputs).</li>
 <li>A TensorFlow tensor, or a list of tensors
 (in case the model has multiple inputs).</li>
-<li>A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+<li>A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 </ul>
 <ul>
 <li><b><code>batch_size</code></b>: Integer or <code>None</code>.
@@ -5353,7 +5353,7 @@ as they can’t be passed easily to children processes.</li>
 (in case the model has multiple inputs).
 - A TensorFlow tensor, or a list of tensors
 (in case the model has multiple inputs).
-- A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+- A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 </ul>
 <h4>Returns:</h4>
 <p>Numpy array(s) of predictions.</p>
@@ -5426,13 +5426,13 @@ storing the weight value, named after the weight tensor.</li>
 </li>
 </ul>
 <p>When saving in TensorFlow format, all objects referenced by the network are
-saved in the same format as <a href="../../tf/train/Checkpoint.md"><code>tf.train.Checkpoint</code></a>, including any <code>Layer</code>
+saved in the same format as <a href="../../tf/train/Checkpoint.html"><code>tf.train.Checkpoint</code></a>, including any <code>Layer</code>
 instances or <code>Optimizer</code> instances assigned to object attributes. For
 networks constructed from inputs and outputs using <code>tf.keras.Model(inputs, outputs)</code>, <code>Layer</code> instances used by the network are tracked/saved
-automatically. For user-defined classes which inherit from <a href="../../tf/keras/Model.md"><code>tf.keras.Model</code></a>,
+automatically. For user-defined classes which inherit from <a href="../../tf/keras/Model.html"><code>tf.keras.Model</code></a>,
 <code>Layer</code> instances must be assigned to object attributes, typically in the
-constructor. See the documentation of <a href="../../tf/train/Checkpoint.md"><code>tf.train.Checkpoint</code></a> and
-<a href="../../tf/keras/Model.md"><code>tf.keras.Model</code></a> for details.</p>
+constructor. See the documentation of <a href="../../tf/train/Checkpoint.html"><code>tf.train.Checkpoint</code></a> and
+<a href="../../tf/keras/Model.html"><code>tf.keras.Model</code></a> for details.</p>
 <h4>Arguments:</h4>
 <ul>
 <li><b><code>filepath</code></b>: String, path to the file to save the weights to. When saving
@@ -5502,7 +5502,7 @@ in order to capture the string summary.</li>
 (in case the model has multiple inputs).
 - A dict mapping input names to the corresponding array/tensors,
 if the model has named inputs.
-- A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+- A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 <li><b><code>y</code></b>: Target data. Like the input data <code>x</code>,
 it could be either Numpy array(s) or TensorFlow tensor(s).
 It should be consistent with <code>x</code> (you cannot have Numpy inputs and
@@ -5578,7 +5578,7 @@ to be passed to <code>yaml.dump()</code>.</li>
 (in case the model has multiple inputs).
 - A dict mapping input names to the corresponding array/tensors,
 if the model has named inputs.
-- A <a href="../../tf/data.md"><code>tf.data</code></a> dataset or a dataset iterator.</li>
+- A <a href="../../tf/data.html"><code>tf.data</code></a> dataset or a dataset iterator.</li>
 <li><b><code>y</code></b>: Target data. Like the input data <code>x</code>,
 it could be either Numpy array(s) or TensorFlow tensor(s).
 It should be consistent with <code>x</code> (you cannot have Numpy inputs and

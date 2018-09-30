@@ -4081,24 +4081,24 @@
     <article id="main" class="content">
       <h1>Dataset Input Pipeline</h1>
 <p>[TOC]</p>
-<p><a href="../../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> allows you to build complex input pipelines. See the
-<a href="../../guide/datasets.md">Importing Data</a> for an in-depth explanation of how to use this API.</p>
+<p><a href="../../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> allows you to build complex input pipelines. See the
+<a href="../../guide/datasets.html">Importing Data</a> for an in-depth explanation of how to use this API.</p>
 <h2 id="Reader_classes">Reader classes</h2>
 <p>Classes that create a dataset from input files.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/data/FixedLengthRecordDataset.md"><code>tf.data.FixedLengthRecordDataset</code></a></li>
-<li><a href="../../api_docs/python/tf/data/TextLineDataset.md"><code>tf.data.TextLineDataset</code></a></li>
-<li><a href="../../api_docs/python/tf/data/TFRecordDataset.md"><code>tf.data.TFRecordDataset</code></a></li>
+<li><a href="../../api_docs/python/tf/data/FixedLengthRecordDataset.html"><code>tf.data.FixedLengthRecordDataset</code></a></li>
+<li><a href="../../api_docs/python/tf/data/TextLineDataset.html"><code>tf.data.TextLineDataset</code></a></li>
+<li><a href="../../api_docs/python/tf/data/TFRecordDataset.html"><code>tf.data.TFRecordDataset</code></a></li>
 </ul>
 <h2 id="Creating_new_datasets">Creating new datasets</h2>
 <p>Static methods in <code>Dataset</code> that create new datasets.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#from_generator"><code>tf.data.Dataset.from_generator</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#from_tensor_slices"><code>tf.data.Dataset.from_tensor_slices</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#from_tensors"><code>tf.data.Dataset.from_tensors</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#list_files"><code>tf.data.Dataset.list_files</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#range"><code>tf.data.Dataset.range</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#zip"><code>tf.data.Dataset.zip</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#from_generator"><code>tf.data.Dataset.from_generator</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#from_tensor_slices"><code>tf.data.Dataset.from_tensor_slices</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#from_tensors"><code>tf.data.Dataset.from_tensors</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#list_files"><code>tf.data.Dataset.list_files</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#range"><code>tf.data.Dataset.range</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#zip"><code>tf.data.Dataset.zip</code></a></li>
 </ul>
 <h2 id="Transformations_on_existing_datasets">Transformations on existing datasets</h2>
 <p>These functions transform an existing dataset, and return a new dataset. Calls
@@ -4106,54 +4106,54 @@ can be chained together, as shown in the example below:</p>
 <pre><code>train_data = train_data.batch(100).shuffle().repeat()
 </code></pre>
 <ul>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#batch"><code>tf.data.Dataset.batch</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#cache"><code>tf.data.Dataset.cache</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#concatenate"><code>tf.data.Dataset.concatenate</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#filter"><code>tf.data.Dataset.filter</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#flat_map"><code>tf.data.Dataset.flat_map</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#interleave"><code>tf.data.Dataset.interleave</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#map"><code>tf.data.Dataset.map</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#prefetch"><code>tf.data.Dataset.prefetch</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#repeat"><code>tf.data.Dataset.repeat</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#shard"><code>tf.data.Dataset.shard</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#shuffle"><code>tf.data.Dataset.shuffle</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#skip"><code>tf.data.Dataset.skip</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#take"><code>tf.data.Dataset.take</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#batch"><code>tf.data.Dataset.batch</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#cache"><code>tf.data.Dataset.cache</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#concatenate"><code>tf.data.Dataset.concatenate</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#filter"><code>tf.data.Dataset.filter</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#flat_map"><code>tf.data.Dataset.flat_map</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#interleave"><code>tf.data.Dataset.interleave</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#map"><code>tf.data.Dataset.map</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#prefetch"><code>tf.data.Dataset.prefetch</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#repeat"><code>tf.data.Dataset.repeat</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#shard"><code>tf.data.Dataset.shard</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#shuffle"><code>tf.data.Dataset.shuffle</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#skip"><code>tf.data.Dataset.skip</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#take"><code>tf.data.Dataset.take</code></a></li>
 </ul>
 <h3>Custom transformation functions</h3>
-<p>Custom transformation functions can be applied to a <code>Dataset</code> using <a href="../../api_docs/python/tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a>. Below are custom transformation functions from <a href="../../api_docs/python/tf/contrib/data.md"><code>tf.contrib.data</code></a>:</p>
+<p>Custom transformation functions can be applied to a <code>Dataset</code> using <a href="../../api_docs/python/tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a>. Below are custom transformation functions from <a href="../../api_docs/python/tf/contrib/data.html"><code>tf.contrib.data</code></a>:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/data/batch_and_drop_remainder.md"><code>tf.contrib.data.batch_and_drop_remainder</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/dense_to_sparse_batch.md"><code>tf.contrib.data.dense_to_sparse_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/enumerate_dataset.md"><code>tf.contrib.data.enumerate_dataset</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/group_by_window.md"><code>tf.contrib.data.group_by_window</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/ignore_errors.md"><code>tf.contrib.data.ignore_errors</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/map_and_batch.md"><code>tf.contrib.data.map_and_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/padded_batch_and_drop_remainder.md"><code>tf.contrib.data.padded_batch_and_drop_remainder</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/parallel_interleave.md"><code>tf.contrib.data.parallel_interleave</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/rejection_resample.md"><code>tf.contrib.data.rejection_resample</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/scan.md"><code>tf.contrib.data.scan</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/shuffle_and_repeat.md"><code>tf.contrib.data.shuffle_and_repeat</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/unbatch.md"><code>tf.contrib.data.unbatch</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/batch_and_drop_remainder.html"><code>tf.contrib.data.batch_and_drop_remainder</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/dense_to_sparse_batch.html"><code>tf.contrib.data.dense_to_sparse_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/enumerate_dataset.html"><code>tf.contrib.data.enumerate_dataset</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/group_by_window.html"><code>tf.contrib.data.group_by_window</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/ignore_errors.html"><code>tf.contrib.data.ignore_errors</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/map_and_batch.html"><code>tf.contrib.data.map_and_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/padded_batch_and_drop_remainder.html"><code>tf.contrib.data.padded_batch_and_drop_remainder</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/parallel_interleave.html"><code>tf.contrib.data.parallel_interleave</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/rejection_resample.html"><code>tf.contrib.data.rejection_resample</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/scan.html"><code>tf.contrib.data.scan</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/shuffle_and_repeat.html"><code>tf.contrib.data.shuffle_and_repeat</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/unbatch.html"><code>tf.contrib.data.unbatch</code></a></li>
 </ul>
 <h2 id="Iterating_over_datasets">Iterating over datasets</h2>
-<p>These functions make a <a href="../../api_docs/python/tf/data/Iterator.md"><code>tf.data.Iterator</code></a> from a <code>Dataset</code>.</p>
+<p>These functions make a <a href="../../api_docs/python/tf/data/Iterator.html"><code>tf.data.Iterator</code></a> from a <code>Dataset</code>.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#make_initializable_iterator"><code>tf.data.Dataset.make_initializable_iterator</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Dataset.md#make_one_shot_iterator"><code>tf.data.Dataset.make_one_shot_iterator</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#make_initializable_iterator"><code>tf.data.Dataset.make_initializable_iterator</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Dataset.html#make_one_shot_iterator"><code>tf.data.Dataset.make_one_shot_iterator</code></a></li>
 </ul>
-<p>The <code>Iterator</code> class also contains static methods that create a <a href="../../api_docs/python/tf/data/Iterator.md"><code>tf.data.Iterator</code></a> that can be used with multiple <code>Dataset</code> objects.</p>
+<p>The <code>Iterator</code> class also contains static methods that create a <a href="../../api_docs/python/tf/data/Iterator.html"><code>tf.data.Iterator</code></a> that can be used with multiple <code>Dataset</code> objects.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/data/Iterator.md#from_structure"><code>tf.data.Iterator.from_structure</code></a></li>
-<li><a href="../../api_docs/python/tf/data/Iterator.md#from_string_handle"><code>tf.data.Iterator.from_string_handle</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Iterator.html#from_structure"><code>tf.data.Iterator.from_structure</code></a></li>
+<li><a href="../../api_docs/python/tf/data/Iterator.html#from_string_handle"><code>tf.data.Iterator.from_string_handle</code></a></li>
 </ul>
-<h2 id="Extra_functions_from_a_href_api_docs_python_tf_contrib_data_md_code_tf_contrib_data_code_a_">Extra functions from <a href="../../api_docs/python/tf/contrib/data.md"><code>tf.contrib.data</code></a></h2>
+<h2 id="Extra_functions_from_a_href_api_docs_python_tf_contrib_data_md_code_tf_contrib_data_code_a_">Extra functions from <a href="../../api_docs/python/tf/contrib/data.html"><code>tf.contrib.data</code></a></h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/data/get_single_element.md"><code>tf.contrib.data.get_single_element</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/make_saveable_from_iterator.md"><code>tf.contrib.data.make_saveable_from_iterator</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/data/read_batch_features.md"><code>tf.contrib.data.read_batch_features</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/get_single_element.html"><code>tf.contrib.data.get_single_element</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/make_saveable_from_iterator.html"><code>tf.contrib.data.make_saveable_from_iterator</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/data/read_batch_features.html"><code>tf.contrib.data.read_batch_features</code></a></li>
 </ul>
 
     </article>

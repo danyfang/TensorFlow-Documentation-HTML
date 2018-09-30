@@ -4109,14 +4109,14 @@ to the inputs via keys or transclusion of the inputs in the outputs.</p>
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>estimator</code></b>: A <a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> object.</li>
+<li><b><code>estimator</code></b>: A <a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> object.</li>
 <li><b><code>keys</code></b>: a <code>string</code> or a <code>list</code> of <code>string</code>. If it is <code>None</code>, all of the
 <code>features</code> in <code>dict</code> is forwarded to the <code>predictions</code>. If it is a
 <code>string</code>, only given key is forwarded. If it is a <code>list</code> of strings, all
 the given <code>keys</code> are forwarded.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A new <a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> which forwards features to predictions.</p>
+<p>A new <a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> which forwards features to predictions.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>:     * if <code>keys</code> is already part of <code>predictions</code>. We don’t allow

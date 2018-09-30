@@ -4091,7 +4091,7 @@
 <p>The operations in this package are safe to use with eager execution turned on or
 off. It has a more flexible API that allows summaries to be written directly
 from ops to places other than event log files, rather than propagating protos
-from <a href="../../tf/summary/merge_all.md"><code>tf.summary.merge_all</code></a> to <a href="../../tf/summary/FileWriter.md"><code>tf.summary.FileWriter</code></a>.</p>
+from <a href="../../tf/summary/merge_all.html"><code>tf.summary.merge_all</code></a> to <a href="../../tf/summary/FileWriter.html"><code>tf.summary.FileWriter</code></a>.</p>
 <p>To use with eager execution enabled, write your code as follows:</p>
 <pre><code class="language-python">global_step = tf.train.get_or_create_global_step()
 summary_writer = tf.contrib.summary.create_file_writer(
@@ -4133,14 +4133,14 @@ with tf.Session(...) as sess:
 <p><a href="../../tf/contrib/summary/audio.html"><code>audio(...)</code></a>: Writes an audio summary if possible.</p>
 <p><a href="../../tf/contrib/summary/create_db_writer.html"><code>create_db_writer(...)</code></a>: Creates a summary database writer in the current context.</p>
 <p><a href="../../tf/contrib/summary/create_file_writer.html"><code>create_file_writer(...)</code></a>: Creates a summary file writer in the current context under the given name.</p>
-<p><a href="../../tf/contrib/summary/create_summary_file_writer.html"><code>create_summary_file_writer(...)</code></a>: Please use <a href="../../tf/contrib/summary/create_file_writer.md"><code>tf.contrib.summary.create_file_writer</code></a>.</p>
+<p><a href="../../tf/contrib/summary/create_summary_file_writer.html"><code>create_summary_file_writer(...)</code></a>: Please use <a href="../../tf/contrib/summary/create_file_writer.html"><code>tf.contrib.summary.create_file_writer</code></a>.</p>
 <p><a href="../../tf/contrib/summary/eval_dir.html"><code>eval_dir(...)</code></a>: Construct a logdir for an eval summary writer.</p>
 <p><a href="../../tf/contrib/summary/flush.html"><code>flush(...)</code></a>: Forces summary writer to send any buffered data to storage.</p>
 <p><a href="../../tf/contrib/summary/generic.html"><code>generic(...)</code></a>: Writes a tensor summary if possible.</p>
 <p><a href="../../tf/contrib/summary/graph.html"><code>graph(...)</code></a>: Writes a TensorFlow graph to the summary interface.</p>
 <p><a href="../../tf/contrib/summary/histogram.html"><code>histogram(...)</code></a>: Writes a histogram summary if possible.</p>
 <p><a href="../../tf/contrib/summary/image.html"><code>image(...)</code></a>: Writes an image summary if possible.</p>
-<p><a href="../../tf/contrib/summary/import_event.html"><code>import_event(...)</code></a>: Writes a <a href="../../tf/Event.md"><code>tf.Event</code></a> binary proto.</p>
+<p><a href="../../tf/contrib/summary/import_event.html"><code>import_event(...)</code></a>: Writes a <a href="../../tf/Event.html"><code>tf.Event</code></a> binary proto.</p>
 <p><a href="../../tf/contrib/summary/initialize.html"><code>initialize(...)</code></a>: Initializes summary writing for graph execution mode.</p>
 <p><a href="../../tf/contrib/summary/never_record_summaries.html"><code>never_record_summaries(...)</code></a>: Sets the should_record_summaries Tensor to always false.</p>
 <p><a href="../../tf/contrib/summary/record_summaries_every_n_global_steps.html"><code>record_summaries_every_n_global_steps(...)</code></a>: Sets the should_record_summaries Tensor to true if global_step % n == 0.</p>

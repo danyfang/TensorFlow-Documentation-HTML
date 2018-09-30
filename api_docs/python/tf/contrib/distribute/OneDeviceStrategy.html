@@ -4152,7 +4152,7 @@ If <code>False</code>, <code>call_for_each_tower(fn)</code> may call <code>fn</c
 <h4>Args:</h4>
 <ul>
 <li><b><code>aggregation</code></b>: Indicates how a variable will be aggregated. Accepted values
-are <a href="../../../tf/VariableAggregation.md#SUM"><code>tf.VariableAggregation.SUM</code></a>, <a href="../../../tf/VariableAggregation.md#MEAN"><code>tf.VariableAggregation.MEAN</code></a>.</li>
+are <a href="../../../tf/VariableAggregation.html#SUM"><code>tf.VariableAggregation.SUM</code></a>, <a href="../../../tf/VariableAggregation.html#MEAN"><code>tf.VariableAggregation.MEAN</code></a>.</li>
 <li><b><code>value_destination_pairs</code></b>: A sequence of (value, destinations)
 pairs. See <code>reduce()</code> for a description.</li>
 </ul>
@@ -4272,7 +4272,7 @@ with distribution_strategy.scope():
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>dataset_fn</code></b>: A function that returns a <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a>.</li>
+<li><b><code>dataset_fn</code></b>: A function that returns a <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>PerDeviceDataset</code> that will produce data for each tower.</p>
@@ -4318,7 +4318,7 @@ default <code>DistributionStrategy</code>.</li>
 <h4>Args:</h4>
 <ul>
 <li><b><code>aggregation</code></b>: Indicates how a variable will be aggregated. Accepted values
-are <a href="../../../tf/VariableAggregation.md#SUM"><code>tf.VariableAggregation.SUM</code></a>, <a href="../../../tf/VariableAggregation.md#MEAN"><code>tf.VariableAggregation.MEAN</code></a>.</li>
+are <a href="../../../tf/VariableAggregation.html#SUM"><code>tf.VariableAggregation.SUM</code></a>, <a href="../../../tf/VariableAggregation.html#MEAN"><code>tf.VariableAggregation.MEAN</code></a>.</li>
 <li><b><code>value</code></b>: A per-device value with one value per tower.</li>
 <li><b><code>destinations</code></b>: An optional mirrored variable, a device string,
 list of device strings. The return value will be copied to all

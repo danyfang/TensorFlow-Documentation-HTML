@@ -4097,7 +4097,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/input.py"><code>tensorflow/python/training/input.py</code></a>.</p>
-<p>See the guides: <a href="../../../../api_guides/python/io_ops.md#Input_pipeline">Inputs and Readers &gt; Input pipeline</a>, <a href="../../../../api_guides/python/reading_data.md#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a></p>
+<p>See the guides: <a href="../../../../api_guides/python/io_ops.html#Input_pipeline">Inputs and Readers &gt; Input pipeline</a>, <a href="../../../../api_guides/python/reading_data.html#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a></p>
 <p>Create batches by randomly shuffling tensors.</p>
 <p>The <code>tensors_list</code> argument is a list of tuples of tensors, or a list of
 dictionaries of tensors.  Each element in the list is treated similarly
@@ -4124,7 +4124,7 @@ same size in the first dimension.  If an input tensor has shape <code>[*, x, y, 
 <p>The <code>capacity</code> argument controls the how long the prefetching is allowed to
 grow the queues.</p>
 <p>The returned operation is a dequeue operation and will throw
-<a href="../../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> if the input queue is exhausted. If this
+<a href="../../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> if the input queue is exhausted. If this
 operation is feeding another input queue, its queue runner will catch
 this exception, however, if this operation is used in your main thread
 you are responsible for catching this yourself.</p>
@@ -4162,7 +4162,7 @@ inferred from the elements of <code>tensors_list</code>.</li>
 </ul>
 <h4>Eager Compatibility</h4>
 <p>Input pipelines based on Queues are not supported when eager execution is
-enabled. Please use the <a href="../../tf/data.md"><code>tf.data</code></a> API to ingest data under eager execution.</p>
+enabled. Please use the <a href="../../tf/data.html"><code>tf.data</code></a> API to ingest data under eager execution.</p>
 
     </article>
   </div>

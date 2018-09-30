@@ -4105,26 +4105,26 @@ new ideas and experimenting with new techniques.</p>
 <p>The CIFAR-10 tutorial demonstrates several important constructs for
 designing larger and more sophisticated models in TensorFlow:</p>
 <ul>
-<li>Core mathematical components including <a href="../../api_docs/python/tf/nn/conv2d.md">convolution</a>
+<li>Core mathematical components including <a href="../../api_docs/python/tf/nn/conv2d.html">convolution</a>
 (<a href="https://en.wikipedia.org/wiki/Convolution">wiki</a>),
-<a href="../../api_docs/python/tf/nn/relu.md">rectified linear activations</a>
+<a href="../../api_docs/python/tf/nn/relu.html">rectified linear activations</a>
 (<a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">wiki</a>),
-<a href="../../api_docs/python/tf/nn/max_pool.md">max pooling</a>
+<a href="../../api_docs/python/tf/nn/max_pool.html">max pooling</a>
 (<a href="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer">wiki</a>)
-and <a href="../../api_docs/python/tf/nn/local_response_normalization.md">local response normalization</a>
+and <a href="../../api_docs/python/tf/nn/local_response_normalization.html">local response normalization</a>
 (Chapter 3.3 in
 <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">AlexNet paper</a>).</li>
-<li><a href="../../guide/summaries_and_tensorboard.md">Visualization</a>
+<li><a href="../../guide/summaries_and_tensorboard.html">Visualization</a>
 of network activities during training, including input images,
 losses and distributions of activations and gradients.</li>
 <li>Routines for calculating the
-<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.md">moving average</a>
+<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.html">moving average</a>
 of learned parameters and using these averages
 during evaluation to boost predictive performance.</li>
 <li>Implementation of a
-<a href="../../api_docs/python/tf/train/exponential_decay.md">learning rate schedule</a>
+<a href="../../api_docs/python/tf/train/exponential_decay.html">learning rate schedule</a>
 that systematically decrements over time.</li>
-<li>Prefetching <a href="../../api_docs/python/tf/train/shuffle_batch.md">queues</a>
+<li>Prefetching <a href="../../api_docs/python/tf/train/shuffle_batch.html">queues</a>
 for input
 data to isolate the model from disk latency and expensive image pre-processing.</li>
 </ul>
@@ -4200,27 +4200,27 @@ gradients, variable updates and visualization summaries.</li>
 <p>The input part of the model is built by the functions <code>inputs()</code> and
 <code>distorted_inputs()</code> which read images from the CIFAR-10 binary data files.
 These files contain fixed byte length records, so we use
-<a href="../../api_docs/python/tf/FixedLengthRecordReader.md"><code>tf.FixedLengthRecordReader</code></a>.
-See <a href="../../api_guides/python/reading_data.md#reading-from-files">Reading Data</a> to
+<a href="../../api_docs/python/tf/FixedLengthRecordReader.html"><code>tf.FixedLengthRecordReader</code></a>.
+See <a href="../../api_guides/python/reading_data.html#reading-from-files">Reading Data</a> to
 learn more about how the <code>Reader</code> class works.</p>
 <p>The images are processed as follows:</p>
 <ul>
 <li>They are cropped to 24 x 24 pixels, centrally for evaluation or
-<a href="../../api_docs/python/tf/random_crop.md">randomly</a> for training.</li>
-<li>They are <a href="../../api_docs/python/tf/image/per_image_standardization.md">approximately whitened</a>
+<a href="../../api_docs/python/tf/random_crop.html">randomly</a> for training.</li>
+<li>They are <a href="../../api_docs/python/tf/image/per_image_standardization.html">approximately whitened</a>
 to make the model insensitive to dynamic range.</li>
 </ul>
 <p>For training, we additionally apply a series of random distortions to
 artificially increase the data set size:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/image/random_flip_left_right.md">Randomly flip</a> the image from left to right.</li>
-<li>Randomly distort the <a href="../../api_docs/python/tf/image/random_brightness.md">image brightness</a>.</li>
-<li>Randomly distort the <a href="../../api_docs/python/tf/image/random_contrast.md">image contrast</a>.</li>
+<li><a href="../../api_docs/python/tf/image/random_flip_left_right.html">Randomly flip</a> the image from left to right.</li>
+<li>Randomly distort the <a href="../../api_docs/python/tf/image/random_brightness.html">image brightness</a>.</li>
+<li>Randomly distort the <a href="../../api_docs/python/tf/image/random_contrast.html">image contrast</a>.</li>
 </ul>
-<p>Please see the <a href="../../api_guides/python/image.md">Images</a> page for the list of
+<p>Please see the <a href="../../api_guides/python/image.html">Images</a> page for the list of
 available distortions. We also attach an
-<a href="../../api_docs/python/tf/summary/image.md"><code>tf.summary.image</code></a> to the images
-so that we may visualize them in <a href="../../guide/summaries_and_tensorboard.md">TensorBoard</a>.
+<a href="../../api_docs/python/tf/summary/image.html"><code>tf.summary.image</code></a> to the images
+so that we may visualize them in <a href="../../guide/summaries_and_tensorboard.html">TensorBoard</a>.
 This is a good practice to verify that inputs are built correctly.</p>
 <div style="width:50%; margin:auto; margin-bottom:10px; margin-top:20px;">
   <img style="width:70%" src="https://www.tensorflow.org/images/cifar_image_summary.png">
@@ -4228,7 +4228,7 @@ This is a good practice to verify that inputs are built correctly.</p>
 <p>Reading images from disk and distorting them can use a non-trivial amount of
 processing time. To prevent these operations from slowing down training, we run
 them inside 16 separate threads which continuously fill a TensorFlow
-<a href="../../api_docs/python/tf/train/shuffle_batch.md">queue</a>.</p>
+<a href="../../api_docs/python/tf/train/shuffle_batch.html">queue</a>.</p>
 <h3>Model Prediction</h3>
 <p>The prediction part of the model is constructed by the <code>inference()</code> function
 which adds operations to compute the <em>logits</em> of the predictions. That part of
@@ -4243,35 +4243,35 @@ the model is organized as follows:</p>
 <tbody>
 <tr>
 <td><code>conv1</code></td>
-<td><a href="../../api_docs/python/tf/nn/conv2d.md">convolution</a> and <a href="../../api_docs/python/tf/nn/relu.md">rectified linear</a> activation.</td>
+<td><a href="../../api_docs/python/tf/nn/conv2d.html">convolution</a> and <a href="../../api_docs/python/tf/nn/relu.html">rectified linear</a> activation.</td>
 </tr>
 <tr>
 <td><code>pool1</code></td>
-<td><a href="../../api_docs/python/tf/nn/max_pool.md">max pooling</a>.</td>
+<td><a href="../../api_docs/python/tf/nn/max_pool.html">max pooling</a>.</td>
 </tr>
 <tr>
 <td><code>norm1</code></td>
-<td><a href="../../api_docs/python/tf/nn/local_response_normalization.md">local response normalization</a>.</td>
+<td><a href="../../api_docs/python/tf/nn/local_response_normalization.html">local response normalization</a>.</td>
 </tr>
 <tr>
 <td><code>conv2</code></td>
-<td><a href="../../api_docs/python/tf/nn/conv2d.md">convolution</a> and <a href="../../api_docs/python/tf/nn/relu.md">rectified linear</a> activation.</td>
+<td><a href="../../api_docs/python/tf/nn/conv2d.html">convolution</a> and <a href="../../api_docs/python/tf/nn/relu.html">rectified linear</a> activation.</td>
 </tr>
 <tr>
 <td><code>norm2</code></td>
-<td><a href="../../api_docs/python/tf/nn/local_response_normalization.md">local response normalization</a>.</td>
+<td><a href="../../api_docs/python/tf/nn/local_response_normalization.html">local response normalization</a>.</td>
 </tr>
 <tr>
 <td><code>pool2</code></td>
-<td><a href="../../api_docs/python/tf/nn/max_pool.md">max pooling</a>.</td>
+<td><a href="../../api_docs/python/tf/nn/max_pool.html">max pooling</a>.</td>
 </tr>
 <tr>
 <td><code>local3</code></td>
-<td><a href="../../api_guides/python/nn.md">fully connected layer with rectified linear activation</a>.</td>
+<td><a href="../../api_guides/python/nn.html">fully connected layer with rectified linear activation</a>.</td>
 </tr>
 <tr>
 <td><code>local4</code></td>
-<td><a href="../../api_guides/python/nn.md">fully connected layer with rectified linear activation</a>.</td>
+<td><a href="../../api_guides/python/nn.html">fully connected layer with rectified linear activation</a>.</td>
 </tr>
 <tr>
 <td><code>softmax_linear</code></td>
@@ -4286,7 +4286,7 @@ the model is organized as follows:</p>
 <blockquote>
 <p><strong>EXERCISE</strong>: The output of <code>inference</code> are un-normalized logits. Try editing
 the network architecture to return normalized predictions using
-<a href="../../api_docs/python/tf/nn/softmax.md"><code>tf.nn.softmax</code></a>.</p>
+<a href="../../api_docs/python/tf/nn/softmax.html"><code>tf.nn.softmax</code></a>.</p>
 </blockquote>
 <p>The <code>inputs()</code> and <code>inference()</code> functions provide all the components
 necessary to perform an evaluation of a model. We now shift our focus towards
@@ -4303,26 +4303,26 @@ architecture in the top layer.</p>
 <p>The usual method for training a network to perform N-way classification is
 <a href="https://en.wikipedia.org/wiki/Multinomial_logistic_regression">multinomial logistic regression</a>,
 aka. <em>softmax regression</em>. Softmax regression applies a
-<a href="../../api_docs/python/tf/nn/softmax.md">softmax</a> nonlinearity to the
+<a href="../../api_docs/python/tf/nn/softmax.html">softmax</a> nonlinearity to the
 output of the network and calculates the
-<a href="../../api_docs/python/tf/nn/sparse_softmax_cross_entropy_with_logits.md">cross-entropy</a>
+<a href="../../api_docs/python/tf/nn/sparse_softmax_cross_entropy_with_logits.html">cross-entropy</a>
 between the normalized predictions and the label index.
 For regularization, we also apply the usual
-<a href="../../api_docs/python/tf/nn/l2_loss.md">weight decay</a> losses to all learned
+<a href="../../api_docs/python/tf/nn/l2_loss.html">weight decay</a> losses to all learned
 variables.  The objective function for the model is the sum of the cross entropy
 loss and all these weight decay terms, as returned by the <code>loss()</code> function.</p>
-<p>We visualize it in TensorBoard with a <a href="../../api_docs/python/tf/summary/scalar.md"><code>tf.summary.scalar</code></a>:</p>
+<p>We visualize it in TensorBoard with a <a href="../../api_docs/python/tf/summary/scalar.html"><code>tf.summary.scalar</code></a>:</p>
 <p><img src="https://www.tensorflow.org/images/cifar_loss.png" alt="CIFAR-10 Loss" title="CIFAR-10 Total Loss"></p>
 <p>We train the model using standard
 <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a>
-algorithm (see <a href="../../api_guides/python/train.md">Training</a> for other methods)
+algorithm (see <a href="../../api_guides/python/train.html">Training</a> for other methods)
 with a learning rate that
-<a href="../../api_docs/python/tf/train/exponential_decay.md">exponentially decays</a>
+<a href="../../api_docs/python/tf/train/exponential_decay.html">exponentially decays</a>
 over time.</p>
 <p><img src="https://www.tensorflow.org/images/cifar_lr_decay.png" alt="CIFAR-10 Learning Rate Decay" title="CIFAR-10 Learning Rate Decay"></p>
 <p>The <code>train()</code> function adds the operations needed to minimize the objective by
 calculating the gradient and updating the learned variables (see
-<a href="../../api_docs/python/tf/train/GradientDescentOptimizer.md"><code>tf.train.GradientDescentOptimizer</code></a>
+<a href="../../api_docs/python/tf/train/GradientDescentOptimizer.html"><code>tf.train.GradientDescentOptimizer</code></a>
 for details).  It returns an operation that executes all the calculations
 needed to train and update the model for one batch of images.</p>
 <h2>Launching and Training the Model</h2>
@@ -4368,9 +4368,9 @@ training step can take so long. Try decreasing the number of images that
 initially fill up the queue.  Search for <code>min_fraction_of_examples_in_queue</code>
 in <code>cifar10_input.py</code>.</p>
 </blockquote>
-<p><code>cifar10_train.py</code> periodically <a href="../../api_docs/python/tf/train/Saver.md">saves</a>
+<p><code>cifar10_train.py</code> periodically <a href="../../api_docs/python/tf/train/Saver.html">saves</a>
 all model parameters in
-<a href="../../guide/saved_model.md">checkpoint files</a>
+<a href="../../guide/saved_model.html">checkpoint files</a>
 but it does <em>not</em> evaluate the model. The checkpoint file
 will be used by <code>cifar10_eval.py</code> to measure the predictive
 performance (see <a href="#evaluating-a-model">Evaluating a Model</a> below).</p>
@@ -4384,10 +4384,10 @@ how the model is training. We want more insight into the model during training:<
 <li>Are the gradients, activations and weights reasonable?</li>
 <li>What is the learning rate currently at?</li>
 </ul>
-<p><a href="../../guide/summaries_and_tensorboard.md">TensorBoard</a> provides this
+<p><a href="../../guide/summaries_and_tensorboard.html">TensorBoard</a> provides this
 functionality, displaying data exported periodically from <code>cifar10_train.py</code> via
 a
-<a href="../../api_docs/python/tf/summary/FileWriter.md"><code>tf.summary.FileWriter</code></a>.</p>
+<a href="../../api_docs/python/tf/summary/FileWriter.html"><code>tf.summary.FileWriter</code></a>.</p>
 <p>For instance, we can watch how the distribution of activations and degree of
 sparsity in <code>local3</code> features evolve during training:</p>
 <div style="width:100%; margin:auto; margin-bottom:10px; margin-top:20px; display: flex; flex-direction: row">
@@ -4399,7 +4399,7 @@ interesting to track over time. However, the loss exhibits a considerable amount
 of noise due to the small batch size employed by training.  In practice we find
 it extremely useful to visualize their moving averages in addition to their raw
 values.  See how the scripts use
-<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.md"><code>tf.train.ExponentialMovingAverage</code></a>
+<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.html"><code>tf.train.ExponentialMovingAverage</code></a>
 for this purpose.</p>
 <h2>Evaluating a Model</h2>
 <p>Let us now evaluate how well the trained model performs on a hold-out data set.
@@ -4426,7 +4426,7 @@ it returned 86% accuracy. <code>cifar10_eval.py</code> also
 exports summaries that may be visualized in TensorBoard. These summaries
 provide additional insight into the model during evaluation.</p>
 <p>The training script calculates the
-<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.md">moving average</a>
+<a href="../../api_docs/python/tf/train/ExponentialMovingAverage.html">moving average</a>
 version of all learned variables. The evaluation script substitutes
 all learned model parameters with the moving average version. This
 substitution boosts model performance at evaluation time.</p>
@@ -4480,21 +4480,21 @@ a “tower”. We must set two attributes for each tower:</p>
 <ul>
 <li>
 <p>A unique name for all operations within a tower.
-<a href="../../api_docs/python/tf/name_scope.md"><code>tf.name_scope</code></a> provides
+<a href="../../api_docs/python/tf/name_scope.html"><code>tf.name_scope</code></a> provides
 this unique name by prepending a scope. For instance, all operations in
 the first tower are prepended with <code>tower_0</code>, e.g. <code>tower_0/conv1/Conv2D</code>.</p>
 </li>
 <li>
 <p>A preferred hardware device to run the operation within a tower.
-<a href="../../api_docs/python/tf/device.md"><code>tf.device</code></a> specifies this. For
+<a href="../../api_docs/python/tf/device.html"><code>tf.device</code></a> specifies this. For
 instance, all operations in the first tower reside within <code>device('/device:GPU:0')</code>
 scope indicating that they should be run on the first GPU.</p>
 </li>
 </ul>
 <p>All variables are pinned to the CPU and accessed via
-<a href="../../api_docs/python/tf/get_variable.md"><code>tf.get_variable</code></a>
+<a href="../../api_docs/python/tf/get_variable.html"><code>tf.get_variable</code></a>
 in order to share them in a multi-GPU version.
-See how-to on <a href="../../guide/variables.md">Sharing Variables</a>.</p>
+See how-to on <a href="../../guide/variables.html">Sharing Variables</a>.</p>
 <h3>Launching and Training the Model on Multiple GPU cards</h3>
 <p>If you have several GPU cards installed on your machine you can use them to
 train the model faster with the <code>cifar10_multi_gpu_train.py</code> script.  This

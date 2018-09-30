@@ -4091,13 +4091,13 @@
 <h2>Class <code>InvalidArgumentError</code></h2>
 <p>Inherits From: <a href="../../tf/OpError.html"><code>OpError</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/errors_impl.py"><code>tensorflow/python/framework/errors_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/client.md#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/client.html#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
 <p>Raised when an operation receives an invalid argument.</p>
 <p>This may occur, for example, if an operation is receives an input
 tensor that has an invalid value or shape. For example, the
-<a href="../../tf/matmul.md"><code>tf.matmul</code></a> op will raise this
+<a href="../../tf/matmul.html"><code>tf.matmul</code></a> op will raise this
 error if it receives an input that is not a matrix, and the
-<a href="../../tf/reshape.md"><code>tf.reshape</code></a> op will raise
+<a href="../../tf/reshape.html"><code>tf.reshape</code></a> op will raise
 this error if the new shape does not match the number of elements in the input
 tensor.</p>
 <h2>Properties</h2>
@@ -4111,9 +4111,9 @@ tensor.</p>
 <p>The operation that failed, if known.</p>
 <p><em>N.B.</em> If the failed op was synthesized at runtime, e.g. a <code>Send</code>
 or <code>Recv</code> op, there will be no corresponding
-<a href="../../tf/Operation.md"><code>tf.Operation</code></a>
+<a href="../../tf/Operation.html"><code>tf.Operation</code></a>
 object.  In that case, this will return <code>None</code>, and you should
-instead use the <a href="../../tf/OpError.md#node_def"><code>tf.OpError.node_def</code></a> to
+instead use the <a href="../../tf/OpError.html#node_def"><code>tf.OpError.node_def</code></a> to
 discover information about the op.</p>
 <h4>Returns:</h4>
 <p>The <code>Operation</code> that failed, or None.</p>

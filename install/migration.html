@@ -4146,7 +4146,7 @@ with tf.variable_scope(tf.get_variable_scope(), reuse=True):
 <code>TensorArray.pack</code> and <code>TensorArray.unpack</code> to
 <code>TensorArray.stack</code> and <code>TensorArray.unstack</code>. However, <code>TensorArray.pack</code>
 and <code>TensorArray.unpack</code> cannot be detected lexically since they are
-indirectly related to the <a href="../api_docs/python/tf.md"><code>tf</code></a> namespace e.g.
+indirectly related to the <a href="../api_docs/python/tf.html"><code>tf</code></a> namespace e.g.
 <code>foo = tf.TensorArray(); foo.unpack()</code></p>
 </li>
 </ul>
@@ -4162,103 +4162,103 @@ all backward incompatible changes made in TensorFlow 1.0.</p>
 <li>should be renamed to <code>tf.GLOBAL_VARIABLES</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/all_variables.md"><code>tf.all_variables</code></a>
+<li><a href="../api_docs/python/tf/all_variables.html"><code>tf.all_variables</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/global_variables.md"><code>tf.global_variables</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/global_variables.html"><code>tf.global_variables</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/initialize_all_variables.md"><code>tf.initialize_all_variables</code></a>
+<li><a href="../api_docs/python/tf/initialize_all_variables.html"><code>tf.initialize_all_variables</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/global_variables_initializer.md"><code>tf.global_variables_initializer</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/global_variables_initializer.html"><code>tf.global_variables_initializer</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/initialize_local_variables.md"><code>tf.initialize_local_variables</code></a>
+<li><a href="../api_docs/python/tf/initialize_local_variables.html"><code>tf.initialize_local_variables</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/local_variables_initializer.md"><code>tf.local_variables_initializer</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/local_variables_initializer.html"><code>tf.local_variables_initializer</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/initialize_variables.md"><code>tf.initialize_variables</code></a>
+<li><a href="../api_docs/python/tf/initialize_variables.html"><code>tf.initialize_variables</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/variables_initializer.md"><code>tf.variables_initializer</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/variables_initializer.html"><code>tf.variables_initializer</code></a></li>
 </ul>
 </li>
 </ul>
 <h3>Summary functions</h3>
-<p>Summary functions have been consolidated under the <a href="../api_docs/python/tf/summary.md"><code>tf.summary</code></a> namespace.</p>
+<p>Summary functions have been consolidated under the <a href="../api_docs/python/tf/summary.html"><code>tf.summary</code></a> namespace.</p>
 <ul>
 <li><code>tf.audio_summary</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/audio.md"><code>tf.summary.audio</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/audio.html"><code>tf.summary.audio</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/contrib/deprecated/histogram_summary.md"><code>tf.contrib.deprecated.histogram_summary</code></a>
+<li><a href="../api_docs/python/tf/contrib/deprecated/histogram_summary.html"><code>tf.contrib.deprecated.histogram_summary</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/histogram.md"><code>tf.summary.histogram</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/histogram.html"><code>tf.summary.histogram</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/contrib/deprecated/scalar_summary.md"><code>tf.contrib.deprecated.scalar_summary</code></a>
+<li><a href="../api_docs/python/tf/contrib/deprecated/scalar_summary.html"><code>tf.contrib.deprecated.scalar_summary</code></a>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/scalar.md"><code>tf.summary.scalar</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/scalar.html"><code>tf.summary.scalar</code></a></li>
 </ul>
 </li>
 <li><code>tf.histogram_summary</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/histogram.md"><code>tf.summary.histogram</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/histogram.html"><code>tf.summary.histogram</code></a></li>
 </ul>
 </li>
 <li><code>tf.image_summary</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/image.md"><code>tf.summary.image</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/image.html"><code>tf.summary.image</code></a></li>
 </ul>
 </li>
 <li><code>tf.merge_all_summaries</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/merge_all.md"><code>tf.summary.merge_all</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/merge_all.html"><code>tf.summary.merge_all</code></a></li>
 </ul>
 </li>
 <li><code>tf.merge_summary</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/merge.md"><code>tf.summary.merge</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/merge.html"><code>tf.summary.merge</code></a></li>
 </ul>
 </li>
 <li><code>tf.scalar_summary</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/scalar.md"><code>tf.summary.scalar</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/scalar.html"><code>tf.summary.scalar</code></a></li>
 </ul>
 </li>
 <li><code>tf.train.SummaryWriter</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/summary/FileWriter.md"><code>tf.summary.FileWriter</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/summary/FileWriter.html"><code>tf.summary.FileWriter</code></a></li>
 </ul>
 </li>
 </ul>
 <h3>Numeric differences</h3>
-<p>Integer division and <a href="../api_docs/python/tf/floordiv.md"><code>tf.floordiv</code></a> now uses flooring semantics. This is to
-make the results of <code>np.divide</code> and <code>np.mod</code> consistent with <a href="../api_docs/python/tf/divide.md"><code>tf.divide</code></a> and
-<a href="../api_docs/python/tf/floormod.md"><code>tf.mod</code></a>, respectively. In addition we have changed the rounding algorithm
-used by <a href="../api_docs/python/tf/round.md"><code>tf.round</code></a> to match NumPy.</p>
+<p>Integer division and <a href="../api_docs/python/tf/floordiv.html"><code>tf.floordiv</code></a> now uses flooring semantics. This is to
+make the results of <code>np.divide</code> and <code>np.mod</code> consistent with <a href="../api_docs/python/tf/divide.html"><code>tf.divide</code></a> and
+<a href="../api_docs/python/tf/floormod.html"><code>tf.mod</code></a>, respectively. In addition we have changed the rounding algorithm
+used by <a href="../api_docs/python/tf/round.html"><code>tf.round</code></a> to match NumPy.</p>
 <ul>
 <li>
-<p><a href="../api_docs/python/tf/div.md"><code>tf.div</code></a></p>
+<p><a href="../api_docs/python/tf/div.html"><code>tf.div</code></a></p>
 <ul>
 <li>
-<p>The semantics of <a href="../api_docs/python/tf/divide.md"><code>tf.divide</code></a> division have been changed to match Python
+<p>The semantics of <a href="../api_docs/python/tf/divide.html"><code>tf.divide</code></a> division have been changed to match Python
 semantics completely. That is, <code>/</code> in Python 3     and future division mode in
 Python 2 will produce floating point numbers always, <code>//</code> will produce floored
-division.     However, even <a href="../api_docs/python/tf/div.md"><code>tf.div</code></a> will produce floored integer division.
-To force C-style truncation semantics, you must use <a href="../api_docs/python/tf/truncatediv.md"><code>tf.truncatediv</code></a>.</p>
+division.     However, even <a href="../api_docs/python/tf/div.html"><code>tf.div</code></a> will produce floored integer division.
+To force C-style truncation semantics, you must use <a href="../api_docs/python/tf/truncatediv.html"><code>tf.truncatediv</code></a>.</p>
 </li>
 <li>
-<p>Consider changing your code to use <a href="../api_docs/python/tf/divide.md"><code>tf.divide</code></a>, which follows Python semantics for promotion.</p>
+<p>Consider changing your code to use <a href="../api_docs/python/tf/divide.html"><code>tf.divide</code></a>, which follows Python semantics for promotion.</p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="../api_docs/python/tf/floormod.md"><code>tf.mod</code></a></p>
+<p><a href="../api_docs/python/tf/floormod.html"><code>tf.mod</code></a></p>
 <ul>
-<li>The semantics of <a href="../api_docs/python/tf/floormod.md"><code>tf.mod</code></a> have been changed to match Python semantics. In
+<li>The semantics of <a href="../api_docs/python/tf/floormod.html"><code>tf.mod</code></a> have been changed to match Python semantics. In
 particular, flooring semantics are used for     integers. If you wish to have
-C-style truncation mod (remainders), you can use <a href="../api_docs/python/tf/truncatemod.md"><code>tf.truncatemod</code></a></li>
+C-style truncation mod (remainders), you can use <a href="../api_docs/python/tf/truncatemod.html"><code>tf.truncatemod</code></a></li>
 </ul>
 </li>
 </ul>
@@ -4398,39 +4398,39 @@ fast rule, but we have removed several commonly noticed inconsistencies.</p>
 <ul>
 <li><code>tf.inv</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/reciprocal.md"><code>tf.reciprocal</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/reciprocal.html"><code>tf.reciprocal</code></a></li>
 <li>This was done to avoid confusion with NumPy’s matrix inverse <code>np.inv</code></li>
 </ul>
 </li>
 <li><code>tf.list_diff</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/setdiff1d.md"><code>tf.setdiff1d</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/setdiff1d.html"><code>tf.setdiff1d</code></a></li>
 </ul>
 </li>
 <li><code>tf.listdiff</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/setdiff1d.md"><code>tf.setdiff1d</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/setdiff1d.html"><code>tf.setdiff1d</code></a></li>
 </ul>
 </li>
 <li><code>tf.mul</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/multiply.md"><code>tf.multiply</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/multiply.html"><code>tf.multiply</code></a></li>
 </ul>
 </li>
 <li><code>tf.neg</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/negative.md"><code>tf.negative</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/negative.html"><code>tf.negative</code></a></li>
 </ul>
 </li>
 <li><code>tf.select</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/where.md"><code>tf.where</code></a></li>
-<li><a href="../api_docs/python/tf/where.md"><code>tf.where</code></a> now takes 3 arguments or 1 argument, just like <code>np.where</code></li>
+<li>should be renamed to <a href="../api_docs/python/tf/where.html"><code>tf.where</code></a></li>
+<li><a href="../api_docs/python/tf/where.html"><code>tf.where</code></a> now takes 3 arguments or 1 argument, just like <code>np.where</code></li>
 </ul>
 </li>
 <li><code>tf.sub</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/subtract.md"><code>tf.subtract</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/subtract.html"><code>tf.subtract</code></a></li>
 </ul>
 </li>
 </ul>
@@ -4439,125 +4439,125 @@ fast rule, but we have removed several commonly noticed inconsistencies.</p>
 NumPy methods.  To achieve this, TensorFlow 1.0 has changed keyword arguments
 and reordered some arguments. Notably, TensorFlow 1.0 now uses <code>axis</code> rather
 than <code>dimension</code>. TensorFlow 1.0 aims to keep the tensor argument first on
-operations that modify Tensors. (see the <a href="../api_docs/python/tf/concat.md"><code>tf.concat</code></a> change).</p>
+operations that modify Tensors. (see the <a href="../api_docs/python/tf/concat.html"><code>tf.concat</code></a> change).</p>
 <ul>
-<li><a href="../api_docs/python/tf/argmax.md"><code>tf.argmax</code></a>
-<ul>
-<li>keyword argument <code>dimension</code> should be renamed to <code>axis</code></li>
-</ul>
-</li>
-<li><a href="../api_docs/python/tf/argmin.md"><code>tf.argmin</code></a>
+<li><a href="../api_docs/python/tf/argmax.html"><code>tf.argmax</code></a>
 <ul>
 <li>keyword argument <code>dimension</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/concat.md"><code>tf.concat</code></a>
+<li><a href="../api_docs/python/tf/argmin.html"><code>tf.argmin</code></a>
+<ul>
+<li>keyword argument <code>dimension</code> should be renamed to <code>axis</code></li>
+</ul>
+</li>
+<li><a href="../api_docs/python/tf/concat.html"><code>tf.concat</code></a>
 <ul>
 <li>keyword argument <code>concat_dim</code> should be renamed to <code>axis</code></li>
 <li>arguments have been reordered to <code>tf.concat(values, axis, name='concat')</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/count_nonzero.md"><code>tf.count_nonzero</code></a>
+<li><a href="../api_docs/python/tf/count_nonzero.html"><code>tf.count_nonzero</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/expand_dims.md"><code>tf.expand_dims</code></a>
+<li><a href="../api_docs/python/tf/expand_dims.html"><code>tf.expand_dims</code></a>
 <ul>
 <li>keyword argument <code>dim</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_all.md"><code>tf.reduce_all</code></a>
+<li><a href="../api_docs/python/tf/reduce_all.html"><code>tf.reduce_all</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_any.md"><code>tf.reduce_any</code></a>
+<li><a href="../api_docs/python/tf/reduce_any.html"><code>tf.reduce_any</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_join.md"><code>tf.reduce_join</code></a>
+<li><a href="../api_docs/python/tf/reduce_join.html"><code>tf.reduce_join</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_logsumexp.md"><code>tf.reduce_logsumexp</code></a>
+<li><a href="../api_docs/python/tf/reduce_logsumexp.html"><code>tf.reduce_logsumexp</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_max.md"><code>tf.reduce_max</code></a>
+<li><a href="../api_docs/python/tf/reduce_max.html"><code>tf.reduce_max</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_mean.md"><code>tf.reduce_mean</code></a>
+<li><a href="../api_docs/python/tf/reduce_mean.html"><code>tf.reduce_mean</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_min.md"><code>tf.reduce_min</code></a>
+<li><a href="../api_docs/python/tf/reduce_min.html"><code>tf.reduce_min</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_prod.md"><code>tf.reduce_prod</code></a>
+<li><a href="../api_docs/python/tf/reduce_prod.html"><code>tf.reduce_prod</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reduce_sum.md"><code>tf.reduce_sum</code></a>
+<li><a href="../api_docs/python/tf/reduce_sum.html"><code>tf.reduce_sum</code></a>
 <ul>
 <li>keyword argument <code>reduction_indices</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reverse.md"><code>tf.reverse</code></a>
+<li><a href="../api_docs/python/tf/reverse.html"><code>tf.reverse</code></a>
 <ul>
-<li><a href="../api_docs/python/tf/reverse.md"><code>tf.reverse</code></a> used to take a 1D <code>bool</code> tensor to control which dimensions were reversed. Now we use a Tensor of axis indices.</li>
+<li><a href="../api_docs/python/tf/reverse.html"><code>tf.reverse</code></a> used to take a 1D <code>bool</code> tensor to control which dimensions were reversed. Now we use a Tensor of axis indices.</li>
 <li>For example <code>tf.reverse(a, [True, False, True])</code> now must be <code>tf.reverse(a, [0, 2])</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/reverse_sequence.md"><code>tf.reverse_sequence</code></a>
+<li><a href="../api_docs/python/tf/reverse_sequence.html"><code>tf.reverse_sequence</code></a>
 <ul>
 <li>keyword argument <code>batch_dim</code> should be renamed to <code>batch_axis</code></li>
 <li>keyword argument <code>seq_dim</code> should be renamed to <code>seq_axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/sparse_concat.md"><code>tf.sparse_concat</code></a>
+<li><a href="../api_docs/python/tf/sparse_concat.html"><code>tf.sparse_concat</code></a>
 <ul>
 <li>keyword argument <code>concat_dim</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/sparse_reduce_sum.md"><code>tf.sparse_reduce_sum</code></a>
+<li><a href="../api_docs/python/tf/sparse_reduce_sum.html"><code>tf.sparse_reduce_sum</code></a>
 <ul>
 <li>keyword argument <code>reduction_axes</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/sparse_reduce_sum_sparse.md"><code>tf.sparse_reduce_sum_sparse</code></a>
+<li><a href="../api_docs/python/tf/sparse_reduce_sum_sparse.html"><code>tf.sparse_reduce_sum_sparse</code></a>
 <ul>
 <li>keyword argument <code>reduction_axes</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/sparse_split.md"><code>tf.sparse_split</code></a>
+<li><a href="../api_docs/python/tf/sparse_split.html"><code>tf.sparse_split</code></a>
 <ul>
 <li>keyword argument <code>split_dim</code> should be renamed to <code>axis</code></li>
 <li>arguments have been reordered to <code>tf.sparse_split(keyword_required=KeywordRequired(), sp_input=None, num_split=None, axis=None, name=None, split_dim=None)</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/split.md"><code>tf.split</code></a>
+<li><a href="../api_docs/python/tf/split.html"><code>tf.split</code></a>
 <ul>
 <li>keyword argument <code>split_dim</code> should be renamed to <code>axis</code></li>
 <li>keyword argument <code>num_split</code> should be renamed to <code>num_or_size_splits</code></li>
 <li>arguments have been reordered to <code>tf.split(value, num_or_size_splits, axis=0, num=None, name='split')</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/squeeze.md"><code>tf.squeeze</code></a>
+<li><a href="../api_docs/python/tf/squeeze.html"><code>tf.squeeze</code></a>
 <ul>
 <li>keyword argument <code>squeeze_dims</code> should be renamed to <code>axis</code></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/svd.md"><code>tf.svd</code></a>
+<li><a href="../api_docs/python/tf/svd.html"><code>tf.svd</code></a>
 <ul>
 <li>arguments have been reordered to <code>tf.svd(tensor, full_matrices=False, compute_uv=True, name=None)</code>.</li>
 </ul>
@@ -4566,7 +4566,7 @@ operations that modify Tensors. (see the <a href="../api_docs/python/tf/concat.m
 <h3>Simplified math variants</h3>
 <p>Batched versions of math operations have been removed. Now the functionality is
 contained in the non-batched versions. Similarly,<code>tf.complex_abs</code> has had its
-functionality moved to <a href="../api_docs/python/tf/abs.md"><code>tf.abs</code></a></p>
+functionality moved to <a href="../api_docs/python/tf/abs.html"><code>tf.abs</code></a></p>
 <ul>
 <li><code>tf.batch_band_part</code>
 <ul>
@@ -4575,87 +4575,87 @@ functionality moved to <a href="../api_docs/python/tf/abs.md"><code>tf.abs</code
 </li>
 <li><code>tf.batch_cholesky</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/cholesky.md"><code>tf.cholesky</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/cholesky.html"><code>tf.cholesky</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_cholesky_solve</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/cholesky_solve.md"><code>tf.cholesky_solve</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/cholesky_solve.html"><code>tf.cholesky_solve</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_fft</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/fft.md"><code>tf.fft</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/fft.html"><code>tf.fft</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_fft3d</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/fft3d.md"><code>tf.fft3d</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/fft3d.html"><code>tf.fft3d</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_ifft</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/ifft.md"><code>tf.ifft</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/ifft.html"><code>tf.ifft</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_ifft2d</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/ifft2d.md"><code>tf.ifft2d</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/ifft2d.html"><code>tf.ifft2d</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_ifft3d</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/ifft3d.md"><code>tf.ifft3d</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/ifft3d.html"><code>tf.ifft3d</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matmul</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matmul.md"><code>tf.matmul</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matmul.html"><code>tf.matmul</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_determinant</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_determinant.md"><code>tf.matrix_determinant</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_determinant.html"><code>tf.matrix_determinant</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_diag</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_diag.md"><code>tf.matrix_diag</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_diag.html"><code>tf.matrix_diag</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_inverse</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_inverse.md"><code>tf.matrix_inverse</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_inverse.html"><code>tf.matrix_inverse</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_solve</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_solve.md"><code>tf.matrix_solve</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_solve.html"><code>tf.matrix_solve</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_solve_ls</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_solve_ls.md"><code>tf.matrix_solve_ls</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_solve_ls.html"><code>tf.matrix_solve_ls</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_transpose</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_transpose.md"><code>tf.matrix_transpose</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_transpose.html"><code>tf.matrix_transpose</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_matrix_triangular_solve</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/matrix_triangular_solve.md"><code>tf.matrix_triangular_solve</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/matrix_triangular_solve.html"><code>tf.matrix_triangular_solve</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_self_adjoint_eig</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/self_adjoint_eig.md"><code>tf.self_adjoint_eig</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/self_adjoint_eig.html"><code>tf.self_adjoint_eig</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_self_adjoint_eigvals</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/self_adjoint_eigvals.md"><code>tf.self_adjoint_eigvals</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/self_adjoint_eigvals.html"><code>tf.self_adjoint_eigvals</code></a></li>
 </ul>
 </li>
 <li><code>tf.batch_set_diag</code>
@@ -4665,12 +4665,12 @@ functionality moved to <a href="../api_docs/python/tf/abs.md"><code>tf.abs</code
 </li>
 <li><code>tf.batch_svd</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/svd.md"><code>tf.svd</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/svd.html"><code>tf.svd</code></a></li>
 </ul>
 </li>
 <li><code>tf.complex_abs</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/abs.md"><code>tf.abs</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/abs.html"><code>tf.abs</code></a></li>
 </ul>
 </li>
 </ul>
@@ -4679,45 +4679,45 @@ functionality moved to <a href="../api_docs/python/tf/abs.md"><code>tf.abs</code
 <ul>
 <li><code>tf.image.per_image_whitening</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/image/per_image_standardization.md"><code>tf.image.per_image_standardization</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/image/per_image_standardization.html"><code>tf.image.per_image_standardization</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/nn/sigmoid_cross_entropy_with_logits.md"><code>tf.nn.sigmoid_cross_entropy_with_logits</code></a>
+<li><a href="../api_docs/python/tf/nn/sigmoid_cross_entropy_with_logits.html"><code>tf.nn.sigmoid_cross_entropy_with_logits</code></a>
 <ul>
 <li>arguments have been reordered to <code>tf.nn.sigmoid_cross_entropy_with_logits(_sentinel=None, labels=None, logits=None, name=None)</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/nn/softmax_cross_entropy_with_logits.md"><code>tf.nn.softmax_cross_entropy_with_logits</code></a>
+<li><a href="../api_docs/python/tf/nn/softmax_cross_entropy_with_logits.html"><code>tf.nn.softmax_cross_entropy_with_logits</code></a>
 <ul>
 <li>arguments have been reordered to <code>tf.nn.softmax_cross_entropy_with_logits(_sentinel=None, labels=None, logits=None, dim=-1, name=None)</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/nn/sparse_softmax_cross_entropy_with_logits.md"><code>tf.nn.sparse_softmax_cross_entropy_with_logits</code></a>
+<li><a href="../api_docs/python/tf/nn/sparse_softmax_cross_entropy_with_logits.html"><code>tf.nn.sparse_softmax_cross_entropy_with_logits</code></a>
 <ul>
 <li>arguments have been reordered to <code>tf.nn.sparse_softmax_cross_entropy_with_logits(_sentinel=None, labels=None, logits=None, name=None)</code>.</li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/ones_initializer.md"><code>tf.ones_initializer</code></a>
+<li><a href="../api_docs/python/tf/ones_initializer.html"><code>tf.ones_initializer</code></a>
 <ul>
 <li>should be changed to a function call i.e. <code>tf.ones_initializer()</code></li>
 </ul>
 </li>
 <li><code>tf.pack</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/stack.md"><code>tf.stack</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/stack.html"><code>tf.stack</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/round.md"><code>tf.round</code></a>
+<li><a href="../api_docs/python/tf/round.html"><code>tf.round</code></a>
 <ul>
-<li>The semantics of <a href="../api_docs/python/tf/round.md"><code>tf.round</code></a> now match Banker’s rounding.</li>
+<li>The semantics of <a href="../api_docs/python/tf/round.html"><code>tf.round</code></a> now match Banker’s rounding.</li>
 </ul>
 </li>
 <li><code>tf.unpack</code>
 <ul>
-<li>should be renamed to <a href="../api_docs/python/tf/unstack.md"><code>tf.unstack</code></a></li>
+<li>should be renamed to <a href="../api_docs/python/tf/unstack.html"><code>tf.unstack</code></a></li>
 </ul>
 </li>
-<li><a href="../api_docs/python/tf/zeros_initializer.md"><code>tf.zeros_initializer</code></a>
+<li><a href="../api_docs/python/tf/zeros_initializer.html"><code>tf.zeros_initializer</code></a>
 <ul>
 <li>should be changed to a function call i.e. <code>tf.zeros_initializer()</code></li>
 </ul>

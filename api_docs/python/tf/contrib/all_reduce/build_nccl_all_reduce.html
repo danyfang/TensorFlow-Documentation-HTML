@@ -4093,14 +4093,14 @@
 <p>Build a subgraph that does one full all-reduce, using NCCL.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>input_tensors</code></b>: list of T <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> of same-shape and type values to
+<li><b><code>input_tensors</code></b>: list of T <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> of same-shape and type values to
 be reduced.</li>
 <li><b><code>red_op</code></b>: binary elementwise reduction operator.  Must be one of
 {tf.add}</li>
 <li><b><code>un_op</code></b>: optional unary elementwise Op to apply to fully-reduce values.</li>
 </ul>
 <h4>Returns:</h4>
-<p>list of T <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> of reduced values.</p>
+<p>list of T <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> of reduced values.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: red_op not supported.</li>

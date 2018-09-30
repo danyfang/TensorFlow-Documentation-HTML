@@ -4120,10 +4120,10 @@ reverse.forward_log_det_jacobian(any_value)
 reverse.inverse_log_det_jacobian(any_value)
 # ==&gt; 0.
 </code></pre>
-<p>Warning: <a href="../../../../tf/estimator.md"><code>tf.estimator</code></a> may repeatedly build the graph thus
+<p>Warning: <a href="../../../../tf/estimator.html"><code>tf.estimator</code></a> may repeatedly build the graph thus
 <code>Permute(np.random.permutation(event_size)).astype(&quot;int32&quot;))</code> is not a
-reliable parameterization (nor would it be even if using <a href="../../../../tf/constant.md"><code>tf.constant</code></a>). A
-safe alternative is to use <a href="../../../../tf/get_variable.md"><code>tf.get_variable</code></a> to achieve “init once” behavior,
+reliable parameterization (nor would it be even if using <a href="../../../../tf/constant.html"><code>tf.constant</code></a>). A
+safe alternative is to use <a href="../../../../tf/get_variable.html"><code>tf.get_variable</code></a> to achieve “init once” behavior,
 i.e.,</p>
 <pre><code class="language-python">def init_once(x, name):
   return tf.get_variable(name, initializer=x, trainable=False)
@@ -4165,7 +4165,7 @@ neither.</p>
 <p>Creates the <code>Permute</code> bijector. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>permutation</code></b>: An <code>int</code>-like vector-shaped <code>Tensor</code> representing the

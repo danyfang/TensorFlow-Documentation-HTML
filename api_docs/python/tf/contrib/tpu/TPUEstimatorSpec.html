@@ -4102,7 +4102,7 @@
 <code>metric_fn</code> runs on CPU to generate metrics and <code>tensors</code> represents the
 <code>Tensor</code>s transferred from TPU system to CPU host and passed to <code>metric_fn</code>.
 To be precise, TPU evaluation expects a slightly different signature from the
-<a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>. While <code>EstimatorSpec.eval_metric_ops</code> expects a
+<a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>. While <code>EstimatorSpec.eval_metric_ops</code> expects a
 dict, <code>TPUEstimatorSpec.eval_metrics</code> is a tuple of <code>metric_fn</code> and <code>tensors</code>.
 The <code>tensors</code> could be a list of <code>Tensor</code>s or dict of names to <code>Tensor</code>s. The
 <code>tensors</code> usually specify the model logits, which are transferred back from
@@ -4122,7 +4122,7 @@ executed on the CPU on every step, so there is communication overhead when
 sending tensors from TPU to CPU. To reduce the overhead, try reducing the
 size of the tensors. The <code>tensors</code> are concatenated along their major (batch)
 dimension, and so must be &gt;= rank 1. The <code>host_call</code> is useful for writing
-summaries with <a href="../../../tf/contrib/summary/create_file_writer.md"><code>tf.contrib.summary.create_file_writer</code></a>.</p>
+summaries with <a href="../../../tf/contrib/summary/create_file_writer.html"><code>tf.contrib.summary.create_file_writer</code></a>.</p>
 <h2>Properties</h2>
 <h3 id="eval_metrics"><code>eval_metrics</code></h3>
 <p>Alias for field number 4</p>

@@ -4081,22 +4081,22 @@
     <article id="main" class="content">
       <h1>Constants, Sequences, and Random Values</h1>
 <p>Note: Functions taking <code>Tensor</code> arguments can also take anything accepted by
-<a href="../../api_docs/python/tf/convert_to_tensor.md"><code>tf.convert_to_tensor</code></a>.</p>
+<a href="../../api_docs/python/tf/convert_to_tensor.html"><code>tf.convert_to_tensor</code></a>.</p>
 <p>[TOC]</p>
 <h2 id="Constant_Value_Tensors">Constant Value Tensors</h2>
 <p>TensorFlow provides several operations that you can use to generate constants.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/zeros.md"><code>tf.zeros</code></a></li>
-<li><a href="../../api_docs/python/tf/zeros_like.md"><code>tf.zeros_like</code></a></li>
-<li><a href="../../api_docs/python/tf/ones.md"><code>tf.ones</code></a></li>
-<li><a href="../../api_docs/python/tf/ones_like.md"><code>tf.ones_like</code></a></li>
-<li><a href="../../api_docs/python/tf/fill.md"><code>tf.fill</code></a></li>
-<li><a href="../../api_docs/python/tf/constant.md"><code>tf.constant</code></a></li>
+<li><a href="../../api_docs/python/tf/zeros.html"><code>tf.zeros</code></a></li>
+<li><a href="../../api_docs/python/tf/zeros_like.html"><code>tf.zeros_like</code></a></li>
+<li><a href="../../api_docs/python/tf/ones.html"><code>tf.ones</code></a></li>
+<li><a href="../../api_docs/python/tf/ones_like.html"><code>tf.ones_like</code></a></li>
+<li><a href="../../api_docs/python/tf/fill.html"><code>tf.fill</code></a></li>
+<li><a href="../../api_docs/python/tf/constant.html"><code>tf.constant</code></a></li>
 </ul>
 <h2 id="Sequences">Sequences</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/lin_space.md"><code>tf.linspace</code></a></li>
-<li><a href="../../api_docs/python/tf/range.md"><code>tf.range</code></a></li>
+<li><a href="../../api_docs/python/tf/lin_space.html"><code>tf.linspace</code></a></li>
+<li><a href="../../api_docs/python/tf/range.html"><code>tf.range</code></a></li>
 </ul>
 <h2 id="Random_Tensors">Random Tensors</h2>
 <p>TensorFlow has several ops that create random tensors with different
@@ -4104,11 +4104,11 @@ distributions.  The random ops are stateful, and create new random values each
 time they are evaluated.</p>
 <p>The <code>seed</code> keyword argument in these functions acts in conjunction with
 the graph-level random seed. Changing either the graph-level seed using
-<a href="../../api_docs/python/tf/set_random_seed.md"><code>tf.set_random_seed</code></a> or the
+<a href="../../api_docs/python/tf/set_random_seed.html"><code>tf.set_random_seed</code></a> or the
 op-level seed will change the underlying seed of these operations. Setting
 neither graph-level nor op-level seed, results in a random seed for all
 operations.
-See <a href="../../api_docs/python/tf/set_random_seed.md"><code>tf.set_random_seed</code></a>
+See <a href="../../api_docs/python/tf/set_random_seed.html"><code>tf.set_random_seed</code></a>
 for details on the interaction between operation-level and graph-level random
 seeds.</p>
 <h3>Examples:</h3>
@@ -4135,7 +4135,7 @@ print(sess.run(norm))
 print(sess.run(norm))
 </code></pre>
 <p>Another common use of random values is the initialization of variables. Also see
-the <a href="../../guide/variables.md">Variables How To</a>.</p>
+the <a href="../../guide/variables.html">Variables How To</a>.</p>
 <pre><code class="language-python"># Use random uniform values in [0, 1) as the initializer for a variable of shape
 # [2, 3]. The default type is float32.
 var = tf.Variable(tf.random_uniform([2, 3]), name=&quot;var&quot;)
@@ -4146,14 +4146,14 @@ sess.run(init)
 print(sess.run(var))
 </code></pre>
 <ul>
-<li><a href="../../api_docs/python/tf/random_normal.md"><code>tf.random_normal</code></a></li>
-<li><a href="../../api_docs/python/tf/truncated_normal.md"><code>tf.truncated_normal</code></a></li>
-<li><a href="../../api_docs/python/tf/random_uniform.md"><code>tf.random_uniform</code></a></li>
-<li><a href="../../api_docs/python/tf/random_shuffle.md"><code>tf.random_shuffle</code></a></li>
-<li><a href="../../api_docs/python/tf/random_crop.md"><code>tf.random_crop</code></a></li>
-<li><a href="../../api_docs/python/tf/multinomial.md"><code>tf.multinomial</code></a></li>
-<li><a href="../../api_docs/python/tf/random_gamma.md"><code>tf.random_gamma</code></a></li>
-<li><a href="../../api_docs/python/tf/set_random_seed.md"><code>tf.set_random_seed</code></a></li>
+<li><a href="../../api_docs/python/tf/random_normal.html"><code>tf.random_normal</code></a></li>
+<li><a href="../../api_docs/python/tf/truncated_normal.html"><code>tf.truncated_normal</code></a></li>
+<li><a href="../../api_docs/python/tf/random_uniform.html"><code>tf.random_uniform</code></a></li>
+<li><a href="../../api_docs/python/tf/random_shuffle.html"><code>tf.random_shuffle</code></a></li>
+<li><a href="../../api_docs/python/tf/random_crop.html"><code>tf.random_crop</code></a></li>
+<li><a href="../../api_docs/python/tf/multinomial.html"><code>tf.multinomial</code></a></li>
+<li><a href="../../api_docs/python/tf/random_gamma.html"><code>tf.random_gamma</code></a></li>
+<li><a href="../../api_docs/python/tf/set_random_seed.html"><code>tf.set_random_seed</code></a></li>
 </ul>
 
     </article>

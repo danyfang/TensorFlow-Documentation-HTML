@@ -4089,28 +4089,28 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/graph_editor/select.py"><code>tensorflow/contrib/graph_editor/select.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.md#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.html#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
 <p>Helper to select operations and tensors.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>*args</code></b>: list of 1) regular expressions (compiled or not) or 2) (array of)
-<a href="../../../tf/Operation.md"><code>tf.Operation</code></a> 3) (array of) tf.Tensor. Regular expressions matching
+<a href="../../../tf/Operation.html"><code>tf.Operation</code></a> 3) (array of) tf.Tensor. Regular expressions matching
 tensors must start with the comment <code>&quot;(?#ts)&quot;</code>, for instance:
 <code>&quot;(?#ts)^foo/.*&quot;</code>.</li>
-<li><b><code>**kwargs</code></b>: ‘graph’: <a href="../../../tf/Graph.md"><code>tf.Graph</code></a> in which to perform the regex query.This is
+<li><b><code>**kwargs</code></b>: ‘graph’: <a href="../../../tf/Graph.html"><code>tf.Graph</code></a> in which to perform the regex query.This is
 required when using regex.
 ‘positive_filter’: an elem if selected only if <code>positive_filter(elem)</code> is
 <code>True</code>. This is optional.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A tuple <code>(ops, ts)</code> where:
-<code>ops</code> is a list of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a>, and
-<code>ts</code> is a list of <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a></p>
+<code>ops</code> is a list of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a>, and
+<code>ts</code> is a list of <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a></p>
 <h4>Raises:</h4>
 <ul>
-<li><b><code>TypeError</code></b>: if the optional keyword argument graph is not a <a href="../../../tf/Graph.md"><code>tf.Graph</code></a>
-or if an argument in args is not an (array of) <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>
-or an (array of) <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> or a string or a regular expression.</li>
+<li><b><code>TypeError</code></b>: if the optional keyword argument graph is not a <a href="../../../tf/Graph.html"><code>tf.Graph</code></a>
+or if an argument in args is not an (array of) <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>
+or an (array of) <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> or a string or a regular expression.</li>
 <li><b><code>ValueError</code></b>: if one of the keyword arguments is unexpected or if a regular
 expression is used without passing a graph as a keyword argument.</li>
 </ul>

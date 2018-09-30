@@ -4091,21 +4091,21 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/graph_editor/util.py"><code>tensorflow/contrib/graph_editor/util.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.md#Module_util">Graph Editor (contrib) &gt; Module: util</a></p>
-<p>Convert ops to a list of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a>.</p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.html#Module_util">Graph Editor (contrib) &gt; Module: util</a></p>
+<p>Convert ops to a list of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>ops</code></b>: can be an iterable of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a>, a <a href="../../../tf/Graph.md"><code>tf.Graph</code></a> or a single
+<li><b><code>ops</code></b>: can be an iterable of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a>, a <a href="../../../tf/Graph.html"><code>tf.Graph</code></a> or a single
 operation.</li>
 <li><b><code>check_graph</code></b>: if <code>True</code> check if all the operations belong to the same graph.</li>
-<li><b><code>allow_graph</code></b>: if <code>False</code> a <a href="../../../tf/Graph.md"><code>tf.Graph</code></a> cannot be converted.</li>
-<li><b><code>ignore_ts</code></b>: if True, silently ignore <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>.</li>
+<li><b><code>allow_graph</code></b>: if <code>False</code> a <a href="../../../tf/Graph.html"><code>tf.Graph</code></a> cannot be converted.</li>
+<li><b><code>ignore_ts</code></b>: if True, silently ignore <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A newly created list of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a>.</p>
+<p>A newly created list of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a>.</p>
 <h4>Raises:</h4>
 <ul>
-<li><b><code>TypeError</code></b>: if ops cannot be converted to a list of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> or,
+<li><b><code>TypeError</code></b>: if ops cannot be converted to a list of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> or,
 if <code>check_graph</code> is <code>True</code>, if all the ops do not belong to the
 same graph.</li>
 </ul>

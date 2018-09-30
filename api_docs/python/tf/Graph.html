@@ -4119,22 +4119,22 @@
 <h1>tf.Graph</h1>
 <h2>Class <code>Graph</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/ops.py"><code>tensorflow/python/framework/ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/framework.md#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
+<p>See the guide: <a href="../../../api_guides/python/framework.html#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
 <p>A TensorFlow computation, represented as a dataflow graph.</p>
 <p>A <code>Graph</code> contains a set of
-<a href="../tf/Operation.md"><code>tf.Operation</code></a> objects,
+<a href="../tf/Operation.html"><code>tf.Operation</code></a> objects,
 which represent units of computation; and
-<a href="../tf/Tensor.md"><code>tf.Tensor</code></a> objects, which represent
+<a href="../tf/Tensor.html"><code>tf.Tensor</code></a> objects, which represent
 the units of data that flow between operations.</p>
 <p>A default <code>Graph</code> is always registered, and accessible by calling
-<a href="../tf/get_default_graph.md"><code>tf.get_default_graph</code></a>.
+<a href="../tf/get_default_graph.html"><code>tf.get_default_graph</code></a>.
 To add an operation to the default graph, simply call one of the functions
 that defines a new <code>Operation</code>:</p>
 <pre><code class="language-python">c = tf.constant(4.0)
 assert c.graph is tf.get_default_graph()
 </code></pre>
 <p>Another typical usage involves the
-<a href="../tf/Graph.md#as_default"><code>tf.Graph.as_default</code></a>
+<a href="../tf/Graph.html#as_default"><code>tf.Graph.as_default</code></a>
 context manager, which overrides the current default graph for the
 lifetime of the context:</p>
 <pre><code class="language-python">g = tf.Graph()
@@ -4150,8 +4150,8 @@ are not thread-safe.</p>
 <p>A <code>Graph</code> instance supports an arbitrary number of “collections”
 that are identified by name. For convenience when building a large
 graph, collections can store groups of related objects: for
-example, the <a href="../tf/Variable.md"><code>tf.Variable</code></a> uses a collection (named
-<a href="../tf/GraphKeys.md#GLOBAL_VARIABLES"><code>tf.GraphKeys.GLOBAL_VARIABLES</code></a>) for
+example, the <a href="../tf/Variable.html"><code>tf.Variable</code></a> uses a collection (named
+<a href="../tf/GraphKeys.html#GLOBAL_VARIABLES"><code>tf.GraphKeys.GLOBAL_VARIABLES</code></a>) for
 all variables that are created during the construction of a graph. The caller
 may define additional collections by specifying a new name.</p>
 <h2>Properties</h2>
@@ -4172,7 +4172,7 @@ may define additional collections by specifying a new name.</p>
 <h3 id="version"><code>version</code></h3>
 <p>Returns a version number that increases as ops are added to the graph.</p>
 <p>Note that this is unrelated to the
-<a href="../tf/Graph.md#graph_def_versions"><code>tf.Graph.graph_def_versions</code></a>.</p>
+<a href="../tf/Graph.html#graph_def_versions"><code>tf.Graph.graph_def_versions</code></a>.</p>
 <h4>Returns:</h4>
 <p>An integer version that increases as ops are added to the graph.</p>
 <h2>Methods</h2>
@@ -4252,7 +4252,7 @@ added to the graph instead of executed eagerly.</p>
 </code></pre>
 <p>Returns a serialized <code>GraphDef</code> representation of this graph.</p>
 <p>The serialized <code>GraphDef</code> can be imported into another <code>Graph</code>
-(using <a href="../tf/import_graph_def.md"><code>tf.import_graph_def</code></a>) or used with the
+(using <a href="../tf/import_graph_def.html"><code>tf.import_graph_def</code></a>) or used with the
 <a href="../../api_docs/cc/index.html">C++ Session API</a>.</p>
 <p>This method is thread-safe.</p>
 <h4>Args:</h4>
@@ -4555,7 +4555,7 @@ with g.device(matmul_on_gpu):
 </code></pre>
 <p><strong>N.B.</strong> The device scope may be overridden by op wrappers or
 other library code. For example, a variable assignment op
-<code>v.assign()</code> must be colocated with the <a href="../tf/Variable.md"><code>tf.Variable</code></a> <code>v</code>, and
+<code>v.assign()</code> must be colocated with the <a href="../tf/Variable.html"><code>tf.Variable</code></a> <code>v</code>, and
 incompatible device scopes will be ignored.</p>
 <h4>Args:</h4>
 <ul>
@@ -4572,7 +4572,7 @@ created ops.</p>
 <p>After calling <code>g.finalize()</code>, no new operations can be added to
 <code>g</code>.  This method is used to ensure that no operations are added
 to a graph when it is shared between multiple threads, for example
-when using a <a href="../tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a>.</p>
+when using a <a href="../tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a>.</p>
 <h3 id="get_all_collection_keys"><code>get_all_collection_keys</code></h3>
 <pre><code class="language-python">get_all_collection_keys()
 </code></pre>

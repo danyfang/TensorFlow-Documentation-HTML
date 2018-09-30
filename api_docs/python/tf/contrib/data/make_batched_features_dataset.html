@@ -4136,14 +4136,14 @@
 <h4>Args:</h4>
 <ul>
 <li><b><code>file_pattern</code></b>: List of files or patterns of file paths containing
-<code>Example</code> records. See <a href="../../../tf/gfile/Glob.md"><code>tf.gfile.Glob</code></a> for pattern rules.</li>
+<code>Example</code> records. See <a href="../../../tf/gfile/Glob.html"><code>tf.gfile.Glob</code></a> for pattern rules.</li>
 <li><b><code>batch_size</code></b>: An int representing the number of records to combine
 in a single batch.</li>
 <li><b><code>features</code></b>: A <code>dict</code> mapping feature keys to <code>FixedLenFeature</code> or
-<code>VarLenFeature</code> values. See <a href="../../../tf/parse_example.md"><code>tf.parse_example</code></a>.</li>
+<code>VarLenFeature</code> values. See <a href="../../../tf/parse_example.html"><code>tf.parse_example</code></a>.</li>
 <li><b><code>reader</code></b>: A function or class that can be
 called with a <code>filenames</code> tensor and (optional) <code>reader_args</code> and returns
-a <code>Dataset</code> of <code>Example</code> tensors. Defaults to <a href="../../../tf/data/TFRecordDataset.md"><code>tf.data.TFRecordDataset</code></a>.</li>
+a <code>Dataset</code> of <code>Example</code> tensors. Defaults to <a href="../../../tf/data/TFRecordDataset.html"><code>tf.data.TFRecordDataset</code></a>.</li>
 <li><b><code>reader_args</code></b>: Additional arguments to pass to the reader class.</li>
 <li><b><code>num_epochs</code></b>: Integer specifying the number of times to read through the
 dataset. If None, cycles through the dataset forever. Defaults to <code>None</code>.</li>

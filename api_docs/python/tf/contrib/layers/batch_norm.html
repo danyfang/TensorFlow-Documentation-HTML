@@ -4110,7 +4110,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py"><code>tensorflow/contrib/layers/python/layers/layers.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.layers.md#Higher_level_ops_for_building_neural_network_layers">Layers (contrib) &gt; Higher level ops for building neural network layers</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.layers.html#Higher_level_ops_for_building_neural_network_layers">Layers (contrib) &gt; Higher level ops for building neural network layers</a></p>
 <p>Adds a Batch Normalization layer from <a href="http://arxiv.org/abs/1502.03167">http://arxiv.org/abs/1502.03167</a>.</p>
 <p>“Batch Normalization: Accelerating Deep Network Training by Reducing
 Internal Covariate Shift”</p>
@@ -4122,7 +4122,7 @@ tensor this corresponds to the batch dimension, while in case of a 4D tensor
 this
 corresponds to the batch and space dimensions.</p>
 <p>Note: when training, the moving_mean and moving_variance need to be updated.
-By default the update ops are placed in <a href="../../../tf/GraphKeys.md#UPDATE_OPS"><code>tf.GraphKeys.UPDATE_OPS</code></a>, so they
+By default the update ops are placed in <a href="../../../tf/GraphKeys.html#UPDATE_OPS"><code>tf.GraphKeys.UPDATE_OPS</code></a>, so they
 need to be added as a dependency to the <code>train_op</code>. For example:</p>
 <pre><code class="language-python">  update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
   with tf.control_dependencies(update_ops):
@@ -4166,7 +4166,7 @@ able to reuse the layer scope must be given.</li>
 <li><b><code>variables_collections</code></b>: Optional collections for the variables.</li>
 <li><b><code>outputs_collections</code></b>: Collections to add the outputs.</li>
 <li><b><code>trainable</code></b>: If <code>True</code> also add variables to the graph collection
-<code>GraphKeys.TRAINABLE_VARIABLES</code> (see <a href="../../../tf/Variable.md"><code>tf.Variable</code></a>).</li>
+<code>GraphKeys.TRAINABLE_VARIABLES</code> (see <a href="../../../tf/Variable.html"><code>tf.Variable</code></a>).</li>
 <li><b><code>batch_weights</code></b>: An optional tensor of shape <code>[batch_size]</code>,
 containing a frequency weight for each batch item. If present,
 then the batch normalization uses weighted mean and

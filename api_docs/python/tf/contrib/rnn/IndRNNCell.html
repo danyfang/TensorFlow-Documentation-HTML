@@ -4409,20 +4409,20 @@ marked as non-trainable. <code>trainable</code> defaults to <code>True</code> un
 <li><b><code>use_resource</code></b>: Whether to use <code>ResourceVariable</code>.</li>
 <li><b><code>synchronization</code></b>: Indicates when a distributed a variable will be
 aggregated. Accepted values are constants defined in the class
-<a href="../../../tf/VariableSynchronization.md"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
+<a href="../../../tf/VariableSynchronization.html"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
 <code>AUTO</code> and the current <code>DistributionStrategy</code> chooses
 when to synchronize. If <code>synchronization</code> is set to <code>ON_READ</code>,
 <code>trainable</code> must not be set to <code>True</code>.</li>
 <li><b><code>aggregation</code></b>: Indicates how a distributed variable will be aggregated.
 Accepted values are constants defined in the class
-<a href="../../../tf/VariableAggregation.md"><code>tf.VariableAggregation</code></a>.</li>
+<a href="../../../tf/VariableAggregation.html"><code>tf.VariableAggregation</code></a>.</li>
 <li><b><code>partitioner</code></b>: (optional) partitioner instance (callable).  If
 provided, when the requested variable is created it will be split
 into multiple partitions according to <code>partitioner</code>.  In this case,
 an instance of <code>PartitionedVariable</code> is returned.  Available
-partitioners include <a href="../../../tf/fixed_size_partitioner.md"><code>tf.fixed_size_partitioner</code></a> and
-<a href="../../../tf/variable_axis_size_partitioner.md"><code>tf.variable_axis_size_partitioner</code></a>.  For more details, see the
-documentation of <a href="../../../tf/get_variable.md"><code>tf.get_variable</code></a> and the  “Variable Partitioners
+partitioners include <a href="../../../tf/fixed_size_partitioner.html"><code>tf.fixed_size_partitioner</code></a> and
+<a href="../../../tf/variable_axis_size_partitioner.html"><code>tf.variable_axis_size_partitioner</code></a>.  For more details, see the
+documentation of <a href="../../../tf/get_variable.html"><code>tf.get_variable</code></a> and the  “Variable Partitioners
 and Sharding” section of the API guide.</li>
 </ul>
 <h4>Returns:</h4>

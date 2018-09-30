@@ -4097,7 +4097,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/control_flow_ops.py"><code>tensorflow/python/ops/control_flow_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.md#Control_Flow_Operations">Control Flow &gt; Control Flow Operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.html#Control_Flow_Operations">Control Flow &gt; Control Flow Operations</a></p>
 <p>Repeat <code>body</code> while the condition <code>cond</code> is true.</p>
 <p><code>cond</code> is a callable returning a boolean scalar tensor. <code>body</code> is a callable
 returning a (possibly nested) tuple, namedtuple or list of tensors of the same
@@ -4124,7 +4124,7 @@ not specified), it is assumed that the initial shape of each tensor in
 <code>loop_vars</code> is the same in every iteration. The <code>shape_invariants</code> argument
 allows the caller to specify a less specific shape invariant for each loop
 variable, which is needed if the shape varies between iterations. The
-<a href="../tf/Tensor.md#set_shape"><code>tf.Tensor.set_shape</code></a>
+<a href="../tf/Tensor.html#set_shape"><code>tf.Tensor.set_shape</code></a>
 function may also be used in the <code>body</code> function to indicate that
 the output loop variable has a particular shape. The shape invariant for
 SparseTensor and IndexedSlices are treated specially as follows:</p>

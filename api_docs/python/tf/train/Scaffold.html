@@ -4097,7 +4097,7 @@
 <h1>tf.train.Scaffold</h1>
 <h2>Class <code>Scaffold</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/monitored_session.py"><code>tensorflow/python/training/monitored_session.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Structure to create or gather pieces commonly needed to train a model.</p>
 <p>When you build a model for training you usually need ops to initialize
 variables, a <code>Saver</code> to checkpoint them, an op to collect summaries for
@@ -4114,7 +4114,7 @@ added to the graph collections.</p>
 <p>The following pieces are directly accessible as attributes of the <code>Scaffold</code>
 object:</p>
 <ul>
-<li><code>saver</code>: A <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a> object taking care of saving the variables.
+<li><code>saver</code>: A <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a> object taking care of saving the variables.
 Picked from and stored into the <code>SAVERS</code> collection in the graph by default.</li>
 <li><code>init_op</code>: An op to run to initialize the variables.  Picked from and
 stored into the <code>INIT_OP</code> collection in the graph by default.</li>
@@ -4183,7 +4183,7 @@ global variables.</li>
 <li><b><code>local_init_op</code></b>: Optional op to initialize local variables.</li>
 <li><b><code>summary_op</code></b>: Optional op to gather all summaries.  Must return a scalar
 string tensor containing a serialized <code>Summary</code> proto.</li>
-<li><b><code>saver</code></b>: Optional <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a> object to use to save and restore
+<li><b><code>saver</code></b>: Optional <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a> object to use to save and restore
 variables.</li>
 <li><b><code>copy_from_scaffold</code></b>: Optional scaffold object to copy fields from. Its
 fields will be overwritten by the provided fields in this function.</li>
@@ -4195,7 +4195,7 @@ default_local_init_op()
 <p>Returns an op that groups the default local init ops.</p>
 <p>This op is used during session initialization when a Scaffold is
 initialized without specifying the local_init_op arg. It includes
-<a href="../../tf/local_variables_initializer.md"><code>tf.local_variables_initializer</code></a>, <a href="../../tf/tables_initializer.md"><code>tf.tables_initializer</code></a>, and also
+<a href="../../tf/local_variables_initializer.html"><code>tf.local_variables_initializer</code></a>, <a href="../../tf/tables_initializer.html"><code>tf.tables_initializer</code></a>, and also
 initializes local session resources.</p>
 <h4>Returns:</h4>
 <p>The default Scaffold local init op.</p>

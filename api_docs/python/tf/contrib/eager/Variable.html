@@ -4162,7 +4162,7 @@
 <p>Inherits From: <a href="../../../tf/Variable.html"><code>Variable</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/resource_variable_ops.py"><code>tensorflow/python/ops/resource_variable_ops.py</code></a>.</p>
 <p>Variable based on resource handles.</p>
-<p>See the <a href="../../../../../guide/variables.md">Variables How To</a> for a high level overview.</p>
+<p>See the <a href="../../../../../guide/variables.html">Variables How To</a> for a high level overview.</p>
 <p>A <code>ResourceVariable</code> allows you to maintain state across subsequent calls to
 session.run.</p>
 <p>The <code>ResourceVariable</code> constructor requires an initial value for the variable,
@@ -4423,7 +4423,7 @@ as well.</p>
 </code></pre>
 <p>Creates a slice helper object given a variable.</p>
 <p>This allows creating a sub-tensor from part of the current contents
-of a variable. See <a href="../../../tf/Tensor.md#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> for detailed examples
+of a variable. See <a href="../../../tf/Tensor.html#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> for detailed examples
 of slicing.</p>
 <p>This function in addition also allows assignment to a sliced range.
 This is similar to <code>__setitem__</code> functionality in Python. However,
@@ -5175,7 +5175,7 @@ has run.</p>
 <p>Writes new value to variable’s memory. Doesn’t add ops to the graph.</p>
 <p>This convenience method requires a session where the graph
 containing this variable has been launched. If no session is
-passed, the default session is used.  See <a href="../../../tf/Session.md"><code>tf.Session</code></a> for more
+passed, the default session is used.  See <a href="../../../tf/Session.html"><code>tf.Session</code></a> for more
 information on launching a graph and on sessions.</p>
 <pre><code class="language-python">v = tf.Variable([1, 2])
 init = tf.global_variables_initializer()

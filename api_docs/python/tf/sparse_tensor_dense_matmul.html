@@ -4092,7 +4092,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/sparse_ops.py"><code>tensorflow/python/ops/sparse_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/sparse_ops.md#Math_Operations">Sparse Tensors &gt; Math Operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/sparse_ops.html#Math_Operations">Sparse Tensors &gt; Math Operations</a></p>
 <p>Multiply SparseTensor (of rank 2) “A” by dense matrix “B”.</p>
 <p>No validity checking is performed on the indices of <code>A</code>.  However, the
 following input format is recommended for optimal behavior:</p>
@@ -4102,7 +4102,7 @@ increasing order.  Use <code>sparse_reorder</code> if you’re not sure.</li>
 <li>If <code>adjoint_a == true</code>: <code>A</code> should be sorted in order of increasing
 dimension 1 (i.e., “column major” order instead of “row major” order).</li>
 </ul>
-<p>Using <a href="../tf/nn/embedding_lookup_sparse.md"><code>tf.nn.embedding_lookup_sparse</code></a> for sparse multiplication:</p>
+<p>Using <a href="../tf/nn/embedding_lookup_sparse.html"><code>tf.nn.embedding_lookup_sparse</code></a> for sparse multiplication:</p>
 <p>It’s not obvious but you can consider <code>embedding_lookup_sparse</code> as another
 sparse and dense multiplication. In some situations, you may prefer to use
 <code>embedding_lookup_sparse</code> even though you’re not dealing with embeddings.</p>
@@ -4110,7 +4110,7 @@ sparse and dense multiplication. In some situations, you may prefer to use
 computed as sparse too? Is your sparse data represented as two
 <code>SparseTensor</code>s: ids and values? There is more explanation about data format
 below. If you answer any of these questions as yes, consider using
-<a href="../tf/nn/embedding_lookup_sparse.md"><code>tf.nn.embedding_lookup_sparse</code></a>.</p>
+<a href="../tf/nn/embedding_lookup_sparse.html"><code>tf.nn.embedding_lookup_sparse</code></a>.</p>
 <p>Following explains differences between the expected SparseTensors:
 For example if dense form of your sparse data has shape <code>[3, 5]</code> and values:</p>
 <pre><code>[[  a      ]
@@ -4140,7 +4140,7 @@ For example if dense form of your sparse data has shape <code>[3, 5]</code> and 
 <li>Is the density of <code>A</code> larger than approximately 15%?</li>
 </ul>
 <p>If the answer to several of these questions is yes, consider
-converting the <code>SparseTensor</code> to a dense one and using <a href="../tf/matmul.md"><code>tf.matmul</code></a> with
+converting the <code>SparseTensor</code> to a dense one and using <a href="../tf/matmul.html"><code>tf.matmul</code></a> with
 <code>a_is_sparse=True</code>.</p>
 <p>This operation tends to perform well when <code>A</code> is more sparse, if the column
 size of the product is small (e.g. matrix-vector multiplication), if

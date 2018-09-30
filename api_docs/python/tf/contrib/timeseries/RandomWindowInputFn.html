@@ -4090,7 +4090,7 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/timeseries/python/timeseries/input_pipeline.py"><code>tensorflow/contrib/timeseries/python/timeseries/input_pipeline.py</code></a>.</p>
 <p>Wraps a <code>TimeSeriesReader</code> to create random batches of windows.</p>
 <p>Tensors are first collected into sequential windows (in a windowing queue
-created by <a href="../../../tf/train/batch.md"><code>tf.train.batch</code></a>, based on the order returned from
+created by <a href="../../../tf/train/batch.html"><code>tf.train.batch</code></a>, based on the order returned from
 <code>time_series_reader</code>), then these windows are randomly batched (in a
 <code>RandomShuffleQueue</code>), the Tensors returned by <code>create_batch</code> having shapes
 prefixed by [<code>batch_size</code>, <code>window_size</code>].</p>

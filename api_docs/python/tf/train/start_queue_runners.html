@@ -4097,7 +4097,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/queue_runner_impl.py"><code>tensorflow/python/training/queue_runner_impl.py</code></a>.</p>
-<p>See the guides: <a href="../../../../api_guides/python/reading_data.md#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a>, <a href="../../../../api_guides/python/threading_and_queues.md#Queue_usage_overview">Threading and Queues &gt; Queue usage overview</a>, <a href="../../../../api_guides/python/train.md#Coordinator_and_QueueRunner">Training &gt; Coordinator and QueueRunner</a></p>
+<p>See the guides: <a href="../../../../api_guides/python/reading_data.html#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a>, <a href="../../../../api_guides/python/threading_and_queues.html#Queue_usage_overview">Threading and Queues &gt; Queue usage overview</a>, <a href="../../../../api_guides/python/train.html#Coordinator_and_QueueRunner">Training &gt; Coordinator and QueueRunner</a></p>
 <p>Starts all queue runners collected in the graph.</p>
 <p>This is a companion method to <code>add_queue_runner()</code>.  It just starts
 threads for all queue runners collected in the graph.  It returns
@@ -4116,18 +4116,18 @@ get the queue runners from.  Defaults to <code>GraphKeys.QUEUE_RUNNERS</code>.</
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: if <code>sess</code> is None and there isn’t any default session.</li>
-<li><b><code>TypeError</code></b>: if <code>sess</code> is not a <a href="../../tf/Session.md"><code>tf.Session</code></a> object.</li>
+<li><b><code>TypeError</code></b>: if <code>sess</code> is not a <a href="../../tf/Session.html"><code>tf.Session</code></a> object.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A list of threads.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>RuntimeError</code></b>: If called with eager execution enabled.</li>
-<li><b><code>ValueError</code></b>: If called without a default <a href="../../tf/Session.md"><code>tf.Session</code></a> registered.</li>
+<li><b><code>ValueError</code></b>: If called without a default <a href="../../tf/Session.html"><code>tf.Session</code></a> registered.</li>
 </ul>
 <h4>Eager Compatibility</h4>
 <p>Not compatible with eager execution. To ingest data under eager execution,
-use the <a href="../../tf/data.md"><code>tf.data</code></a> API instead.</p>
+use the <a href="../../tf/data.html"><code>tf.data</code></a> API instead.</p>
 
     </article>
   </div>

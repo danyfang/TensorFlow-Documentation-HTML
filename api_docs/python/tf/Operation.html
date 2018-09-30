@@ -4101,20 +4101,20 @@
 <h1>tf.Operation</h1>
 <h2>Class <code>Operation</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/ops.py"><code>tensorflow/python/framework/ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/framework.md#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
+<p>See the guide: <a href="../../../api_guides/python/framework.html#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
 <p>Represents a graph node that performs computation on tensors.</p>
 <p>An <code>Operation</code> is a node in a TensorFlow <code>Graph</code> that takes zero or
 more <code>Tensor</code> objects as input, and produces zero or more <code>Tensor</code>
 objects as output. Objects of type <code>Operation</code> are created by
 calling a Python op constructor (such as
-<a href="../tf/matmul.md"><code>tf.matmul</code></a>)
-or <a href="../tf/Graph.md#create_op"><code>tf.Graph.create_op</code></a>.</p>
+<a href="../tf/matmul.html"><code>tf.matmul</code></a>)
+or <a href="../tf/Graph.html#create_op"><code>tf.Graph.create_op</code></a>.</p>
 <p>For example <code>c = tf.matmul(a, b)</code> creates an <code>Operation</code> of type
 “MatMul” that takes tensors <code>a</code> and <code>b</code> as input, and produces <code>c</code>
 as output.</p>
 <p>After the graph has been launched in a session, an <code>Operation</code> can
 be executed by passing it to
-<a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>.
+<a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>.
 <code>op.run()</code> is a shortcut for calling <code>tf.get_default_session().run(op)</code>.</p>
 <h2>Properties</h2>
 <h3 id="control_inputs"><code>control_inputs</code></h3>
@@ -4244,7 +4244,7 @@ available, or <code>session</code> must be specified explicitly.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>feed_dict</code></b>: A dictionary that maps <code>Tensor</code> objects to feed values.
-See <a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>
+See <a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>
 for a description of the valid feed values.</li>
 <li><b><code>session</code></b>: (Optional.) The <code>Session</code> to be used to run to this operation. If
 none, the default session will be used.</li>

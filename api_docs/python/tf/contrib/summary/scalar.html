@@ -4092,20 +4092,20 @@
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/summary_ops_v2.py"><code>tensorflow/python/ops/summary_ops_v2.py</code></a>.</p>
 <p>Writes a scalar summary if possible.</p>
-<p>Unlike <a href="../../../tf/contrib/summary/generic.md"><code>tf.contrib.summary.generic</code></a> this op may change the dtype
+<p>Unlike <a href="../../../tf/contrib/summary/generic.html"><code>tf.contrib.summary.generic</code></a> this op may change the dtype
 depending on the writer, for both practical and efficiency concerns.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>name</code></b>: An arbitrary name for this summary.</li>
-<li><b><code>tensor</code></b>: A <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> Must be one of the following types:
+<li><b><code>tensor</code></b>: A <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> Must be one of the following types:
 <code>float32</code>, <code>float64</code>, <code>int32</code>, <code>int64</code>, <code>uint8</code>, <code>int16</code>,
 <code>int8</code>, <code>uint16</code>, <code>half</code>, <code>uint32</code>, <code>uint64</code>.</li>
 <li><b><code>family</code></b>: Optional, the summary’s family.</li>
 <li><b><code>step</code></b>: The <code>int64</code> monotonic step variable, which defaults
-to <a href="../../../tf/train/get_global_step.md"><code>tf.train.get_global_step</code></a>.</li>
+to <a href="../../../tf/train/get_global_step.html"><code>tf.train.get_global_step</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
-<p>The created <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> or a <a href="../../../tf/no_op.md"><code>tf.no_op</code></a> if summary writing has
+<p>The created <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> or a <a href="../../../tf/no_op.html"><code>tf.no_op</code></a> if summary writing has
 not been enabled for this context.</p>
 
     </article>

@@ -4091,13 +4091,13 @@
 )
 </code></pre>
 <p>Defined in generated file: <code>tensorflow/python/ops/gen_image_ops.py</code>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/image.md#Resizing">Images &gt; Resizing</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/image.html#Resizing">Images &gt; Resizing</a></p>
 <p>Resize <code>images</code> to <code>size</code> using area interpolation.</p>
 <p>Input images can be of different types but output images are always float.</p>
 <p>The range of pixel values for the output image might be slightly different
 from the range for the input image because of limited numerical precision.
 To guarantee an output range, for example <code>[0.0, 1.0]</code>, apply
-<a href="../../tf/clip_by_value.md"><code>tf.clip_by_value</code></a> to the output.</p>
+<a href="../../tf/clip_by_value.html"><code>tf.clip_by_value</code></a> to the output.</p>
 <p>Each output pixel is computed by first transforming the pixel’s footprint into
 the input tensor and then averaging the pixels that intersect the footprint. An
 input pixel’s contribution to the average is weighted by the fraction of its

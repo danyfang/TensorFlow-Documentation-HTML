@@ -4102,11 +4102,11 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/variable_scope.py"><code>tensorflow/python/ops/variable_scope.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/state_ops.md#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
+<p>See the guide: <a href="../../../api_guides/python/state_ops.html#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
 <p>Gets an existing variable with these parameters or create a new one.</p>
 <p>This function prefixes the name with the current variable scope
 and performs reuse checks. See the
-<a href="../../../guide/variables.md">Variable Scope How To</a>
+<a href="../../../guide/variables.html">Variable Scope How To</a>
 for an extensive description of how reusing works. Here is a basic example:</p>
 <pre><code class="language-python">def foo():
   with tf.variable_scope(&quot;foo&quot;, reuse=tf.AUTO_REUSE):
@@ -4139,11 +4139,11 @@ an initializer object or a Tensor. If it’s a Tensor, its shape must be known
 unless validate_shape is False.</li>
 <li><b><code>regularizer</code></b>: A (Tensor -&gt; Tensor or None) function; the result of
 applying it on a newly created variable will be added to the collection
-<a href="../tf/GraphKeys.md#REGULARIZATION_LOSSES"><code>tf.GraphKeys.REGULARIZATION_LOSSES</code></a> and can be used for regularization.</li>
+<a href="../tf/GraphKeys.html#REGULARIZATION_LOSSES"><code>tf.GraphKeys.REGULARIZATION_LOSSES</code></a> and can be used for regularization.</li>
 <li><b><code>trainable</code></b>: If <code>True</code> also add the variable to the graph collection
-<code>GraphKeys.TRAINABLE_VARIABLES</code> (see <a href="../tf/Variable.md"><code>tf.Variable</code></a>).</li>
+<code>GraphKeys.TRAINABLE_VARIABLES</code> (see <a href="../tf/Variable.html"><code>tf.Variable</code></a>).</li>
 <li><b><code>collections</code></b>: List of graph collections keys to add the Variable to.
-Defaults to <code>[GraphKeys.GLOBAL_VARIABLES]</code> (see <a href="../tf/Variable.md"><code>tf.Variable</code></a>).</li>
+Defaults to <code>[GraphKeys.GLOBAL_VARIABLES]</code> (see <a href="../tf/Variable.html"><code>tf.Variable</code></a>).</li>
 <li><b><code>caching_device</code></b>: Optional device string or function describing where the
 Variable should be cached for reading.  Defaults to the Variable’s
 device.  If not <code>None</code>, caches on another device.  Typical use is to

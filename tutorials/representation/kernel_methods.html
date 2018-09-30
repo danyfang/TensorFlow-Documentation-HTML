@@ -4080,10 +4080,10 @@
     </nav>
     <article id="main" class="content">
       <h1>Improving Linear Models Using Explicit Kernel Methods</h1>
-<p>Note: This document uses a deprecated version of <a href="../../api_docs/python/tf/estimator.md"><code>tf.estimator</code></a>,
-which has a <a href="../../api_docs/python/tf/contrib/learn/Estimator.md">different interface</a>.
+<p>Note: This document uses a deprecated version of <a href="../../api_docs/python/tf/estimator.html"><code>tf.estimator</code></a>,
+which has a <a href="../../api_docs/python/tf/contrib/learn/Estimator.html">different interface</a>.
 It also uses other <code>contrib</code> methods whose
-<a href="../../guide/version_compat.md#not_covered">API may not be stable</a>.</p>
+<a href="../../guide/version_compat.html#not_covered">API may not be stable</a>.</p>
 <p>In this tutorial, we demonstrate how combining (explicit) kernel methods with
 linear models can drastically increase the latters’ quality of predictions
 without significantly increasing training and inference times. Unlike dual
@@ -4127,8 +4127,8 @@ models respectively.</p>
 it to Tensors. For this, we will use an <code>input function</code> which adds Ops to the
 TensorFlow graph that, when executed, create mini-batches of Tensors to be used
 downstream. For more background on input functions, check
-<a href="../../guide/premade_estimators.md#create_input_functions">this section on input functions</a>.
-In this example, we will use the <a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a> Op which, besides
+<a href="../../guide/premade_estimators.html#create_input_functions">this section on input functions</a>.
+In this example, we will use the <a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a> Op which, besides
 converting numpy arrays to Tensors, allows us to specify the batch_size and
 whether to randomize the input every time the input_fn Ops are executed
 (randomization typically expedites convergence during training). The full code
@@ -4161,7 +4161,7 @@ eval_input_fn = get_input_fn(data.validation, batch_size=5000)
 </code></pre>
 <h2>Training a simple linear model</h2>
 <p>We can now train a linear model over the MNIST dataset. We will use the
-<a href="../../api_docs/python/tf/contrib/learn/LinearClassifier.md"><code>tf.contrib.learn.LinearClassifier</code></a> estimator with 10 classes representing the
+<a href="../../api_docs/python/tf/contrib/learn/LinearClassifier.html"><code>tf.contrib.learn.LinearClassifier</code></a> estimator with 10 classes representing the
 10 digits. The input features form a 784-dimensional dense vector which can
 be specified as follows:</p>
 <pre><code class="language-python">image_column = tf.contrib.layers.real_valued_column('images', dimension=784)
@@ -4260,8 +4260,8 @@ much higher dimensional space than the original one. See
 <a href="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">Radial basis function kernel</a>
 for more details.</p>
 <h3>Kernel classifier</h3>
-<p><a href="../../api_docs/python/tf/contrib/kernel_methods/KernelLinearClassifier.md"><code>tf.contrib.kernel_methods.KernelLinearClassifier</code></a> is a pre-packaged
-<a href="../../api_docs/python/tf/contrib/learn.md"><code>tf.contrib.learn</code></a> estimator that combines the power of explicit kernel mappings
+<p><a href="../../api_docs/python/tf/contrib/kernel_methods/KernelLinearClassifier.html"><code>tf.contrib.kernel_methods.KernelLinearClassifier</code></a> is a pre-packaged
+<a href="../../api_docs/python/tf/contrib/learn.html"><code>tf.contrib.learn</code></a> estimator that combines the power of explicit kernel mappings
 with linear models. Its constructor is almost identical to that of the
 LinearClassifier estimator with the additional option to specify a list of
 explicit kernel mappings to be applied to each feature the classifier uses. The

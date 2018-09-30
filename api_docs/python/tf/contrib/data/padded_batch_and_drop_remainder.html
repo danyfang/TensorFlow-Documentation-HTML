@@ -4090,29 +4090,29 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/batching.py"><code>tensorflow/contrib/data/python/ops/batching.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
 <p>A batching and padding transformation that omits the final small batch. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed in a future version.
 Instructions for updating:
 Use <code>tf.data.Dataset.padded_batch(..., drop_remainder=True)</code>.</p>
-<p>Like <a href="../../../tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>, this transformation combines
+<p>Like <a href="../../../tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a>, this transformation combines
 consecutive elements of this dataset into batches. However, if the batch
 size does not evenly divide the input dataset size, this transformation will
 drop the final smaller element.</p>
-<p>See <code>&lt;a href=&quot;../../../tf/contrib/data/batch_and_drop_remainder.md&quot;&gt;&lt;code&gt;tf.contrib.data.batch_and_drop_remainder&lt;/code&gt;&lt;/a&gt;</code> for more details.</p>
+<p>See <code>&lt;a href=&quot;../../../tf/contrib/data/batch_and_drop_remainder.html&quot;&gt;&lt;code&gt;tf.contrib.data.batch_and_drop_remainder&lt;/code&gt;&lt;/a&gt;</code> for more details.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 consecutive elements of this dataset to combine in a single batch.</li>
-<li><b><code>padded_shapes</code></b>: A nested structure of <a href="../../../tf/TensorShape.md"><code>tf.TensorShape</code></a> or
-<a href="../../../tf/int64.md"><code>tf.int64</code></a> vector tensor-like objects. See
-<a href="../../../tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a> for details.</li>
+<li><b><code>padded_shapes</code></b>: A nested structure of <a href="../../../tf/TensorShape.html"><code>tf.TensorShape</code></a> or
+<a href="../../../tf/int64.html"><code>tf.int64</code></a> vector tensor-like objects. See
+<a href="../../../tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a> for details.</li>
 <li><b><code>padding_values</code></b>: (Optional.) A nested structure of scalar-shaped
-<a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>. See <a href="../../../tf/data/Dataset.md#padded_batch"><code>tf.data.Dataset.padded_batch</code></a> for details.</li>
+<a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>. See <a href="../../../tf/data/Dataset.html#padded_batch"><code>tf.data.Dataset.padded_batch</code></a> for details.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a></p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a></p>
 
     </article>
   </div>

@@ -4094,7 +4094,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/control_flow_ops.py"><code>tensorflow/python/ops/control_flow_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.md#Control_Flow_Operations">Control Flow &gt; Control Flow Operations</a></p>
+<p>See the guide: <a href="../../../api_guides/python/control_flow_ops.html#Control_Flow_Operations">Control Flow &gt; Control Flow Operations</a></p>
 <p>Return <code>true_fn()</code> if the predicate <code>pred</code> is true else <code>false_fn()</code>. (deprecated arguments)</p>
 <p>SOME ARGUMENTS ARE DEPRECATED. They will be removed in a future version.
 Instructions for updating:
@@ -4106,9 +4106,9 @@ fn1/fn2 are deprecated in favor of the true_fn/false_fn arguments.</p>
 <pre><code class="language-python">z = tf.multiply(a, b)
 result = tf.cond(x &lt; y, lambda: tf.add(x, z), lambda: tf.square(y))
 </code></pre>
-<p>If <code>x &lt; y</code>, the <a href="../tf/add.md"><code>tf.add</code></a> operation will be executed and <a href="../tf/square.md"><code>tf.square</code></a>
+<p>If <code>x &lt; y</code>, the <a href="../tf/add.html"><code>tf.add</code></a> operation will be executed and <a href="../tf/square.html"><code>tf.square</code></a>
 operation will not be executed. Since <code>z</code> is needed for at least one
-branch of the <code>cond</code>, the <a href="../tf/multiply.md"><code>tf.multiply</code></a> operation is always executed,
+branch of the <code>cond</code>, the <a href="../tf/multiply.html"><code>tf.multiply</code></a> operation is always executed,
 unconditionally.
 Although this behavior is consistent with the dataflow model of TensorFlow,
 it has occasionally surprised some users who expected a lazier semantics.</p>
@@ -4117,7 +4117,7 @@ call to <code>cond</code>, and not at all during <code>Session.run()</code>). <c
 stitches together the graph fragments created during the <code>true_fn</code> and
 <code>false_fn</code> calls with some additional graph nodes to ensure that the right
 branch gets executed depending on the value of <code>pred</code>.</p>
-<p><a href="../tf/cond.md"><code>tf.cond</code></a> supports nested structures as implemented in
+<p><a href="../tf/cond.html"><code>tf.cond</code></a> supports nested structures as implemented in
 <code>tensorflow.python.util.nest</code>. Both <code>true_fn</code> and <code>false_fn</code> must return the
 same (possibly nested) value structure of lists, tuples, and/or named tuples.
 Singleton lists and tuples form the only exceptions to this: when returned by

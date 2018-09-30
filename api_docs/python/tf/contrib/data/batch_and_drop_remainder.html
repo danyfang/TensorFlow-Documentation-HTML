@@ -4086,12 +4086,12 @@
 <pre><code class="language-python">tf.contrib.data.batch_and_drop_remainder(batch_size)
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/batching.py"><code>tensorflow/contrib/data/python/ops/batching.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
 <p>A batching transformation that omits the final small batch (if present). (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed in a future version.
 Instructions for updating:
 Use <code>tf.data.Dataset.batch(..., drop_remainder=True)</code>.</p>
-<p>Like <a href="../../../tf/data/Dataset.md#batch"><code>tf.data.Dataset.batch</code></a>, this transformation combines
+<p>Like <a href="../../../tf/data/Dataset.html#batch"><code>tf.data.Dataset.batch</code></a>, this transformation combines
 consecutive elements of this dataset into batches. However, if the batch
 size does not evenly divide the input dataset size, this transformation will
 drop the final smaller element.</p>
@@ -4106,12 +4106,12 @@ shapes <code>(128,)</code> and <code>(72,)</code>, so the batch dimension would 
 known.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the number of
+<li><b><code>batch_size</code></b>: A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the number of
 consecutive elements of this dataset to combine in a single batch.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a></p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a></p>
 
     </article>
   </div>

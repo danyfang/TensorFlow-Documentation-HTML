@@ -4092,7 +4092,7 @@
 <h2>Class <code>AdditiveExternalRegretOptimizer</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/constrained_optimization/python/external_regret_optimizer.py"><code>tensorflow/contrib/constrained_optimization/python/external_regret_optimizer.py</code></a>.</p>
 <p>A <code>ConstrainedOptimizer</code> based on external-regret minimization.</p>
-<p>This <code>ConstrainedOptimizer</code> uses the given <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>s to jointly
+<p>This <code>ConstrainedOptimizer</code> uses the given <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>s to jointly
 minimize over the model parameters, and maximize over Lagrange multipliers,
 with the latter maximization using additive updates and an algorithm that
 minimizes external regret.</p>
@@ -4106,13 +4106,13 @@ Constrained Optimization”.
 formulation–can be found in Definition 1, and is discussed in Section 3. It
 is most similar to Algorithm 3 in Appendix C.3, with the two differences being
 that it uses proxy constraints (if they’re provided) in the update of the
-model parameters, and uses <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>s, instead of SGD, for the
+model parameters, and uses <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>s, instead of SGD, for the
 “inner” updates.</p>
 <h2>Properties</h2>
 <h3 id="constraint_optimizer"><code>constraint_optimizer</code></h3>
-<p>Returns the <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a> used for the Lagrange multipliers.</p>
+<p>Returns the <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a> used for the Lagrange multipliers.</p>
 <h3 id="optimizer"><code>optimizer</code></h3>
-<p>Returns the <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a> used for optimization.</p>
+<p>Returns the <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a> used for optimization.</p>
 <h2>Methods</h2>
 <h3 id="__init__"><code>__init__</code></h3>
 <pre><code class="language-python">__init__(
@@ -4166,14 +4166,14 @@ problem.</p>
 optimize.</li>
 <li><b><code>unconstrained_steps</code></b>: int, number of steps for which we should perform
 unconstrained updates, before transitioning to constrained updates.</li>
-<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
+<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
 method.</li>
-<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
 </ul>
 <h4>Returns:</h4>
 <p>TensorFlow Op.</p>
@@ -4201,14 +4201,14 @@ parameters, while the Lagrange multipliers will be updated using
 <ul>
 <li><b><code>minimization_problem</code></b>: ConstrainedMinimizationProblem, the problem to
 optimize.</li>
-<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
+<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
 method.</li>
-<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
 </ul>
 <h4>Returns:</h4>
 <p>TensorFlow Op.</p>
@@ -4232,14 +4232,14 @@ minimizes <code>objective</code>.</p>
 <ul>
 <li><b><code>minimization_problem</code></b>: ConstrainedMinimizationProblem, the problem to
 optimize.</li>
-<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
+<li><b><code>global_step</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>var_list</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>gate_gradients</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>aggregation_method</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>colocate_gradients_with_ops</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code>
 method.</li>
-<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
-<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>name</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
+<li><b><code>grad_loss</code></b>: as in <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>’s <code>minimize</code> method.</li>
 </ul>
 <h4>Returns:</h4>
 <p>TensorFlow Op.</p>

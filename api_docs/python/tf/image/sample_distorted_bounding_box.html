@@ -4097,7 +4097,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/image_ops_impl.py"><code>tensorflow/python/ops/image_ops_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/image.md#Working_with_Bounding_Boxes">Images &gt; Working with Bounding Boxes</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/image.html#Working_with_Bounding_Boxes">Images &gt; Working with Bounding Boxes</a></p>
 <p>Generate a single randomly distorted bounding box for an image.</p>
 <p>Bounding box annotations are often supplied in addition to ground-truth labels
 in image recognition or object localization tasks. A common technique for
@@ -4107,8 +4107,8 @@ localization of an object, i.e. bounding box, given an <code>image_size</code>,
 <code>bounding_boxes</code> and a series of constraints.</p>
 <p>The output of this Op is a single bounding box that may be used to crop the
 original image. The output is returned as 3 tensors: <code>begin</code>, <code>size</code> and
-<code>bboxes</code>. The first 2 tensors can be fed directly into <a href="../../tf/slice.md"><code>tf.slice</code></a> to crop the
-image. The latter may be supplied to <a href="../../tf/image/draw_bounding_boxes.md"><code>tf.image.draw_bounding_boxes</code></a> to
+<code>bboxes</code>. The first 2 tensors can be fed directly into <a href="../../tf/slice.html"><code>tf.slice</code></a> to crop the
+image. The latter may be supplied to <a href="../../tf/image/draw_bounding_boxes.html"><code>tf.image.draw_bounding_boxes</code></a> to
 visualize
 what the bounding box looks like.</p>
 <p>Bounding boxes are supplied and returned as <code>[y_min, x_min, y_max, x_max]</code>.
@@ -4178,13 +4178,13 @@ raise an error.</li>
 <ul>
 <li><b><code>begin</code></b>: A <code>Tensor</code>. Has the same type as <code>image_size</code>. 1-D, containing
 <code>[offset_height, offset_width, 0]</code>. Provide as input to
-<a href="../../tf/slice.md"><code>tf.slice</code></a>.</li>
+<a href="../../tf/slice.html"><code>tf.slice</code></a>.</li>
 <li><b><code>size</code></b>: A <code>Tensor</code>. Has the same type as <code>image_size</code>. 1-D, containing
 <code>[target_height, target_width, -1]</code>. Provide as input to
-<a href="../../tf/slice.md"><code>tf.slice</code></a>.</li>
+<a href="../../tf/slice.html"><code>tf.slice</code></a>.</li>
 <li><b><code>bboxes</code></b>: A <code>Tensor</code> of type <code>float32</code>. 3-D with shape <code>[1, 1, 4]</code> containing
 the distorted bounding box.
-Provide as input to <a href="../../tf/image/draw_bounding_boxes.md"><code>tf.image.draw_bounding_boxes</code></a>.</li>
+Provide as input to <a href="../../tf/image/draw_bounding_boxes.html"><code>tf.image.draw_bounding_boxes</code></a>.</li>
 </ul>
 
     </article>

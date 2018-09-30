@@ -4086,10 +4086,10 @@ graph when crossing a process boundary.  It can also be used for long
 term storage of graphs.  The MetaGraph contains the information required
 to continue training, perform evaluation, or run inference on a previously trained graph.</p>
 <p>The APIs for exporting and importing the complete model are in
-the <a href="../../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> class:
-<a href="../../api_docs/python/tf/train/export_meta_graph.md"><code>tf.train.export_meta_graph</code></a>
+the <a href="../../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> class:
+<a href="../../api_docs/python/tf/train/export_meta_graph.html"><code>tf.train.export_meta_graph</code></a>
 and
-<a href="../../api_docs/python/tf/train/import_meta_graph.md"><code>tf.train.import_meta_graph</code></a>.</p>
+<a href="../../api_docs/python/tf/train/import_meta_graph.html"><code>tf.train.import_meta_graph</code></a>.</p>
 <h2 id="What_s_in_a_MetaGraph">What's in a MetaGraph</h2>
 <p>The information contained in a MetaGraph is expressed as a
 <a href="https://www.tensorflow.org/code/tensorflow/core/protobuf/meta_graph.proto"><code>MetaGraphDef</code></a>
@@ -4100,8 +4100,8 @@ protocol buffer. It contains the following fields:</p>
 <li><a href="https://www.tensorflow.org/code/tensorflow/core/protobuf/saver.proto"><code>SaverDef</code></a> for the saver.</li>
 <li><a href="https://www.tensorflow.org/code/tensorflow/core/protobuf/meta_graph.proto"><code>CollectionDef</code></a>
 map that further describes additional components of the model such as
-<a href="../../api_guides/python/state_ops.md"><code>Variables</code></a>,
-<a href="../../api_docs/python/tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a>, etc.</li>
+<a href="../../api_guides/python/state_ops.html"><code>Variables</code></a>,
+<a href="../../api_docs/python/tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a>, etc.</li>
 </ul>
 <p>In order for a Python object to be serialized
 to and from <code>MetaGraphDef</code>, the Python class must implement <code>to_proto()</code> and
@@ -4186,7 +4186,7 @@ meta_graph_def = tf.train.export_meta_graph(filename='/tmp/my-model.meta')
     collection_list=[&quot;input_tensor&quot;, &quot;output_tensor&quot;])
 </code></pre>
 <p>The MetaGraph is also automatically exported via the <code>save()</code> API in
-<a href="../../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a>.</p>
+<a href="../../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a>.</p>
 <h2 id="Import_a_MetaGraph">Import a MetaGraph</h2>
 <p>The API for importing a MetaGraph file into a graph is <code>import_meta_graph()</code>.</p>
 <p>Here are some of the typical usage models:</p>

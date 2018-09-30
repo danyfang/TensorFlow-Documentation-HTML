@@ -4087,7 +4087,7 @@ how to solve the Iris classification problem in TensorFlow.</p>
 following:</p>
 <ul>
 <li>
-<p><a href="../install/index.md">Install TensorFlow</a>.</p>
+<p><a href="../install/index.html">Install TensorFlow</a>.</p>
 </li>
 <li>
 <p>If you installed TensorFlow with virtualenv or Anaconda, activate your
@@ -4153,10 +4153,10 @@ provides a programming stack consisting of multiple API layers:</p>
 </div>
 <p>We strongly recommend writing TensorFlow programs with the following APIs:</p>
 <ul>
-<li><a href="../guide/estimators.md">Estimators</a>, which represent a complete model.
+<li><a href="../guide/estimators.html">Estimators</a>, which represent a complete model.
 The Estimator API provides methods to train the model, to judge the model’s
 accuracy, and to generate predictions.</li>
-<li><a href="../guide/datasets_for_estimators.md">Datasets for Estimators</a>, which build a data input
+<li><a href="../guide/datasets_for_estimators.html">Datasets for Estimators</a>, which build a data input
 pipeline. The Dataset API has methods to load and manipulate data, and feed
 it into your model. The Dataset API meshes well with the Estimators API.</li>
 </ul>
@@ -4262,13 +4262,13 @@ example is an Iris Versicolor.</p>
 <p>An Estimator is TensorFlow’s high-level representation of a complete model. It
 handles the details of initialization, logging, saving and restoring, and many
 other features so you can concentrate on your model. For more details see
-<a href="../guide/estimators.md">Estimators</a>.</p>
-<p>An Estimator is any class derived from <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>. TensorFlow
+<a href="../guide/estimators.html">Estimators</a>.</p>
+<p>An Estimator is any class derived from <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>. TensorFlow
 provides a collection of
-<a href="../api_docs/python/tf/estimator.md">pre-made Estimators</a>
+<a href="../api_docs/python/tf/estimator.html">pre-made Estimators</a>
 (for example, <code>LinearRegressor</code>) to implement common ML algorithms. Beyond
 those, you may write your own
-<a href="../guide/custom_estimators.md">custom Estimators</a>.
+<a href="../guide/custom_estimators.html">custom Estimators</a>.
 We recommend using pre-made Estimators when just getting started.</p>
 <p>To write a TensorFlow program based on pre-made Estimators, you must perform the
 following tasks:</p>
@@ -4284,7 +4284,7 @@ input function as the source of the data.</li>
 <h2>Create input functions</h2>
 <p>You must create input functions to supply data for training,
 evaluating, and prediction.</p>
-<p>An <strong>input function</strong> is a function that returns a <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> object
+<p>An <strong>input function</strong> is a function that returns a <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> object
 which outputs the following two-element tuple:</p>
 <ul>
 <li><a href="https://developers.google.com/machine-learning/glossary/#feature"><code>features</code></a> - A Python dictionary in which:
@@ -4347,7 +4347,7 @@ in <a href="https://github.com/tensorflow/models/blob/master/samples/core/get_st
 is an object describing how the model should use raw input data from the
 features dictionary. When you build an Estimator model, you pass it a list of
 feature columns that describes each of the features you want the model to use.
-The <a href="../api_docs/python/tf/feature_column.md"><code>tf.feature_column</code></a> module provides many options for representing data
+The <a href="../api_docs/python/tf/feature_column.html"><code>tf.feature_column</code></a> module provides many options for representing data
 to the model.</p>
 <p>For Iris, the 4 raw features are numeric values, so we’ll build a list of
 feature columns to tell the Estimator model to represent each of the four
@@ -4359,7 +4359,7 @@ for key in train_x.keys():
     my_feature_columns.append(tf.feature_column.numeric_column(key=key))
 </code></pre>
 <p>Feature columns can be far more sophisticated than those we’re showing here.  We
-detail feature columns <a href="../guide/feature_columns.md">later on</a> in our Getting
+detail feature columns <a href="../guide/feature_columns.html">later on</a> in our Getting
 Started guide.</p>
 <p>Now that we have the description of how we want the model to represent the raw
 features, we can build the estimator.</p>
@@ -4367,12 +4367,12 @@ features, we can build the estimator.</p>
 <p>The Iris problem is a classic classification problem. Fortunately, TensorFlow
 provides several pre-made classifier Estimators, including:</p>
 <ul>
-<li><a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>tf.estimator.DNNClassifier</code></a> for deep models that perform multi-class
+<li><a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>tf.estimator.DNNClassifier</code></a> for deep models that perform multi-class
 classification.</li>
-<li><a href="../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.md"><code>tf.estimator.DNNLinearCombinedClassifier</code></a> for wide &amp; deep models.</li>
-<li><a href="../api_docs/python/tf/estimator/LinearClassifier.md"><code>tf.estimator.LinearClassifier</code></a> for classifiers based on linear models.</li>
+<li><a href="../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.html"><code>tf.estimator.DNNLinearCombinedClassifier</code></a> for wide &amp; deep models.</li>
+<li><a href="../api_docs/python/tf/estimator/LinearClassifier.html"><code>tf.estimator.LinearClassifier</code></a> for classifiers based on linear models.</li>
 </ul>
-<p>For the Iris problem, <a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>tf.estimator.DNNClassifier</code></a> seems like the best choice.
+<p>For the Iris problem, <a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>tf.estimator.DNNClassifier</code></a> seems like the best choice.
 Here’s how we instantiated this Estimator:</p>
 <pre><code class="language-python"># Build a DNN with 2 hidden layers and 10 nodes in each hidden layer.
 classifier = tf.estimator.DNNClassifier(
@@ -4460,10 +4460,10 @@ Prediction is &quot;Virginica&quot; (97.9%), expected &quot;Virginica&quot;
 <p>Now that you’ve gotten started writing TensorFlow programs, consider the
 following material:</p>
 <ul>
-<li><a href="../guide/checkpoints.md">Checkpoints</a> to learn how to save and restore models.</li>
-<li><a href="../guide/datasets_for_estimators.md">Datasets for Estimators</a> to learn more about importing
+<li><a href="../guide/checkpoints.html">Checkpoints</a> to learn how to save and restore models.</li>
+<li><a href="../guide/datasets_for_estimators.html">Datasets for Estimators</a> to learn more about importing
 data into your model.</li>
-<li><a href="../guide/custom_estimators.md">Creating Custom Estimators</a> to learn how to
+<li><a href="../guide/custom_estimators.html">Creating Custom Estimators</a> to learn how to
 write your own Estimator, customized for a particular problem.</li>
 </ul>
 

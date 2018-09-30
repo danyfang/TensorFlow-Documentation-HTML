@@ -4160,15 +4160,15 @@ should be instances of classes derived from <code>_FeatureColumn</code>.</li>
 <li><b><code>label_key</code></b>: A string identifying the label. It means tf.Example stores labels
 with this key.</li>
 <li><b><code>label_dtype</code></b>: A <code>tf.dtype</code> identifies the type of labels. By default it is
-<a href="../../tf/float32.md"><code>tf.float32</code></a>.</li>
+<a href="../../tf/float32.html"><code>tf.float32</code></a>.</li>
 <li><b><code>label_default</code></b>: used as label if label_key does not exist in given
 tf.Example. By default default_value is none, which means
-<a href="../../tf/parse_example.md"><code>tf.parse_example</code></a> will error out if there is any missing label.</li>
+<a href="../../tf/parse_example.html"><code>tf.parse_example</code></a> will error out if there is any missing label.</li>
 <li><b><code>label_dimension</code></b>: Number of regression targets per example. This is the
 size of the last dimension of the labels and logits <code>Tensor</code> objects
 (typically, these have shape <code>[batch_size, label_dimension]</code>).</li>
 <li><b><code>weight_column</code></b>: A string or a <code>_NumericColumn</code> created by
-<a href="../../tf/feature_column/numeric_column.md"><code>tf.feature_column.numeric_column</code></a> defining feature column representing
+<a href="../../tf/feature_column/numeric_column.html"><code>tf.feature_column.numeric_column</code></a> defining feature column representing
 weights. It is used to down weight or boost examples during training. It
 will be multiplied by the loss of the example. If it is a string, it is
 used as a key to fetch weight tensor from the <code>features</code>. If it is a

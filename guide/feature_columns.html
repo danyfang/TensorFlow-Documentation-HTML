@@ -4084,11 +4084,11 @@
 intermediaries between raw data and Estimators. Feature columns are very rich,
 enabling you to transform a diverse range of raw data into formats that
 Estimators can use, allowing easy experimentation.</p>
-<p>In <a href="../guide/premade_estimators.md">Premade Estimators</a>, we used the premade
-Estimator, <a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>DNNClassifier</code></a> to train a model to
+<p>In <a href="../guide/premade_estimators.html">Premade Estimators</a>, we used the premade
+Estimator, <a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>DNNClassifier</code></a> to train a model to
 predict different types of Iris flowers from four input features. That example
 created only numerical feature columns (of type
-<a href="../api_docs/python/tf/feature_column/numeric_column.md"><code>tf.feature_column.numeric_column</code></a>). Although numerical feature columns model
+<a href="../api_docs/python/tf/feature_column/numeric_column.html"><code>tf.feature_column.numeric_column</code></a>). Although numerical feature columns model
 the lengths of petals and sepals effectively, real world data sets contain all
 kinds of features, many of which are non-numerical.</p>
 <div style="width:80%; margin:auto; margin-bottom:10px; margin-top:20px;">
@@ -4099,7 +4099,7 @@ Some real-world features (such as, longitude) are numerical, but many are not.
 </div>
 <h2>Input to a Deep Neural Network</h2>
 <p>What kind of data can a deep neural network operate on? The answer
-is, of course, numbers (for example, <a href="../api_docs/python/tf/float32.md"><code>tf.float32</code></a>). After all, every neuron in
+is, of course, numbers (for example, <a href="../api_docs/python/tf/float32.html"><code>tf.float32</code></a>). After all, every neuron in
 a neural network performs multiplication and addition operations on weights and
 input data. Real-life input data, however, often contains non-numerical
 (categorical) data. For example, consider a <code>product_class</code> feature that can
@@ -4131,7 +4131,7 @@ Feature Columns bridge input data (as returned by <code>input_fn</code>) with yo
 Feature columns bridge raw data with the data your model needs.
 </div>
 <p>To create feature columns, call functions from the
-<a href="../api_docs/python/tf/feature_column.md"><code>tf.feature_column</code></a> module. This document explains nine of the functions in
+<a href="../api_docs/python/tf/feature_column.html"><code>tf.feature_column</code></a> module. This document explains nine of the functions in
 that module. As the following figure shows, all nine functions return either a
 Categorical-Column or a Dense-Column object, except <code>bucketized_column</code>, which
 inherits from both classes:</p>
@@ -4143,7 +4143,7 @@ Feature column methods fall into two main categories and one hybrid category.
 </div>
 <p>Let’s look at these functions in more detail.</p>
 <h3>Numeric column</h3>
-<p>The Iris classifier calls the <a href="../api_docs/python/tf/feature_column/numeric_column.md"><code>tf.feature_column.numeric_column</code></a> function for
+<p>The Iris classifier calls the <a href="../api_docs/python/tf/feature_column/numeric_column.html"><code>tf.feature_column.numeric_column</code></a> function for
 all input features:</p>
 <ul>
 <li><code>SepalLength</code></li>
@@ -4153,7 +4153,7 @@ all input features:</p>
 </ul>
 <p>Although <code>tf.numeric_column</code> provides optional arguments, calling
 <code>tf.numeric_column</code> without any arguments, as follows, is a fine way to specify
-a numerical value with the default data type (<a href="../api_docs/python/tf/float32.md"><code>tf.float32</code></a>) as input to your
+a numerical value with the default data type (<a href="../api_docs/python/tf/float32.html"><code>tf.float32</code></a>) as input to your
 model:</p>
 <pre><code class="language-python"># Defaults to a tf.float32 scalar.
 numeric_feature_column = tf.feature_column.numeric_column(key=&quot;SepalLength&quot;)
@@ -4178,7 +4178,7 @@ matrix_feature_column = tf.feature_column.numeric_column(key=&quot;MyMatrix&quot
 <h3>Bucketized column</h3>
 <p>Often, you don’t want to feed a number directly into the model, but instead
 split its value into different categories based on numerical ranges.  To do so,
-create a <a href="../api_docs/python/tf/feature_column/bucketized_column.md">bucketized column</a>. For
+create a <a href="../api_docs/python/tf/feature_column/bucketized_column.html">bucketized column</a>. For
 example, consider raw data that represents the year a house was built. Instead
 of representing that year as a scalar numeric column, we could split the year
 into the following four buckets:</p>
@@ -4261,7 +4261,7 @@ value. That is:</p>
 <li><code>1=&quot;electronics&quot;</code></li>
 <li><code>2=&quot;sport&quot;</code></li>
 </ul>
-<p>Call <a href="../api_docs/python/tf/feature_column/categorical_column_with_identity.md"><code>tf.feature_column.categorical_column_with_identity</code></a> to implement a
+<p>Call <a href="../api_docs/python/tf/feature_column/categorical_column_with_identity.html"><code>tf.feature_column.categorical_column_with_identity</code></a> to implement a
 categorical identity column. For example:</p>
 <pre><code class="language-python"># Create categorical output for an integer feature named &quot;my_feature_b&quot;,
 # The values of my_feature_b must be &gt;= 0 and &lt; num_buckets
@@ -4291,8 +4291,8 @@ Mapping string values to vocabulary columns.
 categorical identity columns. TensorFlow provides two different functions to
 create categorical vocabulary columns:</p>
 <ul>
-<li><a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_list.md"><code>tf.feature_column.categorical_column_with_vocabulary_list</code></a></li>
-<li><a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_file.md"><code>tf.feature_column.categorical_column_with_vocabulary_file</code></a></li>
+<li><a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_list.html"><code>tf.feature_column.categorical_column_with_vocabulary_list</code></a></li>
+<li><a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_file.html"><code>tf.feature_column.categorical_column_with_vocabulary_file</code></a></li>
 </ul>
 <p><code>categorical_column_with_vocabulary_list</code> maps each string to an integer based
 on an explicit vocabulary list. For example:</p>
@@ -4307,7 +4307,7 @@ vocabulary_feature_column =
 <p>The preceding function is pretty straightforward, but it has a significant
 drawback. Namely, there’s way too much typing when the vocabulary list is long.
 For these cases, call
-<a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_file.md"><code>tf.feature_column.categorical_column_with_vocabulary_file</code></a> instead, which lets
+<a href="../api_docs/python/tf/feature_column/categorical_column_with_vocabulary_file.html"><code>tf.feature_column.categorical_column_with_vocabulary_file</code></a> instead, which lets
 you place the vocabulary words in a separate file. For example:</p>
 <pre><code class="language-python">
 # Given input &quot;feature_name_from_input_fn&quot; which is a string,
@@ -4332,7 +4332,7 @@ categories can be so big that it’s not possible to have individual categories
 for each vocabulary word or integer because that would consume too much memory.
 For these cases, we can instead turn the question around and ask, “How many
 categories am I willing to have for my input?”  In fact, the
-<a href="../api_docs/python/tf/feature_column/categorical_column_with_hash_bucket.md"><code>tf.feature_column.categorical_column_with_hash_bucket</code></a> function enables you
+<a href="../api_docs/python/tf/feature_column/categorical_column_with_hash_bucket.html"><code>tf.feature_column.categorical_column_with_hash_bucket</code></a> function enables you
 to specify the number of categories. For this type of feature column the model
 calculates a hash value of the input, then puts it into one of
 the <code>hash_bucket_size</code> categories using the modulo operator, as in the following
@@ -4387,7 +4387,7 @@ Map of Atlanta. Imagine this map divided into 10,000 sections of
 equal size.
 </div>
 <p>For the solution, we used a combination of the <code>bucketized_column</code> we looked at
-earlier, with the <a href="../api_docs/python/tf/feature_column/crossed_column.md"><code>tf.feature_column.crossed_column</code></a> function.</p>
+earlier, with the <a href="../api_docs/python/tf/feature_column/crossed_column.html"><code>tf.feature_column.crossed_column</code></a> function.</p>
 <!--TODO(markdaoust) link to full example-->
 <pre><code class="language-python">def make_dataset(latitude, longitude, labels):
     assert latitude.shape == longitude.shape == labels.shape
@@ -4464,7 +4464,7 @@ where the matching category has value 1 and the rest have 0s:</p>
 Representing data in indicator columns.
 </div>
 <p>Here’s how you create an indicator column by calling
-<a href="../api_docs/python/tf/feature_column/indicator_column.md"><code>tf.feature_column.indicator_column</code></a>:</p>
+<a href="../api_docs/python/tf/feature_column/indicator_column.html"><code>tf.feature_column.indicator_column</code></a>:</p>
 <pre><code class="language-python">categorical_column = ... # Create any type of categorical column.
 
 # Represent the categorical column as an indicator column.
@@ -4534,7 +4534,7 @@ number of dimensions is 3:</p>
 </code></pre>
 <p>Note that this is just a general guideline; you can set the number of embedding
 dimensions as you please.</p>
-<p>Call <a href="../api_docs/python/tf/feature_column/embedding_column.md"><code>tf.feature_column.embedding_column</code></a> to create an <code>embedding_column</code> as
+<p>Call <a href="../api_docs/python/tf/feature_column/embedding_column.html"><code>tf.feature_column.embedding_column</code></a> to create an <code>embedding_column</code> as
 suggested by the following snippet:</p>
 <pre><code class="language-python">categorical_column = ... # Create any categorical column
 
@@ -4544,22 +4544,22 @@ embedding_column = tf.feature_column.embedding_column(
     categorical_column=categorical_column,
     dimension=embedding_dimensions)
 </code></pre>
-<p><a href="../guide/embedding.md">Embeddings</a> is a significant topic within machine
+<p><a href="../guide/embedding.html">Embeddings</a> is a significant topic within machine
 learning. This information was just to get you started using them as feature
 columns.</p>
 <h2>Passing feature columns to Estimators</h2>
 <p>As the following list indicates, not all Estimators permit all types of
 <code>feature_columns</code> argument(s):</p>
 <ul>
-<li><a href="../api_docs/python/tf/estimator/LinearClassifier.md"><code>LinearClassifier</code></a> and
-<a href="../api_docs/python/tf/estimator/LinearRegressor.md"><code>LinearRegressor</code></a>: Accept all types of
+<li><a href="../api_docs/python/tf/estimator/LinearClassifier.html"><code>LinearClassifier</code></a> and
+<a href="../api_docs/python/tf/estimator/LinearRegressor.html"><code>LinearRegressor</code></a>: Accept all types of
 feature column.</li>
-<li><a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>DNNClassifier</code></a> and
-<a href="../api_docs/python/tf/estimator/DNNRegressor.md"><code>DNNRegressor</code></a>: Only accept dense columns. Other
+<li><a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>DNNClassifier</code></a> and
+<a href="../api_docs/python/tf/estimator/DNNRegressor.html"><code>DNNRegressor</code></a>: Only accept dense columns. Other
 column types must be wrapped in either an <code>indicator_column</code> or
 <code>embedding_column</code>.</li>
-<li><a href="../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.md"><code>DNNLinearCombinedClassifier</code></a> and
-<a href="../api_docs/python/tf/estimator/DNNLinearCombinedRegressor.md"><code>DNNLinearCombinedRegressor</code></a>:
+<li><a href="../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.html"><code>DNNLinearCombinedClassifier</code></a> and
+<a href="../api_docs/python/tf/estimator/DNNLinearCombinedRegressor.html"><code>DNNLinearCombinedRegressor</code></a>:
 <ul>
 <li>The <code>linear_feature_columns</code> argument accepts any feature column type.</li>
 <li>The <code>dnn_feature_columns</code> argument only accepts dense columns.</li>
@@ -4569,7 +4569,7 @@ column types must be wrapped in either an <code>indicator_column</code> or
 <h2>Other Sources</h2>
 <p>For more examples on feature columns, view the following:</p>
 <ul>
-<li>The <a href="../guide/low_level_intro.md#feature_columns">Low Level Introduction</a> demonstrates how
+<li>The <a href="../guide/low_level_intro.html#feature_columns">Low Level Introduction</a> demonstrates how
 experiment directly with <code>feature_columns</code> using TensorFlow’s low level APIs.</li>
 <li>The <a href="https://github.com/tensorflow/models/tree/master/official/wide_deep">Estimator wide and deep learning tutorial</a>
 solves a binary classification problem using <code>feature_columns</code> on a variety of

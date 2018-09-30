@@ -4089,10 +4089,10 @@ the model.</li>
 the model.</li>
 </ul>
 <p>This document focuses on checkpoints. For details on <code>SavedModel</code>, see the
-<a href="../guide/saved_model.md">Saving and Restoring</a> guide.</p>
+<a href="../guide/saved_model.html">Saving and Restoring</a> guide.</p>
 <h2>Sample code</h2>
 <p>This document relies on the same
-<a href="https://github.com/tensorflow/models/blob/master/samples/core/get_started/premade_estimator.py">Iris classification example</a> detailed in <a href="../guide/premade_estimators.md">Getting Started with TensorFlow</a>.
+<a href="https://github.com/tensorflow/models/blob/master/samples/core/get_started/premade_estimator.py">Iris classification example</a> detailed in <a href="../guide/premade_estimators.html">Getting Started with TensorFlow</a>.
 To download and access the example, invoke the following two commands:</p>
 <pre><code class="language-shell">git clone https://github.com/tensorflow/models/
 cd models/samples/core/get_started
@@ -4177,7 +4177,7 @@ and completes (final iteration).</li>
 </ul>
 <p>You may alter the default schedule by taking the following steps:</p>
 <ol>
-<li>Create a <a href="../api_docs/python/tf/estimator/RunConfig.md"><code>RunConfig</code></a> object that defines the
+<li>Create a <a href="../api_docs/python/tf/estimator/RunConfig.html"><code>RunConfig</code></a> object that defines the
 desired schedule.</li>
 <li>When instantiating the Estimator, pass that <code>RunConfig</code> object to the
 Estimator’s <code>config</code> argument.</li>
@@ -4204,7 +4204,7 @@ checkpoint to the <code>model_dir</code>. Each subsequent call to the Estimator�
 <li>The Estimator builds the model’s
 <a href="https://developers.google.com/machine-learning/glossary/#graph">graph</a>
 by running the <code>model_fn()</code>.  (For details on the <code>model_fn()</code>, see
-<a href="../guide/custom_estimators.md">Creating Custom Estimators.</a>)</li>
+<a href="../guide/custom_estimators.html">Creating Custom Estimators.</a>)</li>
 <li>The Estimator initializes the weights of the new model from the data
 stored in the most recent checkpoint.</li>
 </ol>
@@ -4259,7 +4259,7 @@ This separation will keep your checkpoints recoverable.</p>
 <h2>Summary</h2>
 <p>Checkpoints provide an easy automatic mechanism for saving and restoring
 models created by Estimators.</p>
-<p>See the <a href="../guide/saved_model.md">Saving and Restoring</a> guide for details about:</p>
+<p>See the <a href="../guide/saved_model.html">Saving and Restoring</a> guide for details about:</p>
 <ul>
 <li>Saving and restoring models using low-level TensorFlow APIs.</li>
 <li>Exporting and importing models in the SavedModel format, which is a

@@ -4094,12 +4094,12 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/graph_editor/select.py"><code>tensorflow/contrib/graph_editor/select.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.md#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
-<p>Return all the <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> within the given boundary.</p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.graph_editor.html#Module_select">Graph Editor (contrib) &gt; Module: select</a></p>
+<p>Return all the <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> within the given boundary.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>ops</code></b>: an object convertible to a list of <a href="../../../tf/Operation.md"><code>tf.Operation</code></a>. those ops define the
-set in which to perform the operation (if a <a href="../../../tf/Graph.md"><code>tf.Graph</code></a> is given, it
+<li><b><code>ops</code></b>: an object convertible to a list of <a href="../../../tf/Operation.html"><code>tf.Operation</code></a>. those ops define the
+set in which to perform the operation (if a <a href="../../../tf/Graph.html"><code>tf.Graph</code></a> is given, it
 will be converted to the list of all its operations).</li>
 <li><b><code>seed_ops</code></b>: the operations from which to start expanding.</li>
 <li><b><code>boundary_ops</code></b>: the ops forming the boundary.</li>
@@ -4113,11 +4113,11 @@ equivalent to set control_inputs to True and control_outputs to
 the <code>util.ControlOutputs</code> instance.</li>
 </ul>
 <h4>Returns:</h4>
-<p>All the <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> surrounding the given ops.</p>
+<p>All the <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> surrounding the given ops.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>TypeError</code></b>: if <code>ops</code> or <code>seed_ops</code> cannot be converted to a list of
-<a href="../../../tf/Operation.md"><code>tf.Operation</code></a>.</li>
+<a href="../../../tf/Operation.html"><code>tf.Operation</code></a>.</li>
 <li><b><code>ValueError</code></b>: if the boundary is intersecting with the seeds.</li>
 </ul>
 

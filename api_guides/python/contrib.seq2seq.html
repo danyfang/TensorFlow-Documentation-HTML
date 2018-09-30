@@ -4082,25 +4082,25 @@
       <h1>Seq2seq Library (contrib)</h1>
 <p>[TOC]</p>
 <p>Module for constructing seq2seq models and dynamic decoding.  Builds on top of
-libraries in <a href="../../api_docs/python/tf/contrib/rnn.md"><code>tf.contrib.rnn</code></a>.</p>
+libraries in <a href="../../api_docs/python/tf/contrib/rnn.html"><code>tf.contrib.rnn</code></a>.</p>
 <p>This library is composed of two primary components:</p>
 <ul>
-<li>New attention wrappers for <a href="../../api_docs/python/tf/contrib/rnn/RNNCell.md"><code>tf.contrib.rnn.RNNCell</code></a> objects.</li>
+<li>New attention wrappers for <a href="../../api_docs/python/tf/contrib/rnn/RNNCell.html"><code>tf.contrib.rnn.RNNCell</code></a> objects.</li>
 <li>A new object-oriented dynamic decoding framework.</li>
 </ul>
 <h2 id="Attention">Attention</h2>
 <p>Attention wrappers are <code>RNNCell</code> objects that wrap other <code>RNNCell</code> objects and
 implement attention.  The form of attention is determined by a subclass of
-<a href="../../api_docs/python/tf/contrib/seq2seq/AttentionMechanism.md"><code>tf.contrib.seq2seq.AttentionMechanism</code></a>.  These subclasses describe the form
+<a href="../../api_docs/python/tf/contrib/seq2seq/AttentionMechanism.html"><code>tf.contrib.seq2seq.AttentionMechanism</code></a>.  These subclasses describe the form
 of attention (e.g. additive vs. multiplicative) to use when creating the
 wrapper.  An instance of an <code>AttentionMechanism</code> is constructed with a
 <code>memory</code> tensor, from which lookup keys and values tensors are created.</p>
 <h3>Attention Mechanisms</h3>
 <p>The two basic attention mechanisms are:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/BahdanauAttention.md"><code>tf.contrib.seq2seq.BahdanauAttention</code></a> (additive attention,
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/BahdanauAttention.html"><code>tf.contrib.seq2seq.BahdanauAttention</code></a> (additive attention,
 <a href="https://arxiv.org/abs/1409.0473">ref.</a>)</li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/LuongAttention.md"><code>tf.contrib.seq2seq.LuongAttention</code></a> (multiplicative attention,
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/LuongAttention.html"><code>tf.contrib.seq2seq.LuongAttention</code></a> (multiplicative attention,
 <a href="https://arxiv.org/abs/1508.04025">ref.</a>)</li>
 </ul>
 <p>The <code>memory</code> tensor passed the attention mechanism’s constructor is expected to
@@ -4114,7 +4114,7 @@ construction parameter <code>num_units</code>.  For some kinds of attention (lik
 the depth of the queries; and the <code>memory</code> tensor will be projected to this
 depth.</p>
 <h3>Attention Wrappers</h3>
-<p>The basic attention wrapper is <a href="../../api_docs/python/tf/contrib/seq2seq/AttentionWrapper.md"><code>tf.contrib.seq2seq.AttentionWrapper</code></a>.
+<p>The basic attention wrapper is <a href="../../api_docs/python/tf/contrib/seq2seq/AttentionWrapper.html"><code>tf.contrib.seq2seq.AttentionWrapper</code></a>.
 This wrapper accepts an <code>RNNCell</code> instance, an instance of <code>AttentionMechanism</code>,
 and an attention depth parameter (<code>attention_size</code>); as well as several
 optional arguments that allow one to customize intermediate calculations.</p>
@@ -4180,22 +4180,22 @@ outputs, _ = tf.contrib.seq2seq.dynamic_decode(
 </code></pre>
 <h3>Decoder base class and functions</h3>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/Decoder.md"><code>tf.contrib.seq2seq.Decoder</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/dynamic_decode.md"><code>tf.contrib.seq2seq.dynamic_decode</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/Decoder.html"><code>tf.contrib.seq2seq.Decoder</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/dynamic_decode.html"><code>tf.contrib.seq2seq.dynamic_decode</code></a></li>
 </ul>
 <h3>Basic Decoder</h3>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/BasicDecoderOutput.md"><code>tf.contrib.seq2seq.BasicDecoderOutput</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/BasicDecoder.md"><code>tf.contrib.seq2seq.BasicDecoder</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/BasicDecoderOutput.html"><code>tf.contrib.seq2seq.BasicDecoderOutput</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/BasicDecoder.html"><code>tf.contrib.seq2seq.BasicDecoder</code></a></li>
 </ul>
 <h3>Decoder Helpers</h3>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/Helper.md"><code>tf.contrib.seq2seq.Helper</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/CustomHelper.md"><code>tf.contrib.seq2seq.CustomHelper</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/GreedyEmbeddingHelper.md"><code>tf.contrib.seq2seq.GreedyEmbeddingHelper</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/ScheduledEmbeddingTrainingHelper.md"><code>tf.contrib.seq2seq.ScheduledEmbeddingTrainingHelper</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/ScheduledOutputTrainingHelper.md"><code>tf.contrib.seq2seq.ScheduledOutputTrainingHelper</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/seq2seq/TrainingHelper.md"><code>tf.contrib.seq2seq.TrainingHelper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/Helper.html"><code>tf.contrib.seq2seq.Helper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/CustomHelper.html"><code>tf.contrib.seq2seq.CustomHelper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/GreedyEmbeddingHelper.html"><code>tf.contrib.seq2seq.GreedyEmbeddingHelper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/ScheduledEmbeddingTrainingHelper.html"><code>tf.contrib.seq2seq.ScheduledEmbeddingTrainingHelper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/ScheduledOutputTrainingHelper.html"><code>tf.contrib.seq2seq.ScheduledOutputTrainingHelper</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/seq2seq/TrainingHelper.html"><code>tf.contrib.seq2seq.TrainingHelper</code></a></li>
 </ul>
 
     </article>

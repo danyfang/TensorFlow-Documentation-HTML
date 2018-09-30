@@ -4143,7 +4143,7 @@ setting it to &gt; 1 empirically seems to give a better fit.</p>
 <li>
 <p><b><code>prediction_model_factory</code></b>: A callable taking arguments <code>num_features</code>,
 <code>input_window_size</code>, and <code>output_window_size</code> and returning a
-<a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>. The <code>Model</code>'s <code>call()</code> takes two arguments: an input
+<a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>. The <code>Model</code>'s <code>call()</code> takes two arguments: an input
 window and an output window, and returns a dictionary of
 predictions. See <code>FlatPredictionModel</code> for an example. Example usage:</p>
 <pre><code class="language-python">model = ar_model.ARModel(
@@ -4168,11 +4168,11 @@ observations and predictions, while the training loss is computed on
 normalized data (if input statistics are available).</p>
 </li>
 <li>
-<p><b><code>exogenous_feature_columns</code></b>: A list of <a href="../../../tf/feature_column.md"><code>tf.feature_column</code></a>s (for example
-<a href="../../../tf/feature_column/embedding_column.md"><code>tf.feature_column.embedding_column</code></a>) corresponding to exogenous
+<p><b><code>exogenous_feature_columns</code></b>: A list of <a href="../../../tf/feature_column.html"><code>tf.feature_column</code></a>s (for example
+<a href="../../../tf/feature_column/embedding_column.html"><code>tf.feature_column.embedding_column</code></a>) corresponding to exogenous
 features which provide extra information to the model but are not part
 of the series to be predicted. Passed to
-<a href="../../../tf/feature_column/input_layer.md"><code>tf.feature_column.input_layer</code></a>.</p>
+<a href="../../../tf/feature_column/input_layer.html"><code>tf.feature_column.input_layer</code></a>.</p>
 </li>
 </ul>
 <h3 id="define_loss"><code>define_loss</code></h3>

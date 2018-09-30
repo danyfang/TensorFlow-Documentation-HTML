@@ -4090,7 +4090,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/data/python/ops/shuffle_ops.py"><code>tensorflow/contrib/data/python/ops/shuffle_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.md#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/input_dataset.html#Transformations_on_existing_datasets">Dataset Input Pipeline &gt; Transformations on existing datasets</a></p>
 <p>Shuffles and repeats a Dataset returning a new permutation for each epoch.</p>
 <p><code>dataset.apply(tf.contrib.data.shuffle_and_repeat(buffer_size, count))</code></p>
 <p>is equivalent to</p>
@@ -4100,19 +4100,19 @@ if you need to checkpoint an input pipeline with reshuffling you must use
 this implementation.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>buffer_size</code></b>: A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>buffer_size</code></b>: A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 maximum number elements that will be buffered when prefetching.</li>
-<li><b><code>count</code></b>: (Optional.) A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>count</code></b>: (Optional.) A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 number of times the dataset should be repeated. The default behavior
 (if <code>count</code> is <code>None</code> or <code>-1</code>) is for the dataset be repeated
 indefinitely.</li>
-<li><b><code>seed</code></b>: (Optional.) A <a href="../../../tf/int64.md"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a>, representing the
+<li><b><code>seed</code></b>: (Optional.) A <a href="../../../tf/int64.html"><code>tf.int64</code></a> scalar <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a>, representing the
 random seed that will be used to create the distribution. See
-<a href="../../../tf/set_random_seed.md"><code>tf.set_random_seed</code></a> for behavior.</li>
+<a href="../../../tf/set_random_seed.html"><code>tf.set_random_seed</code></a> for behavior.</li>
 </ul>
 <h4>Returns:</h4>
 <p>A <code>Dataset</code> transformation function, which can be passed to
-<a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a>.</p>
+<a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a>.</p>
 
     </article>
   </div>

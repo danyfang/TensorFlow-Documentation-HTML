@@ -4098,7 +4098,7 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/debug/lib/debug_gradients.py"><code>tensorflow/python/debug/lib/debug_gradients.py</code></a>.</p>
 <p>Gradients Debugger.</p>
 <p>Allows retrieval of gradient tensors created by TensorFlow’s automatic
-differentiation algorithm, i.e., <a href="../tf/gradients.md"><code>tf.gradients</code></a> and optimizer classes that
+differentiation algorithm, i.e., <a href="../tf/gradients.html"><code>tf.gradients</code></a> and optimizer classes that
 use it.</p>
 <h2>Properties</h2>
 <h3 id="graph"><code>graph</code></h3>
@@ -4110,7 +4110,7 @@ use it.</p>
 <p>Constructor of GradientsDebugger.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>y_tensor</code></b>: optional: the <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> to be differentiated, i.e., the tensor
+<li><b><code>y_tensor</code></b>: optional: the <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> to be differentiated, i.e., the tensor
 on the numerator of the differentiation.</li>
 </ul>
 <h3 id="__enter__"><code>__enter__</code></h3>
@@ -4129,15 +4129,15 @@ on the numerator of the differentiation.</li>
 <p>Get the gradient tensor of an x-tensor.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>x_tensor</code></b>: (<a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, <a href="../tf/Variable.md"><code>tf.Variable</code></a> or <code>str</code>) The x-tensor object or its
-name. x-tensor refers to the independent <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, i.e., the tensor
+<li><b><code>x_tensor</code></b>: (<a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, <a href="../tf/Variable.html"><code>tf.Variable</code></a> or <code>str</code>) The x-tensor object or its
+name. x-tensor refers to the independent <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, i.e., the tensor
 on the denominator of the differentiation.</li>
 </ul>
 <h4>Returns:</h4>
 <p>If found, the gradient tensor.</p>
 <h4>Raises:</h4>
 <ul>
-<li><b><code>TypeError</code></b>: If <code>x_tensor</code> is not a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, <a href="../tf/Variable.md"><code>tf.Variable</code></a> or <code>str</code>.</li>
+<li><b><code>TypeError</code></b>: If <code>x_tensor</code> is not a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, <a href="../tf/Variable.html"><code>tf.Variable</code></a> or <code>str</code>.</li>
 <li><b><code>LookupError</code></b>: If the <code>x_tensor</code> has not been registered with a gradient
 tensor.</li>
 </ul>
@@ -4175,13 +4175,13 @@ y_grad = grad_debugger.gradient_tensor(y)
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>input_tensor</code></b>: the input <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> object whose related gradient tensors
+<li><b><code>input_tensor</code></b>: the input <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> object whose related gradient tensors
 are to be reigstered with this <code>GradientsDebugger</code> instance when they
-are created, e.g., during <a href="../tf/gradients.md"><code>tf.gradients</code></a> calls or the construction
-of optimization (training) op that uses <a href="../tf/gradients.md"><code>tf.gradients</code></a>.</li>
+are created, e.g., during <a href="../tf/gradients.html"><code>tf.gradients</code></a> calls or the construction
+of optimization (training) op that uses <a href="../tf/gradients.html"><code>tf.gradients</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A forwarded identity of <code>input_tensor</code>, as a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>.</p>
+<p>A forwarded identity of <code>input_tensor</code>, as a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If an op with name that duplicates the gradient-debugging op
@@ -4196,9 +4196,9 @@ already exists in the graph (highly unlikely).</li>
 <p>Register the gradient tensor for an x-tensor.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>x_tensor_name</code></b>: (<code>str</code>) the name of the independent <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>, i.e.,
+<li><b><code>x_tensor_name</code></b>: (<code>str</code>) the name of the independent <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>, i.e.,
 the tensor on the denominator of the differentiation.</li>
-<li><b><code>gradient_tensor</code></b>: the gradient <a href="../tf/Tensor.md"><code>tf.Tensor</code></a>.</li>
+<li><b><code>gradient_tensor</code></b>: the gradient <a href="../tf/Tensor.html"><code>tf.Tensor</code></a>.</li>
 </ul>
 <h3 id="watch_gradients_by_tensor_names"><code>watch_gradients_by_tensor_names</code></h3>
 <pre><code class="language-python">watch_gradients_by_tensor_names(
@@ -4215,8 +4215,8 @@ construction of the forward graph has completed. Unlike the
 <code>watch_gradients_by_tensor</code> method, this method does not use handles to the
 tensors of interest; it uses their names.</p>
 <p>This method is the same as <code>watch_gradients_by_tensors</code> except that the
-x-tensors are specified by name patterns, instead of <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> or
-<a href="../tf/Variable.md"><code>tf.Variable</code></a> objects.</p>
+x-tensors are specified by name patterns, instead of <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> or
+<a href="../tf/Variable.html"><code>tf.Variable</code></a> objects.</p>
 <p>Example:</p>
 <pre><code class="language-python">x = tf.Variable(1.0, name=&quot;x&quot;)
 y = tf.add(x, x, name=&quot;y&quot;)
@@ -4234,7 +4234,7 @@ y_grad = grad_debugger.gradient_tensor(&quot;y:0&quot;)
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>graph</code></b>: the <a href="../tf/Graph.md"><code>tf.Graph</code></a> to watch the gradients on.</li>
+<li><b><code>graph</code></b>: the <a href="../tf/Graph.html"><code>tf.Graph</code></a> to watch the gradients on.</li>
 <li><b><code>tensor_name_regex</code></b>: the regular-expression pattern of the name(s) of the
 x-tensor(s) to watch. x-tensor refers to the tensors on the denominator
 of the differentiation.</li>
@@ -4257,7 +4257,7 @@ methods <code>gradient_tensor</code> and <code>gradient_tensors</code>.</p>
 gradient tensors after the construction of the forward subgraph has
 completed (but before the construction of the backward subgraph).</p>
 <p>This method is the same as <code>watch_gradients_by_x_tensor_names</code> except that
-the tensors are specified by the Python <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> or <a href="../tf/Variable.md"><code>tf.Variable</code></a>
+the tensors are specified by the Python <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> or <a href="../tf/Variable.html"><code>tf.Variable</code></a>
 objects, instead by name patterns.</p>
 <p>Example:</p>
 <pre><code class="language-python">x = tf.Variable(1.0)
@@ -4277,8 +4277,8 @@ y_grad = grad_debugger.gradient_tensor(&quot;y:0&quot;)
 </code></pre>
 <h4>Args:</h4>
 <ul>
-<li><b><code>graph</code></b>: the <a href="../tf/Graph.md"><code>tf.Graph</code></a> to watch the gradients on.</li>
-<li><b><code>tensors</code></b>: a <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> or <a href="../tf/Variable.md"><code>tf.Variable</code></a> object, or a list of such objects.</li>
+<li><b><code>graph</code></b>: the <a href="../tf/Graph.html"><code>tf.Graph</code></a> to watch the gradients on.</li>
+<li><b><code>tensors</code></b>: a <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> or <a href="../tf/Variable.html"><code>tf.Variable</code></a> object, or a list of such objects.</li>
 </ul>
 <h4>Returns:</h4>
 <p>The GradientsDebugger instance itself.</p>

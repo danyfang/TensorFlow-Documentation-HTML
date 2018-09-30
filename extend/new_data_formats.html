@@ -4084,12 +4084,12 @@
 <ul>
 <li>Some familiarity with C++.</li>
 <li>Must have
-<a href="../install/install_sources.md">downloaded TensorFlow source</a>, and be
+<a href="../install/install_sources.html">downloaded TensorFlow source</a>, and be
 able to build it.</li>
 </ul>
 <p>We divide the task of supporting a file format into two pieces:</p>
 <ul>
-<li>File formats: We use a reader <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> to read raw <em>records</em> (which
+<li>File formats: We use a reader <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> to read raw <em>records</em> (which
 are typically represented by scalar string tensors, but can have more
 structure) from a file.</li>
 <li>Record formats: We use decoder or parsing ops to turn a string record
@@ -4097,20 +4097,20 @@ into tensors usable by TensorFlow.</li>
 </ul>
 <p>For example, to read a
 <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV file</a>, we use
-<a href="../api_docs/python/tf/data/TextLineDataset.md">a dataset for reading text files line-by-line</a>
-and then <a href="../api_docs/python/tf/data/Dataset.md#map">map</a> an
-<a href="../api_docs/python/tf/decode_csv.md">op</a> that parses CSV data from each line of text in the dataset.</p>
+<a href="../api_docs/python/tf/data/TextLineDataset.html">a dataset for reading text files line-by-line</a>
+and then <a href="../api_docs/python/tf/data/Dataset.html#map">map</a> an
+<a href="../api_docs/python/tf/decode_csv.html">op</a> that parses CSV data from each line of text in the dataset.</p>
 <p>[TOC]</p>
 <h2>Writing a <code>Dataset</code> for a file format</h2>
-<p>A <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> represents a sequence of <em>elements</em>, which can be the
+<p>A <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> represents a sequence of <em>elements</em>, which can be the
 individual records in a file. There are several examples of “reader” datasets
 that are already built into TensorFlow:</p>
 <ul>
-<li><a href="../api_docs/python/tf/data/TFRecordDataset.md"><code>tf.data.TFRecordDataset</code></a>
+<li><a href="../api_docs/python/tf/data/TFRecordDataset.html"><code>tf.data.TFRecordDataset</code></a>
 (<a href="https://www.tensorflow.org/code/tensorflow/core/kernels/data/reader_dataset_ops.cc">source in <code>kernels/data/reader_dataset_ops.cc</code></a>)</li>
-<li><a href="../api_docs/python/tf/data/FixedLengthRecordDataset.md"><code>tf.data.FixedLengthRecordDataset</code></a>
+<li><a href="../api_docs/python/tf/data/FixedLengthRecordDataset.html"><code>tf.data.FixedLengthRecordDataset</code></a>
 (<a href="https://www.tensorflow.org/code/tensorflow/core/kernels/data/reader_dataset_ops.cc">source in <code>kernels/data/reader_dataset_ops.cc</code></a>)</li>
-<li><a href="../api_docs/python/tf/data/TextLineDataset.md"><code>tf.data.TextLineDataset</code></a>
+<li><a href="../api_docs/python/tf/data/TextLineDataset.html"><code>tf.data.TextLineDataset</code></a>
 (<a href="https://www.tensorflow.org/code/tensorflow/core/kernels/data/reader_dataset_ops.cc">source in <code>kernels/data/reader_dataset_ops.cc</code></a>)</li>
 </ul>
 <p>Each of these implementations comprises three related classes:</p>
@@ -4144,11 +4144,11 @@ need to:</p>
 that implement the reading logic.</li>
 <li>In C++, register a new reader op and kernel with the name
 <code>&quot;MyReaderDataset&quot;</code>.</li>
-<li>In Python, define a subclass of <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> called <code>MyReaderDataset</code>.</li>
+<li>In Python, define a subclass of <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> called <code>MyReaderDataset</code>.</li>
 </ol>
 <p>You can put all the C++ code in a single file, such as
 <code>my_reader_dataset_op.cc</code>. It will help if you are
-familiar with <a href="../extend/adding_an_op.md">the adding an op how-to</a>. The following skeleton
+familiar with <a href="../extend/adding_an_op.html">the adding an op how-to</a>. The following skeleton
 can be used as a starting point for your implementation:</p>
 <pre><code class="language-c++">#include &quot;tensorflow/core/framework/common_shape_fns.h&quot;
 #include &quot;tensorflow/core/framework/dataset.h&quot;
@@ -4305,9 +4305,9 @@ REGISTER_KERNEL_BUILDER(Name(&quot;MyReaderDataset&quot;).Device(tensorflow::DEV
 }  // namespace myproject
 </code></pre>
 <p>The last step is to build the C++ code and add a Python wrapper. The easiest way
-to do this is by <a href="../extend/adding_an_op.md#build_the_op_library">compiling a dynamic
+to do this is by <a href="../extend/adding_an_op.html#build_the_op_library">compiling a dynamic
 library</a> (e.g. called <code>&quot;my_reader_dataset_op.so&quot;</code>), and adding a Python class
-that subclasses <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> to wrap it. An example Python program is
+that subclasses <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> to wrap it. An example Python program is
 given here:</p>
 <pre><code class="language-python">import tensorflow as tf
 
@@ -4328,7 +4328,7 @@ class MyReaderDataset(tf.data.Dataset):
     return my_reader_dataset_module.my_reader_dataset()
 
   # The following properties define the structure of each element: a scalar
-  # &lt;a href=&quot;../api_docs/python/tf/string.md&quot;&gt;&lt;code&gt;tf.string&lt;/code&gt;&lt;/a&gt; tensor. Change these properties to match the `output_dtypes()`
+  # &lt;a href=&quot;../api_docs/python/tf/string.html&quot;&gt;&lt;code&gt;tf.string&lt;/code&gt;&lt;/a&gt; tensor. Change these properties to match the `output_dtypes()`
   # and `output_shapes()` methods of `MyReaderDataset::Dataset` if you modify
   # the structure of each element.
   @property
@@ -4358,23 +4358,23 @@ if __name__ == &quot;__main__&quot;:
 <a href="https://www.tensorflow.org/code/tensorflow/python/data/ops/dataset_ops.py"><code>tensorflow/python/data/ops/dataset_ops.py</code></a>.</p>
 <h2>Writing an Op for a record format</h2>
 <p>Generally this is an ordinary op that takes a scalar string record as input, and
-so follow <a href="../extend/adding_an_op.md">the instructions to add an Op</a>.
+so follow <a href="../extend/adding_an_op.html">the instructions to add an Op</a>.
 You may optionally take a scalar string key as input, and include that in error
 messages reporting improperly formatted data.  That way users can more easily
 track down where the bad data came from.</p>
 <p>Examples of Ops useful for decoding records:</p>
 <ul>
-<li><a href="../api_docs/python/tf/parse_single_example.md"><code>tf.parse_single_example</code></a> (and <a href="../api_docs/python/tf/parse_example.md"><code>tf.parse_example</code></a>)</li>
-<li><a href="../api_docs/python/tf/decode_csv.md"><code>tf.decode_csv</code></a></li>
-<li><a href="../api_docs/python/tf/decode_raw.md"><code>tf.decode_raw</code></a></li>
+<li><a href="../api_docs/python/tf/parse_single_example.html"><code>tf.parse_single_example</code></a> (and <a href="../api_docs/python/tf/parse_example.html"><code>tf.parse_example</code></a>)</li>
+<li><a href="../api_docs/python/tf/decode_csv.html"><code>tf.decode_csv</code></a></li>
+<li><a href="../api_docs/python/tf/decode_raw.html"><code>tf.decode_raw</code></a></li>
 </ul>
 <p>Note that it can be useful to use multiple Ops to decode a particular record
 format.  For example, you may have an image saved as a string in
-<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto">a <a href="../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a> protocol buffer</a>.
+<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto">a <a href="../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a> protocol buffer</a>.
 Depending on the format of that image, you might take the corresponding output
-from a <a href="../api_docs/python/tf/parse_single_example.md"><code>tf.parse_single_example</code></a> op and call <a href="../api_docs/python/tf/image/decode_jpeg.md"><code>tf.image.decode_jpeg</code></a>,
-<a href="../api_docs/python/tf/image/decode_png.md"><code>tf.image.decode_png</code></a>, or <a href="../api_docs/python/tf/decode_raw.md"><code>tf.decode_raw</code></a>.  It is common to take the output
-of <a href="../api_docs/python/tf/decode_raw.md"><code>tf.decode_raw</code></a> and use <a href="../api_docs/python/tf/slice.md"><code>tf.slice</code></a> and <a href="../api_docs/python/tf/reshape.md"><code>tf.reshape</code></a> to extract pieces.</p>
+from a <a href="../api_docs/python/tf/parse_single_example.html"><code>tf.parse_single_example</code></a> op and call <a href="../api_docs/python/tf/image/decode_jpeg.html"><code>tf.image.decode_jpeg</code></a>,
+<a href="../api_docs/python/tf/image/decode_png.html"><code>tf.image.decode_png</code></a>, or <a href="../api_docs/python/tf/decode_raw.html"><code>tf.decode_raw</code></a>.  It is common to take the output
+of <a href="../api_docs/python/tf/decode_raw.html"><code>tf.decode_raw</code></a> and use <a href="../api_docs/python/tf/slice.html"><code>tf.slice</code></a> and <a href="../api_docs/python/tf/reshape.html"><code>tf.reshape</code></a> to extract pieces.</p>
 
     </article>
   </div>

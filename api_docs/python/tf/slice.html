@@ -4091,7 +4091,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/array_ops.py"><code>tensorflow/python/ops/array_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/array_ops.md#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
+<p>See the guide: <a href="../../../api_guides/python/array_ops.html#Slicing_and_Joining">Tensor Transformations &gt; Slicing and Joining</a></p>
 <p>Extracts a slice from a tensor.</p>
 <p>This operation extracts a slice of size <code>size</code> from a tensor <code>input</code> starting
 at the location specified by <code>begin</code>. The slice <code>size</code> is represented as a
@@ -4100,7 +4100,7 @@ of <code>input</code> that you want to slice. The starting location (<code>begin
 slice is represented as an offset in each dimension of <code>input</code>. In other
 words, <code>begin[i]</code> is the offset into the 'i’th dimension of <code>input</code> that you
 want to slice from.</p>
-<p>Note that <a href="../tf/Tensor.md#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> is typically a more pythonic way to
+<p>Note that <a href="../tf/Tensor.html#__getitem__"><code>tf.Tensor.<strong>getitem</strong></code></a> is typically a more pythonic way to
 perform slices, as it allows you to write <code>foo[3:7, :-2]</code> instead of
 <code>tf.slice(foo, [3, 0], [4, foo.get_shape()[1]-2])</code>.</p>
 <p><code>begin</code> is zero-based; <code>size</code> is one-based. If <code>size[i]</code> is -1,

@@ -4100,7 +4100,7 @@
 <h1>tf.QueueBase</h1>
 <h2>Class <code>QueueBase</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/data_flow_ops.py"><code>tensorflow/python/ops/data_flow_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/io_ops.md#Queues">Inputs and Readers &gt; Queues</a></p>
+<p>See the guide: <a href="../../../api_guides/python/io_ops.html#Queues">Inputs and Readers &gt; Queues</a></p>
 <p>Base class for queue implementations.</p>
 <p>A queue is a TensorFlow data structure that stores tensors across
 multiple steps, and exposes operations that enqueue and dequeue
@@ -4110,8 +4110,8 @@ tuple component has a static dtype, and may have a static shape. The
 queue implementations support versions of enqueue and dequeue that
 handle single elements, versions that support enqueuing and
 dequeuing a batch of elements at once.</p>
-<p>See <a href="../tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a> and
-<a href="../tf/RandomShuffleQueue.md"><code>tf.RandomShuffleQueue</code></a> for concrete
+<p>See <a href="../tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a> and
+<a href="../tf/RandomShuffleQueue.html"><code>tf.RandomShuffleQueue</code></a> for concrete
 implementations of this class, and instructions on how to create
 them.</p>
 <h2>Properties</h2>
@@ -4186,12 +4186,12 @@ be canceled.</p>
 <p>If the queue is empty when this operation executes, it will block
 until there is an element to dequeue.</p>
 <p>At runtime, this operation may raise an error if the queue is
-<a href="../tf/FIFOQueue.md#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
+<a href="../tf/FIFOQueue.html#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
 queue is closed, the queue is empty, and there are no pending
 enqueue operations that can fulfill this request,
-<a href="../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> will be raised. If the session is
-<a href="../tf/Session.md#close"><code>tf.Session.close</code></a>,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised.</p>
+<a href="../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> will be raised. If the session is
+<a href="../tf/Session.html#close"><code>tf.Session.close</code></a>,
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>name</code></b>: A name for the operation (optional).</li>
@@ -4211,12 +4211,12 @@ components in the dequeued tuple will have size <code>n</code> in the 0th dimens
 <p>If the queue is closed and there are less than <code>n</code> elements left, then an
 <code>OutOfRange</code> exception is raised.</p>
 <p>At runtime, this operation may raise an error if the queue is
-<a href="../tf/FIFOQueue.md#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
+<a href="../tf/FIFOQueue.html#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
 queue is closed, the queue contains fewer than <code>n</code> elements, and
 there are no pending enqueue operations that can fulfill this
-request, <a href="../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> will be raised. If the
-session is <a href="../tf/Session.md#close"><code>tf.Session.close</code></a>,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised.</p>
+request, <a href="../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> will be raised. If the
+session is <a href="../tf/Session.html#close"><code>tf.Session.close</code></a>,
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>n</code></b>: A scalar <code>Tensor</code> containing the number of elements to dequeue.</li>
@@ -4232,17 +4232,17 @@ session is <a href="../tf/Session.md#close"><code>tf.Session.close</code></a>,
 </code></pre>
 <p>Dequeues and concatenates <code>n</code> elements from this queue.</p>
 <p><strong>Note</strong> This operation is not supported by all queues.  If a queue does not
-support DequeueUpTo, then a <a href="../tf/errors/UnimplementedError.md"><code>tf.errors.UnimplementedError</code></a> is raised.</p>
+support DequeueUpTo, then a <a href="../tf/errors/UnimplementedError.html"><code>tf.errors.UnimplementedError</code></a> is raised.</p>
 <p>This operation concatenates queue-element component tensors along
 the 0th dimension to make a single component tensor. If the queue
 has not been closed, all of the components in the dequeued tuple
 will have size <code>n</code> in the 0th dimension.</p>
 <p>If the queue is closed and there are more than <code>0</code> but fewer than
 <code>n</code> elements remaining, then instead of raising a
-<a href="../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> like <a href="../tf/FIFOQueue.md#dequeue_many"><code>tf.QueueBase.dequeue_many</code></a>,
+<a href="../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> like <a href="../tf/FIFOQueue.html#dequeue_many"><code>tf.QueueBase.dequeue_many</code></a>,
 less than <code>n</code> elements are returned immediately.  If the queue is
 closed and there are <code>0</code> elements left in the queue, then a
-<a href="../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> is raised just like in <code>dequeue_many</code>.
+<a href="../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> is raised just like in <code>dequeue_many</code>.
 Otherwise the behavior is identical to <code>dequeue_many</code>.</p>
 <h4>Args:</h4>
 <ul>
@@ -4261,13 +4261,13 @@ Otherwise the behavior is identical to <code>dequeue_many</code>.</p>
 <p>If the queue is full when this operation executes, it will block
 until the element has been enqueued.</p>
 <p>At runtime, this operation may raise an error if the queue is
-<a href="../tf/FIFOQueue.md#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
+<a href="../tf/FIFOQueue.html#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
 queue is closed before this operation runs,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised. If this operation is
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised. If this operation is
 blocked, and either (i) the queue is closed by a close operation
 with <code>cancel_pending_enqueues=True</code>, or (ii) the session is
-<a href="../tf/Session.md#close"><code>tf.Session.close</code></a>,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised.</p>
+<a href="../tf/Session.html#close"><code>tf.Session.close</code></a>,
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>vals</code></b>: A tensor, a list or tuple of tensors, or a dictionary containing
@@ -4289,13 +4289,13 @@ same size in the 0th dimension.</p>
 <p>If the queue is full when this operation executes, it will block
 until all of the elements have been enqueued.</p>
 <p>At runtime, this operation may raise an error if the queue is
-<a href="../tf/FIFOQueue.md#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
+<a href="../tf/FIFOQueue.html#close"><code>tf.QueueBase.close</code></a> before or during its execution. If the
 queue is closed before this operation runs,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised. If this operation is
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised. If this operation is
 blocked, and either (i) the queue is closed by a close operation
 with <code>cancel_pending_enqueues=True</code>, or (ii) the session is
-<a href="../tf/Session.md#close"><code>tf.Session.close</code></a>,
-<a href="../tf/errors/CancelledError.md"><code>tf.errors.CancelledError</code></a> will be raised.</p>
+<a href="../tf/Session.html#close"><code>tf.Session.close</code></a>,
+<a href="../tf/errors/CancelledError.html"><code>tf.errors.CancelledError</code></a> will be raised.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>vals</code></b>: A tensor, a list or tuple of tensors, or a dictionary

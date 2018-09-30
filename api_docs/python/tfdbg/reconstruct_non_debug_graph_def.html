@@ -4087,7 +4087,7 @@
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/debug/lib/debug_graphs.py"><code>tensorflow/python/debug/lib/debug_graphs.py</code></a>.</p>
 <p>Reconstruct original (non-debugger-decorated) partition GraphDef.</p>
-<p>This method strips the input <a href="../tf/GraphDef.md"><code>tf.GraphDef</code></a> of the Copy* and Debug*-type nodes
+<p>This method strips the input <a href="../tf/GraphDef.html"><code>tf.GraphDef</code></a> of the Copy* and Debug*-type nodes
 inserted by the debugger.</p>
 <p>The reconstructed partition graph is identical to the original (i.e.,
 non-debugger-decorated) partition graph except in the following respects:
@@ -4098,11 +4098,11 @@ send- and recv-type ops will have different input names.
 3) The parallel_iteration attribute of while-loop Enter ops are set to 1.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>debug_graph_def</code></b>: The debugger-decorated <a href="../tf/GraphDef.md"><code>tf.GraphDef</code></a>, with the
+<li><b><code>debug_graph_def</code></b>: The debugger-decorated <a href="../tf/GraphDef.html"><code>tf.GraphDef</code></a>, with the
 debugger-inserted Copy* and Debug* nodes.</li>
 </ul>
 <h4>Returns:</h4>
-<p>The reconstructed <a href="../tf/GraphDef.md"><code>tf.GraphDef</code></a> stripped of the debugger-inserted nodes.</p>
+<p>The reconstructed <a href="../tf/GraphDef.html"><code>tf.GraphDef</code></a> stripped of the debugger-inserted nodes.</p>
 
     </article>
   </div>

@@ -4092,7 +4092,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/math_ops.py"><code>tensorflow/python/ops/math_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/math_ops.md#Scan">Math &gt; Scan</a></p>
+<p>See the guide: <a href="../../../api_guides/python/math_ops.html#Scan">Math &gt; Scan</a></p>
 <p>Compute the cumulative sum of the tensor <code>x</code> along <code>axis</code>.</p>
 <p>By default, this op performs an inclusive cumsum, which means that the first
 element of the input is identical to the first element of the output:</p>
@@ -4106,7 +4106,7 @@ instead:</p>
 opposite direction:</p>
 <pre><code class="language-python">tf.cumsum([a, b, c], reverse=True)  # [a + b + c, b + c, c]
 </code></pre>
-<p>This is more efficient than using separate <a href="../tf/reverse.md"><code>tf.reverse</code></a> ops.</p>
+<p>This is more efficient than using separate <a href="../tf/reverse.html"><code>tf.reverse</code></a> ops.</p>
 <p>The <code>reverse</code> and <code>exclusive</code> kwargs can also be combined:</p>
 <pre><code class="language-python">tf.cumsum([a, b, c], exclusive=True, reverse=True)  # [b + c, c, 0]
 </code></pre>

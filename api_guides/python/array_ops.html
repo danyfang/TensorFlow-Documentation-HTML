@@ -4081,85 +4081,85 @@
     <article id="main" class="content">
       <h1>Tensor Transformations</h1>
 <p>Note: Functions taking <code>Tensor</code> arguments can also take anything accepted by
-<a href="../../api_docs/python/tf/convert_to_tensor.md"><code>tf.convert_to_tensor</code></a>.</p>
+<a href="../../api_docs/python/tf/convert_to_tensor.html"><code>tf.convert_to_tensor</code></a>.</p>
 <p>[TOC]</p>
 <h2 id="Casting">Casting</h2>
 <p>TensorFlow provides several operations that you can use to cast tensor data
 types in your graph.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/string_to_number.md"><code>tf.string_to_number</code></a></li>
-<li><a href="../../api_docs/python/tf/to_double.md"><code>tf.to_double</code></a></li>
-<li><a href="../../api_docs/python/tf/to_float.md"><code>tf.to_float</code></a></li>
-<li><a href="../../api_docs/python/tf/to_bfloat16.md"><code>tf.to_bfloat16</code></a></li>
-<li><a href="../../api_docs/python/tf/to_int32.md"><code>tf.to_int32</code></a></li>
-<li><a href="../../api_docs/python/tf/to_int64.md"><code>tf.to_int64</code></a></li>
-<li><a href="../../api_docs/python/tf/cast.md"><code>tf.cast</code></a></li>
-<li><a href="../../api_docs/python/tf/bitcast.md"><code>tf.bitcast</code></a></li>
-<li><a href="../../api_docs/python/tf/saturate_cast.md"><code>tf.saturate_cast</code></a></li>
+<li><a href="../../api_docs/python/tf/string_to_number.html"><code>tf.string_to_number</code></a></li>
+<li><a href="../../api_docs/python/tf/to_double.html"><code>tf.to_double</code></a></li>
+<li><a href="../../api_docs/python/tf/to_float.html"><code>tf.to_float</code></a></li>
+<li><a href="../../api_docs/python/tf/to_bfloat16.html"><code>tf.to_bfloat16</code></a></li>
+<li><a href="../../api_docs/python/tf/to_int32.html"><code>tf.to_int32</code></a></li>
+<li><a href="../../api_docs/python/tf/to_int64.html"><code>tf.to_int64</code></a></li>
+<li><a href="../../api_docs/python/tf/cast.html"><code>tf.cast</code></a></li>
+<li><a href="../../api_docs/python/tf/bitcast.html"><code>tf.bitcast</code></a></li>
+<li><a href="../../api_docs/python/tf/saturate_cast.html"><code>tf.saturate_cast</code></a></li>
 </ul>
 <h2 id="Shapes_and_Shaping">Shapes and Shaping</h2>
 <p>TensorFlow provides several operations that you can use to determine the shape
 of a tensor and change the shape of a tensor.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/broadcast_dynamic_shape.md"><code>tf.broadcast_dynamic_shape</code></a></li>
-<li><a href="../../api_docs/python/tf/broadcast_static_shape.md"><code>tf.broadcast_static_shape</code></a></li>
-<li><a href="../../api_docs/python/tf/shape.md"><code>tf.shape</code></a></li>
-<li><a href="../../api_docs/python/tf/shape_n.md"><code>tf.shape_n</code></a></li>
-<li><a href="../../api_docs/python/tf/size.md"><code>tf.size</code></a></li>
-<li><a href="../../api_docs/python/tf/rank.md"><code>tf.rank</code></a></li>
-<li><a href="../../api_docs/python/tf/reshape.md"><code>tf.reshape</code></a></li>
-<li><a href="../../api_docs/python/tf/squeeze.md"><code>tf.squeeze</code></a></li>
-<li><a href="../../api_docs/python/tf/expand_dims.md"><code>tf.expand_dims</code></a></li>
-<li><a href="../../api_docs/python/tf/meshgrid.md"><code>tf.meshgrid</code></a></li>
+<li><a href="../../api_docs/python/tf/broadcast_dynamic_shape.html"><code>tf.broadcast_dynamic_shape</code></a></li>
+<li><a href="../../api_docs/python/tf/broadcast_static_shape.html"><code>tf.broadcast_static_shape</code></a></li>
+<li><a href="../../api_docs/python/tf/shape.html"><code>tf.shape</code></a></li>
+<li><a href="../../api_docs/python/tf/shape_n.html"><code>tf.shape_n</code></a></li>
+<li><a href="../../api_docs/python/tf/size.html"><code>tf.size</code></a></li>
+<li><a href="../../api_docs/python/tf/rank.html"><code>tf.rank</code></a></li>
+<li><a href="../../api_docs/python/tf/reshape.html"><code>tf.reshape</code></a></li>
+<li><a href="../../api_docs/python/tf/squeeze.html"><code>tf.squeeze</code></a></li>
+<li><a href="../../api_docs/python/tf/expand_dims.html"><code>tf.expand_dims</code></a></li>
+<li><a href="../../api_docs/python/tf/meshgrid.html"><code>tf.meshgrid</code></a></li>
 </ul>
 <h2 id="Slicing_and_Joining">Slicing and Joining</h2>
 <p>TensorFlow provides several operations to slice or extract parts of a tensor,
 or join multiple tensors together.</p>
 <ul>
-<li><a href="../../api_docs/python/tf/slice.md"><code>tf.slice</code></a></li>
-<li><a href="../../api_docs/python/tf/strided_slice.md"><code>tf.strided_slice</code></a></li>
-<li><a href="../../api_docs/python/tf/split.md"><code>tf.split</code></a></li>
-<li><a href="../../api_docs/python/tf/tile.md"><code>tf.tile</code></a></li>
-<li><a href="../../api_docs/python/tf/pad.md"><code>tf.pad</code></a></li>
-<li><a href="../../api_docs/python/tf/concat.md"><code>tf.concat</code></a></li>
-<li><a href="../../api_docs/python/tf/stack.md"><code>tf.stack</code></a></li>
-<li><a href="../../api_docs/python/tf/parallel_stack.md"><code>tf.parallel_stack</code></a></li>
-<li><a href="../../api_docs/python/tf/unstack.md"><code>tf.unstack</code></a></li>
-<li><a href="../../api_docs/python/tf/reverse_sequence.md"><code>tf.reverse_sequence</code></a></li>
-<li><a href="../../api_docs/python/tf/reverse.md"><code>tf.reverse</code></a></li>
-<li><a href="../../api_docs/python/tf/reverse.md"><code>tf.reverse_v2</code></a></li>
-<li><a href="../../api_docs/python/tf/transpose.md"><code>tf.transpose</code></a></li>
-<li><a href="../../api_docs/python/tf/extract_image_patches.md"><code>tf.extract_image_patches</code></a></li>
-<li><a href="../../api_docs/python/tf/space_to_batch_nd.md"><code>tf.space_to_batch_nd</code></a></li>
-<li><a href="../../api_docs/python/tf/space_to_batch.md"><code>tf.space_to_batch</code></a></li>
-<li><a href="../../api_docs/python/tf/required_space_to_batch_paddings.md"><code>tf.required_space_to_batch_paddings</code></a></li>
-<li><a href="../../api_docs/python/tf/batch_to_space_nd.md"><code>tf.batch_to_space_nd</code></a></li>
-<li><a href="../../api_docs/python/tf/batch_to_space.md"><code>tf.batch_to_space</code></a></li>
-<li><a href="../../api_docs/python/tf/space_to_depth.md"><code>tf.space_to_depth</code></a></li>
-<li><a href="../../api_docs/python/tf/depth_to_space.md"><code>tf.depth_to_space</code></a></li>
-<li><a href="../../api_docs/python/tf/gather.md"><code>tf.gather</code></a></li>
-<li><a href="../../api_docs/python/tf/gather_nd.md"><code>tf.gather_nd</code></a></li>
-<li><a href="../../api_docs/python/tf/unique_with_counts.md"><code>tf.unique_with_counts</code></a></li>
-<li><a href="../../api_docs/python/tf/scatter_nd.md"><code>tf.scatter_nd</code></a></li>
-<li><a href="../../api_docs/python/tf/dynamic_partition.md"><code>tf.dynamic_partition</code></a></li>
-<li><a href="../../api_docs/python/tf/dynamic_stitch.md"><code>tf.dynamic_stitch</code></a></li>
-<li><a href="../../api_docs/python/tf/boolean_mask.md"><code>tf.boolean_mask</code></a></li>
-<li><a href="../../api_docs/python/tf/one_hot.md"><code>tf.one_hot</code></a></li>
-<li><a href="../../api_docs/python/tf/sequence_mask.md"><code>tf.sequence_mask</code></a></li>
-<li><a href="../../api_docs/python/tf/dequantize.md"><code>tf.dequantize</code></a></li>
-<li><a href="../../api_docs/python/tf/quantize_v2.md"><code>tf.quantize_v2</code></a></li>
-<li><a href="../../api_docs/python/tf/quantized_concat.md"><code>tf.quantized_concat</code></a></li>
-<li><a href="../../api_docs/python/tf/setdiff1d.md"><code>tf.setdiff1d</code></a></li>
+<li><a href="../../api_docs/python/tf/slice.html"><code>tf.slice</code></a></li>
+<li><a href="../../api_docs/python/tf/strided_slice.html"><code>tf.strided_slice</code></a></li>
+<li><a href="../../api_docs/python/tf/split.html"><code>tf.split</code></a></li>
+<li><a href="../../api_docs/python/tf/tile.html"><code>tf.tile</code></a></li>
+<li><a href="../../api_docs/python/tf/pad.html"><code>tf.pad</code></a></li>
+<li><a href="../../api_docs/python/tf/concat.html"><code>tf.concat</code></a></li>
+<li><a href="../../api_docs/python/tf/stack.html"><code>tf.stack</code></a></li>
+<li><a href="../../api_docs/python/tf/parallel_stack.html"><code>tf.parallel_stack</code></a></li>
+<li><a href="../../api_docs/python/tf/unstack.html"><code>tf.unstack</code></a></li>
+<li><a href="../../api_docs/python/tf/reverse_sequence.html"><code>tf.reverse_sequence</code></a></li>
+<li><a href="../../api_docs/python/tf/reverse.html"><code>tf.reverse</code></a></li>
+<li><a href="../../api_docs/python/tf/reverse.html"><code>tf.reverse_v2</code></a></li>
+<li><a href="../../api_docs/python/tf/transpose.html"><code>tf.transpose</code></a></li>
+<li><a href="../../api_docs/python/tf/extract_image_patches.html"><code>tf.extract_image_patches</code></a></li>
+<li><a href="../../api_docs/python/tf/space_to_batch_nd.html"><code>tf.space_to_batch_nd</code></a></li>
+<li><a href="../../api_docs/python/tf/space_to_batch.html"><code>tf.space_to_batch</code></a></li>
+<li><a href="../../api_docs/python/tf/required_space_to_batch_paddings.html"><code>tf.required_space_to_batch_paddings</code></a></li>
+<li><a href="../../api_docs/python/tf/batch_to_space_nd.html"><code>tf.batch_to_space_nd</code></a></li>
+<li><a href="../../api_docs/python/tf/batch_to_space.html"><code>tf.batch_to_space</code></a></li>
+<li><a href="../../api_docs/python/tf/space_to_depth.html"><code>tf.space_to_depth</code></a></li>
+<li><a href="../../api_docs/python/tf/depth_to_space.html"><code>tf.depth_to_space</code></a></li>
+<li><a href="../../api_docs/python/tf/gather.html"><code>tf.gather</code></a></li>
+<li><a href="../../api_docs/python/tf/gather_nd.html"><code>tf.gather_nd</code></a></li>
+<li><a href="../../api_docs/python/tf/unique_with_counts.html"><code>tf.unique_with_counts</code></a></li>
+<li><a href="../../api_docs/python/tf/scatter_nd.html"><code>tf.scatter_nd</code></a></li>
+<li><a href="../../api_docs/python/tf/dynamic_partition.html"><code>tf.dynamic_partition</code></a></li>
+<li><a href="../../api_docs/python/tf/dynamic_stitch.html"><code>tf.dynamic_stitch</code></a></li>
+<li><a href="../../api_docs/python/tf/boolean_mask.html"><code>tf.boolean_mask</code></a></li>
+<li><a href="../../api_docs/python/tf/one_hot.html"><code>tf.one_hot</code></a></li>
+<li><a href="../../api_docs/python/tf/sequence_mask.html"><code>tf.sequence_mask</code></a></li>
+<li><a href="../../api_docs/python/tf/dequantize.html"><code>tf.dequantize</code></a></li>
+<li><a href="../../api_docs/python/tf/quantize_v2.html"><code>tf.quantize_v2</code></a></li>
+<li><a href="../../api_docs/python/tf/quantized_concat.html"><code>tf.quantized_concat</code></a></li>
+<li><a href="../../api_docs/python/tf/setdiff1d.html"><code>tf.setdiff1d</code></a></li>
 </ul>
 <h2 id="Fake_quantization">Fake quantization</h2>
 Operations used to help train for better quantization accuracy.
 <ul>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_args.md"><code>tf.fake_quant_with_min_max_args</code></a></li>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_args_gradient.md"><code>tf.fake_quant_with_min_max_args_gradient</code></a></li>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars.md"><code>tf.fake_quant_with_min_max_vars</code></a></li>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_gradient.md"><code>tf.fake_quant_with_min_max_vars_gradient</code></a></li>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_per_channel.md"><code>tf.fake_quant_with_min_max_vars_per_channel</code></a></li>
-<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_per_channel_gradient.md"><code>tf.fake_quant_with_min_max_vars_per_channel_gradient</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_args.html"><code>tf.fake_quant_with_min_max_args</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_args_gradient.html"><code>tf.fake_quant_with_min_max_args_gradient</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars.html"><code>tf.fake_quant_with_min_max_vars</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_gradient.html"><code>tf.fake_quant_with_min_max_vars_gradient</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_per_channel.html"><code>tf.fake_quant_with_min_max_vars_per_channel</code></a></li>
+<li><a href="../../api_docs/python/tf/fake_quant_with_min_max_vars_per_channel_gradient.html"><code>tf.fake_quant_with_min_max_vars_per_channel_gradient</code></a></li>
 </ul>
 
     </article>

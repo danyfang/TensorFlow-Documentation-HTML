@@ -4092,7 +4092,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/estimator/python/estimator/head.py"><code>tensorflow/contrib/estimator/python/estimator/head.py</code></a>.</p>
-<p>Creates a <code>_Head</code> for poisson regression using <a href="../../../tf/nn/log_poisson_loss.md"><code>tf.nn.log_poisson_loss</code></a>.</p>
+<p>Creates a <code>_Head</code> for poisson regression using <a href="../../../tf/nn/log_poisson_loss.html"><code>tf.nn.log_poisson_loss</code></a>.</p>
 <p>The loss is the weighted sum over all input dimensions. Namely, if the input
 labels have shape <code>[batch_size, label_dimension]</code>, the loss is the weighted
 sum over both <code>batch_size</code> and <code>label_dimension</code>.</p>
@@ -4130,18 +4130,18 @@ my_estimator = tf.estimator.Estimator(model_fn=_my_model_fn)
 <h4>Args:</h4>
 <ul>
 <li><b><code>weight_column</code></b>: A string or a <code>_NumericColumn</code> created by
-<a href="../../../tf/feature_column/numeric_column.md"><code>tf.feature_column.numeric_column</code></a> defining feature column representing
+<a href="../../../tf/feature_column/numeric_column.html"><code>tf.feature_column.numeric_column</code></a> defining feature column representing
 weights. It is used to down weight or boost examples during training. It
 will be multiplied by the loss of the example.</li>
 <li><b><code>label_dimension</code></b>: Number of regression labels per example. This is the size
 of the last dimension of the labels <code>Tensor</code> (typically, this has shape
 <code>[batch_size, label_dimension]</code>).</li>
-<li><b><code>loss_reduction</code></b>: One of <a href="../../../tf/losses/Reduction.md"><code>tf.losses.Reduction</code></a> except <code>NONE</code>. Describes how to
+<li><b><code>loss_reduction</code></b>: One of <a href="../../../tf/losses/Reduction.html"><code>tf.losses.Reduction</code></a> except <code>NONE</code>. Describes how to
 reduce training loss over batch and label dimension. Defaults to
 <code>SUM_OVER_BATCH_SIZE</code>, namely weighted sum of losses divided by
-<code>batch size * label_dimension</code>. See <a href="../../../tf/losses/Reduction.md"><code>tf.losses.Reduction</code></a>.</li>
+<code>batch size * label_dimension</code>. See <a href="../../../tf/losses/Reduction.html"><code>tf.losses.Reduction</code></a>.</li>
 <li><b><code>compute_full_loss</code></b>: Whether to include the constant <code>log(z!)</code> term in
-computing the poisson loss. See <a href="../../../tf/nn/log_poisson_loss.md"><code>tf.nn.log_poisson_loss</code></a> for the full
+computing the poisson loss. See <a href="../../../tf/nn/log_poisson_loss.html"><code>tf.nn.log_poisson_loss</code></a> for the full
 documentation.</li>
 <li><b><code>name</code></b>: name of the head. If provided, summary and metrics keys will be
 suffixed by <code>&quot;/&quot; + name</code>. Also used as <code>name_scope</code> when creating ops.</li>

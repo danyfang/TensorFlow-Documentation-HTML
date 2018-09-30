@@ -4098,9 +4098,9 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/checkpointable/util.py"><code>tensorflow/python/training/checkpointable/util.py</code></a>.</p>
 <p>Groups checkpointable objects, saving and restoring them.</p>
 <p><code>Checkpoint</code>'s constructor accepts keyword arguments whose values are types
-that contain checkpointable state, such as <a href="../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>
-implementations, <a href="../../tf/Variable.md"><code>tf.Variable</code></a>, <code>tf.keras.Layer</code> implementations, or
-<a href="../../tf/keras/Model.md"><code>tf.keras.Model</code></a> implementations. It saves these values with a checkpoint, and
+that contain checkpointable state, such as <a href="../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>
+implementations, <a href="../../tf/Variable.html"><code>tf.Variable</code></a>, <code>tf.keras.Layer</code> implementations, or
+<a href="../../tf/keras/Model.html"><code>tf.keras.Model</code></a> implementations. It saves these values with a checkpoint, and
 maintains a <code>save_counter</code> for numbering checkpoints.</p>
 <p>Example usage when graph building:</p>
 <pre><code class="language-python">import tensorflow as tf
@@ -4138,19 +4138,19 @@ status.assert_consumed()  # Optional sanity checks.
 checkpoint.save(file_prefix=checkpoint_prefix)
 </code></pre>
 <p><code>Checkpoint.save</code> and <code>Checkpoint.restore</code> write and read object-based
-checkpoints, in contrast to <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a> which writes and reads
+checkpoints, in contrast to <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a> which writes and reads
 <code>variable.name</code> based checkpoints. Object-based checkpointing saves a graph of
 dependencies between Python objects (<code>Layer</code>s, <code>Optimizer</code>s, <code>Variable</code>s,
 etc.) with named edges, and this graph is used to match variables when
 restoring a checkpoint. It can be more robust to changes in the Python
 program, and helps to support restore-on-create for variables when executing
-eagerly. Prefer <a href="../../tf/train/Checkpoint.md"><code>tf.train.Checkpoint</code></a> over <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a> for new code.</p>
+eagerly. Prefer <a href="../../tf/train/Checkpoint.html"><code>tf.train.Checkpoint</code></a> over <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a> for new code.</p>
 <p><code>Checkpoint</code> objects have dependencies on the objects passed as keyword
 arguments to their constructors, and each dependency is given a name that is
 identical to the name of the keyword argument for which it was created.
 TensorFlow classes like <code>Layer</code>s and <code>Optimizer</code>s will automatically add
 dependencies on their variables (e.g. “kernel” and “bias” for
-<a href="../../tf/keras/layers/Dense.md"><code>tf.keras.layers.Dense</code></a>). Inheriting from <a href="../../tf/keras/Model.md"><code>tf.keras.Model</code></a> makes managing
+<a href="../../tf/keras/layers/Dense.html"><code>tf.keras.layers.Dense</code></a>). Inheriting from <a href="../../tf/keras/Model.html"><code>tf.keras.Model</code></a> makes managing
 dependencies easy in user-defined classes, since <code>Model</code> hooks into attribute
 assignment. For example:</p>
 <pre><code class="language-python">class Regress(tf.keras.Model):
@@ -4166,7 +4166,7 @@ assignment. For example:</p>
 </code></pre>
 <p>This <code>Model</code> has a dependency named “input_transform” on its <code>Dense</code> layer,
 which in turn depends on its variables. As a result, saving an instance of
-<code>Regress</code> using <a href="../../tf/train/Checkpoint.md"><code>tf.train.Checkpoint</code></a> will also save all the variables created
+<code>Regress</code> using <a href="../../tf/train/Checkpoint.html"><code>tf.train.Checkpoint</code></a> will also save all the variables created
 by the <code>Dense</code> layer.</p>
 <h4>Attributes:</h4>
 <ul>
@@ -4228,19 +4228,19 @@ run via the <code>run_restore_ops()</code> method of the status object:</p>
 </code></pre>
 <p>If the checkpoint has not been consumed completely, then the list of restore
 ops will grow as more objects are added to the dependency graph.</p>
-<p>Name-based <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a> checkpoints can be loaded using this
+<p>Name-based <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a> checkpoints can be loaded using this
 method. Names are used to match variables. No restore ops are created/run
 until <code>run_restore_ops()</code> or <code>initialize_or_restore()</code> are called on the
 returned status object when graph building, but there is restore-on-creation
 when executing eagerly. Re-encode name-based checkpoints using
-<a href="../../tf/train/Checkpoint.md#save"><code>tf.train.Checkpoint.save</code></a> as soon as possible.</p>
+<a href="../../tf/train/Checkpoint.html#save"><code>tf.train.Checkpoint.save</code></a> as soon as possible.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>save_path</code></b>: The path to the checkpoint, as returned by <code>save</code> or
-<a href="../../tf/train/latest_checkpoint.md"><code>tf.train.latest_checkpoint</code></a>. If None (as when there is no latest
-checkpoint for <a href="../../tf/train/latest_checkpoint.md"><code>tf.train.latest_checkpoint</code></a> to return), returns an
+<a href="../../tf/train/latest_checkpoint.html"><code>tf.train.latest_checkpoint</code></a>. If None (as when there is no latest
+checkpoint for <a href="../../tf/train/latest_checkpoint.html"><code>tf.train.latest_checkpoint</code></a> to return), returns an
 object which may run initializers for objects in the dependency
-graph. If the checkpoint was written by the name-based <a href="../../tf/train/Saver.md"><code>tf.train.Saver</code></a>,
+graph. If the checkpoint was written by the name-based <a href="../../tf/train/Saver.html"><code>tf.train.Saver</code></a>,
 names are used to match variables.</li>
 </ul>
 <h4>Returns:</h4>

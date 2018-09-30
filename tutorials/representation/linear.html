@@ -4080,7 +4080,7 @@
     </nav>
     <article id="main" class="content">
       <h1>Large-scale Linear Models with TensorFlow</h1>
-<p><a href="../../api_docs/python/tf/estimator.md">Estimators</a> provides (among other things) a rich set of tools for
+<p><a href="../../api_docs/python/tf/estimator.html">Estimators</a> provides (among other things) a rich set of tools for
 working with linear models in TensorFlow. This document provides an overview of
 those tools. It explains:</p>
 <ul>
@@ -4097,7 +4097,7 @@ to give it a try. This overview uses code samples from the tutorial, but the
 tutorial walks through the code in greater detail.</p>
 <p>To understand this overview it will help to have some familiarity
 with basic machine learning concepts, and also with
-<a href="../../guide/premade_estimators.md">Estimators</a>.</p>
+<a href="../../guide/premade_estimators.html">Estimators</a>.</p>
 <p>[TOC]</p>
 <h2>What is a linear model?</h2>
 <p>A <strong>linear model</strong> uses a single weighted sum of features to make a prediction.
@@ -4211,7 +4211,7 @@ the data itself. You provide the data through an input function.</p>
 <p>The input function must return a dictionary of tensors. Each key corresponds to
 the name of a <code>FeatureColumn</code>. Each key’s value is a tensor containing the
 values of that feature for all data instances. See
-<a href="../../guide/premade_estimators.md#input_fn">Premade Estimators</a> for a
+<a href="../../guide/premade_estimators.html#input_fn">Premade Estimators</a> for a
 more comprehensive look at input functions, and <code>input_fn</code> in the
 <a href="https://github.com/tensorflow/models/tree/master/official/wide_deep">wide and deep learning tutorial</a>
 for an example implementation of an input function.</p>
@@ -4223,8 +4223,8 @@ for regression and classification models. They take care of the details of the
 training and evaluation loops and allow the user to focus on model inputs and
 architecture.</p>
 <p>To build a linear estimator, you can use either the
-<a href="../../api_docs/python/tf/estimator/LinearClassifier.md"><code>tf.estimator.LinearClassifier</code></a> estimator or the
-<a href="../../api_docs/python/tf/estimator/LinearRegressor.md"><code>tf.estimator.LinearRegressor</code></a> estimator, for classification and
+<a href="../../api_docs/python/tf/estimator/LinearClassifier.html"><code>tf.estimator.LinearClassifier</code></a> estimator or the
+<a href="../../api_docs/python/tf/estimator/LinearRegressor.html"><code>tf.estimator.LinearRegressor</code></a> estimator, for classification and
 regression respectively.</p>
 <p>As with all tensorflow estimators, to run the estimator you just:</p>
 <ol>
@@ -4249,10 +4249,10 @@ for key in sorted(results):
     print(&quot;%s: %s&quot; % (key, results[key]))
 </code></pre>
 <h3>Wide and deep learning</h3>
-<p>The <a href="../../api_docs/python/tf/estimator.md"><code>tf.estimator</code></a> module also provides an estimator class that lets you jointly
+<p>The <a href="../../api_docs/python/tf/estimator.html"><code>tf.estimator</code></a> module also provides an estimator class that lets you jointly
 train a linear model and a deep neural network. This novel approach combines the
 ability of linear models to “memorize” key features with the generalization
-ability of neural nets. Use <a href="../../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.md"><code>tf.estimator.DNNLinearCombinedClassifier</code></a> to
+ability of neural nets. Use <a href="../../api_docs/python/tf/estimator/DNNLinearCombinedClassifier.html"><code>tf.estimator.DNNLinearCombinedClassifier</code></a> to
 create this sort of “wide and deep” model:</p>
 <pre><code class="language-python">e = tf.estimator.DNNLinearCombinedClassifier(
     model_dir=YOUR_MODEL_DIR,

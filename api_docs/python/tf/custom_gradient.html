@@ -4117,8 +4117,8 @@ def log1pexp(x):
 </code></pre>
 <p>With this definition, the gradient at x=100 will be correctly evaluated as
 1.0.</p>
-<p>See also <a href="../tf/RegisterGradient.md"><code>tf.RegisterGradient</code></a> which registers a gradient function for a
-primitive TensorFlow operation. <a href="../tf/custom_gradient.md"><code>tf.custom_gradient</code></a> on the other hand allows
+<p>See also <a href="../tf/RegisterGradient.html"><code>tf.RegisterGradient</code></a> which registers a gradient function for a
+primitive TensorFlow operation. <a href="../tf/custom_gradient.html"><code>tf.custom_gradient</code></a> on the other hand allows
 for fine grained control over the gradient computation of a sequence of
 operations.</p>
 <p>Note that if the decorated function uses <code>Variable</code>s, the enclosing variable
@@ -4146,7 +4146,7 @@ with the derivatives of <code>Tensor</code>s in <code>y</code> with respect to t
 </ul>
 <h4>Returns:</h4>
 <p>A function <code>h(x)</code> which returns the same value as <code>f(x)[0]</code> and whose
-gradient (as calculated by <a href="../tf/gradients.md"><code>tf.gradients</code></a>) is determined by <code>f(x)[1]</code>.</p>
+gradient (as calculated by <a href="../tf/gradients.html"><code>tf.gradients</code></a>) is determined by <code>f(x)[1]</code>.</p>
 
     </article>
   </div>

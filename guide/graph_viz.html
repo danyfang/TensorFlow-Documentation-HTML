@@ -4083,7 +4083,7 @@
 <p>TensorFlow computation graphs are powerful but complicated. The graph visualization can help you understand and debug them. Here’s an example of the visualization at work.</p>
 <p><img src="https://www.tensorflow.org/images/graph_vis_animation.gif" alt="Visualization of a TensorFlow graph" title="Visualization of a TensorFlow graph">
 <em>Visualization of a TensorFlow graph.</em></p>
-<p>To see your own graph, run TensorBoard pointing it to the log directory of the job, click on the graph tab on the top pane and select the appropriate run using the menu at the upper left corner. For in depth information on how to run TensorBoard and make sure you are logging all the necessary information, see <a href="../guide/summaries_and_tensorboard.md">TensorBoard: Visualizing Learning</a>.</p>
+<p>To see your own graph, run TensorBoard pointing it to the log directory of the job, click on the graph tab on the top pane and select the appropriate run using the menu at the upper left corner. For in depth information on how to run TensorBoard and make sure you are logging all the necessary information, see <a href="../guide/summaries_and_tensorboard.html">TensorBoard: Visualizing Learning</a>.</p>
 <h2>Name scoping and nodes</h2>
 <p>Typical TensorFlow graphs can have many thousands of nodes–far too many to see
 easily all at once, or even to lay out using standard graph tools. To simplify,
@@ -4091,7 +4091,7 @@ variable names can be scoped and the visualization uses this information to
 define a hierarchy on the nodes in the graph.  By default, only the top of this
 hierarchy is shown. Here is an example that defines three operations under the
 <code>hidden</code> name scope using
-<a href="../api_docs/python/tf/name_scope.md"><code>tf.name_scope</code></a>:</p>
+<a href="../api_docs/python/tf/name_scope.html"><code>tf.name_scope</code></a>:</p>
 <pre><code class="language-python">import tensorflow as tf
 
 with tf.name_scope('hidden') as scope:
@@ -4335,7 +4335,7 @@ is a snippet from the train and test section of a modification of the
 <a href="../tutorials/estimators/cnn.html">Estimators MNIST tutorial</a>, in which we have
 recorded summaries and
 runtime statistics. See the
-<a href="../guide/summaries_and_tensorboard.md#serializing-the-data">Summaries Tutorial</a>
+<a href="../guide/summaries_and_tensorboard.html#serializing-the-data">Summaries Tutorial</a>
 for details on how to record summaries.
 Full source is <a href="https://www.tensorflow.org/code/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py">here</a>.</p>
 <pre><code class="language-python">  # Train the model, and also write summaries.

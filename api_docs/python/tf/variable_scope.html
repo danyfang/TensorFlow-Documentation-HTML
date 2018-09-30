@@ -4088,7 +4088,7 @@
 <h1>tf.variable_scope</h1>
 <h2>Class <code>variable_scope</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/variable_scope.py"><code>tensorflow/python/ops/variable_scope.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/state_ops.md#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
+<p>See the guide: <a href="../../../api_guides/python/state_ops.html#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
 <p>A context manager for defining ops that creates variables (layers).</p>
 <p>This context manager validates that the (optional) <code>values</code> are from the same
 graph, ensures that graph is the default graph, and pushes a name scope and a
@@ -4099,7 +4099,7 @@ previously used in the same scope, it will be made unique by appending <code>_N<
 to it.</p>
 <p>Variable scope allows you to create new variables and to share already created
 ones while providing checks to not create or share by accident. For details,
-see the <a href="../../../guide/variables.md">Variable Scope How To</a>, here we present only a few basic
+see the <a href="../../../guide/variables.html">Variable Scope How To</a>, here we present only a few basic
 examples.</p>
 <p>Simple example of how to create a new variable:</p>
 <pre><code class="language-python">with tf.variable_scope(&quot;foo&quot;):

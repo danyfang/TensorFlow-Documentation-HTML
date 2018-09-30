@@ -4116,8 +4116,8 @@ before the matrix multiply and afterwards reshaping it to
 [\(\text{dim}<em>0, …, \text{dim}</em>{n-1},\) <code>num_output_units</code>].</p>
 <p>This op creates <code>w</code> and optionally <code>b</code>. Bias (<code>b</code>) can be disabled by setting
 <code>bias_init</code> to <code>None</code>.</p>
-<p>The variable creation is compatible with <a href="../../../tf/variable_scope.md"><code>tf.variable_scope</code></a> and so can be
-reused with <a href="../../../tf/variable_scope.md"><code>tf.variable_scope</code></a> or <a href="../../../tf/make_template.md"><code>tf.make_template</code></a>.</p>
+<p>The variable creation is compatible with <a href="../../../tf/variable_scope.html"><code>tf.variable_scope</code></a> and so can be
+reused with <a href="../../../tf/variable_scope.html"><code>tf.variable_scope</code></a> or <a href="../../../tf/make_template.html"><code>tf.make_template</code></a>.</p>
 <p>Most of the details of variable creation can be controlled by specifying the
 initializers (<code>weight_init</code> and <code>bias_init</code>) and in which collections to place
 the created variables (<code>weight_collections</code> and <code>bias_collections</code>; note that
@@ -4142,7 +4142,7 @@ order to disable bias.</li>
 <li><b><code>name</code></b>: The name for this operation is used to name operations and to find
 variables. If specified it must be unique for this scope, otherwise a
 unique name starting with “fully_connected” will be created.  See
-<a href="../../../tf/variable_scope.md"><code>tf.variable_scope</code></a> for details.</li>
+<a href="../../../tf/variable_scope.html"><code>tf.variable_scope</code></a> for details.</li>
 <li><b><code>weight_collections</code></b>: List of graph collections to which weights are added.</li>
 <li><b><code>bias_collections</code></b>: List of graph collections to which biases are added.</li>
 <li><b><code>output_collections</code></b>: List of graph collections to which outputs are added.</li>

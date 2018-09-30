@@ -4099,7 +4099,7 @@
 <code>AttentionWrapper</code>, then you must ensure that:</p>
 <ul>
 <li>The encoder output has been tiled to <code>beam_width</code> via
-<a href="../../../tf/contrib/seq2seq/tile_batch.md"><code>tf.contrib.seq2seq.tile_batch</code></a> (NOT <a href="../../../tf/tile.md"><code>tf.tile</code></a>).</li>
+<a href="../../../tf/contrib/seq2seq/tile_batch.html"><code>tf.contrib.seq2seq.tile_batch</code></a> (NOT <a href="../../../tf/tile.html"><code>tf.tile</code></a>).</li>
 <li>The <code>batch_size</code> argument passed to the <code>zero_state</code> method of this
 wrapper is equal to <code>true_batch_size * beam_width</code>.</li>
 <li>The initial state created with <code>zero_state</code> above contains a
@@ -4162,8 +4162,8 @@ or the <code>params</code> argument for <code>embedding_lookup</code>.</li>
 <li><b><code>end_token</code></b>: <code>int32</code> scalar, the token that marks end of decoding.</li>
 <li><b><code>initial_state</code></b>: A (possibly nested tuple of…) tensors and TensorArrays.</li>
 <li><b><code>beam_width</code></b>:  Python integer, the number of beams.</li>
-<li><b><code>output_layer</code></b>: (Optional) An instance of <a href="../../../tf/layers/Layer.md"><code>tf.layers.Layer</code></a>, i.e.,
-<a href="../../../tf/layers/Dense.md"><code>tf.layers.Dense</code></a>.  Optional layer to apply to the RNN output prior
+<li><b><code>output_layer</code></b>: (Optional) An instance of <a href="../../../tf/layers/Layer.html"><code>tf.layers.Layer</code></a>, i.e.,
+<a href="../../../tf/layers/Dense.html"><code>tf.layers.Dense</code></a>.  Optional layer to apply to the RNN output prior
 to storing the result or sampling.</li>
 <li><b><code>length_penalty_weight</code></b>: Float weight to penalize length. Disabled with 0.0.</li>
 <li><b><code>reorder_tensor_arrays</code></b>: If <code>True</code>, <code>TensorArray</code>s’ elements within the cell
@@ -4176,7 +4176,7 @@ to reordering.</li>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>TypeError</code></b>: if <code>cell</code> is not an instance of <code>RNNCell</code>,
-or <code>output_layer</code> is not an instance of <a href="../../../tf/layers/Layer.md"><code>tf.layers.Layer</code></a>.</li>
+or <code>output_layer</code> is not an instance of <a href="../../../tf/layers/Layer.html"><code>tf.layers.Layer</code></a>.</li>
 <li><b><code>ValueError</code></b>: If <code>start_tokens</code> is not a vector or
 <code>end_token</code> is not a scalar.</li>
 </ul>

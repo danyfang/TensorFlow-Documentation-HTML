@@ -4102,15 +4102,15 @@
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/nn/python/ops/sampling_ops.py"><code>tensorflow/contrib/nn/python/ops/sampling_ops.py</code></a>.</p>
 <p>Computes softmax loss using rank-based adaptive resampling.</p>
 <p>This has been shown to improve rank loss after training compared to
-<a href="../../../tf/nn/sampled_softmax_loss.md"><code>tf.nn.sampled_softmax_loss</code></a>. For a description of the algorithm and some
+<a href="../../../tf/nn/sampled_softmax_loss.html"><code>tf.nn.sampled_softmax_loss</code></a>. For a description of the algorithm and some
 experimental results, please see: <a href="https://arxiv.org/abs/1707.03073">TAPAS: Two-pass Approximate Adaptive
 Sampling for Softmax</a>.</p>
 <p>Sampling follows two phases:</p>
 <ul>
 <li>In the first phase, <code>num_sampled</code> classes are selected using
-<a href="../../../tf/nn/learned_unigram_candidate_sampler.md"><code>tf.nn.learned_unigram_candidate_sampler</code></a> or supplied <code>sampled_values</code>.
+<a href="../../../tf/nn/learned_unigram_candidate_sampler.html"><code>tf.nn.learned_unigram_candidate_sampler</code></a> or supplied <code>sampled_values</code>.
 The logits are calculated on those sampled classes. This phases is
-similar to <a href="../../../tf/nn/sampled_softmax_loss.md"><code>tf.nn.sampled_softmax_loss</code></a>.</li>
+similar to <a href="../../../tf/nn/sampled_softmax_loss.html"><code>tf.nn.sampled_softmax_loss</code></a>.</li>
 <li>In the second phase, the <code>num_resampled</code> classes with highest predicted
 probability are kept. Probabilities are
 <code>LogSumExp(logits / resampling_temperature)</code>, where the sum is over
@@ -4120,7 +4120,7 @@ probability are kept. Probabilities are
 resampling. At lower temperatures, resampling is more adaptive because it
 picks more candidates close to the predicted classes. A common strategy is
 to decrease the temperature as training proceeds.</p>
-<p>See <a href="../../../tf/nn/sampled_softmax_loss.md"><code>tf.nn.sampled_softmax_loss</code></a> for more documentation on sampling and
+<p>See <a href="../../../tf/nn/sampled_softmax_loss.html"><code>tf.nn.sampled_softmax_loss</code></a> for more documentation on sampling and
 for typical default values for some of the parameters.</p>
 <p>This operation is for training only. It is generally an underestimate of
 the full softmax loss.</p>
@@ -4170,7 +4170,7 @@ for the adaptive resampling algorithm.</li>
 where a sampled class equals one of the target classes.</li>
 <li><b><code>partition_strategy</code></b>: A string specifying the partitioning strategy, relevant
 if <code>len(weights) &gt; 1</code>. Currently <code>&quot;div&quot;</code> and <code>&quot;mod&quot;</code> are supported.
-See <a href="../../../tf/nn/embedding_lookup.md"><code>tf.nn.embedding_lookup</code></a> for more details.</li>
+See <a href="../../../tf/nn/embedding_lookup.html"><code>tf.nn.embedding_lookup</code></a> for more details.</li>
 <li><b><code>name</code></b>: A name for the operation (optional).</li>
 </ul>
 <h4>Returns:</h4>

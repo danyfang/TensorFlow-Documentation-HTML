@@ -4086,8 +4086,8 @@ learning models and system-level optimizations.</p>
 <p>This document describes the system architecture that makes this
 combination of scale and flexibility possible. It assumes that you have basic familiarity
 with TensorFlow programming concepts such as the computation graph, operations,
-and sessions. See <a href="../guide/low_level_intro.md">this document</a> for an introduction to
-these topics. Some familiarity with <a href="../deploy/distributed.md">distributed TensorFlow</a>
+and sessions. See <a href="../guide/low_level_intro.html">this document</a> for an introduction to
+these topics. Some familiarity with <a href="../deploy/distributed.html">distributed TensorFlow</a>
 will also be helpful.</p>
 <p>This document is for developers who want to extend TensorFlow in some way not
 supported by current APIs, hardware engineers who want to optimize for
@@ -4157,7 +4157,7 @@ we typically port them to C++, so that users can access an optimized
 implementation from all client languages. Most of the training libraries are
 still Python-only, but C++ does have support for efficient inference.</p>
 <p>The client creates a session, which sends the graph definition to the
-distributed master as a <a href="../api_docs/python/tf/GraphDef.md"><code>tf.GraphDef</code></a>
+distributed master as a <a href="../api_docs/python/tf/GraphDef.html"><code>tf.GraphDef</code></a>
 protocol buffer. When the client evaluates a node or nodes in the
 graph, the evaluation triggers a call to the distributed master to initiate
 computation.</p>
@@ -4168,7 +4168,7 @@ feature vector (x), adds a bias term (b) and saves the result in a variable
 <p><strong>Figure 3</strong></p>
 <h3>Code</h3>
 <ul>
-<li><a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a></li>
+<li><a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a></li>
 </ul>
 <h2>Distributed master</h2>
 <p>The distributed master:</p>
@@ -4231,7 +4231,7 @@ copy via the host CPU.</li>
 <li>RDMA over Converged Ethernet.</li>
 </ul>
 <p>We also have preliminary support for NVIDIA’s NCCL library for multi-GPU
-communication (see <a href="https://www.tensorflow.org/code/tensorflow/contrib/nccl/python/ops/nccl_ops.py"><a href="../api_docs/python/tf/contrib/nccl.md"><code>tf.contrib.nccl</code></a></a>).</p>
+communication (see <a href="https://www.tensorflow.org/code/tensorflow/contrib/nccl/python/ops/nccl_ops.py"><a href="../api_docs/python/tf/contrib/nccl.html"><code>tf.contrib.nccl</code></a></a>).</p>
 <p><img src="https://www.tensorflow.org/images/graph_send_recv.svg" alt="Partitioned Graph">{: width=“700”}</p>
 <p><strong>Figure 8</strong></p>
 <h3>Code</h3>
@@ -4248,7 +4248,7 @@ Many of the operation kernels are implemented using Eigen::Tensor, which uses
 C++ templates to generate efficient parallel code for multicore CPUs and GPUs;
 however, we liberally use libraries like cuDNN where a more efficient kernel
 implementation is possible. We have also implemented
-<a href="../performance/quantization.md">quantization</a>, which enables
+<a href="../performance/quantization.html">quantization</a>, which enables
 faster inference in environments such as mobile devices and high-throughput
 datacenter applications, and use the
 <a href="https://github.com/google/gemmlowp">gemmlowp</a> low-precision matrix library to
@@ -4257,7 +4257,7 @@ accelerate quantized computation.</p>
 of operations, users can register additional kernels that provide an efficient
 implementation written in C++. For example, we recommend registering your own
 fused kernels for some performance critical operations, such as the ReLU and
-Sigmoid activation functions and their corresponding gradients. The <a href="../performance/xla/index.md">XLA Compiler</a> has an
+Sigmoid activation functions and their corresponding gradients. The <a href="../performance/xla/index.html">XLA Compiler</a> has an
 experimental implementation of automatic kernel fusion.</p>
 <h3>Code</h3>
 <ul>

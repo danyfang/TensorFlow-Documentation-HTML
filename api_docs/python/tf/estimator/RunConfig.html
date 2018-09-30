@@ -4163,7 +4163,7 @@ spec given above, the global ids are assigned as:</p>
 <h3 id="task_type"><code>task_type</code></h3>
 <h3 id="tf_random_seed"><code>tf_random_seed</code></h3>
 <h3 id="train_distribute"><code>train_distribute</code></h3>
-<p>Returns the optional <a href="../../tf/contrib/distribute/DistributionStrategy.md"><code>tf.contrib.distribute.DistributionStrategy</code></a> object.</p>
+<p>Returns the optional <a href="../../tf/contrib/distribute/DistributionStrategy.html"><code>tf.contrib.distribute.DistributionStrategy</code></a> object.</p>
 <h2>Methods</h2>
 <h3 id="__init__"><code>__init__</code></h3>
 <pre><code class="language-python">__init__(
@@ -4294,12 +4294,12 @@ the feature.</li>
 <li><b><code>log_step_count_steps</code></b>: The frequency, in number of global steps, that the
 global step/sec and the loss will be logged during training.</li>
 <li><b><code>train_distribute</code></b>: an optional instance of
-<a href="../../tf/contrib/distribute/DistributionStrategy.md"><code>tf.contrib.distribute.DistributionStrategy</code></a>. If specified,
+<a href="../../tf/contrib/distribute/DistributionStrategy.html"><code>tf.contrib.distribute.DistributionStrategy</code></a>. If specified,
 then Estimator will distribute the user’s model during training,
 according to the policy specified by that strategy.</li>
 <li><b><code>device_fn</code></b>: A callable invoked for every <code>Operation</code> that takes the
 <code>Operation</code> and returns the device string. If <code>None</code>, defaults to
-the device function returned by <a href="../../tf/train/replica_device_setter.md"><code>tf.train.replica_device_setter</code></a>
+the device function returned by <a href="../../tf/train/replica_device_setter.html"><code>tf.train.replica_device_setter</code></a>
 with round-robin strategy.</li>
 </ul>
 <h4>Raises:</h4>

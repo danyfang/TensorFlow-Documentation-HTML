@@ -4158,7 +4158,7 @@ repository):</p>
 </code></pre>
 <p>Next, we need to compile the C++ binary that includes the code to load and run the graph.
 If you’ve followed
-<a href="../../install/install_sources.md">the instructions to download the source installation of TensorFlow</a>
+<a href="../../install/install_sources.html">the instructions to download the source installation of TensorFlow</a>
 for your platform, you should be able to build the example by
 running this command from your shell terminal:</p>
 <pre><code class="language-bash">bazel build tensorflow/examples/label_image/...
@@ -4278,7 +4278,7 @@ definition with the <code>ToGraphDef()</code> function.</p>
   TF_RETURN_IF_ERROR(session-&gt;Run({}, {output_name}, {}, out_tensors));
   return Status::OK();
 </code></pre>
-<p>Then we create a <a href="../../api_docs/python/tf/Session.md"><code>tf.Session</code></a>
+<p>Then we create a <a href="../../api_docs/python/tf/Session.html"><code>tf.Session</code></a>
 object, which is the interface to actually running the graph, and run it,
 specifying which node we want to get the output from, and where to put the
 output data.</p>
@@ -4446,7 +4446,7 @@ and Michael Nielsen’s book has a
 <a href="http://neuralnetworksanddeeplearning.com/chap6.html">great chapter</a>
 covering them.</p>
 <p>To find out more about implementing convolutional neural networks, you can jump
-to the TensorFlow <a href="../../tutorials/images/deep_cnn.md">deep convolutional networks tutorial</a>,
+to the TensorFlow <a href="../../tutorials/images/deep_cnn.html">deep convolutional networks tutorial</a>,
 or start a bit more gently with our <a href="../estimators/cnn.html">Estimator MNIST tutorial</a>.
 Finally, if you want to get up to speed on research in this area, you can
 read the recent work of all the papers referenced in this tutorial.</p>

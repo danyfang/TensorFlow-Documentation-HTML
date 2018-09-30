@@ -4098,15 +4098,15 @@
 <h1>tf.summary.FileWriter</h1>
 <h2>Class <code>FileWriter</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/summary/writer/writer.py"><code>tensorflow/python/summary/writer/writer.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/summary.md#Generation_of_Summaries">Summary Operations &gt; Generation of Summaries</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/summary.html#Generation_of_Summaries">Summary Operations &gt; Generation of Summaries</a></p>
 <p>Writes <code>Summary</code> protocol buffers to event files.</p>
 <p>The <code>FileWriter</code> class provides a mechanism to create an event file in a
 given directory and add summaries and events to it. The class updates the
 file contents asynchronously. This allows a training program to call methods
 to add data to the file directly from the training loop, without slowing down
 training.</p>
-<p>When constructed with a <a href="../../tf/Session.md"><code>tf.Session</code></a> parameter, a <code>FileWriter</code> instead forms
-a compatibility layer over new graph-based summaries (<a href="../../tf/contrib/summary.md"><code>tf.contrib.summary</code></a>)
+<p>When constructed with a <a href="../../tf/Session.html"><code>tf.Session</code></a> parameter, a <code>FileWriter</code> instead forms
+a compatibility layer over new graph-based summaries (<a href="../../tf/contrib/summary.html"><code>tf.contrib.summary</code></a>)
 to facilitate the use of new summary writing with pre-existing code that
 expects a <code>FileWriter</code> instance.</p>
 <h2>Methods</h2>
@@ -4138,15 +4138,15 @@ sess = tf.Session()
 writer = tf.summary.FileWriter(&lt;some-directory&gt;, sess.graph)
 </code></pre>
 <p>The <code>session</code> argument to the constructor makes the returned <code>FileWriter</code> a
-a compatibility layer over new graph-based summaries (<a href="../../tf/contrib/summary.md"><code>tf.contrib.summary</code></a>).
+a compatibility layer over new graph-based summaries (<a href="../../tf/contrib/summary.html"><code>tf.contrib.summary</code></a>).
 Crucially, this means the underlying writer resource and events file will
 be shared with any other <code>FileWriter</code> using the same <code>session</code> and <code>logdir</code>,
-and with any <a href="../../tf/contrib/summary/SummaryWriter.md"><code>tf.contrib.summary.SummaryWriter</code></a> in this session using the
+and with any <a href="../../tf/contrib/summary/SummaryWriter.html"><code>tf.contrib.summary.SummaryWriter</code></a> in this session using the
 the same shared resource name (which by default scoped to the logdir). If
 no such resource exists, one will be created using the remaining arguments
 to this constructor, but if one already exists those arguments are ignored.
 In either case, ops will be added to <code>session.graph</code> to control the
-underlying file writer resource. See <a href="../../tf/contrib/summary.md"><code>tf.contrib.summary</code></a> for more details.</p>
+underlying file writer resource. See <a href="../../tf/contrib/summary.html"><code>tf.contrib.summary</code></a> for more details.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>logdir</code></b>: A string. Directory where event file will be written.</li>
@@ -4157,7 +4157,7 @@ pending events and summaries to disk.</li>
 <li><b><code>graph_def</code></b>: DEPRECATED: Use the <code>graph</code> argument instead.</li>
 <li><b><code>filename_suffix</code></b>: A string. Every event file’s name is suffixed with
 <code>suffix</code>.</li>
-<li><b><code>session</code></b>: A <a href="../../tf/Session.md"><code>tf.Session</code></a> object. See details above.</li>
+<li><b><code>session</code></b>: A <a href="../../tf/Session.html"><code>tf.Session</code></a> object. See details above.</li>
 </ul>
 <h4>Raises:</h4>
 <ul>
@@ -4165,7 +4165,7 @@ pending events and summaries to disk.</li>
 </ul>
 <p>@compatibility(eager)
 <code>FileWriter</code> is not compatible with eager execution. To write TensorBoard
-summaries under eager execution, use <a href="../../tf/contrib/summary.md"><code>tf.contrib.summary</code></a> instead.
+summaries under eager execution, use <a href="../../tf/contrib/summary.html"><code>tf.contrib.summary</code></a> instead.
 @end_compatbility</p>
 <h3 id="__enter__"><code>__enter__</code></h3>
 <pre><code class="language-python">__enter__()
@@ -4272,9 +4272,9 @@ summary.</li>
 <p>This method wraps the provided summary in an <code>Event</code> protocol buffer
 and adds it to the event file.</p>
 <p>You can pass the result of evaluating any summary op, using
-<a href="../../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> or
-<a href="../../tf/Tensor.md#eval"><code>tf.Tensor.eval</code></a>, to this
-function. Alternatively, you can pass a <a href="../../tf/Summary.md"><code>tf.Summary</code></a> protocol
+<a href="../../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> or
+<a href="../../tf/Tensor.html#eval"><code>tf.Tensor.eval</code></a>, to this
+function. Alternatively, you can pass a <a href="../../tf/Summary.html"><code>tf.Summary</code></a> protocol
 buffer that you populate with your own data. The latter is
 commonly done to report evaluation results in event files.</p>
 <h4>Args:</h4>

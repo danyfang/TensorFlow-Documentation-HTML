@@ -4093,12 +4093,12 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/spectral_ops.py"><code>tensorflow/python/ops/spectral_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/spectral_ops.md#Discrete_Cosine_Transforms">Spectral Functions &gt; Discrete Cosine Transforms</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/spectral_ops.html#Discrete_Cosine_Transforms">Spectral Functions &gt; Discrete Cosine Transforms</a></p>
 <p>Computes the 1D <a href="https://en.wikipedia.org/wiki/Discrete_cosine_transform">Discrete Cosine Transform (DCT)</a> of <code>input</code>.</p>
 <p>Currently only Types II and III are supported. Type II is implemented using a
-length <code>2N</code> padded <a href="../../tf/spectral/rfft.md"><code>tf.spectral.rfft</code></a>, as described here:
+length <code>2N</code> padded <a href="../../tf/spectral/rfft.html"><code>tf.spectral.rfft</code></a>, as described here:
 <a href="https://dsp.stackexchange.com/a/10606">https://dsp.stackexchange.com/a/10606</a>. Type III is a fairly straightforward
-inverse of Type II (i.e. using a length <code>2N</code> padded <a href="../../tf/spectral/irfft.md"><code>tf.spectral.irfft</code></a>).</p>
+inverse of Type II (i.e. using a length <code>2N</code> padded <a href="../../tf/spectral/irfft.html"><code>tf.spectral.irfft</code></a>).</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>input</code></b>: A <code>[..., samples]</code> <code>float32</code> <code>Tensor</code> containing the signals to

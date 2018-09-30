@@ -4114,7 +4114,7 @@ serialize your model and restore it in a different environment.</p>
 <li>
 <p>The operation must run in the same address space as the Python program
 that calls <code>tf.py_func()</code>. If you are using distributed TensorFlow, you
-must run a <a href="../tf/train/Server.md"><code>tf.train.Server</code></a> in the same process as the program that calls
+must run a <a href="../tf/train/Server.html"><code>tf.train.Server</code></a> in the same process as the program that calls
 <code>tf.py_func()</code> and you must pin the created operation to a device in that
 server (e.g. using <code>with tf.device():</code>).</p>
 </li>
@@ -4124,7 +4124,7 @@ server (e.g. using <code>with tf.device():</code>).</p>
 <li><b><code>func</code></b>: A Python function, which accepts <code>ndarray</code> objects as arguments and
 returns a list of <code>ndarray</code> objects (or a single <code>ndarray</code>). This function
 must accept as many arguments as there are tensors in <code>inp</code>, and these
-argument types will match the corresponding <a href="../tf/Tensor.md"><code>tf.Tensor</code></a> objects
+argument types will match the corresponding <a href="../tf/Tensor.html"><code>tf.Tensor</code></a> objects
 in <code>inp</code>. The returns <code>ndarray</code>s must match the number and types defined
 <code>Tout</code>.
 Important Note: Input and output numpy <code>ndarray</code>s of <code>func</code> are not

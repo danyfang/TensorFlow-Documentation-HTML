@@ -4141,7 +4141,7 @@ need for a separate calibration step.</p>
 <p>TensorFlow can train models with quantization in the loop. Because training
 requires small gradient adjustments, floating point values are still used. To
 keep models as floating point while adding the quantization error in the training
-loop, <a href="../api_guides/python/array_ops.md#Fake_quantization">fake quantization</a> nodes simulate the
+loop, <a href="../api_guides/python/array_ops.html#Fake_quantization">fake quantization</a> nodes simulate the
 effect of quantization in the forward and backward passes.</p>
 <p>Since it’s difficult to add these fake quantization operations to all the
 required locations in the model, there’s a function available that rewrites the
@@ -4208,14 +4208,14 @@ quantized TensorFLow Lite model:</p>
   --output_array=outputs \
   --std_value=127.5 --mean_value=127.5
 </code></pre>
-<p>See the documentation for <a href="../api_docs/python/tf/contrib/quantize.md"><code>tf.contrib.quantize</code></a> and
+<p>See the documentation for <a href="../api_docs/python/tf/contrib/quantize.html"><code>tf.contrib.quantize</code></a> and
 <a href="/mobile/tflite/">TensorFlow Lite</a>.</p>
 <h2>Quantized accuracy</h2>
 <p>Fixed point <a href="https://arxiv.org/abs/1704.0486">MobileNet</a> models are released with
 8-bit weights and activations. Using the rewriters, these models achieve the
 Top-1 accuracies listed in Table 1. For comparison, the floating point accuracies
 are listed for the same models. The code used to generate these models
-<a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">is available</a>
+<a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.html">is available</a>
 along with links to all of the pretrained mobilenet_v1 models.</p>
 <figure>
   <table>

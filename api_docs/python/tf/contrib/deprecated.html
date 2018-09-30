@@ -4104,12 +4104,12 @@ generated protobufs.</p>
 to the summary op generating it, and no relation to the TensorFlow name system.
 This behavior made it very difficult to write reusable  that would add
 summary ops to the graph. If you had a function to add summary ops, you would
-need to pass in a <a href="../../tf/name_scope.md"><code>tf.name_scope</code></a>, manually, to that function to create
+need to pass in a <a href="../../tf/name_scope.html"><code>tf.name_scope</code></a>, manually, to that function to create
 deduplicated tags. Otherwise your program would fail with a runtime error due
 to tag collision.</p>
-<p>The new summary APIs under <a href="../../tf/summary.md"><code>tf.summary</code></a> throw away the “tag” as an independent
+<p>The new summary APIs under <a href="../../tf/summary.html"><code>tf.summary</code></a> throw away the “tag” as an independent
 concept; instead, the first argument is the node name. So summary tags now
-automatically inherit the surrounding <a href="../../tf/name_scope.md"><code>tf.name_scope</code></a>, and automatically
+automatically inherit the surrounding <a href="../../tf/name_scope.html"><code>tf.name_scope</code></a>, and automatically
 are deduplicated if there is a conflict. Now however, the only allowed
 characters are alphanumerics, underscores, and forward slashes. To make
 migration easier, the new APIs automatically convert illegal characters to
@@ -4126,22 +4126,22 @@ def add_activation_summaries(v):
   tf.summary.histogram(&quot;activations&quot;, v)
 </code></pre>
 <p>Now, so long as the add_activation_summaries function is called from within the
-right <a href="../../tf/name_scope.md"><code>tf.name_scope</code></a>, the behavior is the same.</p>
+right <a href="../../tf/name_scope.html"><code>tf.name_scope</code></a>, the behavior is the same.</p>
 <p>Because this change does modify the behavior and could break tests, we can’t
 automatically migrate usage to the new APIs. That is why we are making the old
-APIs temporarily available here at <a href="../../tf/contrib/deprecated.md"><code>tf.contrib.deprecated</code></a>.</p>
+APIs temporarily available here at <a href="../../tf/contrib/deprecated.html"><code>tf.contrib.deprecated</code></a>.</p>
 <p>In addition to the name change described above, there are two further changes
 to the new summary ops:</p>
 <ul>
 <li>the “max_images” argument for <code>tf.image_summary</code> was renamed to &quot;max_outputs
-for <a href="../../tf/summary/image.md"><code>tf.summary.image</code></a></li>
+for <a href="../../tf/summary/image.html"><code>tf.summary.image</code></a></li>
 <li><code>tf.scalar_summary</code> accepted arbitrary tensors of tags and values. But
-<a href="../../tf/summary/scalar.md"><code>tf.summary.scalar</code></a> requires a single scalar name and scalar value. In most
-cases, you can create <a href="../../tf/summary/scalar.md"><code>tf.summary.scalar</code></a> in a loop to get the same behavior</li>
+<a href="../../tf/summary/scalar.html"><code>tf.summary.scalar</code></a> requires a single scalar name and scalar value. In most
+cases, you can create <a href="../../tf/summary/scalar.html"><code>tf.summary.scalar</code></a> in a loop to get the same behavior</li>
 </ul>
-<p>As before, TensorBoard groups charts by the top-level <a href="../../tf/name_scope.md"><code>tf.name_scope</code></a> which may
+<p>As before, TensorBoard groups charts by the top-level <a href="../../tf/name_scope.html"><code>tf.name_scope</code></a> which may
 be inconvenient, for in the new summary ops, the summary will inherit that
-<a href="../../tf/name_scope.md"><code>tf.name_scope</code></a> without user control. We plan to add more grouping mechanisms
+<a href="../../tf/name_scope.html"><code>tf.name_scope</code></a> without user control. We plan to add more grouping mechanisms
 to TensorBoard, so it will be possible to specify the TensorBoard group for
 each summary via the summary API.</p>
 <h2>Functions</h2>

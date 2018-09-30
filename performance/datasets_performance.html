@@ -4083,15 +4083,15 @@
 <p>GPUs and TPUs can radically reduce the time required to execute a single
 training step. Achieving peak performance requires an efficient input pipeline
 that delivers data for the next step before the current step has finished. The
-<a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API helps to build flexible and efficient input pipelines. This
-document explains the <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API’s features and best practices for building
+<a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API helps to build flexible and efficient input pipelines. This
+document explains the <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API’s features and best practices for building
 high performance TensorFlow input pipelines across a variety of models and
 accelerators.</p>
 <p>This guide does the following:</p>
 <ul>
 <li>Illustrates that TensorFlow input pipelines are essentially an
 <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">ETL</a> process.</li>
-<li>Describes common performance optimizations in the context of the <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a>
+<li>Describes common performance optimizations in the context of the <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a>
 API.</li>
 <li>Discusses the performance implications of the order in which you apply
 transformations.</li>
@@ -4114,9 +4114,9 @@ example, GPU(s) or TPU(s)) that execute the machine learning model.</li>
 the heavy lifting of training your model. In addition, viewing input pipelines
 as an ETL process provides structure that facilitates the application of
 performance optimizations.</p>
-<p>When using the <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> API, the first two phases (Extract and
+<p>When using the <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> API, the first two phases (Extract and
 Transform) are captured in the <code>input_fn</code> passed to
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#train"><code>tf.estimator.Estimator.train</code></a>. In code, this might look like the following
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#train"><code>tf.estimator.Estimator.train</code></a>. In code, this might look like the following
 (naive, sequential) implementation:</p>
 <pre><code>def parse_fn(example):
   &quot;Parse TFExample records and perform simple data augmentation.&quot;
@@ -4142,7 +4142,7 @@ optimizations.</p>
 <h2>Optimizing Performance</h2>
 <p>As new computing devices (such as GPUs and TPUs) make it possible to train
 neural networks at an increasingly fast rate, the CPU processing is prone to
-becoming the bottleneck. The <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API provides users with building blocks
+becoming the bottleneck. The <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API provides users with building blocks
 to design input pipelines that effectively utilize the CPU, optimizing each step
 of the ETL process.</p>
 <h3>Pipelining</h3>
@@ -4161,8 +4161,8 @@ transform the data.</p>
 <p><img src="/images/datasets_without_pipelining.png" alt="without pipelining"></p>
 <p>With pipelining, idle time diminishes significantly:</p>
 <p><img src="/images/datasets_with_pipelining.png" alt="with pipelining"></p>
-<p>The <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API provides a software pipelining mechanism through the
-<a href="../api_docs/python/tf/data/Dataset.md#prefetch"><code>tf.data.Dataset.prefetch</code></a> transformation, which can be used to decouple the
+<p>The <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API provides a software pipelining mechanism through the
+<a href="../api_docs/python/tf/data/Dataset.html#prefetch"><code>tf.data.Dataset.prefetch</code></a> transformation, which can be used to decouple the
 time data is produced from the time it is consumed. In particular, the
 transformation uses a background thread and an internal buffer to prefetch
 elements from the input dataset ahead of the time they are requested. Thus, to
@@ -4183,7 +4183,7 @@ opportunity to overlap the work of a “producer” with the work of a “consum
 The preceding recommendation is simply the most common application.</p>
 <h3>Parallelize Data Transformation</h3>
 <p>When preparing a batch, input elements may need to be pre-processed. To this
-end, the <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API offers the <a href="../api_docs/python/tf/data/Dataset.md#map"><code>tf.data.Dataset.map</code></a> transformation, which
+end, the <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API offers the <a href="../api_docs/python/tf/data/Dataset.html#map"><code>tf.data.Dataset.map</code></a> transformation, which
 applies a user-defined function (for example, <code>parse_fn</code> from the running
 example) to each element of the input dataset. Because input elements are
 independent of one another, the pre-processing can be parallelized across
@@ -4208,7 +4208,7 @@ available CPUs can lead to inefficient scheduling, resulting in a slowdown.</p>
 </code></pre>
 <p>Furthermore, if your batch size is in the hundreds or thousands, your pipeline
 will likely additionally benefit from parallelizing the batch creation. To this
-end, the <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API provides the <a href="../api_docs/python/tf/contrib/data/map_and_batch.md"><code>tf.contrib.data.map_and_batch</code></a>
+end, the <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API provides the <a href="../api_docs/python/tf/contrib/data/map_and_batch.html"><code>tf.contrib.data.map_and_batch</code></a>
 transformation, which effectively “fuses” the map and batch transformations.</p>
 <p>To apply this change to our running example, change:</p>
 <pre><code>dataset = dataset.map(map_func=parse_fn, num_parallel_calls=FLAGS.num_parallel_calls)
@@ -4238,8 +4238,8 @@ to deserialize or decrypt the data
 additional overhead. This overhead is present irrespective of whether the data
 is stored locally or remotely, but can be worse in the remote case if data is
 not prefetched effectively.</p>
-<p>To mitigate the impact of the various data extraction overheads, the <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a>
-API offers the <a href="../api_docs/python/tf/contrib/data/parallel_interleave.md"><code>tf.contrib.data.parallel_interleave</code></a> transformation. Use this
+<p>To mitigate the impact of the various data extraction overheads, the <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a>
+API offers the <a href="../api_docs/python/tf/contrib/data/parallel_interleave.html"><code>tf.contrib.data.parallel_interleave</code></a> transformation. Use this
 transformation to parallelize the execution of and interleave the contents of
 other datasets (such as data file readers). The
 number of datasets to overlap can be specified by the <code>cycle_length</code> argument.</p>
@@ -4256,7 +4256,7 @@ the <code>parallel_interleave</code> transformation:</p>
 <p>The throughput of remote storage systems can vary over time due to load or
 network events. To account for this variance, the <code>parallel_interleave</code>
 transformation can optionally use prefetching. (See
-<a href="../api_docs/python/tf/contrib/data/parallel_interleave.md"><code>tf.contrib.data.parallel_interleave</code></a> for details).</p>
+<a href="../api_docs/python/tf/contrib/data/parallel_interleave.html"><code>tf.contrib.data.parallel_interleave</code></a> for details).</p>
 <p>By default, the <code>parallel_interleave</code> transformation provides a deterministic
 ordering of elements to aid reproducibility. As an alternative to prefetching
 (which may be ineffective in some cases), the <code>parallel_interleave</code>
@@ -4266,7 +4266,7 @@ the transformation may depart from its otherwise deterministic ordering, by
 temporarily skipping over files whose elements are not available when the next
 element is requested.</p>
 <h2>Performance Considerations</h2>
-<p>The <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> API is designed around composable transformations to provide its
+<p>The <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> API is designed around composable transformations to provide its
 users with flexibility. Although many of these transformations are commutative,
 the ordering of certain transformations has performance implications.</p>
 <h3>Map and Batch</h3>
@@ -4278,7 +4278,7 @@ the total cost. In such cases, we recommend vectorizing the user-defined
 function (that is, have it operate over a batch of inputs at once) and apply the
 <code>batch</code> transformation <em>before</em> the <code>map</code> transformation.</p>
 <h3>Map and Cache</h3>
-<p>The <a href="../api_docs/python/tf/data/Dataset.md#cache"><code>tf.data.Dataset.cache</code></a> transformation can cache a dataset, either in
+<p>The <a href="../api_docs/python/tf/data/Dataset.html#cache"><code>tf.data.Dataset.cache</code></a> transformation can cache a dataset, either in
 memory or on local storage. If the user-defined function passed into the <code>map</code>
 transformation is expensive, apply the cache transformation after the map
 transformation as long as the resulting dataset can still fit into memory or
@@ -4294,9 +4294,9 @@ affects the memory usage. In general, we recommend choosing the order that
 results in lower memory footprint, unless different ordering is desirable for
 performance (for example, to enable fusing of the map and batch transformations).</p>
 <h3>Repeat and Shuffle</h3>
-<p>The <a href="../api_docs/python/tf/data/Dataset.md#repeat"><code>tf.data.Dataset.repeat</code></a> transformation repeats the input data a finite (or
+<p>The <a href="../api_docs/python/tf/data/Dataset.html#repeat"><code>tf.data.Dataset.repeat</code></a> transformation repeats the input data a finite (or
 infinite) number of times; each repetition of the data is typically referred to
-as an <em>epoch</em>. The <a href="../api_docs/python/tf/data/Dataset.md#shuffle"><code>tf.data.Dataset.shuffle</code></a> transformation randomizes the
+as an <em>epoch</em>. The <a href="../api_docs/python/tf/data/Dataset.html#shuffle"><code>tf.data.Dataset.shuffle</code></a> transformation randomizes the
 order of the dataset’s examples.</p>
 <p>If the <code>repeat</code> transformation is applied before the <code>shuffle</code> transformation,
 then the epoch boundaries are blurred. That is, certain elements can be repeated
@@ -4307,7 +4307,7 @@ internal state of the <code>shuffle</code> transformation. In other words, the f
 (<code>repeat</code> before <code>shuffle</code>) provides better performance, while the latter
 (<code>shuffle</code> before <code>repeat</code>) provides stronger ordering guarantees.</p>
 <p>When possible, we recommend using the fused
-<a href="../api_docs/python/tf/contrib/data/shuffle_and_repeat.md"><code>tf.contrib.data.shuffle_and_repeat</code></a> transformation, which combines the best of
+<a href="../api_docs/python/tf/contrib/data/shuffle_and_repeat.html"><code>tf.contrib.data.shuffle_and_repeat</code></a> transformation, which combines the best of
 both worlds (good performance and strong ordering guarantees). Otherwise, we
 recommend shuffling before repeating.</p>
 <h2>Summary of Best Practices</h2>

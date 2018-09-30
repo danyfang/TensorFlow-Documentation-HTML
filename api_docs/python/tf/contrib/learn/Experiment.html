@@ -4101,10 +4101,10 @@
 <h1>tf.contrib.learn.Experiment</h1>
 <h2>Class <code>Experiment</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/learn/python/learn/experiment.py"><code>tensorflow/contrib/learn/python/learn/experiment.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.learn.md#Distributed_training_utilities">Learn (contrib) &gt; Distributed training utilities</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.learn.html#Distributed_training_utilities">Learn (contrib) &gt; Distributed training utilities</a></p>
 <p>Experiment is a class containing all information needed to train a model.</p>
 <p>THIS CLASS IS DEPRECATED. See
-<a href="https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md">contrib/learn/README.md</a>
+<a href="https://www.tensorflow.org/code/tensorflow/contrib/learn/README.html">contrib/learn/README.html</a>
 for general migration instructions.</p>
 <p>After an experiment is created (by passing an Estimator and inputs for
 training and evaluation), an Experiment instance knows how to invoke training
@@ -4147,16 +4147,16 @@ when a method is executed which requires it.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>estimator</code></b>: Object implementing Estimator interface, which could be a
-combination of <a href="../../../tf/contrib/learn/Trainable.md"><code>tf.contrib.learn.Trainable</code></a> and
-<a href="../../../tf/contrib/learn/Evaluable.md"><code>tf.contrib.learn.Evaluable</code></a> (deprecated), or
-<a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>.</li>
+combination of <a href="../../../tf/contrib/learn/Trainable.html"><code>tf.contrib.learn.Trainable</code></a> and
+<a href="../../../tf/contrib/learn/Evaluable.html"><code>tf.contrib.learn.Evaluable</code></a> (deprecated), or
+<a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>.</li>
 <li><b><code>train_input_fn</code></b>: function, returns features and labels for training.</li>
 <li><b><code>eval_input_fn</code></b>: function, returns features and labels for evaluation. If
 <code>eval_steps</code> is <code>None</code>, this should be configured only to produce for a
 finite number of batches (generally, 1 epoch over the evaluation data).</li>
 <li><b><code>eval_metrics</code></b>: <code>dict</code> of string, metric function. If <code>None</code>, default set
 is used. This should be <code>None</code> if the <code>estimator</code> is
-<a href="../../../tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>. If metrics are provided they will be
+<a href="../../../tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>. If metrics are provided they will be
 <em>appended</em> to the default set.</li>
 <li><b><code>train_steps</code></b>: Perform this many steps of training. <code>None</code>, the default,
 means train forever.</li>

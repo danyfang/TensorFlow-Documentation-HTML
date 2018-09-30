@@ -4108,7 +4108,7 @@ is an on-device model that provides one-touch replies for incoming text messages
 by suggesting contextually relevant messages. The model is built specifically for
 memory constrained devices, such as watches and phones, and has been successfully
 used in Smart Replies on Android Wear. Currently, this model is Android-specific.</p>
-<p>These pre-trained models are <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/models.md">available for download</a></p>
+<p>These pre-trained models are <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/models.html">available for download</a></p>
 <h3>Re-train Inception-V3 or MobileNet for a custom data set</h3>
 <p>These pre-trained models were trained on the <em>ImageNet</em> data set which contains
 1000 predefined classes. If these classes are not sufficient for your use case,
@@ -4124,23 +4124,23 @@ both floating point and quantized inference.</p>
 <p>A developer may choose to train a custom model using Tensorflow (see the
 <a href="../../tutorials/">TensorFlow tutorials</a> for examples of building and training
 models). If you have already written a model, the first step is to export this
-to a <a href="../../api_docs/python/tf/GraphDef.md"><code>tf.GraphDef</code></a> file. This is required because some formats do not store the
+to a <a href="../../api_docs/python/tf/GraphDef.html"><code>tf.GraphDef</code></a> file. This is required because some formats do not store the
 model structure outside the code, and we must communicate with other parts of the
 framework. See
-<a href="https://github.com/tensorflow/models/blob/master/research/slim/README.md">Exporting the Inference Graph</a>
+<a href="https://github.com/tensorflow/models/blob/master/research/slim/README.html">Exporting the Inference Graph</a>
 to create .pb file for the custom model.</p>
 <p>TensorFlow Lite currently supports a subset of TensorFlow operators. Refer to the
-<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/tf_ops_compatibility.md">TensorFlow Lite &amp; TensorFlow Compatibility Guide</a>
+<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/tf_ops_compatibility.html">TensorFlow Lite &amp; TensorFlow Compatibility Guide</a>
 for supported operators and their usage. This set of operators will continue to
 grow in future Tensorflow Lite releases.</p>
 <h2>2. Convert the model format</h2>
 <p>The model generated (or downloaded) in the previous step is a <em>standard</em>
-Tensorflow model and you should now have a .pb or .pbtxt <a href="../../api_docs/python/tf/GraphDef.md"><code>tf.GraphDef</code></a> file.
+Tensorflow model and you should now have a .pb or .pbtxt <a href="../../api_docs/python/tf/GraphDef.html"><code>tf.GraphDef</code></a> file.
 Models generated with transfer learning (re-training) or custom models must be
 converted—but, we must first freeze the graph to convert the model to the
 Tensorflow Lite format. This process uses several model formats:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/GraphDef.md"><code>tf.GraphDef</code></a> (.pb) —A protobuf that represents the TensorFlow training or
+<li><a href="../../api_docs/python/tf/GraphDef.html"><code>tf.GraphDef</code></a> (.pb) —A protobuf that represents the TensorFlow training or
 computation graph. It contains operators, tensors, and variables definitions.</li>
 <li><em>CheckPoint</em> (.ckpt) —Serialized variables from a TensorFlow graph. Since this
 does not contain a graph structure, it cannot be interpreted by itself.</li>
@@ -4163,7 +4163,7 @@ of the graph. The process of merging the checkpoint values with the graph
 structure is called <em>freezing the graph</em>.</p>
 <p>You should have a checkpoints folder or download them for a pre-trained model
 (for example,
-<a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">MobileNets</a>).</p>
+<a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.html">MobileNets</a>).</p>
 <p>To freeze the graph, use the following command (changing the arguments):</p>
 <pre><code>freeze_graph --input_graph=/tmp/mobilenet_v1_224.pb \
   --input_checkpoint=/tmp/checkpoints/mobilenet-10202.ckpt \
@@ -4196,7 +4196,7 @@ containing the model architecture. The <a href="https://storage.googleapis.com/d
 file used here is available for download. <code>output_file</code> is where the TensorFlow
 Lite model will get generated. The <code>input_type</code> and <code>inference_type</code>
 arguments should be set to <code>FLOAT</code>, unless converting a
-<a href="../../performance/quantization.md">quantized model</a>. Setting the <code>input_array</code>,
+<a href="../../performance/quantization.html">quantized model</a>. Setting the <code>input_array</code>,
 <code>output_array</code>, and <code>input_shape</code> arguments are not as straightforward. The
 easiest way to find these values is to explore the graph using Tensorboard. Reuse
 the arguments for specifying the output nodes for inference in the
@@ -4218,9 +4218,9 @@ with tf.Session() as sess:
   open(&quot;converteds_model.tflite&quot;, &quot;wb&quot;).write(tflite_model)
 </code></pre>
 <p>For usage, see the Tensorflow Optimizing Converter
-<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/toco/g3doc/cmdline_examples.md">command-line examples</a>.</p>
+<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/toco/g3doc/cmdline_examples.html">command-line examples</a>.</p>
 <p>Refer to the
-<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/tf_ops_compatibility.md">Ops compatibility guide</a>
+<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/tf_ops_compatibility.html">Ops compatibility guide</a>
 for troubleshooting help, and if that doesn’t help, please
 <a href="https://github.com/tensorflow/tensorflow/issues">file an issue</a>.</p>
 <p>The <a href="https://github.com/tensorflow/tensorflow">development repo</a> contains a tool
@@ -4242,13 +4242,13 @@ calculate outputs.</p>
 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/java/demo/app">on GitHub</a>.
 You can also download a
 <a href="http://download.tensorflow.org/deps/tflite/TfLiteCameraDemo.apk">prebuilt APK</a>.
-See the <a href="../../mobile/tflite/demo_android.md">Android Demo App</a> guide for details.</p>
-<p>The <a href="../../mobile/android_build.md">Building TensorFlow on Android</a> guide has instructions for installing TensorFlow on
+See the <a href="../../mobile/tflite/demo_android.html">Android Demo App</a> guide for details.</p>
+<p>The <a href="../../mobile/android_build.html">Building TensorFlow on Android</a> guide has instructions for installing TensorFlow on
 Android and setting up <code>bazel</code> and Android Studio.</p>
 <h3>iOS</h3>
 <p>To integrate a TensorFlow model in an iOS app, see the
-<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/ios.md">TensorFlow Lite for iOS</a>
-guide and <a href="../../mobile/tflite/demo_ios.md">iOS Demo App</a> guide.</p>
+<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/g3doc/ios.html">TensorFlow Lite for iOS</a>
+guide and <a href="../../mobile/tflite/demo_ios.html">iOS Demo App</a> guide.</p>
 <h4>Core ML support</h4>
 <p>Core ML is a machine learning framework used in Apple products. In addition to
 using Tensorflow Lite models directly in your applications, you can convert
@@ -4258,7 +4258,7 @@ devices. To use the converter, refer to the
 <a href="https://github.com/tf-coreml/tf-coreml">Tensorflow-CoreML converter documentation</a>.</p>
 <h3>Raspberry Pi</h3>
 <p>Compile Tensorflow Lite for a Raspberry Pi by following the
-<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/rpi.md">RPi build instructions</a>
+<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/rpi.html">RPi build instructions</a>
 This compiles a static library file (<code>.a</code>) used to build your app. There are
 plans for Python bindings and a demo app.</p>
 

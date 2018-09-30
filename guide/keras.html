@@ -4094,22 +4094,22 @@ research. Create new layers, loss functions, and develop state-of-the-art
 models.</li>
 </ul>
 <h2>Import tf.keras</h2>
-<p><a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> is TensorFlow’s implementation of the
+<p><a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> is TensorFlow’s implementation of the
 <a href="https://keras.io">Keras API specification</a>{:.external}. This is a high-level
 API to build and train models that includes first-class support for
 TensorFlow-specific functionality, such as <a href="#eager_execution">eager execution</a>,
-<a href="../api_docs/python/tf/data.md"><code>tf.data</code></a> pipelines, and <a href="./estimators.html">Estimators</a>.
-<a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> makes TensorFlow easier to use without sacrificing flexibility and
+<a href="../api_docs/python/tf/data.html"><code>tf.data</code></a> pipelines, and <a href="./estimators.html">Estimators</a>.
+<a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> makes TensorFlow easier to use without sacrificing flexibility and
 performance.</p>
-<p>To get started, import <a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> as part of your TensorFlow program setup:</p>
+<p>To get started, import <a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> as part of your TensorFlow program setup:</p>
 <pre><code class="language-python">import tensorflow as tf
 from tensorflow import keras
 </code></pre>
-<p><a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> can run any Keras-compatible code, but keep in mind:</p>
+<p><a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> can run any Keras-compatible code, but keep in mind:</p>
 <ul>
-<li>The <a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> version in the latest TensorFlow release might not be the same
-as the latest <code>keras</code> version from PyPI. Check <a href="../api_docs/python/tf/keras/__version__.md"><code>tf.keras.<strong>version</strong></code></a>.</li>
-<li>When <a href="#weights_only">saving a model’s weights</a>, <a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> defaults to the
+<li>The <a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> version in the latest TensorFlow release might not be the same
+as the latest <code>keras</code> version from PyPI. Check <a href="../api_docs/python/tf/keras/__version__.html"><code>tf.keras.<strong>version</strong></code></a>.</li>
+<li>When <a href="#weights_only">saving a model’s weights</a>, <a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> defaults to the
 <a href="./checkpoints.html">checkpoint format</a>. Pass <code>save_format='h5'</code> to
 use HDF5.</li>
 </ul>
@@ -4117,7 +4117,7 @@ use HDF5.</li>
 <h3>Sequential model</h3>
 <p>In Keras, you assemble <em>layers</em> to build <em>models</em>. A model is (usually) a graph
 of layers. The most common type of model is a stack of layers: the
-<a href="../api_docs/python/tf/keras/Sequential.md"><code>tf.keras.Sequential</code></a> model.</p>
+<a href="../api_docs/python/tf/keras/Sequential.html"><code>tf.keras.Sequential</code></a> model.</p>
 <p>To build a simple, fully-connected network (i.e. multi-layer perceptron):</p>
 <pre><code class="language-python">model = keras.Sequential()
 # Adds a densely-connected layer with 64 units to the model:
@@ -4128,7 +4128,7 @@ model.add(keras.layers.Dense(64, activation='relu'))
 model.add(keras.layers.Dense(10, activation='softmax'))
 </code></pre>
 <h3>Configure the layers</h3>
-<p>There are many <a href="../api_docs/python/tf/keras/layers.md"><code>tf.keras.layers</code></a> available with some common constructor
+<p>There are many <a href="../api_docs/python/tf/keras/layers.html"><code>tf.keras.layers</code></a> available with some common constructor
 parameters:</p>
 <ul>
 <li><code>activation</code>: Set the activation function for the layer. This parameter is
@@ -4141,7 +4141,7 @@ a callable object. This defaults to the <code>&quot;Glorot uniform&quot;</code> 
 that apply the layer’s weights (kernel and bias), such as L1 or L2
 regularization. By default, no regularization is applied.</li>
 </ul>
-<p>The following instantiates <a href="../api_docs/python/tf/keras/layers/Dense.md"><code>tf.keras.layers.Dense</code></a> layers using constructor
+<p>The following instantiates <a href="../api_docs/python/tf/keras/layers/Dense.html"><code>tf.keras.layers.Dense</code></a> layers using constructor
 arguments:</p>
 <pre><code class="language-python"># Create a sigmoid layer:
 layers.Dense(64, activation='sigmoid')
@@ -4166,19 +4166,19 @@ layers.Dense(64, bias_initializer=keras.initializers.constant(2.0))
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 </code></pre>
-<p><a href="../api_docs/python/tf/keras/Model.md#compile"><code>tf.keras.Model.compile</code></a> takes three important arguments:</p>
+<p><a href="../api_docs/python/tf/keras/Model.html#compile"><code>tf.keras.Model.compile</code></a> takes three important arguments:</p>
 <ul>
 <li><code>optimizer</code>: This object specifies the training procedure. Pass it optimizer
-instances from the <a href="../api_docs/python/tf/train.md"><code>tf.train</code></a> module, such as
+instances from the <a href="../api_docs/python/tf/train.html"><code>tf.train</code></a> module, such as
 <a href="/api_docs/python/tf/train/AdamOptimizer"><code>AdamOptimizer</code></a>,
 <a href="/api_docs/python/tf/train/RMSPropOptimizer"><code>RMSPropOptimizer</code></a>, or
 <a href="/api_docs/python/tf/train/GradientDescentOptimizer"><code>GradientDescentOptimizer</code></a>.</li>
 <li><code>loss</code>: The function to minimize during optimization. Common choices include
 mean square error (<code>mse</code>), <code>categorical_crossentropy</code>, and
 <code>binary_crossentropy</code>. Loss functions are specified by name or by
-passing a callable object from the <a href="../api_docs/python/tf/keras/losses.md"><code>tf.keras.losses</code></a> module.</li>
+passing a callable object from the <a href="../api_docs/python/tf/keras/losses.html"><code>tf.keras.losses</code></a> module.</li>
 <li><code>metrics</code>: Used to monitor training. These are string names or callables from
-the <a href="../api_docs/python/tf/keras/metrics.md"><code>tf.keras.metrics</code></a> module.</li>
+the <a href="../api_docs/python/tf/keras/metrics.html"><code>tf.keras.metrics</code></a> module.</li>
 </ul>
 <p>The following shows a few examples of configuring a model for training:</p>
 <pre><code class="language-python"># Configure a model for mean-squared error regression.
@@ -4202,7 +4202,7 @@ labels = np.random.random((1000, 10))
 
 model.fit(data, labels, epochs=10, batch_size=32)
 </code></pre>
-<p><a href="../api_docs/python/tf/keras/Model.md#fit"><code>tf.keras.Model.fit</code></a> takes three important arguments:</p>
+<p><a href="../api_docs/python/tf/keras/Model.html#fit"><code>tf.keras.Model.fit</code></a> takes three important arguments:</p>
 <ul>
 <li><code>epochs</code>: Training is structured into <em>epochs</em>. An epoch is one iteration over
 the entire input data (this is done in smaller batches).</li>
@@ -4229,7 +4229,7 @@ model.fit(data, labels, epochs=10, batch_size=32,
 </code></pre>
 <h3>Input tf.data datasets</h3>
 <p>Use the <a href="./datasets.html">Datasets API</a> to scale to large datasets
-or multi-device training. Pass a <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> instance to the <code>fit</code>
+or multi-device training. Pass a <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> instance to the <code>fit</code>
 method:</p>
 <pre><code class="language-python"># Instantiates a toy dataset instance:
 dataset = tf.data.Dataset.from_tensor_slices((data, labels))
@@ -4254,8 +4254,8 @@ model.fit(dataset, epochs=10, steps_per_epoch=30,
           validation_steps=3)
 </code></pre>
 <h3>Evaluate and predict</h3>
-<p>The <a href="../api_docs/python/tf/keras/Model.md#evaluate"><code>tf.keras.Model.evaluate</code></a> and <a href="../api_docs/python/tf/keras/Model.md#predict"><code>tf.keras.Model.predict</code></a> methods can use NumPy
-data and a <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a>.</p>
+<p>The <a href="../api_docs/python/tf/keras/Model.html#evaluate"><code>tf.keras.Model.evaluate</code></a> and <a href="../api_docs/python/tf/keras/Model.html#predict"><code>tf.keras.Model.predict</code></a> methods can use NumPy
+data and a <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a>.</p>
 <p>To <em>evaluate</em> the inference-mode loss and metrics for the data provided:</p>
 <pre><code class="language-python">model.evaluate(x, y, batch_size=32)
 
@@ -4269,7 +4269,7 @@ model.predict(dataset, steps=30)
 </code></pre>
 <h2>Build advanced models</h2>
 <h3>Functional API</h3>
-<p>The <a href="../api_docs/python/tf/keras/Sequential.md"><code>tf.keras.Sequential</code></a> model is a simple stack of layers that cannot
+<p>The <a href="../api_docs/python/tf/keras/Sequential.html"><code>tf.keras.Sequential</code></a> model is a simple stack of layers that cannot
 represent arbitrary models. Use the
 <a href="https://keras.io/getting-started/functional-api-guide/">Keras functional API</a>{:.external}
 to build complex model topologies such as:</p>
@@ -4282,7 +4282,7 @@ to build complex model topologies such as:</p>
 <p>Building a model with the functional API works like this:</p>
 <ol>
 <li>A layer instance is callable and returns a tensor.</li>
-<li>Input tensors and output tensors are used to define a <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a>
+<li>Input tensors and output tensors are used to define a <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a>
 instance.</li>
 <li>This model is trained just like the <code>Sequential</code> model.</li>
 </ol>
@@ -4307,7 +4307,7 @@ model.compile(optimizer=tf.train.RMSPropOptimizer(0.001),
 model.fit(data, labels, batch_size=32, epochs=5)
 </code></pre>
 <h3>Model subclassing</h3>
-<p>Build a fully-customizable model by subclassing <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a> and defining
+<p>Build a fully-customizable model by subclassing <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a> and defining
 your own forward pass. Create layers in the <code>__init__</code> method and set them as
 attributes of the class instance. Define the forward pass in the <code>call</code> method.</p>
 <p>Model subclassing is particularly useful when
@@ -4316,7 +4316,7 @@ can be written imperatively.</p>
 <p>Key Point: Use the right API for the job. While model subclassing offers
 flexibility, it comes at a cost of greater complexity and more opportunities for
 user errors. If possible, prefer the functional API.</p>
-<p>The following example shows a subclassed <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a> using a custom forward
+<p>The following example shows a subclassed <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a> using a custom forward
 pass:</p>
 <pre><code class="language-python">class MyModel(keras.Model):
 
@@ -4354,7 +4354,7 @@ model.compile(optimizer=tf.train.RMSPropOptimizer(0.001),
 model.fit(data, labels, batch_size=32, epochs=5)
 </code></pre>
 <h3>Custom layers</h3>
-<p>Create a custom layer by subclassing <a href="../api_docs/python/tf/keras/layers/Layer.md"><code>tf.keras.layers.Layer</code></a> and implementing
+<p>Create a custom layer by subclassing <a href="../api_docs/python/tf/keras/layers/Layer.html"><code>tf.keras.layers.Layer</code></a> and implementing
 the following methods:</p>
 <ul>
 <li><code>build</code>: Create the weights of the layer. Add weights with the <code>add_weight</code>
@@ -4415,18 +4415,18 @@ model.fit(data, targets, batch_size=32, epochs=5)
 <h2>Callbacks</h2>
 <p>A callback is an object passed to a model to customize and extend its behavior
 during training. You can write your own custom callback, or use the built-in
-<a href="../api_docs/python/tf/keras/callbacks.md"><code>tf.keras.callbacks</code></a> that include:</p>
+<a href="../api_docs/python/tf/keras/callbacks.html"><code>tf.keras.callbacks</code></a> that include:</p>
 <ul>
-<li><a href="../api_docs/python/tf/keras/callbacks/ModelCheckpoint.md"><code>tf.keras.callbacks.ModelCheckpoint</code></a>: Save checkpoints of your model at
+<li><a href="../api_docs/python/tf/keras/callbacks/ModelCheckpoint.html"><code>tf.keras.callbacks.ModelCheckpoint</code></a>: Save checkpoints of your model at
 regular intervals.</li>
-<li><a href="../api_docs/python/tf/keras/callbacks/LearningRateScheduler.md"><code>tf.keras.callbacks.LearningRateScheduler</code></a>: Dynamically change the learning
+<li><a href="../api_docs/python/tf/keras/callbacks/LearningRateScheduler.html"><code>tf.keras.callbacks.LearningRateScheduler</code></a>: Dynamically change the learning
 rate.</li>
-<li><a href="../api_docs/python/tf/keras/callbacks/EarlyStopping.md"><code>tf.keras.callbacks.EarlyStopping</code></a>: Interrupt training when validation
+<li><a href="../api_docs/python/tf/keras/callbacks/EarlyStopping.html"><code>tf.keras.callbacks.EarlyStopping</code></a>: Interrupt training when validation
 performance has stopped improving.</li>
-<li><a href="../api_docs/python/tf/keras/callbacks/TensorBoard.md"><code>tf.keras.callbacks.TensorBoard</code></a>: Monitor the model’s behavior using
+<li><a href="../api_docs/python/tf/keras/callbacks/TensorBoard.html"><code>tf.keras.callbacks.TensorBoard</code></a>: Monitor the model’s behavior using
 <a href="./summaries_and_tensorboard.html">TensorBoard</a>.</li>
 </ul>
-<p>To use a <a href="../api_docs/python/tf/keras/callbacks/Callback.md"><code>tf.keras.callbacks.Callback</code></a>, pass it to the model’s <code>fit</code> method:</p>
+<p>To use a <a href="../api_docs/python/tf/keras/callbacks/Callback.html"><code>tf.keras.callbacks.Callback</code></a>, pass it to the model’s <code>fit</code> method:</p>
 <pre><code class="language-python">callbacks = [
   # Interrupt training if `val_loss` stops improving for over 2 epochs
   keras.callbacks.EarlyStopping(patience=2, monitor='val_loss'),
@@ -4438,7 +4438,7 @@ model.fit(data, labels, batch_size=32, epochs=5, callbacks=callbacks,
 </code></pre>
 <h2>Save and restore</h2>
 <h3>Weights only</h3>
-<p>Save and load the weights of a model using <a href="../api_docs/python/tf/keras/Model.md#save_weights"><code>tf.keras.Model.save_weights</code></a>:</p>
+<p>Save and load the weights of a model using <a href="../api_docs/python/tf/keras/Model.html#save_weights"><code>tf.keras.Model.save_weights</code></a>:</p>
 <pre><code class="language-python"># Save weights to a TensorFlow Checkpoint file
 model.save_weights('./my_model')
 
@@ -4500,24 +4500,24 @@ model = keras.models.load_model('my_model.h5')
 <h2>Eager execution</h2>
 <p><a href="./eager.html">Eager execution</a> is an imperative programming
 environment that evaluates operations immediately. This is not required for
-Keras, but is supported by <a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> and useful for inspecting your program and
+Keras, but is supported by <a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> and useful for inspecting your program and
 debugging.</p>
-<p>All of the <a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> model-building APIs are compatible with eager execution.
+<p>All of the <a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> model-building APIs are compatible with eager execution.
 And while the <code>Sequential</code> and functional APIs can be used, eager execution
 especially benefits <em>model subclassing</em> and building <em>custom layers</em>—the APIs
 that require you to write the forward pass as code (instead of the APIs that
 create models by assembling existing layers).</p>
-<p>See the <a href="./eager.md#build_a_model">eager execution guide</a> for
-examples of using Keras models with custom training loops and <a href="../api_docs/python/tf/GradientTape.md"><code>tf.GradientTape</code></a>.</p>
+<p>See the <a href="./eager.html#build_a_model">eager execution guide</a> for
+examples of using Keras models with custom training loops and <a href="../api_docs/python/tf/GradientTape.html"><code>tf.GradientTape</code></a>.</p>
 <h2>Distribution</h2>
 <h3>Estimators</h3>
 <p>The <a href="./estimators.html">Estimators</a> API is used for training models
 for distributed environments. This targets industry use cases such as
 distributed training on large datasets that can export a model for production.</p>
-<p>A <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a> can be trained with the <a href="../api_docs/python/tf/estimator.md"><code>tf.estimator</code></a> API by converting the
-model to an <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> object with
-<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.md"><code>tf.keras.estimator.model_to_estimator</code></a>. See
-<a href="./estimators.md#creating_estimators_from_keras_models">Creating Estimators from Keras models</a>.</p>
+<p>A <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a> can be trained with the <a href="../api_docs/python/tf/estimator.html"><code>tf.estimator</code></a> API by converting the
+model to an <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> object with
+<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.html"><code>tf.keras.estimator.model_to_estimator</code></a>. See
+<a href="./estimators.html#creating_estimators_from_keras_models">Creating Estimators from Keras models</a>.</p>
 <pre><code class="language-python">model = keras.Sequential([layers.Dense(10,activation='softmax'),
                           layers.Dense(10,activation='softmax')])
 
@@ -4528,19 +4528,19 @@ model.compile(optimizer=tf.train.RMSPropOptimizer(0.001),
 estimator = keras.estimator.model_to_estimator(model)
 </code></pre>
 <p>Note: Enable <a href="./eager.html">eager execution</a> for debugging
-<a href="./premade_estimators.md#create_input_functions">Estimator input functions</a>
+<a href="./premade_estimators.html#create_input_functions">Estimator input functions</a>
 and inspecting data.</p>
 <h3>Multiple GPUs</h3>
-<p><a href="../api_docs/python/tf/keras.md"><code>tf.keras</code></a> models can run on multiple GPUs using
-<a href="../api_docs/python/tf/contrib/distribute/DistributionStrategy.md"><code>tf.contrib.distribute.DistributionStrategy</code></a>. This API provides distributed
+<p><a href="../api_docs/python/tf/keras.html"><code>tf.keras</code></a> models can run on multiple GPUs using
+<a href="../api_docs/python/tf/contrib/distribute/DistributionStrategy.html"><code>tf.contrib.distribute.DistributionStrategy</code></a>. This API provides distributed
 training on multiple GPUs with almost no changes to existing code.</p>
-<p>Currently, <a href="../api_docs/python/tf/contrib/distribute/MirroredStrategy.md"><code>tf.contrib.distribute.MirroredStrategy</code></a> is the only supported
+<p>Currently, <a href="../api_docs/python/tf/contrib/distribute/MirroredStrategy.html"><code>tf.contrib.distribute.MirroredStrategy</code></a> is the only supported
 distribution strategy. <code>MirroredStrategy</code> does in-graph replication with
 synchronous training using all-reduce on a single machine. To use
-<code>DistributionStrategy</code> with Keras, convert the <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a> to a
-<a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> with <a href="../api_docs/python/tf/keras/estimator/model_to_estimator.md"><code>tf.keras.estimator.model_to_estimator</code></a>, then
+<code>DistributionStrategy</code> with Keras, convert the <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a> to a
+<a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> with <a href="../api_docs/python/tf/keras/estimator/model_to_estimator.html"><code>tf.keras.estimator.model_to_estimator</code></a>, then
 train the estimator</p>
-<p>The following example distributes a <a href="../api_docs/python/tf/keras/Model.md"><code>tf.keras.Model</code></a> across multiple GPUs on a
+<p>The following example distributes a <a href="../api_docs/python/tf/keras/Model.html"><code>tf.keras.Model</code></a> across multiple GPUs on a
 single machine.</p>
 <p>First, define a simple model:</p>
 <pre><code class="language-python">model = keras.Sequential()
@@ -4552,7 +4552,7 @@ optimizer = tf.train.GradientDescentOptimizer(0.2)
 model.compile(loss='binary_crossentropy', optimizer=optimizer)
 model.summary()
 </code></pre>
-<p>Define an <em>input pipeline</em>. The <code>input_fn</code> returns a <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> object
+<p>Define an <em>input pipeline</em>. The <code>input_fn</code> returns a <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> object
 used to distribute the data across multiple devices—with each device processing
 a slice of the input batch.</p>
 <pre><code class="language-python">def input_fn():
@@ -4564,14 +4564,14 @@ a slice of the input batch.</p>
   dataset = dataset.batch(32)
   return dataset
 </code></pre>
-<p>Next, create a <a href="../api_docs/python/tf/estimator/RunConfig.md"><code>tf.estimator.RunConfig</code></a> and set the <code>train_distribute</code> argument
-to the <a href="../api_docs/python/tf/contrib/distribute/MirroredStrategy.md"><code>tf.contrib.distribute.MirroredStrategy</code></a> instance. When creating
+<p>Next, create a <a href="../api_docs/python/tf/estimator/RunConfig.html"><code>tf.estimator.RunConfig</code></a> and set the <code>train_distribute</code> argument
+to the <a href="../api_docs/python/tf/contrib/distribute/MirroredStrategy.html"><code>tf.contrib.distribute.MirroredStrategy</code></a> instance. When creating
 <code>MirroredStrategy</code>, you can specify a list of devices or set the <code>num_gpus</code>
 argument. The default uses all available GPUs, like the following:</p>
 <pre><code class="language-python">strategy = tf.contrib.distribute.MirroredStrategy()
 config = tf.estimator.RunConfig(train_distribute=strategy)
 </code></pre>
-<p>Convert the Keras model to a <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> instance:</p>
+<p>Convert the Keras model to a <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> instance:</p>
 <pre><code class="language-python">keras_estimator = keras.estimator.model_to_estimator(
   keras_model=model,
   config=config,

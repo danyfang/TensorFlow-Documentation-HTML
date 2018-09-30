@@ -4099,18 +4099,18 @@
 <p>Evaluates the model at the given checkpoint path.</p>
 <p>During a single evaluation, the <code>eval_ops</code> is run until the session is
 interrupted or requested to finish. This is typically requested via a
-<a href="../../../tf/contrib/training/StopAfterNEvalsHook.md"><code>tf.contrib.training.StopAfterNEvalsHook</code></a> which results in <code>eval_ops</code> running
+<a href="../../../tf/contrib/training/StopAfterNEvalsHook.html"><code>tf.contrib.training.StopAfterNEvalsHook</code></a> which results in <code>eval_ops</code> running
 the requested number of times.</p>
 <p>Optionally, a user can pass in <code>final_ops</code>, a single <code>Tensor</code>, a list of
 <code>Tensors</code> or a dictionary from names to <code>Tensors</code>. The <code>final_ops</code> is
 evaluated a single time after <code>eval_ops</code> has finished running and the fetched
 values of <code>final_ops</code> are returned. If <code>final_ops</code> is left as <code>None</code>, then
 <code>None</code> is returned.</p>
-<p>One may also consider using a <a href="../../../tf/contrib/training/SummaryAtEndHook.md"><code>tf.contrib.training.SummaryAtEndHook</code></a> to record
+<p>One may also consider using a <a href="../../../tf/contrib/training/SummaryAtEndHook.html"><code>tf.contrib.training.SummaryAtEndHook</code></a> to record
 summaries after the <code>eval_ops</code> have run. If <code>eval_ops</code> is <code>None</code>, the
 summaries run immediately after the model checkpoint has been restored.</p>
 <p>Note that <code>evaluate_once</code> creates a local variable used to track the number of
-evaluations run via <a href="../../../tf/contrib/training/get_or_create_eval_step.md"><code>tf.contrib.training.get_or_create_eval_step</code></a>.
+evaluations run via <a href="../../../tf/contrib/training/get_or_create_eval_step.html"><code>tf.contrib.training.get_or_create_eval_step</code></a>.
 Consequently, if a custom local init op is provided via a <code>scaffold</code>, the
 caller should ensure that the local init op also initializes the eval step.</p>
 <h4>Args:</h4>
@@ -4123,14 +4123,14 @@ to restore the checkpoint. If you supply a custom init_fn, then it must
 also take care of restoring the model from its checkpoint.</li>
 <li><b><code>eval_ops</code></b>: A single <code>Tensor</code>, a list of <code>Tensors</code> or a dictionary of names
 to <code>Tensors</code>, which is run until the session is requested to stop,
-commonly done by a <a href="../../../tf/contrib/training/StopAfterNEvalsHook.md"><code>tf.contrib.training.StopAfterNEvalsHook</code></a>.</li>
+commonly done by a <a href="../../../tf/contrib/training/StopAfterNEvalsHook.html"><code>tf.contrib.training.StopAfterNEvalsHook</code></a>.</li>
 <li><b><code>feed_dict</code></b>: The feed dictionary to use when executing the <code>eval_ops</code>.</li>
 <li><b><code>final_ops</code></b>: A single <code>Tensor</code>, a list of <code>Tensors</code> or a dictionary of names
 to <code>Tensors</code>.</li>
 <li><b><code>final_ops_feed_dict</code></b>: A feed dictionary to use when evaluating <code>final_ops</code>.</li>
-<li><b><code>hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.md"><code>tf.train.SessionRunHook</code></a> callbacks which are run inside the
+<li><b><code>hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.html"><code>tf.train.SessionRunHook</code></a> callbacks which are run inside the
 evaluation loop.</li>
-<li><b><code>config</code></b>: An instance of <a href="../../../tf/ConfigProto.md"><code>tf.ConfigProto</code></a> that will be used to
+<li><b><code>config</code></b>: An instance of <a href="../../../tf/ConfigProto.html"><code>tf.ConfigProto</code></a> that will be used to
 configure the <code>Session</code>. If left as <code>None</code>, the default will be used.</li>
 </ul>
 <h4>Returns:</h4>

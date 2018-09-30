@@ -4110,9 +4110,9 @@ feature. <code>TrainEvalFeatures.TIMES</code> and <code>TrainEvalFeatures.VALUES
 required; <code>VALUES</code> may be repeated to indicate a multivariate series.</li>
 <li><b><code>column_dtypes</code></b>: If provided, must be a list with the same length as
 <code>column_names</code>, indicating dtypes for each column. Defaults to
-<a href="../../../tf/int64.md"><code>tf.int64</code></a> for <code>TrainEvalFeatures.TIMES</code> and <a href="../../../tf/float32.md"><code>tf.float32</code></a> for
+<a href="../../../tf/int64.html"><code>tf.int64</code></a> for <code>TrainEvalFeatures.TIMES</code> and <a href="../../../tf/float32.html"><code>tf.float32</code></a> for
 everything else.</li>
-<li><b><code>skip_header_lines</code></b>: Passed on to <a href="../../../tf/TextLineReader.md"><code>tf.TextLineReader</code></a>; skips this number of
+<li><b><code>skip_header_lines</code></b>: Passed on to <a href="../../../tf/TextLineReader.html"><code>tf.TextLineReader</code></a>; skips this number of
 lines at the beginning of each file.</li>
 <li><b><code>read_num_records_hint</code></b>: When not reading a full dataset, indicates the
 number of records to parse/transfer in a single chunk (for
@@ -4142,7 +4142,7 @@ possible if an epoch of data contains fewer records.</li>
 <h3 id="read"><code>read</code></h3>
 <pre><code class="language-python">read()
 </code></pre>
-<p>Reads a chunk of data from the <a href="../../../tf/ReaderBase.md"><code>tf.ReaderBase</code></a> for later re-chunking.</p>
+<p>Reads a chunk of data from the <a href="../../../tf/ReaderBase.html"><code>tf.ReaderBase</code></a> for later re-chunking.</p>
 <h3 id="read_full"><code>read_full</code></h3>
 <pre><code class="language-python">read_full()
 </code></pre>

@@ -4095,10 +4095,10 @@
 <p>This function allows expressing computations in a TensorFlow graph as
 Python functions. In particular, it wraps a Python function <code>func</code>
 in a once-differentiable TensorFlow operation that executes it with eager
-exeuction enabled. As a consequence, <a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> makes it
+exeuction enabled. As a consequence, <a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> makes it
 possible to express control flow using Python constructs (<code>if</code>, <code>while</code>,
-<code>for</code>, etc.), instead of TensorFlow control flow constructs (<a href="../../../tf/cond.md"><code>tf.cond</code></a>,
-<a href="../../../tf/while_loop.md"><code>tf.while_loop</code></a>). For example, you might use <a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> to
+<code>for</code>, etc.), instead of TensorFlow control flow constructs (<a href="../../../tf/cond.html"><code>tf.cond</code></a>,
+<a href="../../../tf/while_loop.html"><code>tf.while_loop</code></a>). For example, you might use <a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> to
 implement the log huber function:</p>
 <pre><code class="language-python">def log_huber(x, m):
   if tf.abs(x) &lt;= m:
@@ -4118,20 +4118,20 @@ with tf.Session() as sess:
   # `dy_dx` evaluates to 2.0.
   y, dy_dx = sess.run([y, dy_dx], feed_dict={x: 1.0, m: 2.0})
 </code></pre>
-<p>You can also use <a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> to debug your models at runtime
+<p>You can also use <a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> to debug your models at runtime
 using Python tools, i.e., you can isolate portions of your code that
 you want to debug, wrap them in Python functions and insert <code>pdb</code> tracepoints
 or print statements as desired, and wrap those functions in
-<a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a>.</p>
-<p>For more information on eager execution, see <a href="../../../../../guide/eager.md">Eager Execution</a>.</p>
-<p><a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> is similar in spirit to <a href="../../../tf/py_func.md"><code>tf.py_func</code></a>, but unlike
+<a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a>.</p>
+<p>For more information on eager execution, see <a href="../../../../../guide/eager.html">Eager Execution</a>.</p>
+<p><a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> is similar in spirit to <a href="../../../tf/py_func.html"><code>tf.py_func</code></a>, but unlike
 the latter, the former lets you use TensorFlow operations in the wrapped
-Python function. In particular, while <a href="../../../tf/py_func.md"><code>tf.py_func</code></a> only runs on CPUs and
+Python function. In particular, while <a href="../../../tf/py_func.html"><code>tf.py_func</code></a> only runs on CPUs and
 wraps functions that take NumPy arrays as inputs and return NumPy arrays as
-outputs, <a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> can be placed on GPUs and wraps functions
+outputs, <a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> can be placed on GPUs and wraps functions
 that take Tensors as inputs, execute TensorFlow operations in their bodies,
 and return Tensors as outputs.</p>
-<p>Like <a href="../../../tf/py_func.md"><code>tf.py_func</code></a>, <a href="../../../tf/contrib/eager/py_func.md"><code>tf.contrib.eager.py_func</code></a> has the following limitations
+<p>Like <a href="../../../tf/py_func.html"><code>tf.py_func</code></a>, <a href="../../../tf/contrib/eager/py_func.html"><code>tf.contrib.eager.py_func</code></a> has the following limitations
 with respect to serialization and distribution:</p>
 <ul>
 <li>
@@ -4142,7 +4142,7 @@ serialize your model and restore it in a different environment.</p>
 <li>
 <p>The operation must run in the same address space as the Python program
 that calls <code>tf.contrib.eager.py_func()</code>. If you are using distributed
-TensorFlow, you must run a <a href="../../../tf/train/Server.md"><code>tf.train.Server</code></a> in the same process as the
+TensorFlow, you must run a <a href="../../../tf/train/Server.html"><code>tf.train.Server</code></a> in the same process as the
 program that calls <code>tf.contrib.eager.py_func()</code> and you must pin the created
 operation to a device in that server (e.g. using <code>with tf.device():</code>).</p>
 </li>
@@ -4150,7 +4150,7 @@ operation to a device in that server (e.g. using <code>with tf.device():</code>)
 <h4>Args:</h4>
 <ul>
 <li><b><code>func</code></b>: A Python function which accepts a list of <code>Tensor</code> objects
-having element types that match the corresponding <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> objects
+having element types that match the corresponding <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> objects
 in <code>inp</code> and returns a list of <code>Tensor</code> objects (or a single
 <code>Tensor</code>, or <code>None</code>) having element types that match the
 corresponding values in <code>Tout</code>.</li>

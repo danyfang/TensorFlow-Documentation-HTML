@@ -4135,12 +4135,12 @@
 <h1>tf.Tensor</h1>
 <h2>Class <code>Tensor</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/ops.py"><code>tensorflow/python/framework/ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/framework.md#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
+<p>See the guide: <a href="../../../api_guides/python/framework.html#Core_graph_data_structures">Building Graphs &gt; Core graph data structures</a></p>
 <p>Represents one of the outputs of an <code>Operation</code>.</p>
 <p>A <code>Tensor</code> is a symbolic handle to one of the outputs of an
 <code>Operation</code>. It does not hold the values of that operation’s output,
 but instead provides a means of computing those values in a
-TensorFlow <a href="../tf/Session.md"><code>tf.Session</code></a>.</p>
+TensorFlow <a href="../tf/Session.html"><code>tf.Session</code></a>.</p>
 <p>This class has two primary purposes:</p>
 <ol>
 <li>
@@ -4152,7 +4152,7 @@ large, multi-step computation.</p>
 <li>
 <p>After the graph has been launched in a session, the value of the
 <code>Tensor</code> can be computed by passing it to
-<a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>.
+<a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>.
 <code>t.eval()</code> is a shortcut for calling
 <code>tf.get_default_session().run(t)</code>.</p>
 </li>
@@ -4186,7 +4186,7 @@ result = sess.run(e)
 <p>Returns the <code>TensorShape</code> that represents the shape of this tensor.</p>
 <p>The shape is computed using shape inference functions that are
 registered in the Op for each <code>Operation</code>.  See
-<a href="../tf/TensorShape.md"><code>tf.TensorShape</code></a>
+<a href="../tf/TensorShape.html"><code>tf.TensorShape</code></a>
 for more details of what a shape represents.</p>
 <p>The inferred shape of a tensor is used to provide shape
 information without having to launch the graph in a session. This
@@ -4419,7 +4419,7 @@ print(foo[tf.newaxis].eval())  # =&gt; [[[1,2,3], [4,5,6], [7,8,9]]]
 </code></pre>
 <p>Notes:</p>
 <ul>
-<li><a href="../tf/newaxis.md"><code>tf.newaxis</code></a> is <code>None</code> as in NumPy.</li>
+<li><a href="../tf/newaxis.html"><code>tf.newaxis</code></a> is <code>None</code> as in NumPy.</li>
 <li>An implicit ellipsis is placed at the end of the <code>slice_spec</code></li>
 <li>NumPy advanced indexing is currently not supported.</li>
 </ul>
@@ -5018,7 +5018,7 @@ available, or <code>session</code> must be specified explicitly.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>feed_dict</code></b>: A dictionary that maps <code>Tensor</code> objects to feed values.
-See <a href="../tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> for a
+See <a href="../tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> for a
 description of the valid feed values.</li>
 <li><b><code>session</code></b>: (Optional.) The <code>Session</code> to be used to evaluate this tensor. If
 none, the default session will be used.</li>

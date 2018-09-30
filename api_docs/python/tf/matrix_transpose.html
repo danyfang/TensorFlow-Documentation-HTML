@@ -4095,7 +4095,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/array_ops.py"><code>tensorflow/python/ops/array_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/math_ops.md#Matrix_Math_Functions">Math &gt; Matrix Math Functions</a></p>
+<p>See the guide: <a href="../../../api_guides/python/math_ops.html#Matrix_Math_Functions">Math &gt; Matrix Math Functions</a></p>
 <p>Transposes last two dimensions of tensor <code>a</code>.</p>
 <p>For example:</p>
 <pre><code class="language-python">x = tf.constant([[1, 2, 3], [4, 5, 6]])
@@ -4113,7 +4113,7 @@ tf.matrix_transpose(x, conjugate=True)  # [[1 - 1j, 4 - 4j],
 # x.shape is [1, 2, 3, 4]
 # tf.matrix_transpose(x) is shape [1, 2, 4, 3]
 </code></pre>
-<p>Note that <a href="../tf/matmul.md"><code>tf.matmul</code></a> provides kwargs allowing for transpose of arguments.
+<p>Note that <a href="../tf/matmul.html"><code>tf.matmul</code></a> provides kwargs allowing for transpose of arguments.
 This is done with minimal cost, and is preferable to using this function. E.g.</p>
 <pre><code class="language-python"># Good!  Transpose is taken at minimal additional cost.
 tf.matmul(matrix, b, transpose_b=True)

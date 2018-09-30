@@ -4091,12 +4091,12 @@
 <h2>Class <code>OutOfRangeError</code></h2>
 <p>Inherits From: <a href="../../tf/OpError.html"><code>OpError</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/errors_impl.py"><code>tensorflow/python/framework/errors_impl.py</code></a>.</p>
-<p>See the guides: <a href="../../../../api_guides/python/reading_data.md#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a>, <a href="../../../../api_guides/python/client.md#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
+<p>See the guides: <a href="../../../../api_guides/python/reading_data.html#_QueueRunner_">Reading data &gt; <code>QueueRunner</code></a>, <a href="../../../../api_guides/python/client.html#Error_classes_and_convenience_functions">Running Graphs &gt; Error classes and convenience functions</a></p>
 <p>Raised when an operation iterates past the valid input range.</p>
 <p>This exception is raised in “end-of-file” conditions, such as when a
-<a href="../../tf/FIFOQueue.md#dequeue"><code>tf.QueueBase.dequeue</code></a>
+<a href="../../tf/FIFOQueue.html#dequeue"><code>tf.QueueBase.dequeue</code></a>
 operation is blocked on an empty queue, and a
-<a href="../../tf/FIFOQueue.md#close"><code>tf.QueueBase.close</code></a>
+<a href="../../tf/FIFOQueue.html#close"><code>tf.QueueBase.close</code></a>
 operation executes.</p>
 <h2>Properties</h2>
 <h3 id="error_code"><code>error_code</code></h3>
@@ -4109,9 +4109,9 @@ operation executes.</p>
 <p>The operation that failed, if known.</p>
 <p><em>N.B.</em> If the failed op was synthesized at runtime, e.g. a <code>Send</code>
 or <code>Recv</code> op, there will be no corresponding
-<a href="../../tf/Operation.md"><code>tf.Operation</code></a>
+<a href="../../tf/Operation.html"><code>tf.Operation</code></a>
 object.  In that case, this will return <code>None</code>, and you should
-instead use the <a href="../../tf/OpError.md#node_def"><code>tf.OpError.node_def</code></a> to
+instead use the <a href="../../tf/OpError.html#node_def"><code>tf.OpError.node_def</code></a> to
 discover information about the op.</p>
 <h4>Returns:</h4>
 <p>The <code>Operation</code> that failed, or None.</p>

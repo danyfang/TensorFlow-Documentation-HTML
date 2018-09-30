@@ -4122,10 +4122,10 @@
 <h1>tf.train.Supervisor</h1>
 <h2>Class <code>Supervisor</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/supervisor.py"><code>tensorflow/python/training/supervisor.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>A training helper that checkpoints models and computes summaries.</p>
 <p>This class is deprecated. Please use
-<a href="../../tf/train/MonitoredTrainingSession.md"><code>tf.train.MonitoredTrainingSession</code></a> instead.</p>
+<a href="../../tf/train/MonitoredTrainingSession.html"><code>tf.train.MonitoredTrainingSession</code></a> instead.</p>
 <p>The Supervisor is a small wrapper around a <code>Coordinator</code>, a <code>Saver</code>,
 and a <code>SessionManager</code> that takes care of common needs of TensorFlow
 training programs.</p>
@@ -4150,7 +4150,7 @@ After an exception is raised, <code>should_stop()</code> returns <code>True</cod
 the training loop should also stop.  This is why the training loop has to
 check for <code>sv.should_stop()</code>.</p>
 <p>Exceptions that indicate that the training inputs have been exhausted,
-<a href="../../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a>, also cause <code>sv.should_stop()</code> to return <code>True</code>
+<a href="../../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a>, also cause <code>sv.should_stop()</code> to return <code>True</code>
 but are not re-raised from the <code>with</code> block: they indicate a normal
 termination.</p>
 <h4>Use for multiple replicas</h4>
@@ -4198,14 +4198,14 @@ following values for the --master flag:</p>
 <li>
 <p>Specifying <code>'local'</code> requests a session that uses the RPC-based
 “Master interface” to run TensorFlow programs. See
-<a href="../../tf/train/Server.md#create_local_server"><code>tf.train.Server.create_local_server</code></a> for
+<a href="../../tf/train/Server.html#create_local_server"><code>tf.train.Server.create_local_server</code></a> for
 details.</p>
 </li>
 <li>
 <p>Specifying <code>'grpc://hostname:port'</code> requests a session that uses
 the RPC interface to a specific host, and also allows the in-process
 master to access remote tensorflow workers. Often, it is
-appropriate to pass <code>server.target</code> (for some <a href="../../tf/train/Server.md"><code>tf.train.Server</code></a>
+appropriate to pass <code>server.target</code> (for some <a href="../../tf/train/Server.html"><code>tf.train.Server</code></a>
 named `server).</p>
 </li>
 </ul>
@@ -4453,7 +4453,7 @@ and <code>start_standard_service</code> is set to True, also call the session
 manager to start the standard services.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.md"><code>tf.Session</code></a>
+<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.html"><code>tf.Session</code></a>
 constructor for how this is interpreted.</li>
 <li><b><code>config</code></b>: Optional ConfigProto proto used to configure the session,
 which is passed as-is to create the session.</li>
@@ -4509,7 +4509,7 @@ list of queue runners gathered in the graph under the key
 </ul>
 <h4>Eager Compatibility</h4>
 <p>Queues are not compatible with eager execution. To ingest data when eager
-execution is enabled, use the <a href="../../tf/data.md"><code>tf.data</code></a> API.</p>
+execution is enabled, use the <a href="../../tf/data.html"><code>tf.data</code></a> API.</p>
 <h3 id="StartStandardServices"><code>StartStandardServices</code></h3>
 <pre><code class="language-python">StartStandardServices(sess)
 </code></pre>
@@ -4653,7 +4653,7 @@ raised again from the <code>with</code> block: they indicate a clean termination
 the training loop and are considered normal termination.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.md"><code>tf.Session</code></a>
+<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.html"><code>tf.Session</code></a>
 constructor for how this is interpreted.</li>
 <li><b><code>config</code></b>: Optional <code>ConfigProto</code> proto used to configure the session.
 Passed as-is to create the session.</li>
@@ -4682,7 +4682,7 @@ and <code>start_standard_service</code> is set to True, also call the session
 manager to start the standard services.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.md"><code>tf.Session</code></a>
+<li><b><code>master</code></b>: name of the TensorFlow master to use.  See the <a href="../../tf/Session.html"><code>tf.Session</code></a>
 constructor for how this is interpreted.</li>
 <li><b><code>config</code></b>: Optional ConfigProto proto used to configure the session,
 which is passed as-is to create the session.</li>
@@ -4738,7 +4738,7 @@ list of queue runners gathered in the graph under the key
 </ul>
 <h4>Eager Compatibility</h4>
 <p>Queues are not compatible with eager execution. To ingest data when eager
-execution is enabled, use the <a href="../../tf/data.md"><code>tf.data</code></a> API.</p>
+execution is enabled, use the <a href="../../tf/data.html"><code>tf.data</code></a> API.</p>
 <h3 id="start_standard_services"><code>start_standard_services</code></h3>
 <pre><code class="language-python">start_standard_services(sess)
 </code></pre>

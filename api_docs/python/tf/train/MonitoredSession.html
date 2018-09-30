@@ -4094,7 +4094,7 @@
 <h1>tf.train.MonitoredSession</h1>
 <h2>Class <code>MonitoredSession</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/monitored_session.py"><code>tensorflow/python/training/monitored_session.py</code></a>.</p>
-<p>See the guides: <a href="../../../../api_guides/python/threading_and_queues.md#Queue_usage_overview">Threading and Queues &gt; Queue usage overview</a>, <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guides: <a href="../../../../api_guides/python/threading_and_queues.html#Queue_usage_overview">Threading and Queues &gt; Queue usage overview</a>, <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Session-like object that handles initialization, recovery and hooks.</p>
 <p>Example usage:</p>
 <pre><code class="language-python">saver_hook = CheckpointSaverHook(...)
@@ -4131,7 +4131,7 @@ reinitializes the session before executing the run() call again</li>
 <li>suppresses <code>OutOfRange</code> error which indicates that all inputs have been
 processed if the monitored_session is used as a context</li>
 </ul>
-<p>How to set <a href="../../tf/Session.md"><code>tf.Session</code></a> arguments:</p>
+<p>How to set <a href="../../tf/Session.html"><code>tf.Session</code></a> arguments:</p>
 <ul>
 <li>In most cases you can set session arguments as follows:</li>
 </ul>
@@ -4145,7 +4145,7 @@ processed if the monitored_session is used as a context</li>
   session_creator=WorkerSessionCreator(master=..., config=...))
 </code></pre>
 <p>See <code>MonitoredTrainingSession</code> for an example usage based on chief or worker.</p>
-<p>Note: This is not a <a href="../../tf/Session.md"><code>tf.Session</code></a>. For example, it cannot do following:</p>
+<p>Note: This is not a <a href="../../tf/Session.html"><code>tf.Session</code></a>. For example, it cannot do following:</p>
 <ul>
 <li>it cannot be set as default session.</li>
 <li>it cannot be sent to saver.save.</li>

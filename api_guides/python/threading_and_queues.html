@@ -4082,9 +4082,9 @@
       <h1>Threading and Queues</h1>
 <p>Note: In versions of TensorFlow before 1.2, we recommended using multi-threaded,
 queue-based input pipelines for performance. Beginning with TensorFlow 1.4,
-however, we recommend using the <a href="../../api_docs/python/tf/data.md"><code>tf.data</code></a> module instead. (See
-<a href="../../guide/datasets.md">Datasets</a> for details. In TensorFlow 1.2 and 1.3, the module was
-called <a href="../../api_docs/python/tf/contrib/data.md"><code>tf.contrib.data</code></a>.) The <a href="../../api_docs/python/tf/data.md"><code>tf.data</code></a> module offers an easier-to-use
+however, we recommend using the <a href="../../api_docs/python/tf/data.html"><code>tf.data</code></a> module instead. (See
+<a href="../../guide/datasets.html">Datasets</a> for details. In TensorFlow 1.2 and 1.3, the module was
+called <a href="../../api_docs/python/tf/contrib/data.html"><code>tf.contrib.data</code></a>.) The <a href="../../api_docs/python/tf/data.html"><code>tf.data</code></a> module offers an easier-to-use
 interface for constructing efficient input pipelines. Furthermore, we’ve stopped
 developing the old multi-threaded, queue-based input pipelines.  We’ve retained
 the documentation in this file to help developers who are still maintaining
@@ -4102,7 +4102,7 @@ longer holds, the queue will unblock the step and allow execution to proceed.</p
 <p>TensorFlow implements several classes of queue. The principal difference between
 these classes is the order that items are removed from the queue.  To get a feel
 for queues, let’s consider a simple example. We will create a “first in, first
-out” queue (<a href="../../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a>) and fill it with zeros.  Then we’ll construct a
+out” queue (<a href="../../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a>) and fill it with zeros.  Then we’ll construct a
 graph that takes an item off the queue, adds one to that item, and puts it back
 on the end of the queue. Slowly, the numbers on the queue increase.</p>
 <div style="width:70%; margin:auto; margin-bottom:10px; margin-top:20px;">
@@ -4118,8 +4118,8 @@ as the queue. Incompatible device placement directives will be ignored when
 creating these operations.</p>
 <p>Now that you have a bit of a feel for queues, let’s dive into the details…</p>
 <h2 id="Queue_usage_overview">Queue usage overview</h2>
-<p>Queues, such as <a href="../../api_docs/python/tf/FIFOQueue.md"><code>tf.FIFOQueue</code></a>
-and <a href="../../api_docs/python/tf/RandomShuffleQueue.md"><code>tf.RandomShuffleQueue</code></a>,
+<p>Queues, such as <a href="../../api_docs/python/tf/FIFOQueue.html"><code>tf.FIFOQueue</code></a>
+and <a href="../../api_docs/python/tf/RandomShuffleQueue.html"><code>tf.RandomShuffleQueue</code></a>,
 are important TensorFlow objects that aid in computing tensors asynchronously
 in a graph.</p>
 <p>For example, a typical queue-based input pipeline uses a <code>RandomShuffleQueue</code> to
@@ -4129,11 +4129,11 @@ prepare inputs for training a model as follows:</p>
 <li>A training thread executes a training op that dequeues mini-batches from the
 queue</li>
 </ul>
-<p>We recommend using the <a href="../../api_docs/python/tf/data/Dataset.md#shuffle"><code>shuffle</code></a>
-and <a href="../../api_docs/python/tf/data/Dataset.md#batch"><code>batch</code></a> methods of a
-<a href="../../api_docs/python/tf/data/Dataset.md"><code>Dataset</code></a> to accomplish this. However, if you’d prefer
+<p>We recommend using the <a href="../../api_docs/python/tf/data/Dataset.html#shuffle"><code>shuffle</code></a>
+and <a href="../../api_docs/python/tf/data/Dataset.html#batch"><code>batch</code></a> methods of a
+<a href="../../api_docs/python/tf/data/Dataset.html"><code>Dataset</code></a> to accomplish this. However, if you’d prefer
 to use a queue-based version instead, you can find a full implementation in the
-<a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a> function.</p>
+<a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a> function.</p>
 <p>For demonstration purposes a simplified implementation is given below.</p>
 <p>This function takes a source tensor, a capacity, and a batch size as arguments
 and returns a tensor that dequeues a shuffled batch when executed.</p>
@@ -4152,14 +4152,14 @@ and returns a tensor that dequeues a shuffled batch when executed.</p>
   qr = tf.train.QueueRunner(queue, [enqueue] * num_threads)
 
   # Register the queue runner so it can be found and started by
-  # &lt;a href=&quot;../../api_docs/python/tf/train/start_queue_runners.md&quot;&gt;&lt;code&gt;tf.train.start_queue_runners&lt;/code&gt;&lt;/a&gt; later (the threads are not launched yet).
+  # &lt;a href=&quot;../../api_docs/python/tf/train/start_queue_runners.html&quot;&gt;&lt;code&gt;tf.train.start_queue_runners&lt;/code&gt;&lt;/a&gt; later (the threads are not launched yet).
   tf.train.add_queue_runner(qr)
 
   # Create an op to dequeue a batch
   return queue.dequeue_many(batch_size)
 </code></pre>
-<p>Once started by <a href="../../api_docs/python/tf/train/start_queue_runners.md"><code>tf.train.start_queue_runners</code></a>, or indirectly through
-<a href="../../api_docs/python/tf/train/MonitoredSession.md"><code>tf.train.MonitoredSession</code></a>, the <code>QueueRunner</code> will launch the
+<p>Once started by <a href="../../api_docs/python/tf/train/start_queue_runners.html"><code>tf.train.start_queue_runners</code></a>, or indirectly through
+<a href="../../api_docs/python/tf/train/MonitoredSession.html"><code>tf.train.MonitoredSession</code></a>, the <code>QueueRunner</code> will launch the
 threads in the background to fill the queue. Meanwhile the main thread will
 execute the <code>dequeue_many</code> op to pull data from it. Note how these ops do not
 depend on each other, except indirectly through the internal state of the queue.</p>
@@ -4185,7 +4185,7 @@ with tf.train.MonitoredSession() as sess:
 ...
 </code></pre>
 <p>For most use cases, the automatic thread startup and management provided
-by <a href="../../api_docs/python/tf/train/MonitoredSession.md"><code>tf.train.MonitoredSession</code></a> is sufficient. In the rare case that it is not,
+by <a href="../../api_docs/python/tf/train/MonitoredSession.html"><code>tf.train.MonitoredSession</code></a> is sufficient. In the rare case that it is not,
 TensorFlow provides tools for manually managing your threads and queues.</p>
 <h2 id="Manual_Thread_Management">Manual Thread Management</h2>
 <p>As we have seen, the TensorFlow <code>Session</code> object is multithreaded and
@@ -4195,20 +4195,20 @@ easy to implement a Python program that drives threads as required.  All
 threads must be able to stop together, exceptions must be caught and
 reported, and queues must be properly closed when stopping.</p>
 <p>TensorFlow provides two classes to help:
-<a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a> and
-<a href="../../api_docs/python/tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a>. These two classes
+<a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a> and
+<a href="../../api_docs/python/tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a>. These two classes
 are designed to be used together. The <code>Coordinator</code> class helps multiple threads
 stop together and report exceptions to a program that waits for them to stop.
 The <code>QueueRunner</code> class is used to create a number of threads cooperating to
 enqueue tensors in the same queue.</p>
 <h3>Coordinator</h3>
-<p>The <a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a> class manages background threads in a TensorFlow
+<p>The <a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a> class manages background threads in a TensorFlow
 program and helps multiple threads stop together.</p>
 <p>Its key methods are:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/train/Coordinator.md#should_stop"><code>tf.train.Coordinator.should_stop</code></a>: returns <code>True</code> if the threads should stop.</li>
-<li><a href="../../api_docs/python/tf/train/Coordinator.md#request_stop"><code>tf.train.Coordinator.request_stop</code></a>: requests that threads should stop.</li>
-<li><a href="../../api_docs/python/tf/train/Coordinator.md#join"><code>tf.train.Coordinator.join</code></a>: waits until the specified threads have stopped.</li>
+<li><a href="../../api_docs/python/tf/train/Coordinator.html#should_stop"><code>tf.train.Coordinator.should_stop</code></a>: returns <code>True</code> if the threads should stop.</li>
+<li><a href="../../api_docs/python/tf/train/Coordinator.html#request_stop"><code>tf.train.Coordinator.request_stop</code></a>: requests that threads should stop.</li>
+<li><a href="../../api_docs/python/tf/train/Coordinator.html#join"><code>tf.train.Coordinator.join</code></a>: waits until the specified threads have stopped.</li>
 </ul>
 <p>You first create a <code>Coordinator</code> object, and then create a number of threads
 that use the coordinator.  The threads typically run loops that stop when
@@ -4240,14 +4240,14 @@ coord.join(threads)
 </code></pre>
 <p>Obviously, the coordinator can manage threads doing very different things.
 They don’t have to be all the same as in the example above.  The coordinator
-also has support to capture and report exceptions.  See the <a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a> documentation for more details.</p>
+also has support to capture and report exceptions.  See the <a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a> documentation for more details.</p>
 <h3>QueueRunner</h3>
-<p>The <a href="../../api_docs/python/tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a> class creates a number of threads that repeatedly
+<p>The <a href="../../api_docs/python/tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a> class creates a number of threads that repeatedly
 run an enqueue op.  These threads can use a coordinator to stop together.  In
 addition, a queue runner will run a <em>closer operation</em> that closes the queue if
 an exception is reported to the coordinator.</p>
 <p>You can use a queue runner to implement the architecture described above.</p>
-<p>First build a graph that uses a TensorFlow queue (e.g. a <a href="../../api_docs/python/tf/RandomShuffleQueue.md"><code>tf.RandomShuffleQueue</code></a>) for input examples.  Add ops that
+<p>First build a graph that uses a TensorFlow queue (e.g. a <a href="../../api_docs/python/tf/RandomShuffleQueue.html"><code>tf.RandomShuffleQueue</code></a>) for input examples.  Add ops that
 process examples and enqueue them in the queue.  Add training ops that start by
 dequeueing from the queue.</p>
 <pre><code class="language-python">example = ...ops to create one example...
@@ -4284,7 +4284,7 @@ coord.join(enqueue_threads)
 <h3>Handling exceptions</h3>
 <p>Threads started by queue runners do more than just run the enqueue ops.  They
 also catch and handle exceptions generated by queues, including the
-<a href="../../api_docs/python/tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> exception, which is used to report that a queue was
+<a href="../../api_docs/python/tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> exception, which is used to report that a queue was
 closed.</p>
 <p>A training program that uses a coordinator must similarly catch and report
 exceptions in its main loop.</p>

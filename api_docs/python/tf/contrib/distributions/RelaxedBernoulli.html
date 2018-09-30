@@ -4142,9 +4142,9 @@ the RelaxedBernoulli can suffer from underflow issues. In many case loss
 functions such as these are invariant under invertible transformations of
 the random variables. The KL divergence, found in the variational autoencoder
 loss, is an example. Because RelaxedBernoullis are sampled by a Logistic
-random variable followed by a <a href="../../../tf/sigmoid.md"><code>tf.sigmoid</code></a> op, one solution is to treat
-the Logistic as the random variable and <a href="../../../tf/sigmoid.md"><code>tf.sigmoid</code></a> as downstream. The
-KL divergences of two Logistics, which are always followed by a <a href="../../../tf/sigmoid.md"><code>tf.sigmoid</code></a>
+random variable followed by a <a href="../../../tf/sigmoid.html"><code>tf.sigmoid</code></a> op, one solution is to treat
+the Logistic as the random variable and <a href="../../../tf/sigmoid.html"><code>tf.sigmoid</code></a> as downstream. The
+KL divergences of two Logistics, which are always followed by a <a href="../../../tf/sigmoid.html"><code>tf.sigmoid</code></a>
 op, is equivalent to evaluating KL divergences of RelaxedBernoulli samples.
 See Maddison et al., 2016 for more details where this distribution is called
 the BinConcrete.</p>
@@ -4268,7 +4268,7 @@ or <code>distributions.NOT_REPARAMETERIZED</code>.</p>
 <p>Construct RelaxedBernoulli distributions. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-10-01.
 Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.md"><code>tf.contrib.distributions</code></a>.</p>
+The TensorFlow Distributions library has moved to TensorFlow Probability (<a href="https://github.com/tensorflow/probability">https://github.com/tensorflow/probability</a>). You should update all references to use <code>tfp.distributions</code> instead of <a href="../../../tf/contrib/distributions.html"><code>tf.contrib.distributions</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>temperature</code></b>: An 0-D <code>Tensor</code>, representing the temperature
@@ -4393,7 +4393,7 @@ cross entropy is defined as:</p>
 <p>where <code>F</code> denotes the support of the random variable <code>X ~ P</code>.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4459,7 +4459,7 @@ measure <code>r</code>, the KL divergence is defined as:</p>
 denotes (Shanon) cross entropy, and <code>H[.]</code> denotes (Shanon) entropy.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.md"><code>tf.distributions.Distribution</code></a> instance.</li>
+<li><b><code>other</code></b>: <a href="../../../tf/distributions/Distribution.html"><code>tf.distributions.Distribution</code></a> instance.</li>
 <li><b><code>name</code></b>: Python <code>str</code> prepended to names of ops created by this function.</li>
 </ul>
 <h4>Returns:</h4>

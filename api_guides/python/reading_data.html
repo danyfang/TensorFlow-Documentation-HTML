@@ -4081,10 +4081,10 @@
     <article id="main" class="content">
       <h1>Reading data</h1>
 <p>Note: The preferred way to feed data into a tensorflow program is using the
-<a href="../../guide/datasets.md"><code>tf.data</code> API</a>.</p>
+<a href="../../guide/datasets.html"><code>tf.data</code> API</a>.</p>
 <p>There are four methods of getting data into a TensorFlow program:</p>
 <ul>
-<li><a href="../../api_docs/python/tf/data.md"><code>tf.data</code></a> API: Easily construct a complex input pipeline. (preferred method)</li>
+<li><a href="../../api_docs/python/tf/data.html"><code>tf.data</code></a> API: Easily construct a complex input pipeline. (preferred method)</li>
 <li>Feeding: Python code provides the data when running each step.</li>
 <li><code>QueueRunner</code>: a queue-based input pipeline reads the data from files
 at the beginning of a TensorFlow graph.</li>
@@ -4092,9 +4092,9 @@ at the beginning of a TensorFlow graph.</li>
 all the data (for small data sets).</li>
 </ul>
 <p>[TOC]</p>
-<h2 id="_a_href_api_docs_python_tf_data_md_code_tf_data_code_a_API"><a href="../../api_docs/python/tf/data.md"><code>tf.data</code></a> API</h2>
-<p>See the <a href="../../guide/datasets.md">Importing Data</a> for an in-depth explanation of <a href="../../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a>.
-The <a href="../../api_docs/python/tf/data.md"><code>tf.data</code></a> API enables you to extract and preprocess data
+<h2 id="_a_href_api_docs_python_tf_data_md_code_tf_data_code_a_API"><a href="../../api_docs/python/tf/data.html"><code>tf.data</code></a> API</h2>
+<p>See the <a href="../../guide/datasets.html">Importing Data</a> for an in-depth explanation of <a href="../../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a>.
+The <a href="../../api_docs/python/tf/data.html"><code>tf.data</code></a> API enables you to extract and preprocess data
 from different input/file formats, and apply transformations such as batching,
 shuffling, and mapping functions over the dataset. This is an improved version
 of the old input methods—feeding and <code>QueueRunner</code>—which are described
@@ -4114,7 +4114,7 @@ that initiates computation.</p>
 </code></pre>
 <p>While you can replace any Tensor with feed data, including variables and
 constants, the best practice is to use a
-<a href="../../api_docs/python/tf/placeholder.md"><code>tf.placeholder</code></a> node. A
+<a href="../../api_docs/python/tf/placeholder.html"><code>tf.placeholder</code></a> node. A
 <code>placeholder</code> exists solely to serve as the target of feeds. It is not
 initialized and contains no data. A placeholder generates an error if
 it is executed without a feed, so you won’t forget to feed it.</p>
@@ -4123,7 +4123,7 @@ in
 <a href="https://www.tensorflow.org/code/tensorflow/examples/tutorials/mnist/fully_connected_feed.py"><code>tensorflow/examples/tutorials/mnist/fully_connected_feed.py</code></a>.</p>
 <h2 id="_QueueRunner_">`QueueRunner`</h2>
 <p>Warning: This section discusses implementing input pipelines using the
-queue-based APIs which can be cleanly replaced by the <a href="../../guide/datasets.md"><code>tf.data</code>
+queue-based APIs which can be cleanly replaced by the <a href="../../guide/datasets.html"><code>tf.data</code>
 API</a>.</p>
 <p>A typical queue-based pipeline for reading records from files has the following stages:</p>
 <ol>
@@ -4139,8 +4139,8 @@ API</a>.</p>
 <h3>Filenames, shuffling, and epoch limits</h3>
 <p>For the list of filenames, use either a constant string Tensor (like
 <code>[&quot;file0&quot;, &quot;file1&quot;]</code> or <code>[(&quot;file%d&quot; % i) for i in range(2)]</code>) or the
-<a href="../../api_docs/python/tf/train/match_filenames_once.md"><code>tf.train.match_filenames_once</code></a> function.</p>
-<p>Pass the list of filenames to the <a href="../../api_docs/python/tf/train/string_input_producer.md"><code>tf.train.string_input_producer</code></a> function.
+<a href="../../api_docs/python/tf/train/match_filenames_once.html"><code>tf.train.match_filenames_once</code></a> function.</p>
+<p>Pass the list of filenames to the <a href="../../api_docs/python/tf/train/string_input_producer.html"><code>tf.train.string_input_producer</code></a> function.
 <code>string_input_producer</code> creates a FIFO queue for holding the filenames until
 the reader needs them.</p>
 <p><code>string_input_producer</code> has options for shuffling and setting a maximum number
@@ -4160,8 +4160,8 @@ decode this string into the tensors that make up an example.</p>
 <h4>CSV files</h4>
 <p>To read text files in <a href="https://tools.ietf.org/html/rfc4180">comma-separated value (CSV)
 format</a>, use a
-<a href="../../api_docs/python/tf/TextLineReader.md"><code>tf.TextLineReader</code></a> with the
-<a href="../../api_docs/python/tf/decode_csv.md"><code>tf.decode_csv</code></a> operation. For example:</p>
+<a href="../../api_docs/python/tf/TextLineReader.html"><code>tf.TextLineReader</code></a> with the
+<a href="../../api_docs/python/tf/decode_csv.html"><code>tf.decode_csv</code></a> operation. For example:</p>
 <pre><code class="language-python">filename_queue = tf.train.string_input_producer([&quot;file0.csv&quot;, &quot;file1.csv&quot;])
 
 reader = tf.TextLineReader()
@@ -4190,13 +4190,13 @@ with tf.Session() as sess:
 <code>decode_csv</code> op then parses the result into a list of tensors. The
 <code>record_defaults</code> argument determines the type of the resulting tensors and
 sets the default value to use if a value is missing in the input string.</p>
-<p>You must call <a href="../../api_docs/python/tf/train/start_queue_runners.md"><code>tf.train.start_queue_runners</code></a> to populate the queue before
+<p>You must call <a href="../../api_docs/python/tf/train/start_queue_runners.html"><code>tf.train.start_queue_runners</code></a> to populate the queue before
 you call <code>run</code> or <code>eval</code> to execute the <code>read</code>. Otherwise <code>read</code> will
 block while it waits for filenames from the queue.</p>
 <h4>Fixed length records</h4>
 <p>To read binary files in which each record is a fixed number of bytes, use
-<a href="../../api_docs/python/tf/FixedLengthRecordReader.md"><code>tf.FixedLengthRecordReader</code></a>
-with the <a href="../../api_docs/python/tf/decode_raw.md"><code>tf.decode_raw</code></a> operation.
+<a href="../../api_docs/python/tf/FixedLengthRecordReader.html"><code>tf.FixedLengthRecordReader</code></a>
+with the <a href="../../api_docs/python/tf/decode_raw.html"><code>tf.decode_raw</code></a> operation.
 The <code>decode_raw</code> op converts from a string to a uint8 tensor.</p>
 <p>For example, <a href="http://www.cs.toronto.edu/~kriz/cifar.html">the CIFAR-10 dataset</a>
 uses a file format where each record is represented using a fixed number of
@@ -4205,24 +4205,24 @@ a uint8 tensor, standard operations can slice out each piece and reformat as
 needed. For CIFAR-10, you can see how to do the reading and decoding in
 <a href="https://github.com/tensorflow/models/tree/master/tutorials/image/cifar10/cifar10_input.py"><code>tensorflow_models/tutorials/image/cifar10/cifar10_input.py</code></a>
 and described in
-<a href="../../tutorials/images/deep_cnn.md#prepare-the-data">this tutorial</a>.</p>
+<a href="../../tutorials/images/deep_cnn.html#prepare-the-data">this tutorial</a>.</p>
 <h4>Standard TensorFlow format</h4>
 <p>Another approach is to convert whatever data you have into a supported format.
 This approach makes it easier to mix and match data sets and network
 architectures. The recommended format for TensorFlow is a
-<a href="../../api_guides/python/python_io.md#tfrecords_format_details">TFRecords file</a>
+<a href="../../api_guides/python/python_io.html#tfrecords_format_details">TFRecords file</a>
 containing
-<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><a href="../../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a> protocol buffers</a>
+<a href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><a href="../../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a> protocol buffers</a>
 (which contain
 <a href="https://www.tensorflow.org/code/tensorflow/core/example/feature.proto"><code>Features</code></a>
 as a field).  You write a little program that gets your data, stuffs it in an
 <code>Example</code> protocol buffer, serializes the protocol buffer to a string, and then
 writes the string to a TFRecords file using the
-<a href="../../api_docs/python/tf/python_io/TFRecordWriter.md"><code>tf.python_io.TFRecordWriter</code></a>.
+<a href="../../api_docs/python/tf/python_io/TFRecordWriter.html"><code>tf.python_io.TFRecordWriter</code></a>.
 For example,
 <a href="https://www.tensorflow.org/code/tensorflow/examples/how_tos/reading_data/convert_to_records.py"><code>tensorflow/examples/how_tos/reading_data/convert_to_records.py</code></a>
 converts MNIST data to this format.</p>
-<p>The recommended way to read a TFRecord file is with a <a href="../../api_docs/python/tf/data/TFRecordDataset.md"><code>tf.data.TFRecordDataset</code></a>, <a href="https://www.tensorflow.org/code/tensorflow/examples/how_tos/reading_data/fully_connected_reader.py">as in this example</a>:</p>
+<p>The recommended way to read a TFRecord file is with a <a href="../../api_docs/python/tf/data/TFRecordDataset.html"><code>tf.data.TFRecordDataset</code></a>, <a href="https://www.tensorflow.org/code/tensorflow/examples/how_tos/reading_data/fully_connected_reader.py">as in this example</a>:</p>
 <pre><code class="language-python">    dataset = tf.data.TFRecordDataset(filename)
     dataset = dataset.repeat(num_epochs)
 
@@ -4247,7 +4247,7 @@ for an example.</p>
 <p>At the end of the pipeline we use another queue to batch together examples for
 training, evaluation, or inference.  For this we use a queue that randomizes the
 order of examples, using the
-<a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a>.</p>
+<a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a>.</p>
 <p>Example:</p>
 <pre><code>def read_my_file_format(filename_queue):
   reader = tf.SomeReader()
@@ -4275,7 +4275,7 @@ def input_pipeline(filenames, batch_size, num_epochs=None):
 </code></pre>
 <p>If you need more parallelism or shuffling of examples between files, use
 multiple reader instances using the
-<a href="../../api_docs/python/tf/train/shuffle_batch_join.md"><code>tf.train.shuffle_batch_join</code></a>.
+<a href="../../api_docs/python/tf/train/shuffle_batch_join.html"><code>tf.train.shuffle_batch_join</code></a>.
 For example:</p>
 <pre><code>def read_my_file_format(filename_queue):
   # Same as above
@@ -4297,7 +4297,7 @@ That way we ensure that the different readers use different files from the same
 epoch until all the files from the epoch have been started.  (It is also usually
 sufficient to have a single thread filling the filename queue.)</p>
 <p>An alternative is to use a single reader via the
-<a href="../../api_docs/python/tf/train/shuffle_batch.md"><code>tf.train.shuffle_batch</code></a>
+<a href="../../api_docs/python/tf/train/shuffle_batch.html"><code>tf.train.shuffle_batch</code></a>
 with <code>num_threads</code> bigger than 1.  This will make it read from a single file at
 the same time (but faster than with 1 thread), instead of N files at once.
 This can be important:</p>
@@ -4310,16 +4310,16 @@ each other.</li>
 <p>How many threads do you need? the <code>tf.train.shuffle_batch*</code> functions add a
 summary to the graph that indicates how full the example queue is. If you have
 enough reading threads, that summary will stay above zero.  You can
-<a href="../../guide/summaries_and_tensorboard.md">view your summaries as training progresses using TensorBoard</a>.</p>
+<a href="../../guide/summaries_and_tensorboard.html">view your summaries as training progresses using TensorBoard</a>.</p>
 <h3>Creating threads to prefetch using <code>QueueRunner</code> objects</h3>
-<p>The short version: many of the <a href="../../api_docs/python/tf/train.md"><code>tf.train</code></a> functions listed above add
-<a href="../../api_docs/python/tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a> objects to your
+<p>The short version: many of the <a href="../../api_docs/python/tf/train.html"><code>tf.train</code></a> functions listed above add
+<a href="../../api_docs/python/tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a> objects to your
 graph.  These require that you call
-<a href="../../api_docs/python/tf/train/start_queue_runners.md"><code>tf.train.start_queue_runners</code></a>
+<a href="../../api_docs/python/tf/train/start_queue_runners.html"><code>tf.train.start_queue_runners</code></a>
 before running any training or inference steps, or it will hang forever. This
 will start threads that run the input pipeline, filling the example queue so
 that the dequeue to get the examples will succeed.  This is best combined with a
-<a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a> to cleanly
+<a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a> to cleanly
 shut down these threads when there are errors. If you set a limit on the number
 of epochs, that will use an epoch counter that will need to be initialized. The
 recommended code pattern combining these is:</p>
@@ -4365,30 +4365,30 @@ queue.</p>
 <div style="width:70%; margin-left:12%; margin-bottom:10px; margin-top:20px;">
 <img style="width:100%" src="https://www.tensorflow.org/images/AnimatedFileQueues.gif">
 </div>
-<p>The helpers in <a href="../../api_docs/python/tf/train.md"><code>tf.train</code></a> that create these queues and enqueuing operations add
-a <a href="../../api_docs/python/tf/train/QueueRunner.md"><code>tf.train.QueueRunner</code></a> to the
+<p>The helpers in <a href="../../api_docs/python/tf/train.html"><code>tf.train</code></a> that create these queues and enqueuing operations add
+a <a href="../../api_docs/python/tf/train/QueueRunner.html"><code>tf.train.QueueRunner</code></a> to the
 graph using the
-<a href="../../api_docs/python/tf/train/add_queue_runner.md"><code>tf.train.add_queue_runner</code></a>
+<a href="../../api_docs/python/tf/train/add_queue_runner.html"><code>tf.train.add_queue_runner</code></a>
 function. Each <code>QueueRunner</code> is responsible for one stage, and holds the list of
 enqueue operations that need to be run in threads. Once the graph is
 constructed, the
-<a href="../../api_docs/python/tf/train/start_queue_runners.md"><code>tf.train.start_queue_runners</code></a>
+<a href="../../api_docs/python/tf/train/start_queue_runners.html"><code>tf.train.start_queue_runners</code></a>
 function asks each QueueRunner in the graph to start its threads running the
 enqueuing operations.</p>
 <p>If all goes well, you can now run your training steps and the queues will be
 filled by the background threads. If you have set an epoch limit, at some point
 an attempt to dequeue examples will get an
-<a href="../../api_docs/python/tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a>. This
+<a href="../../api_docs/python/tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a>. This
 is the TensorFlow equivalent of “end of file” (EOF) – this means the epoch
 limit has been reached and no more examples are available.</p>
 <p>The last ingredient is the
-<a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a>. This is responsible
+<a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a>. This is responsible
 for letting all the threads know if anything has signaled a shut down. Most
 commonly this would be because an exception was raised, for example one of the
 threads got an error when running some operation (or an ordinary Python
 exception).</p>
 <p>For more about threading, queues, QueueRunners, and Coordinators
-<a href="../../api_guides/python/threading_and_queues.md">see here</a>.</p>
+<a href="../../api_guides/python/threading_and_queues.html">see here</a>.</p>
 <h4>Aside: How clean shut-down when limiting epochs works</h4>
 <p>Imagine you have a model that has set a limit on the number of epochs to train
 on.  That means that the thread generating filenames will only run that many
@@ -4414,20 +4414,20 @@ associated with a single QueueRunner.  If this isn’t the last thread in the
 QueueRunner, the <code>OutOfRange</code> error just causes the one thread to exit.  This
 allows the other threads, which are still finishing up their last file, to
 proceed until they finish as well.  (Assuming you are using a
-<a href="../../api_docs/python/tf/train/Coordinator.md"><code>tf.train.Coordinator</code></a>,
+<a href="../../api_docs/python/tf/train/Coordinator.html"><code>tf.train.Coordinator</code></a>,
 other types of errors will cause all the threads to stop.)  Once all the reader
 threads hit the <code>OutOfRange</code> error, only then does the next queue, the example
 queue, gets closed.</p>
 <p>Again, the example queue will have some elements queued, so training will
 continue until those are exhausted.  If the example queue is a
-<a href="../../api_docs/python/tf/RandomShuffleQueue.md"><code>tf.RandomShuffleQueue</code></a>, say
+<a href="../../api_docs/python/tf/RandomShuffleQueue.html"><code>tf.RandomShuffleQueue</code></a>, say
 because you are using <code>shuffle_batch</code> or <code>shuffle_batch_join</code>, it normally will
 avoid ever having fewer than its <code>min_after_dequeue</code> attr elements buffered.
 However, once the queue is closed that restriction will be lifted and the queue
 will eventually empty.  At that point the actual training threads, when they
 try and dequeue from example queue, will start getting <code>OutOfRange</code> errors and
 exiting.  Once all the training threads are done,
-<a href="../../api_docs/python/tf/train/Coordinator.md#join"><code>tf.train.Coordinator.join</code></a>
+<a href="../../api_docs/python/tf/train/Coordinator.html#join"><code>tf.train.Coordinator.join</code></a>
 will return and you can exit cleanly.</p>
 <h3>Filtering records or producing multiple examples per record</h3>
 <p>Instead of examples with shapes <code>[x, y, z]</code>, you will produce a batch of
@@ -4439,8 +4439,8 @@ when calling one of the batching functions (such as <code>shuffle_batch</code> o
 <h3>Sparse input data</h3>
 <p>SparseTensors don’t play well with queues. If you use SparseTensors you have
 to decode the string records using
-<a href="../../api_docs/python/tf/parse_example.md"><code>tf.parse_example</code></a> <strong>after</strong>
-batching (instead of using <a href="../../api_docs/python/tf/parse_single_example.md"><code>tf.parse_single_example</code></a> before batching).</p>
+<a href="../../api_docs/python/tf/parse_example.html"><code>tf.parse_example</code></a> <strong>after</strong>
+batching (instead of using <a href="../../api_docs/python/tf/parse_single_example.html"><code>tf.parse_single_example</code></a> before batching).</p>
 <h2 id="Preloaded_data">Preloaded data</h2>
 <p>This is only used for small data sets that can be loaded entirely in memory.
 There are two approaches:</p>
@@ -4479,11 +4479,11 @@ with tf.Session() as sess:
 update it when training.  Setting <code>collections=[]</code> keeps the variable out of the
 <code>GraphKeys.GLOBAL_VARIABLES</code> collection used for saving and restoring checkpoints.</p>
 <p>Either way,
-<a href="../../api_docs/python/tf/train/slice_input_producer.md"><code>tf.train.slice_input_producer</code></a>
+<a href="../../api_docs/python/tf/train/slice_input_producer.html"><code>tf.train.slice_input_producer</code></a>
 can be used to produce a slice at a time.  This shuffles the examples across an
 entire epoch, so further shuffling when batching is undesirable.  So instead of
 using the <code>shuffle_batch</code> functions, we use the plain
-<a href="../../api_docs/python/tf/train/batch.md"><code>tf.train.batch</code></a> function.  To use
+<a href="../../api_docs/python/tf/train/batch.html"><code>tf.train.batch</code></a> function.  To use
 multiple preprocessing threads, set the <code>num_threads</code> parameter to a number
 bigger than 1.</p>
 <p>An MNIST example that preloads the data using constants can be found in
@@ -4501,22 +4501,22 @@ checkpoint files with all the trained variables.</li>
 <li>The evaluation process restores the checkpoint files into an inference
 model that reads validation input data.</li>
 </ul>
-<p>This is what is done <a href="../../api_docs/python/tf/estimator.md">estimators</a> and manually in
-<a href="../../tutorials/images/deep_cnn.md#save-and-restore-checkpoints">the example CIFAR-10 model</a>.
+<p>This is what is done <a href="../../api_docs/python/tf/estimator.html">estimators</a> and manually in
+<a href="../../tutorials/images/deep_cnn.html#save-and-restore-checkpoints">the example CIFAR-10 model</a>.
 This has a couple of benefits:</p>
 <ul>
 <li>The eval is performed on a single snapshot of the trained variables.</li>
 <li>You can perform the eval even after training has completed and exited.</li>
 </ul>
 <p>You can have the train and eval in the same graph in the same process, and share
-their trained variables or layers. See <a href="../../guide/variables.md">the shared variables tutorial</a>.</p>
+their trained variables or layers. See <a href="../../guide/variables.html">the shared variables tutorial</a>.</p>
 <p>To support the single-graph approach
-<a href="../../guide/datasets.md"><code>tf.data</code></a> also supplies
-<a href="../../guide/datasets.md#creating_an_iterator">advanced iterator types</a> that
+<a href="../../guide/datasets.html"><code>tf.data</code></a> also supplies
+<a href="../../guide/datasets.html#creating_an_iterator">advanced iterator types</a> that
 that allow the user to change the input pipeline without rebuilding the graph or
 session.</p>
 <p>Note: Regardless of the implementation, many
-operations (like <a href="../../api_docs/python/tf/layers/batch_normalization.md"><code>tf.layers.batch_normalization</code></a>, and <a href="../../api_docs/python/tf/layers/dropout.md"><code>tf.layers.dropout</code></a>)
+operations (like <a href="../../api_docs/python/tf/layers/batch_normalization.html"><code>tf.layers.batch_normalization</code></a>, and <a href="../../api_docs/python/tf/layers/dropout.html"><code>tf.layers.dropout</code></a>)
 need to know if they are in training or evaluation mode, and you must be
 careful to set this appropriately if you change the data source.</p>
 

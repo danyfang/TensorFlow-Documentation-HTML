@@ -4091,7 +4091,7 @@
 )
 </code></pre>
 <p>Defined in generated file: <code>tensorflow/python/ops/gen_image_ops.py</code>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/image.md#Encoding_and_Decoding">Images &gt; Encoding and Decoding</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/image.html#Encoding_and_Decoding">Images &gt; Encoding and Decoding</a></p>
 <p>Decode a PNG-encoded image to a uint8 or uint16 tensor.</p>
 <p>The attr <code>channels</code> indicates the desired number of color channels for the
 decoded image.</p>
@@ -4105,13 +4105,13 @@ decoded image.</p>
 <p>If needed, the PNG-encoded image is transformed to match the requested number
 of color channels.</p>
 <p>This op also supports decoding JPEGs and non-animated GIFs since the interface
-is the same, though it is cleaner to use <a href="../../tf/image/decode_image.md"><code>tf.image.decode_image</code></a>.</p>
+is the same, though it is cleaner to use <a href="../../tf/image/decode_image.html"><code>tf.image.decode_image</code></a>.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>contents</code></b>: A <code>Tensor</code> of type <code>string</code>. 0-D.  The PNG-encoded image.</li>
 <li><b><code>channels</code></b>: An optional <code>int</code>. Defaults to <code>0</code>.
 Number of color channels for the decoded image.</li>
-<li><b><code>dtype</code></b>: An optional <a href="../../tf/DType.md"><code>tf.DType</code></a> from: <code>tf.uint8, tf.uint16</code>. Defaults to <a href="../../tf/uint8.md"><code>tf.uint8</code></a>.</li>
+<li><b><code>dtype</code></b>: An optional <a href="../../tf/DType.html"><code>tf.DType</code></a> from: <code>tf.uint8, tf.uint16</code>. Defaults to <a href="../../tf/uint8.html"><code>tf.uint8</code></a>.</li>
 <li><b><code>name</code></b>: A name for the operation (optional).</li>
 </ul>
 <h4>Returns:</h4>

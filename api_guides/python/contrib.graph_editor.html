@@ -4083,7 +4083,7 @@
 <p>[TOC]</p>
 <p>TensorFlow Graph Editor.</p>
 <p>The TensorFlow Graph Editor library allows for modification of an existing
-<a href="../../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> instance in-place.</p>
+<a href="../../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> instance in-place.</p>
 <p>The author’s github username is <a href="https://github.com/purpledog">purpledog</a>.</p>
 <h2 id="Library_overview">Library overview</h2>
 <p>Appending new nodes is the only graph editing operation allowed by the
@@ -4160,7 +4160,7 @@ graphs (but not quite yet).</li>
 <li>reroute: various ways of rerouting tensors to different consuming ops like
 <em>swap</em> or <em>reroute_a2b</em>.</li>
 <li>subgraph: the SubGraphView class, which enables subgraph manipulations in a
-TensorFlow <a href="../../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>.</li>
+TensorFlow <a href="../../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>.</li>
 <li>edit: various editing functions operating on subgraphs like <em>detach</em>,
 <em>connect</em> or <em>bypass</em>.</li>
 <li>transform: the Transformer class, which enables transforming
@@ -4168,81 +4168,81 @@ TensorFlow <a href="../../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>
 </ul>
 <h2 id="Module_util">Module: util</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_list_of_op.md"><code>tf.contrib.graph_editor.make_list_of_op</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_tensors.md"><code>tf.contrib.graph_editor.get_tensors</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_list_of_t.md"><code>tf.contrib.graph_editor.make_list_of_t</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_generating_ops.md"><code>tf.contrib.graph_editor.get_generating_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_consuming_ops.md"><code>tf.contrib.graph_editor.get_consuming_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/ControlOutputs.md"><code>tf.contrib.graph_editor.ControlOutputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/placeholder_name.md"><code>tf.contrib.graph_editor.placeholder_name</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_tensor.md"><code>tf.contrib.graph_editor.make_placeholder_from_tensor</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_dtype_and_shape.md"><code>tf.contrib.graph_editor.make_placeholder_from_dtype_and_shape</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_list_of_op.html"><code>tf.contrib.graph_editor.make_list_of_op</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_tensors.html"><code>tf.contrib.graph_editor.get_tensors</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_list_of_t.html"><code>tf.contrib.graph_editor.make_list_of_t</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_generating_ops.html"><code>tf.contrib.graph_editor.get_generating_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_consuming_ops.html"><code>tf.contrib.graph_editor.get_consuming_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/ControlOutputs.html"><code>tf.contrib.graph_editor.ControlOutputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/placeholder_name.html"><code>tf.contrib.graph_editor.placeholder_name</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_tensor.html"><code>tf.contrib.graph_editor.make_placeholder_from_tensor</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_dtype_and_shape.html"><code>tf.contrib.graph_editor.make_placeholder_from_dtype_and_shape</code></a></li>
 </ul>
 <h2 id="Module_select">Module: select</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ts.md"><code>tf.contrib.graph_editor.filter_ts</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ts_from_regex.md"><code>tf.contrib.graph_editor.filter_ts_from_regex</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ops.md"><code>tf.contrib.graph_editor.filter_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ops_from_regex.md"><code>tf.contrib.graph_editor.filter_ops_from_regex</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_name_scope_ops.md"><code>tf.contrib.graph_editor.get_name_scope_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/check_cios.md"><code>tf.contrib.graph_editor.check_cios</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_ops_ios.md"><code>tf.contrib.graph_editor.get_ops_ios</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/compute_boundary_ts.md"><code>tf.contrib.graph_editor.compute_boundary_ts</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_within_boundary_ops.md"><code>tf.contrib.graph_editor.get_within_boundary_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_forward_walk_ops.md"><code>tf.contrib.graph_editor.get_forward_walk_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_backward_walk_ops.md"><code>tf.contrib.graph_editor.get_backward_walk_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_walks_intersection_ops.md"><code>tf.contrib.graph_editor.get_walks_intersection_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_walks_union_ops.md"><code>tf.contrib.graph_editor.get_walks_union_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ops.md"><code>tf.contrib.graph_editor.select_ops</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ts.md"><code>tf.contrib.graph_editor.select_ts</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ops_and_ts.md"><code>tf.contrib.graph_editor.select_ops_and_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ts.html"><code>tf.contrib.graph_editor.filter_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ts_from_regex.html"><code>tf.contrib.graph_editor.filter_ts_from_regex</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ops.html"><code>tf.contrib.graph_editor.filter_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/filter_ops_from_regex.html"><code>tf.contrib.graph_editor.filter_ops_from_regex</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_name_scope_ops.html"><code>tf.contrib.graph_editor.get_name_scope_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/check_cios.html"><code>tf.contrib.graph_editor.check_cios</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_ops_ios.html"><code>tf.contrib.graph_editor.get_ops_ios</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/compute_boundary_ts.html"><code>tf.contrib.graph_editor.compute_boundary_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_within_boundary_ops.html"><code>tf.contrib.graph_editor.get_within_boundary_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_forward_walk_ops.html"><code>tf.contrib.graph_editor.get_forward_walk_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_backward_walk_ops.html"><code>tf.contrib.graph_editor.get_backward_walk_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_walks_intersection_ops.html"><code>tf.contrib.graph_editor.get_walks_intersection_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/get_walks_union_ops.html"><code>tf.contrib.graph_editor.get_walks_union_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ops.html"><code>tf.contrib.graph_editor.select_ops</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ts.html"><code>tf.contrib.graph_editor.select_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/select_ops_and_ts.html"><code>tf.contrib.graph_editor.select_ops_and_ts</code></a></li>
 </ul>
 <h2 id="Module_subgraph">Module: subgraph</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/SubGraphView.md"><code>tf.contrib.graph_editor.SubGraphView</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view.md"><code>tf.contrib.graph_editor.make_view</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view_from_scope.md"><code>tf.contrib.graph_editor.make_view_from_scope</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/SubGraphView.html"><code>tf.contrib.graph_editor.SubGraphView</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view.html"><code>tf.contrib.graph_editor.make_view</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view_from_scope.html"><code>tf.contrib.graph_editor.make_view_from_scope</code></a></li>
 </ul>
 <h2 id="Module_reroute">Module: reroute</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_ts.md"><code>tf.contrib.graph_editor.swap_ts</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_ts.md"><code>tf.contrib.graph_editor.reroute_ts</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_inputs.md"><code>tf.contrib.graph_editor.swap_inputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_inputs.md"><code>tf.contrib.graph_editor.reroute_inputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_outputs.md"><code>tf.contrib.graph_editor.swap_outputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_outputs.md"><code>tf.contrib.graph_editor.reroute_outputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_ios.md"><code>tf.contrib.graph_editor.swap_ios</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_ios.md"><code>tf.contrib.graph_editor.reroute_ios</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/remove_control_inputs.md"><code>tf.contrib.graph_editor.remove_control_inputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/add_control_inputs.md"><code>tf.contrib.graph_editor.add_control_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_ts.html"><code>tf.contrib.graph_editor.swap_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_ts.html"><code>tf.contrib.graph_editor.reroute_ts</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_inputs.html"><code>tf.contrib.graph_editor.swap_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_inputs.html"><code>tf.contrib.graph_editor.reroute_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_outputs.html"><code>tf.contrib.graph_editor.swap_outputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_outputs.html"><code>tf.contrib.graph_editor.reroute_outputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/swap_ios.html"><code>tf.contrib.graph_editor.swap_ios</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/reroute_ios.html"><code>tf.contrib.graph_editor.reroute_ios</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/remove_control_inputs.html"><code>tf.contrib.graph_editor.remove_control_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/add_control_inputs.html"><code>tf.contrib.graph_editor.add_control_inputs</code></a></li>
 </ul>
 <h2 id="Module_edit">Module: edit</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_control_inputs.md"><code>tf.contrib.graph_editor.detach_control_inputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_control_outputs.md"><code>tf.contrib.graph_editor.detach_control_outputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_inputs.md"><code>tf.contrib.graph_editor.detach_inputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_outputs.md"><code>tf.contrib.graph_editor.detach_outputs</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach.md"><code>tf.contrib.graph_editor.detach</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/connect.md"><code>tf.contrib.graph_editor.connect</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/bypass.md"><code>tf.contrib.graph_editor.bypass</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_control_inputs.html"><code>tf.contrib.graph_editor.detach_control_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_control_outputs.html"><code>tf.contrib.graph_editor.detach_control_outputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_inputs.html"><code>tf.contrib.graph_editor.detach_inputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach_outputs.html"><code>tf.contrib.graph_editor.detach_outputs</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/detach.html"><code>tf.contrib.graph_editor.detach</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/connect.html"><code>tf.contrib.graph_editor.connect</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/bypass.html"><code>tf.contrib.graph_editor.bypass</code></a></li>
 </ul>
 <h2 id="Module_transform">Module: transform</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/replace_t_with_placeholder_handler.md"><code>tf.contrib.graph_editor.replace_t_with_placeholder_handler</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/keep_t_if_possible_handler.md"><code>tf.contrib.graph_editor.keep_t_if_possible_handler</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/assign_renamed_collections_handler.md"><code>tf.contrib.graph_editor.assign_renamed_collections_handler</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/transform_op_if_inside_handler.md"><code>tf.contrib.graph_editor.transform_op_if_inside_handler</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy_op_handler.md"><code>tf.contrib.graph_editor.copy_op_handler</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/Transformer.md"><code>tf.contrib.graph_editor.Transformer</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy.md"><code>tf.contrib.graph_editor.copy</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy_with_input_replacements.md"><code>tf.contrib.graph_editor.copy_with_input_replacements</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/graph_replace.md"><code>tf.contrib.graph_editor.graph_replace</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/replace_t_with_placeholder_handler.html"><code>tf.contrib.graph_editor.replace_t_with_placeholder_handler</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/keep_t_if_possible_handler.html"><code>tf.contrib.graph_editor.keep_t_if_possible_handler</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/assign_renamed_collections_handler.html"><code>tf.contrib.graph_editor.assign_renamed_collections_handler</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/transform_op_if_inside_handler.html"><code>tf.contrib.graph_editor.transform_op_if_inside_handler</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy_op_handler.html"><code>tf.contrib.graph_editor.copy_op_handler</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/Transformer.html"><code>tf.contrib.graph_editor.Transformer</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy.html"><code>tf.contrib.graph_editor.copy</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/copy_with_input_replacements.html"><code>tf.contrib.graph_editor.copy_with_input_replacements</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/graph_replace.html"><code>tf.contrib.graph_editor.graph_replace</code></a></li>
 </ul>
 <h2 id="Useful_aliases">Useful aliases</h2>
 <ul>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_dtype_and_shape.md"><code>tf.contrib.graph_editor.ph</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view.md"><code>tf.contrib.graph_editor.sgv</code></a></li>
-<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view_from_scope.md"><code>tf.contrib.graph_editor.sgv_scope</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_placeholder_from_dtype_and_shape.html"><code>tf.contrib.graph_editor.ph</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view.html"><code>tf.contrib.graph_editor.sgv</code></a></li>
+<li><a href="../../api_docs/python/tf/contrib/graph_editor/make_view_from_scope.html"><code>tf.contrib.graph_editor.sgv_scope</code></a></li>
 </ul>
 
     </article>

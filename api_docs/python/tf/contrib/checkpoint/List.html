@@ -4112,10 +4112,10 @@
 <p>An append-only sequence type which is checkpointable.</p>
 <p>Maintains checkpoint dependencies on its contents (which must also be
 checkpointable), and forwards any <code>Layer</code> metadata such as updates and losses.</p>
-<p>Note that <code>List</code> is purely a container. It lets a <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> or
+<p>Note that <code>List</code> is purely a container. It lets a <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> or
 other checkpointable object know about its contents, but does not call any
 <code>Layer</code> instances which are added to it. To indicate a sequence of <code>Layer</code>
-instances which should be called sequentially, use <a href="../../../tf/keras/Sequential.md"><code>tf.keras.Sequential</code></a>.</p>
+instances which should be called sequentially, use <a href="../../../tf/keras/Sequential.html"><code>tf.keras.Sequential</code></a>.</p>
 <p>Example usage:</p>
 <pre><code class="language-python">class HasList(tf.keras.Model):
 

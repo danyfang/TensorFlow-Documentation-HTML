@@ -4109,9 +4109,9 @@ of hooks.</li>
 <li><b><code>is_chief</code></b>: Specifies whether or not the training is being run by the primary
 replica during replica training.</li>
 <li><b><code>scaffold</code></b>: An tf.train.Scaffold instance.</li>
-<li><b><code>hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.md"><code>tf.train.SessionRunHook</code></a> callbacks which are run inside the
+<li><b><code>hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.html"><code>tf.train.SessionRunHook</code></a> callbacks which are run inside the
 training loop.</li>
-<li><b><code>chief_only_hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.md"><code>tf.train.SessionRunHook</code></a> instances which are run
+<li><b><code>chief_only_hooks</code></b>: List of <a href="../../../tf/train/SessionRunHook.html"><code>tf.train.SessionRunHook</code></a> instances which are run
 inside the training loop for the chief trainer only.</li>
 <li><b><code>save_checkpoint_secs</code></b>: The frequency, in seconds, that a checkpoint is saved
 using a default checkpoint saver. If <code>save_checkpoint_secs</code> is set to
@@ -4120,7 +4120,7 @@ using a default checkpoint saver. If <code>save_checkpoint_secs</code> is set to
 summaries are written to disk using a default summary saver. If
 <code>save_summaries_steps</code> is set to <code>None</code>, then the default summary saver
 isn’t used.</li>
-<li><b><code>config</code></b>: An instance of <a href="../../../tf/ConfigProto.md"><code>tf.ConfigProto</code></a>.</li>
+<li><b><code>config</code></b>: An instance of <a href="../../../tf/ConfigProto.html"><code>tf.ConfigProto</code></a>.</li>
 </ul>
 <h4>Returns:</h4>
 <p>Output of the call to <code>training.train</code>.</p>

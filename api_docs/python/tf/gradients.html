@@ -4095,7 +4095,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/gradients_impl.py"><code>tensorflow/python/ops/gradients_impl.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/train.md#Gradient_Computation">Training &gt; Gradient Computation</a></p>
+<p>See the guide: <a href="../../../api_guides/python/train.html#Gradient_Computation">Training &gt; Gradient Computation</a></p>
 <p>Constructs symbolic derivatives of sum of <code>ys</code> w.r.t. x in <code>xs</code>.</p>
 <p><code>ys</code> and <code>xs</code> are each a <code>Tensor</code> or a list of tensors.  <code>grad_ys</code>
 is a list of <code>Tensor</code>, holding the gradients received by the
@@ -4128,9 +4128,9 @@ b = tf.stop_gradient(2 * a)
 g = tf.gradients(a + b, [a, b])
 </code></pre>
 <p><code>stop_gradients</code> provides a way of stopping gradient after the graph has
-already been constructed, as compared to <a href="../tf/stop_gradient.md"><code>tf.stop_gradient</code></a> which is used
+already been constructed, as compared to <a href="../tf/stop_gradient.html"><code>tf.stop_gradient</code></a> which is used
 during graph construction.  When the two approaches are combined,
-backpropagation stops at both <a href="../tf/stop_gradient.md"><code>tf.stop_gradient</code></a> nodes and nodes in
+backpropagation stops at both <a href="../tf/stop_gradient.html"><code>tf.stop_gradient</code></a> nodes and nodes in
 <code>stop_gradients</code>, whichever is encountered first.</p>
 <p>All integer tensors are considered constant with respect to all <code>xs</code>, as if
 they were included in <code>stop_gradients</code>.</p>

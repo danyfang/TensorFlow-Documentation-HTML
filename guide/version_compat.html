@@ -4118,7 +4118,7 @@ patch versions.  The public APIs consist of</p>
 <p>All the documented <a href="../api_docs/python">Python</a> functions and classes in the
 <code>tensorflow</code> module and its submodules, except for</p>
 <ul>
-<li>functions and classes in <a href="../api_docs/python/tf/contrib.md"><code>tf.contrib</code></a></li>
+<li>functions and classes in <a href="../api_docs/python/tf/contrib.html"><code>tf.contrib</code></a></li>
 <li>functions and classes whose names start with <code>_</code> (as these are private)
 Note that the code in the <code>examples/</code> and <code>tools/</code> directories is not
 reachable through the <code>tensorflow</code> Python module and is thus not covered by
@@ -4153,7 +4153,7 @@ public API.</p>
 backward incompatible ways between minor releases. These include:</p>
 <ul>
 <li>
-<p><strong>Experimental APIs</strong>: The <a href="../api_docs/python/tf/contrib.md"><code>tf.contrib</code></a> module and its submodules in Python
+<p><strong>Experimental APIs</strong>: The <a href="../api_docs/python/tf/contrib.html"><code>tf.contrib</code></a> module and its submodules in Python
 and any functions in the C API or fields in protocol buffers that are
 explicitly commented as being experimental. In particular, any field in a
 protocol buffer which is called “experimental” and all its fields and
@@ -4165,7 +4165,7 @@ such as:</p>
 </li>
 </ul>
 <ul>
-<li><a href="../api_guides/cc/guide.md">C++</a> (exposed through header files in
+<li><a href="../api_guides/cc/guide.html">C++</a> (exposed through header files in
 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/cc"><code>tensorflow/cc</code></a>).</li>
 <li><a href="../api_docs/java/reference/org/tensorflow/package-summary">Java</a>,</li>
 <li><a href="https://godoc.org/github.com/tensorflow/tensorflow/tensorflow/go">Go</a></li>
@@ -4191,7 +4191,7 @@ accuracy for the overall system.</p>
 </li>
 <li>
 <p><strong>Random numbers:</strong> The specific random numbers computed by the
-<a href="../api_guides/python/constant_op.md#Random_Tensors">random ops</a> may change at any time.
+<a href="../api_guides/python/constant_op.html#Random_Tensors">random ops</a> may change at any time.
 Users should rely only on approximately correct distributions and
 statistical strength, not the specific bits computed. However, we will make
 changes to random bits rarely (or perhaps never) for patch releases.  We
@@ -4342,13 +4342,13 @@ ops has not changed:</p>
 <ol>
 <li>If forward compatibility is desired,  set <code>strip_default_attrs</code> to <code>True</code>
 while exporting the model using either the
-<a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md#add_meta_graph_and_variables"><code>add_meta_graph_and_variables</code></a>
-and <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md#add_meta_graph"><code>add_meta_graph</code></a>
+<a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html#add_meta_graph_and_variables"><code>add_meta_graph_and_variables</code></a>
+and <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html#add_meta_graph"><code>add_meta_graph</code></a>
 methods of the <code>SavedModelBuilder</code> class, or
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#export_savedmodel"><code>Estimator.export_savedmodel</code></a></li>
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#export_savedmodel"><code>Estimator.export_savedmodel</code></a></li>
 <li>This strips off the default valued attributes at the time of
 producing/exporting the models. This makes sure that the exported
-<a href="../api_docs/python/tf/MetaGraphDef.md"><code>tf.MetaGraphDef</code></a> does not contain the new op-attribute when the default
+<a href="../api_docs/python/tf/MetaGraphDef.html"><code>tf.MetaGraphDef</code></a> does not contain the new op-attribute when the default
 value is used.</li>
 <li>Having this control could allow out-of-date consumers (for example, serving
 binaries that lag behind training binaries) to continue loading the models

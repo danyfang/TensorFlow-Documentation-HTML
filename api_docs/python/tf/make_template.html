@@ -4093,7 +4093,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/template.py"><code>tensorflow/python/ops/template.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/state_ops.md#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
+<p>See the guide: <a href="../../../api_guides/python/state_ops.html#Sharing_Variables">Variables &gt; Sharing Variables</a></p>
 <p>Given an arbitrary function, wrap it so that it does variable sharing.</p>
 <p>This wraps <code>func_</code> in a Template and partially evaluates it. Templates are
 functions that create variables the first time they are called and reuse them
@@ -4101,12 +4101,12 @@ thereafter. In order for <code>func_</code> to be compatible with a <code>Templa
 have the following properties:</p>
 <ul>
 <li>The function should create all trainable variables and any variables that
-should be reused by calling <a href="../tf/get_variable.md"><code>tf.get_variable</code></a>. If a trainable variable is
-created using <a href="../tf/Variable.md"><code>tf.Variable</code></a>, then a ValueError will be thrown. Variables
+should be reused by calling <a href="../tf/get_variable.html"><code>tf.get_variable</code></a>. If a trainable variable is
+created using <a href="../tf/Variable.html"><code>tf.Variable</code></a>, then a ValueError will be thrown. Variables
 that are intended to be locals can be created by specifying
 <code>tf.Variable(..., trainable=false)</code>.</li>
 <li>The function may use variable scopes and other templates internally to
-create and reuse variables, but it shouldn’t use <a href="../tf/global_variables.md"><code>tf.global_variables</code></a> to
+create and reuse variables, but it shouldn’t use <a href="../tf/global_variables.html"><code>tf.global_variables</code></a> to
 capture variables that are defined outside of the scope of the function.</li>
 <li>Internal scopes and variable names should not depend on any arguments that
 are not supplied to <code>make_template</code>. In general you will get a ValueError
@@ -4129,7 +4129,7 @@ z = scale_by_y(input1)
 w = scale_by_y(input2)
 </code></pre>
 <p>As a safe-guard, the returned function will raise a <code>ValueError</code> after the
-first call if trainable variables are created by calling <a href="../tf/Variable.md"><code>tf.Variable</code></a>.</p>
+first call if trainable variables are created by calling <a href="../tf/Variable.html"><code>tf.Variable</code></a>.</p>
 <p>If all of these are true, then 2 properties are enforced by the template:</p>
 <ol>
 <li>Calling the same template multiple times will share all non-local
@@ -4174,7 +4174,7 @@ is False, meaning the scope is created when the template is called.</li>
 template of the same scope/unique_name already exists and reuse is false,
 an error is raised. Defaults to None.</li>
 <li><b><code>custom_getter_</code></b>: Optional custom getter for variables used in <code>func_</code>. See
-the <a href="../tf/get_variable.md"><code>tf.get_variable</code></a> <code>custom_getter</code> documentation for
+the <a href="../tf/get_variable.html"><code>tf.get_variable</code></a> <code>custom_getter</code> documentation for
 more information.</li>
 <li><b><code>**kwargs</code></b>: Keyword arguments to apply to <code>func_</code>.</li>
 </ul>

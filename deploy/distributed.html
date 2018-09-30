@@ -4082,7 +4082,7 @@
       <h1>Distributed TensorFlow</h1>
 <p>This document shows how to create a cluster of TensorFlow servers, and how to
 distribute a computation graph across that cluster. We assume that you are
-familiar with the <a href="../guide/low_level_intro.md">basic concepts</a> of
+familiar with the <a href="../guide/low_level_intro.html">basic concepts</a> of
 writing low level TensorFlow programs.</p>
 <h2>Hello distributed TensorFlow!</h2>
 <p>To see a simple TensorFlow cluster in action, execute the following:</p>
@@ -4096,7 +4096,7 @@ $ python
 'Hello, distributed TensorFlow!'
 </code></pre>
 <p>The
-<a href="../api_docs/python/tf/train/Server.md#create_local_server"><code>tf.train.Server.create_local_server</code></a>
+<a href="../api_docs/python/tf/train/Server.html#create_local_server"><code>tf.train.Server.create_local_server</code></a>
 method creates a single-process cluster, with an in-process server.</p>
 <h2>Create a cluster</h2>
 <div class="video-wrapper">
@@ -4115,19 +4115,19 @@ on the same machine (e.g. to control different GPU devices). In each task, do
 the following:</p>
 <ol>
 <li>
-<p><strong>Create a <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a></strong> that describes all of the tasks
+<p><strong>Create a <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a></strong> that describes all of the tasks
 in the cluster. This should be the same for each task.</p>
 </li>
 <li>
-<p><strong>Create a <a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a></strong>, passing the <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a> to
+<p><strong>Create a <a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a></strong>, passing the <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a> to
 the constructor, and identifying the local task with a job name
 and task index.</p>
 </li>
 </ol>
-<h3>Create a <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a> to describe the cluster</h3>
+<h3>Create a <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a> to describe the cluster</h3>
 <p>The cluster specification dictionary maps job names to lists of network
 addresses. Pass this dictionary to
-the <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a>
+the <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a>
 constructor.  For example:</p>
 <table>
   <tr><th><code>tf.train.ClusterSpec</code> construction</th><th>Available tasks</th>
@@ -4152,11 +4152,11 @@ tf.train.ClusterSpec({
 </pre></td><td><code>/job:worker/task:0</code><br/><code>/job:worker/task:1</code><br/><code>/job:worker/task:2</code><br/><code>/job:ps/task:0</code><br/><code>/job:ps/task:1</code></td>
   </tr>
 </table>
-<h3>Create a <a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a> instance in each task</h3>
-<p>A <a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a> object contains a
+<h3>Create a <a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a> instance in each task</h3>
+<p>A <a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a> object contains a
 set of local devices, a set of connections to other tasks in its
-<a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a>, and a
-<a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> that can use these
+<a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a>, and a
+<a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> that can use these
 to perform a distributed computation. Each server is a member of a specific
 named job and has a task index within that job.  A server can communicate with
 any other server in the cluster.</p>
@@ -4179,7 +4179,7 @@ which you’d like to see support, please raise a
 <a href="https://github.com/tensorflow/tensorflow/issues">GitHub issue</a>.</p>
 <h2>Specifying distributed devices in your model</h2>
 <p>To place operations on a particular process, you can use the same
-<a href="../api_docs/python/tf/device.md"><code>tf.device</code></a>
+<a href="../api_docs/python/tf/device.html"><code>tf.device</code></a>
 function that is used to specify whether ops run on the CPU or GPU. For example:</p>
 <pre><code class="language-python">with tf.device(&quot;/job:ps/task:0&quot;):
   weights_1 = tf.Variable(...)
@@ -4215,7 +4215,7 @@ simplify the work of specifying a replicated model. Possible approaches include:
 <ul>
 <li>
 <p><strong>In-graph replication.</strong> In this approach, the client builds a single
-<a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> that contains one set of parameters (in <a href="../api_docs/python/tf/Variable.md"><code>tf.Variable</code></a> nodes pinned
+<a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> that contains one set of parameters (in <a href="../api_docs/python/tf/Variable.html"><code>tf.Variable</code></a> nodes pinned
 to <code>/job:ps</code>); and multiple copies of the compute-intensive part of the model,
 each pinned to a different task in <code>/job:worker</code>.</p>
 </li>
@@ -4224,7 +4224,7 @@ each pinned to a different task in <code>/job:worker</code>.</p>
 for each <code>/job:worker</code> task, typically in the same process as the worker
 task. Each client builds a similar graph containing the parameters (pinned to
 <code>/job:ps</code> as before using
-<a href="../api_docs/python/tf/train/replica_device_setter.md"><code>tf.train.replica_device_setter</code></a>
+<a href="../api_docs/python/tf/train/replica_device_setter.html"><code>tf.train.replica_device_setter</code></a>
 to map them deterministically to the same tasks); and a single copy of the
 compute-intensive part of the model, pinned to the local task in
 <code>/job:worker</code>.</p>
@@ -4241,7 +4241,7 @@ apply them together. It is compatible with in-graph replication (e.g. using
 gradient averaging as in the
 <a href="https://github.com/tensorflow/models/tree/master/tutorials/image/cifar10/cifar10_multi_gpu_train.py">CIFAR-10 multi-GPU trainer</a>),
 and between-graph replication (e.g. using the
-<a href="../api_docs/python/tf/train/SyncReplicasOptimizer.md"><code>tf.train.SyncReplicasOptimizer</code></a>).</p>
+<a href="../api_docs/python/tf/train/SyncReplicasOptimizer.html"><code>tf.train.SyncReplicasOptimizer</code></a>).</p>
 </li>
 </ul>
 <h3>Putting it all together: example trainer program</h3>
@@ -4296,7 +4296,7 @@ def main(_):
                                            hooks=hooks) as mon_sess:
       while not mon_sess.should_stop():
         # Run a training step asynchronously.
-        # See &lt;a href=&quot;../api_docs/python/tf/train/SyncReplicasOptimizer.md&quot;&gt;&lt;code&gt;tf.train.SyncReplicasOptimizer&lt;/code&gt;&lt;/a&gt; for additional details on how to
+        # See &lt;a href=&quot;../api_docs/python/tf/train/SyncReplicasOptimizer.html&quot;&gt;&lt;code&gt;tf.train.SyncReplicasOptimizer&lt;/code&gt;&lt;/a&gt; for additional details on how to
         # perform *synchronous* training.
         # mon_sess.run handles AbortedError in case of preempted PS.
         mon_sess.run(train_op)
@@ -4369,7 +4369,7 @@ serve multiple clients.</p>
 one or more “tasks”. A cluster is typically dedicated to a particular high-level
 objective, such as training a neural network, using many machines in parallel. A
 cluster is defined by
-a <a href="../api_docs/python/tf/train/ClusterSpec.md"><code>tf.train.ClusterSpec</code></a> object.</p>
+a <a href="../api_docs/python/tf/train/ClusterSpec.html"><code>tf.train.ClusterSpec</code></a> object.</p>
 <p><strong>Job</strong></p>
 <p>A job comprises a list of “tasks”, which typically serve a common purpose.
 For example, a job named <code>ps</code> (for “parameter server”) typically hosts nodes
@@ -4388,7 +4388,7 @@ service.</p>
 to a single process. A task belongs to a particular “job” and is identified by
 its index within that job’s list of tasks.</p>
 <p><strong>TensorFlow server</strong> A process running
-a <a href="../api_docs/python/tf/train/Server.md"><code>tf.train.Server</code></a> instance, which is
+a <a href="../api_docs/python/tf/train/Server.html"><code>tf.train.Server</code></a> instance, which is
 a member of a cluster, and exports a “master service” and “worker service”.</p>
 <p><strong>Worker service</strong></p>
 <p>An RPC service that executes parts of a TensorFlow graph using its local devices.

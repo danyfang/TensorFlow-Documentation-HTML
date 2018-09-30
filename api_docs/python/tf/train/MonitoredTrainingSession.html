@@ -4102,12 +4102,12 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/training/monitored_session.py"><code>tensorflow/python/training/monitored_session.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/train.md#Distributed_execution">Training &gt; Distributed execution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/train.html#Distributed_execution">Training &gt; Distributed execution</a></p>
 <p>Creates a <code>MonitoredSession</code> for training.</p>
 <p>For a chief, this utility sets proper session initializer/restorer. It also
 creates hooks related to checkpoint and summary saving. For workers, this
 utility sets proper session creator which waits for the chief to
-initialize/restore. Please check <a href="../../tf/train/MonitoredSession.md"><code>tf.train.MonitoredSession</code></a> for more
+initialize/restore. Please check <a href="../../tf/train/MonitoredSession.html"><code>tf.train.MonitoredSession</code></a> for more
 information.</p>
 <h4>Args:</h4>
 <ul>
@@ -4135,8 +4135,8 @@ the default summary saver isn’t used. Default 100.</li>
 to disk using a default summary saver.  If both <code>save_summaries_steps</code> and
 <code>save_summaries_secs</code> are set to <code>None</code>, then the default summary saver
 isn’t used. Default not enabled.</li>
-<li><b><code>config</code></b>: an instance of <a href="../../tf/ConfigProto.md"><code>tf.ConfigProto</code></a> proto used to configure the session.
-It’s the <code>config</code> argument of constructor of <a href="../../tf/Session.md"><code>tf.Session</code></a>.</li>
+<li><b><code>config</code></b>: an instance of <a href="../../tf/ConfigProto.html"><code>tf.ConfigProto</code></a> proto used to configure the session.
+It’s the <code>config</code> argument of constructor of <a href="../../tf/Session.html"><code>tf.Session</code></a>.</li>
 <li><b><code>stop_grace_period_secs</code></b>: Number of seconds given to threads to stop after
 <code>close()</code> has been called.</li>
 <li><b><code>log_step_count_steps</code></b>: The frequency, in number of global steps, that the

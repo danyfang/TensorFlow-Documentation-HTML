@@ -4095,7 +4095,7 @@
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/script_ops.py"><code>tensorflow/contrib/framework/python/ops/script_ops.py</code></a>.</p>
 <p>Wraps a python function and uses it as a TensorFlow op.</p>
-<p>This function is a wrapper around <a href="../../../tf/py_func.md"><code>tf.py_func</code></a> and improve it with kwargs
+<p>This function is a wrapper around <a href="../../../tf/py_func.html"><code>tf.py_func</code></a> and improve it with kwargs
 and output_shapes. Further it changed some argument names.</p>
 <p>Given a python function <code>func</code>, which takes numpy arrays as its
 inputs and returns numpy arrays as its outputs, wrap this function as an
@@ -4118,7 +4118,7 @@ serialize your model and restore it in a different environment.</p>
 <li>
 <p>The operation must run in the same address space as the Python program
 that calls <code>tf.py_func()</code>. If you are using distributed TensorFlow, you
-must run a <a href="../../../tf/train/Server.md"><code>tf.train.Server</code></a> in the same process as the program that calls
+must run a <a href="../../../tf/train/Server.html"><code>tf.train.Server</code></a> in the same process as the program that calls
 <code>tf.py_func()</code> and you must pin the created operation to a device in that
 server (e.g. using <code>with tf.device():</code>).</p>
 </li>
@@ -4126,7 +4126,7 @@ server (e.g. using <code>with tf.device():</code>).</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>func</code></b>: A Python function, which accepts a list of NumPy <code>ndarray</code> objects
-having element types that match the corresponding <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> objects
+having element types that match the corresponding <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> objects
 in <code>inp</code>, and returns a list of <code>ndarray</code> objects (or a single <code>ndarray</code>)
 having element types that match the corresponding values in <code>Tout</code>.</li>
 <li><b><code>args</code></b>: A list of <code>Tensor</code> objects.</li>

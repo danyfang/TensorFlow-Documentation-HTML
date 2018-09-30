@@ -4080,14 +4080,14 @@
     </nav>
     <article id="main" class="content">
       <h1>Save and Restore</h1>
-<p>The <a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> class provides methods to save and restore models. The
-<a href="../api_docs/python/tf/saved_model/simple_save.md"><code>tf.saved_model.simple_save</code></a> function is an easy way to build a
-<a href="../api_docs/python/tf/saved_model.md">saved model</a> suitable for serving.
-[Estimators](<a href="../guide/estimators.md">Estimators</a>) automatically save and restore
+<p>The <a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> class provides methods to save and restore models. The
+<a href="../api_docs/python/tf/saved_model/simple_save.html"><code>tf.saved_model.simple_save</code></a> function is an easy way to build a
+<a href="../api_docs/python/tf/saved_model.html">saved model</a> suitable for serving.
+[Estimators](<a href="../guide/estimators.html">Estimators</a>) automatically save and restore
 variables in the <code>model_dir</code>.</p>
 <h2>Save and restore variables</h2>
-<p>TensorFlow <a href="../guide/variables.md">Variables</a> are the best way to represent shared, persistent state
-manipulated by your program. The <a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> constructor adds <code>save</code> and
+<p>TensorFlow <a href="../guide/variables.html">Variables</a> are the best way to represent shared, persistent state
+manipulated by your program. The <a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> constructor adds <code>save</code> and
 <code>restore</code> ops to the graph for all, or a specified list, of the variables in the
 graph.  The <code>Saver</code> object provides methods to run these ops, specifying paths
 for the checkpoint files to write to or read from.</p>
@@ -4099,12 +4099,12 @@ later in this document.</p>
 <p>TensorFlow saves variables in binary <em>checkpoint files</em> that map variable
 names to tensor values.</p>
 <p>Caution: TensorFlow model files are code. Be careful with untrusted code.
-See <a href="https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md">Using TensorFlow Securely</a>
+See <a href="https://github.com/tensorflow/tensorflow/blob/master/SECURITY.html">Using TensorFlow Securely</a>
 for details.</p>
 <h3>Save variables</h3>
 <p>Create a <code>Saver</code> with <code>tf.train.Saver()</code> to manage all variables in the
 model. For example, the following snippet demonstrates how to call the
-<a href="../api_docs/python/tf/train/Saver.md#save"><code>tf.train.Saver.save</code></a> method to save variables to checkpoint files:</p>
+<a href="../api_docs/python/tf/train/Saver.html#save"><code>tf.train.Saver.save</code></a> method to save variables to checkpoint files:</p>
 <pre><code class="language-python"># Create some variables.
 v1 = tf.get_variable(&quot;v1&quot;, shape=[3], initializer = tf.zeros_initializer)
 v2 = tf.get_variable(&quot;v2&quot;, shape=[5], initializer = tf.zeros_initializer)
@@ -4130,10 +4130,10 @@ with tf.Session() as sess:
   print(&quot;Model saved in path: %s&quot; % save_path)
 </code></pre>
 <h3>Restore variables</h3>
-<p>The <a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a> object not only saves variables to checkpoint files, it
+<p>The <a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a> object not only saves variables to checkpoint files, it
 also restores variables. Note that when you restore variables you do not have
 to initialize them beforehand. For example, the following snippet demonstrates
-how to call the <a href="../api_docs/python/tf/train/Saver.md#restore"><code>tf.train.Saver.restore</code></a> method to restore variables from the
+how to call the <a href="../api_docs/python/tf/train/Saver.html#restore"><code>tf.train.Saver.restore</code></a> method to restore variables from the
 checkpoint files:</p>
 <pre><code class="language-python">tf.reset_default_graph()
 
@@ -4206,7 +4206,7 @@ listed in multiple saver objects; its value is only changed when the
 <li>
 <p>If you only restore a subset of the model variables at the start of a
 session, you have to run an initialize op for the other variables.  See
-<a href="../api_docs/python/tf/variables_initializer.md"><code>tf.variables_initializer</code></a> for more information.</p>
+<a href="../api_docs/python/tf/variables_initializer.html"><code>tf.variables_initializer</code></a> for more information.</p>
 </li>
 <li>
 <p>To inspect the variables in a checkpoint, you can use the
@@ -4214,7 +4214,7 @@ session, you have to run an initialize op for the other variables.  See
 library, particularly the <code>print_tensors_in_checkpoint_file</code> function.</p>
 </li>
 <li>
-<p>By default, <code>Saver</code> uses the value of the <a href="../api_docs/python/tf/Variable.md#name"><code>tf.Variable.name</code></a> property
+<p>By default, <code>Saver</code> uses the value of the <a href="../api_docs/python/tf/Variable.html#name"><code>tf.Variable.name</code></a> property
 for each variable.  However, when you create a <code>Saver</code> object, you may
 optionally choose names for the variables in the checkpoint files.</p>
 </li>
@@ -4252,11 +4252,11 @@ chkp.print_tensors_in_checkpoint_file(&quot;/tmp/model.ckpt&quot;, tensor_name='
 graph’s metadata. This is a language-neutral, recoverable, hermetic
 serialization format that enables higher-level systems and tools to produce,
 consume, and transform TensorFlow models. TensorFlow provides several ways to
-interact with <code>SavedModel</code>, including the <a href="../api_docs/python/tf/saved_model.md"><code>tf.saved_model</code></a> APIs,
-<a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>, and a command-line interface.</p>
+interact with <code>SavedModel</code>, including the <a href="../api_docs/python/tf/saved_model.html"><code>tf.saved_model</code></a> APIs,
+<a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>, and a command-line interface.</p>
 <h2>Build and load a SavedModel</h2>
 <h3>Simple save</h3>
-<p>The easiest way to create a <code>SavedModel</code> is to use the <a href="../api_docs/python/tf/saved_model/simple_save.md"><code>tf.saved_model.simple_save</code></a>
+<p>The easiest way to create a <code>SavedModel</code> is to use the <a href="../api_docs/python/tf/saved_model/simple_save.html"><code>tf.saved_model.simple_save</code></a>
 function:</p>
 <pre><code class="language-python">simple_save(session,
             export_dir,
@@ -4267,11 +4267,11 @@ function:</p>
 <a href="/serving/serving_basic">TensorFlow serving</a> and supports the
 <a href="https://github.com/tensorflow/serving/blob/master/tensorflow_serving/apis/predict.proto">Predict API</a>.
 To access the classify, regress, or multi-inference APIs, use the manual
-<code>SavedModel</code> builder APIs or an <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a>.</p>
+<code>SavedModel</code> builder APIs or an <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a>.</p>
 <h3>Manually build a SavedModel</h3>
-<p>If your use case isn’t covered by <a href="../api_docs/python/tf/saved_model/simple_save.md"><code>tf.saved_model.simple_save</code></a>, use the manual
-<a href="../api_docs/python/tf/saved_model/builder.md">builder APIs</a> to create a <code>SavedModel</code>.</p>
-<p>The <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md"><code>tf.saved_model.builder.SavedModelBuilder</code></a> class provides functionality to
+<p>If your use case isn’t covered by <a href="../api_docs/python/tf/saved_model/simple_save.html"><code>tf.saved_model.simple_save</code></a>, use the manual
+<a href="../api_docs/python/tf/saved_model/builder.html">builder APIs</a> to create a <code>SavedModel</code>.</p>
+<p>The <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html"><code>tf.saved_model.builder.SavedModelBuilder</code></a> class provides functionality to
 save multiple <code>MetaGraphDef</code>s.  A <strong>MetaGraph</strong> is a dataflow graph, plus
 its associated variables, assets, and signatures.  A <strong><code>MetaGraphDef</code></strong>
 is the protocol buffer representation of a MetaGraph.  A <strong>signature</strong> is
@@ -4310,15 +4310,15 @@ builder.save()
 <h4>Forward compatibility via <code>strip_default_attrs=True</code></h4>
 <p>Following the guidance below gives you forward compatibility only if the set of
 Ops has not changed.</p>
-<p>The <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md"><code>SavedModelBuilder</code></a> class allows
+<p>The <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html"><code>SavedModelBuilder</code></a> class allows
 users to control whether default-valued attributes must be stripped from the
-<a href="../extend/tool_developers/index.md#nodes"><code>NodeDefs</code></a>
+<a href="../extend/tool_developers/index.html#nodes"><code>NodeDefs</code></a>
 while adding a meta graph to the SavedModel bundle. Both
-<a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md#add_meta_graph_and_variables"><code>SavedModelBuilder.add_meta_graph_and_variables</code></a>
-and <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.md#add_meta_graph"><code>SavedModelBuilder.add_meta_graph</code></a>
+<a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html#add_meta_graph_and_variables"><code>SavedModelBuilder.add_meta_graph_and_variables</code></a>
+and <a href="../api_docs/python/tf/saved_model/builder/SavedModelBuilder.html#add_meta_graph"><code>SavedModelBuilder.add_meta_graph</code></a>
 methods accept a Boolean flag <code>strip_default_attrs</code> that controls this behavior.</p>
-<p>If <code>strip_default_attrs</code> is <code>False</code>, the exported <a href="../api_docs/python/tf/MetaGraphDef.md"><code>tf.MetaGraphDef</code></a> will have
-the default valued attributes in all its <a href="../api_docs/python/tf/NodeDef.md"><code>tf.NodeDef</code></a> instances.
+<p>If <code>strip_default_attrs</code> is <code>False</code>, the exported <a href="../api_docs/python/tf/MetaGraphDef.html"><code>tf.MetaGraphDef</code></a> will have
+the default valued attributes in all its <a href="../api_docs/python/tf/NodeDef.html"><code>tf.NodeDef</code></a> instances.
 This can break forward compatibility with a sequence of events such as the
 following:</p>
 <ul>
@@ -4339,7 +4339,7 @@ loading models regenerated with newer training binaries.</li>
 for more information.</p>
 <h3>Loading a SavedModel in Python</h3>
 <p>The Python version of the SavedModel
-<a href="../api_docs/python/tf/saved_model/loader.md">loader</a>
+<a href="../api_docs/python/tf/saved_model/loader.html">loader</a>
 provides load and restore capability for a SavedModel. The <code>load</code> operation
 requires the following information:</p>
 <ul>
@@ -4427,7 +4427,7 @@ that can be served (Classify, Regress, or Predict).</li>
 <li>Serve the model from a local server and request predictions.</li>
 </ul>
 <h3>Prepare serving inputs</h3>
-<p>During training, an <a href="../guide/premade_estimators.md#input_fn"><code>input_fn()</code></a> ingests data
+<p>During training, an <a href="../guide/premade_estimators.html#input_fn"><code>input_fn()</code></a> ingests data
 and prepares it for use by the model.  At serving time, similarly, a
 <code>serving_input_receiver_fn()</code> accepts inference requests and prepares them for
 the model.  This function has the following purposes:</p>
@@ -4437,18 +4437,18 @@ with inference requests.</li>
 <li>To add any additional ops needed to convert data from the input format
 into the feature <code>Tensor</code>s expected by the model.</li>
 </ul>
-<p>The function returns a <a href="../api_docs/python/tf/estimator/export/ServingInputReceiver.md"><code>tf.estimator.export.ServingInputReceiver</code></a> object,
+<p>The function returns a <a href="../api_docs/python/tf/estimator/export/ServingInputReceiver.html"><code>tf.estimator.export.ServingInputReceiver</code></a> object,
 which packages the placeholders and the resulting feature <code>Tensor</code>s together.</p>
 <p>A typical pattern is that inference requests arrive in the form of serialized
 <code>tf.Example</code>s, so the <code>serving_input_receiver_fn()</code> creates a single string
 placeholder to receive them.  The <code>serving_input_receiver_fn()</code> is then also
-responsible for parsing the <code>tf.Example</code>s by adding a <a href="../api_docs/python/tf/parse_example.md"><code>tf.parse_example</code></a> op to
+responsible for parsing the <code>tf.Example</code>s by adding a <a href="../api_docs/python/tf/parse_example.html"><code>tf.parse_example</code></a> op to
 the graph.</p>
 <p>When writing such a <code>serving_input_receiver_fn()</code>, you must pass a parsing
-specification to <a href="../api_docs/python/tf/parse_example.md"><code>tf.parse_example</code></a> to tell the parser what feature names to
+specification to <a href="../api_docs/python/tf/parse_example.html"><code>tf.parse_example</code></a> to tell the parser what feature names to
 expect and how to map them to <code>Tensor</code>s. A parsing specification takes the
-form of a dict from feature names to <a href="../api_docs/python/tf/FixedLenFeature.md"><code>tf.FixedLenFeature</code></a>, <a href="../api_docs/python/tf/VarLenFeature.md"><code>tf.VarLenFeature</code></a>,
-and <a href="../api_docs/python/tf/SparseFeature.md"><code>tf.SparseFeature</code></a>.  Note this parsing specification should not include
+form of a dict from feature names to <a href="../api_docs/python/tf/FixedLenFeature.html"><code>tf.FixedLenFeature</code></a>, <a href="../api_docs/python/tf/VarLenFeature.html"><code>tf.VarLenFeature</code></a>,
+and <a href="../api_docs/python/tf/SparseFeature.html"><code>tf.SparseFeature</code></a>.  Note this parsing specification should not include
 any label or weight columns, since those will not be available at serving
 time—in contrast to a parsing specification used in the <code>input_fn()</code> at
 training time.</p>
@@ -4465,7 +4465,7 @@ def serving_input_receiver_fn():
   features = tf.parse_example(serialized_tf_example, feature_spec)
   return tf.estimator.export.ServingInputReceiver(features, receiver_tensors)
 </code></pre>
-<p>The <a href="../api_docs/python/tf/estimator/export/build_parsing_serving_input_receiver_fn.md"><code>tf.estimator.export.build_parsing_serving_input_receiver_fn</code></a> utility
+<p>The <a href="../api_docs/python/tf/estimator/export/build_parsing_serving_input_receiver_fn.html"><code>tf.estimator.export.build_parsing_serving_input_receiver_fn</code></a> utility
 function provides that input receiver for the common case.</p>
 <blockquote>
 <p>Note: when training a model to be served using the Predict API with a local
@@ -4476,7 +4476,7 @@ feature data.</p>
 serving system will feed feature <code>Tensor</code>s directly—you must still provide
 a <code>serving_input_receiver_fn()</code> that creates placeholders for the feature
 <code>Tensor</code>s and passes them through.  The
-<a href="../api_docs/python/tf/estimator/export/build_raw_serving_input_receiver_fn.md"><code>tf.estimator.export.build_raw_serving_input_receiver_fn</code></a> utility provides for
+<a href="../api_docs/python/tf/estimator/export/build_raw_serving_input_receiver_fn.html"><code>tf.estimator.export.build_raw_serving_input_receiver_fn</code></a> utility provides for
 this.</p>
 <p>If these utilities do not meet your needs, you are free to write your own
 <code>serving_input_receiver_fn()</code>.  One case where this may be needed is if your
@@ -4492,7 +4492,7 @@ By contrast, the <em>output</em> portion of the signature is determined by the m
 <p><a name="specify_outputs"></a></p>
 <h3>Specify the outputs of a custom model</h3>
 <p>When writing a custom <code>model_fn</code>, you must populate the <code>export_outputs</code> element
-of the <a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a> return value. This is a dict of
+of the <a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a> return value. This is a dict of
 <code>{name: output}</code> describing the output signatures to be exported and used during
 serving.</p>
 <p>In the usual case of making a single prediction, this dict contains
@@ -4500,9 +4500,9 @@ one element, and the <code>name</code> is immaterial.  In a multi-headed model, 
 is represented by an entry in this dict.  In this case the <code>name</code> is a string
 of your choice that can be used to request a specific head at serving time.</p>
 <p>Each <code>output</code> value must be an <code>ExportOutput</code> object  such as
-<a href="../api_docs/python/tf/estimator/export/ClassificationOutput.md"><code>tf.estimator.export.ClassificationOutput</code></a>,
-<a href="../api_docs/python/tf/estimator/export/RegressionOutput.md"><code>tf.estimator.export.RegressionOutput</code></a>, or
-<a href="../api_docs/python/tf/estimator/export/PredictOutput.md"><code>tf.estimator.export.PredictOutput</code></a>.</p>
+<a href="../api_docs/python/tf/estimator/export/ClassificationOutput.html"><code>tf.estimator.export.ClassificationOutput</code></a>,
+<a href="../api_docs/python/tf/estimator/export/RegressionOutput.html"><code>tf.estimator.export.RegressionOutput</code></a>, or
+<a href="../api_docs/python/tf/estimator/export/PredictOutput.html"><code>tf.estimator.export.PredictOutput</code></a>.</p>
 <p>These output types map straightforwardly to the
 <a href="https://github.com/tensorflow/serving/blob/master/tensorflow_serving/apis/prediction_service.proto">TensorFlow Serving APIs</a>,
 and so determine which request types will be honored.</p>
@@ -4518,7 +4518,7 @@ does not specify one.</p>
 <p><a name="perform_export"></a></p>
 <h3>Perform the export</h3>
 <p>To export your trained Estimator, call
-<a href="../api_docs/python/tf/estimator/BaselineClassifier.md#export_savedmodel"><code>tf.estimator.Estimator.export_savedmodel</code></a> with the export base path and
+<a href="../api_docs/python/tf/estimator/BaselineClassifier.html#export_savedmodel"><code>tf.estimator.Estimator.export_savedmodel</code></a> with the export base path and
 the <code>serving_input_receiver_fn</code>.</p>
 <pre><code class="language-py">estimator.export_savedmodel(export_dir_base, serving_input_receiver_fn,
                             strip_default_attrs=True)
@@ -4592,7 +4592,7 @@ result = stub.Classify(request, 10.0)  # 10 secs timeout
 </code></pre>
 <p>The returned result in this example is a <code>ClassificationResponse</code> protocol
 buffer.</p>
-<p>This is a skeletal example; please see the <a href="../deploy/index.md">Tensorflow Serving</a>
+<p>This is a skeletal example; please see the <a href="../deploy/index.html">Tensorflow Serving</a>
 documentation and <a href="https://github.com/tensorflow/serving/tree/master/tensorflow_serving/example">examples</a>
 for more details.</p>
 <blockquote>
@@ -4616,7 +4616,7 @@ from contrib to core. -->
 execute a SavedModel.
 For example, you can use the CLI to inspect the model’s <code>SignatureDef</code>s.
 The CLI enables you to quickly confirm that the input
-<a href="../guide/tensors.md">Tensor dtype and shape</a> match the model. Moreover, if you
+<a href="../guide/tensors.html">Tensor dtype and shape</a> match the model. Moreover, if you
 want to test your model, you can use the CLI to do a sanity check by
 passing in sample inputs in various formats (for example, Python
 expressions) and then fetching the output.</p>
@@ -4738,7 +4738,7 @@ Here’s the syntax:</p>
 <ul>
 <li><code>--inputs</code> option enables you to pass numpy ndarray in files.</li>
 <li><code>--input_exprs</code> option enables you to pass Python expressions.</li>
-<li><code>--input_examples</code> option enables you to pass <a href="../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a>.</li>
+<li><code>--input_examples</code> option enables you to pass <a href="../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a>.</li>
 </ul>
 <h4><code>--inputs</code></h4>
 <p>To pass input data in files, specify the <code>--inputs</code> option, which takes the
@@ -4787,9 +4787,9 @@ example:</p>
 </code></pre>
 <p>(Note that the <code>numpy</code> module is already available to you as <code>np</code>.)</p>
 <h4><code>--input_examples</code></h4>
-<p>To pass <a href="../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a> as inputs, specify the <code>--input_examples</code> option.
+<p>To pass <a href="../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a> as inputs, specify the <code>--input_examples</code> option.
 For each input key, it takes a list of dictionary, where each dictionary is an
-instance of <a href="../api_docs/python/tf/train/Example.md"><code>tf.train.Example</code></a>. The dictionary keys are the features and the
+instance of <a href="../api_docs/python/tf/train/Example.html"><code>tf.train.Example</code></a>. The dictionary keys are the features and the
 values are the value lists for each feature.
 For example:</p>
 <pre><code class="language-bsh">`&lt;input_key&gt;=[{&quot;age&quot;:[22,24],&quot;education&quot;:[&quot;BS&quot;,&quot;MS&quot;]}]`
@@ -4874,7 +4874,7 @@ and can be read when loading a specific <code>MetaGraphDef</code>.</li>
 add their own assets that co-exist with the model, but are not loaded by
 the graph.  This subfolder is not managed by the SavedModel libraries.</li>
 <li><code>variables</code> is a subfolder that includes output from
-<a href="../api_docs/python/tf/train/Saver.md"><code>tf.train.Saver</code></a>.</li>
+<a href="../api_docs/python/tf/train/Saver.html"><code>tf.train.Saver</code></a>.</li>
 <li><code>saved_model.pb</code> or <code>saved_model.pbtxt</code> is the SavedModel protocol buffer.
 It includes the graph definitions as <code>MetaGraphDef</code> protocol buffers.</li>
 </ul>

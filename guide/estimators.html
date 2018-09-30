@@ -4080,7 +4080,7 @@
     </nav>
     <article id="main" class="content">
       <h1>Estimators</h1>
-<p>This document introduces <a href="../api_docs/python/tf/estimator.md"><strong>Estimators</strong></a>–a high-level TensorFlow
+<p>This document introduces <a href="../api_docs/python/tf/estimator.html"><strong>Estimators</strong></a>–a high-level TensorFlow
 API that greatly simplifies machine learning programming. Estimators encapsulate
 the following actions:</p>
 <ul>
@@ -4091,9 +4091,9 @@ the following actions:</p>
 </ul>
 <p>You may either use the pre-made Estimators we provide or write your
 own custom Estimators.  All Estimators–whether pre-made or custom–are
-classes based on the <a href="../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> class.</p>
+classes based on the <a href="../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> class.</p>
 <p>Note: TensorFlow also includes a deprecated <code>Estimator</code> class at
-<a href="../api_docs/python/tf/contrib/learn/Estimator.md"><code>tf.contrib.learn.Estimator</code></a>, which you should not use.</p>
+<a href="../api_docs/python/tf/contrib/learn/Estimator.html"><code>tf.contrib.learn.Estimator</code></a>, which you should not use.</p>
 <h2>Advantages of Estimators</h2>
 <p>Estimators provide the following benefits:</p>
 <ul>
@@ -4105,7 +4105,7 @@ or TPUs without recoding your model.</li>
 <li>You can develop a state of the art model with high-level intuitive code.
 In short, it is generally much easier to create models with Estimators
 than with the low-level TensorFlow APIs.</li>
-<li>Estimators are themselves built on <a href="../api_docs/python/tf/layers.md"><code>tf.layers</code></a>, which
+<li>Estimators are themselves built on <a href="../api_docs/python/tf/layers.html"><code>tf.layers</code></a>, which
 simplifies customization.</li>
 <li>Estimators build the graph for you.</li>
 <li>Estimators provide a safe distributed training loop that controls how and
@@ -4128,9 +4128,9 @@ different data sets.</p>
 than the base TensorFlow APIs. You no longer have to worry about creating
 the computational graph or sessions since Estimators handle all
 the “plumbing” for you.  That is, pre-made Estimators create and manage
-<a href="../api_docs/python/tf/Graph.md"><code>Graph</code></a> and <a href="../api_docs/python/tf/Session.md"><code>Session</code></a> objects for you.  Furthermore,
+<a href="../api_docs/python/tf/Graph.html"><code>Graph</code></a> and <a href="../api_docs/python/tf/Session.html"><code>Session</code></a> objects for you.  Furthermore,
 pre-made Estimators let you experiment with different model architectures by
-making only minimal code changes.  <a href="../api_docs/python/tf/estimator/DNNClassifier.md"><code>DNNClassifier</code></a>,
+making only minimal code changes.  <a href="../api_docs/python/tf/estimator/DNNClassifier.html"><code>DNNClassifier</code></a>,
 for example, is a pre-made Estimator class that trains classification models
 based on dense, feed-forward neural networks.</p>
 <h3>Structure of a pre-made Estimators program</h3>
@@ -4154,10 +4154,10 @@ an input function:</p>
    ...  # manipulate dataset, extracting the feature dict and the label
    return feature_dict, label
 </code></pre>
-<p>(See <a href="../guide/datasets.md">Importing Data</a> for full details.)</p>
+<p>(See <a href="../guide/datasets.html">Importing Data</a> for full details.)</p>
 </li>
 <li>
-<p><strong>Define the feature columns.</strong> Each <a href="../api_docs/python/tf/feature_column.md"><code>tf.feature_column</code></a>
+<p><strong>Define the feature columns.</strong> Each <a href="../api_docs/python/tf/feature_column.html"><code>tf.feature_column</code></a>
 identifies a feature name, its type, and any input pre-processing.
 For example, the following snippet creates three feature
 columns that hold integer or floating-point data.  The first two
@@ -4205,7 +4205,7 @@ features yourself.</p>
 evaluation, and prediction. When you are using a pre-made Estimator,
 someone else has already implemented the model function. When relying
 on a custom Estimator, you must write the model function yourself. A
-<a href="../guide/custom_estimators.md">companion document</a>
+<a href="../guide/custom_estimators.html">companion document</a>
 explains how to write the model function.</p>
 <h2>Recommended workflow</h2>
 <p>We recommend the following workflow:</p>
@@ -4222,7 +4222,7 @@ best results.</li>
 <h2>Creating Estimators from Keras models</h2>
 <p>You can convert existing Keras models to Estimators. Doing so enables your Keras
 model to access Estimator’s strengths, such as distributed training. Call
-<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.md"><code>tf.keras.estimator.model_to_estimator</code></a> as in the
+<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.html"><code>tf.keras.estimator.model_to_estimator</code></a> as in the
 following sample:</p>
 <pre><code class="language-python"># Instantiate a Keras inception v3 model.
 keras_inception_v3 = tf.keras.applications.inception_v3.InceptionV3(weights=None)
@@ -4254,7 +4254,7 @@ the corresponding compiled keras model. For example, the input key names for
 and similarly, the predicted output names can be obtained from
 <code>keras_inception_v3.output_names</code>.</p>
 <p>For more details, please refer to the documentation for
-<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.md"><code>tf.keras.estimator.model_to_estimator</code></a>.</p>
+<a href="../api_docs/python/tf/keras/estimator/model_to_estimator.html"><code>tf.keras.estimator.model_to_estimator</code></a>.</p>
 
     </article>
   </div>

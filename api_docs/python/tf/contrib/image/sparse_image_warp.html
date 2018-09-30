@@ -4098,10 +4098,10 @@
 <p>Apply a non-linear warp to the image, where the warp is specified by
 the source and destination locations of a (potentially small) number of
 control points. First, we use a polyharmonic spline
-(<a href="../../../tf/contrib/image/interpolate_spline.md"><code>tf.contrib.image.interpolate_spline</code></a>) to interpolate the displacements
+(<a href="../../../tf/contrib/image/interpolate_spline.html"><code>tf.contrib.image.interpolate_spline</code></a>) to interpolate the displacements
 between the corresponding control points to a dense flow field.
 Then, we warp the image using this dense flow field
-(<a href="../../../tf/contrib/image/dense_image_warp.md"><code>tf.contrib.image.dense_image_warp</code></a>).</p>
+(<a href="../../../tf/contrib/image/dense_image_warp.html"><code>tf.contrib.image.dense_image_warp</code></a>).</p>
 <p>Let t index our control points. For regularization_weight=0, we have:
 warped_image[b, dest_control_point_locations[b, t, 0],
 dest_control_point_locations[b, t, 1], :] =
@@ -4110,7 +4110,7 @@ source_control_point_locations[b, t, 1], :].</p>
 <p>For regularization_weight &gt; 0, this condition is met approximately, since
 regularized interpolation trades off smoothness of the interpolant vs.
 reconstruction of the interpolant at the control points.
-See <a href="../../../tf/contrib/image/interpolate_spline.md"><code>tf.contrib.image.interpolate_spline</code></a> for further documentation of the
+See <a href="../../../tf/contrib/image/interpolate_spline.html"><code>tf.contrib.image.interpolate_spline</code></a> for further documentation of the
 interpolation_order and regularization_weight arguments.</p>
 <h4>Args:</h4>
 <ul>

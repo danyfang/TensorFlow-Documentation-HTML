@@ -4093,7 +4093,7 @@
 <p>Replicate <code>Estimator.model_fn</code> over GPUs. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed after 2018-05-31.
 Instructions for updating:
-Please use <a href="../../../tf/contrib/distribute/MirroredStrategy.md"><code>tf.contrib.distribute.MirroredStrategy</code></a> instead.</p>
+Please use <a href="../../../tf/contrib/distribute/MirroredStrategy.html"><code>tf.contrib.distribute.MirroredStrategy</code></a> instead.</p>
 <p>The given <code>model_fn</code> specifies a single forward pass of a model.  To replicate
 such a model over GPUs, each GPU gets its own instance of the forward pass
 (a.k.a. a tower).  The input features and labels get sharded into the chunks
@@ -4163,7 +4163,7 @@ specified device.</p>
 <p>On current limitations:</p>
 <ul>
 <li><code>predictions</code> are not supported for <code>ModeKeys.EVAL</code>.  They are required
-for <a href="../../../tf/contrib/estimator/add_metrics.md"><code>tf.contrib.estimator.add_metrics</code></a>.</li>
+for <a href="../../../tf/contrib/estimator/add_metrics.html"><code>tf.contrib.estimator.add_metrics</code></a>.</li>
 </ul>
 <h4>Args:</h4>
 <ul>

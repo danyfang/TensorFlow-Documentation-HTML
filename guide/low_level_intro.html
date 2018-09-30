@@ -4083,13 +4083,13 @@
 <p>This guide gets you started programming in the low-level TensorFlow APIs
 (TensorFlow Core), showing you how to:</p>
 <ul>
-<li>Manage your own TensorFlow program (a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>) and TensorFlow
-runtime (a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>), instead of relying on Estimators to manage them.</li>
-<li>Run TensorFlow operations, using a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>.</li>
+<li>Manage your own TensorFlow program (a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>) and TensorFlow
+runtime (a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>), instead of relying on Estimators to manage them.</li>
+<li>Run TensorFlow operations, using a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>.</li>
 <li>Use high level components (<a href="#datasets">datasets</a>, <a href="#layers">layers</a>, and
 <a href="#feature_columns">feature_columns</a>) in this low level environment.</li>
 <li>Build your own training loop, instead of using the one
-<a href="../guide/premade_estimators.md">provided by Estimators</a>.</li>
+<a href="../guide/premade_estimators.html">provided by Estimators</a>.</li>
 </ul>
 <p>We recommend using the higher level APIs to build models when possible.
 Knowing TensorFlow Core is valuable for the following reasons:</p>
@@ -4100,7 +4100,7 @@ when you can use low level TensorFlow operations directly.</li>
 using the higher level APIs.</li>
 </ul>
 <h2>Setup</h2>
-<p>Before using this guide, <a href="../install/index.md">install TensorFlow</a>.</p>
+<p>Before using this guide, <a href="../install/index.html">install TensorFlow</a>.</p>
 <p>To get the most out of this guide, you should know the following:</p>
 <ul>
 <li>How to program in Python.</li>
@@ -4132,16 +4132,16 @@ examples of tensor values:</p>
 <p>You might think of TensorFlow Core programs as consisting of two discrete
 sections:</p>
 <ol>
-<li>Building the computational graph (a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a>).</li>
-<li>Running the computational graph (using a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>).</li>
+<li>Building the computational graph (a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a>).</li>
+<li>Running the computational graph (using a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>).</li>
 </ol>
 <h3>Graph</h3>
 <p>A <strong>computational graph</strong> is a series of TensorFlow operations arranged into a
 graph. The graph is composed of two types of objects.</p>
 <ul>
-<li><a href="../api_docs/python/tf/Operation.md">Operations</a> (or “ops”): The nodes of the graph.
+<li><a href="../api_docs/python/tf/Operation.html">Operations</a> (or “ops”): The nodes of the graph.
 Operations describe calculations that consume and produce tensors.</li>
-<li><a href="../api_docs/python/tf/Tensor.md">Tensors</a>: The edges in the graph. These represent the values
+<li><a href="../api_docs/python/tf/Tensor.html">Tensors</a>: The edges in the graph. These represent the values
 that will flow through the graph. Most TensorFlow functions return
 <code>tf.Tensors</code>.</li>
 </ul>
@@ -4166,7 +4166,7 @@ Tensor(&quot;add:0&quot;, shape=(), dtype=float32)
 </code></pre>
 <p>Notice that printing the tensors does not output the values <code>3.0</code>, <code>4.0</code>, and
 <code>7.0</code> as you might expect. The above statements only build the computation
-graph. These <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> objects just represent the results of the operations
+graph. These <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> objects just represent the results of the operations
 that will be run.</p>
 <p>Each operation in a graph is given a unique name. This name is independent of
 the names the objects are assigned to in Python. Tensors are named after the
@@ -4191,13 +4191,13 @@ following format:</p>
 <p>Then open TensorBoard’s <a href="http://localhost:6006/#graphs">graphs page</a> in your
 browser, and you should see a graph similar to the following:</p>
 <p><img src="https://www.tensorflow.org/images/getting_started_add.png" alt="TensorBoard screenshot"></p>
-<p>For more about TensorBoard’s graph visualization tools see <a href="../guide/graph_viz.md">TensorBoard: Graph Visualization</a>.</p>
+<p>For more about TensorBoard’s graph visualization tools see <a href="../guide/graph_viz.html">TensorBoard: Graph Visualization</a>.</p>
 <h3>Session</h3>
-<p>To evaluate tensors, instantiate a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> object, informally known as a
+<p>To evaluate tensors, instantiate a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> object, informally known as a
 <strong>session</strong>. A session encapsulates the state of the TensorFlow runtime, and
-runs TensorFlow operations. If a <a href="../api_docs/python/tf/Graph.md"><code>tf.Graph</code></a> is like a <code>.py</code> file, a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a>
+runs TensorFlow operations. If a <a href="../api_docs/python/tf/Graph.html"><code>tf.Graph</code></a> is like a <code>.py</code> file, a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a>
 is like the <code>python</code> executable.</p>
-<p>The following code creates a <a href="../api_docs/python/tf/Session.md"><code>tf.Session</code></a> object and then invokes its <code>run</code>
+<p>The following code creates a <a href="../api_docs/python/tf/Session.html"><code>tf.Session</code></a> object and then invokes its <code>run</code>
 method to evaluate the <code>total</code> tensor we created above:</p>
 <pre><code class="language-python">sess = tf.Session()
 print(sess.run(total))
@@ -4207,7 +4207,7 @@ through the graph and runs all the nodes that provide input to the requested
 output node. So this prints the expected value of 7.0:</p>
 <pre><code>7.0
 </code></pre>
-<p>You can pass multiple tensors to <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>. The <code>run</code> method
+<p>You can pass multiple tensors to <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>. The <code>run</code> method
 transparently handles any combination of tuples or dictionaries, as in the
 following example:</p>
 <pre><code class="language-python">print(sess.run({'ab':(a, b), 'total':total}))
@@ -4215,9 +4215,9 @@ following example:</p>
 <p>which returns the results in a structure of the same layout:</p>
 <pre><code class="language-None">{'total': 7.0, 'ab': (3.0, 4.0)}
 </code></pre>
-<p>During a call to <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a> any <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> only has a single value.
-For example, the following code calls <a href="../api_docs/python/tf/random_uniform.md"><code>tf.random_uniform</code></a> to produce a
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> that generates a random 3-element vector (with values in <code>[0,1)</code>):</p>
+<p>During a call to <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a> any <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> only has a single value.
+For example, the following code calls <a href="../api_docs/python/tf/random_uniform.html"><code>tf.random_uniform</code></a> to produce a
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> that generates a random 3-element vector (with values in <code>[0,1)</code>):</p>
 <pre><code class="language-python">vec = tf.random_uniform(shape=(3,))
 out1 = vec + 1
 out2 = vec + 2
@@ -4252,7 +4252,7 @@ z = x + y
 <p>The preceding three lines are a bit like a function in which we
 define two input parameters (<code>x</code> and <code>y</code>) and then an operation on them. We can
 evaluate this graph with multiple inputs by using the <code>feed_dict</code> argument of
-the <a href="../api_docs/python/tf/InteractiveSession.md#run">run method</a> to feed concrete values to the placeholders:</p>
+the <a href="../api_docs/python/tf/InteractiveSession.html#run">run method</a> to feed concrete values to the placeholders:</p>
 <pre><code class="language-python">print(sess.run(z, feed_dict={x: 3, y: 4.5}))
 print(sess.run(z, feed_dict={x: [1, 3], y: [2, 4]}))
 </code></pre>
@@ -4264,13 +4264,13 @@ print(sess.run(z, feed_dict={x: [1, 3], y: [2, 4]}))
 the graph. The only difference between placeholders and other <code>tf.Tensors</code> is
 that placeholders throw an error if no value is fed to them.</p>
 <h2>Datasets</h2>
-<p>Placeholders work for simple experiments, but <a href="../api_docs/python/tf/data.md">Datasets</a> are the
+<p>Placeholders work for simple experiments, but <a href="../api_docs/python/tf/data.html">Datasets</a> are the
 preferred method of streaming data into a model.</p>
-<p>To get a runnable <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> from a Dataset you must first convert it to a
-<a href="../api_docs/python/tf/data/Iterator.md"><code>tf.data.Iterator</code></a>, and then call the Iterator’s
-<a href="../api_docs/python/tf/data/Iterator.md#get_next"><code>get_next</code></a> method.</p>
+<p>To get a runnable <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> from a Dataset you must first convert it to a
+<a href="../api_docs/python/tf/data/Iterator.html"><code>tf.data.Iterator</code></a>, and then call the Iterator’s
+<a href="../api_docs/python/tf/data/Iterator.html#get_next"><code>get_next</code></a> method.</p>
 <p>The simplest way to create an Iterator is with the
-<a href="../api_docs/python/tf/data/Dataset.md#make_one_shot_iterator"><code>make_one_shot_iterator</code></a> method.
+<a href="../api_docs/python/tf/data/Dataset.html#make_one_shot_iterator"><code>make_one_shot_iterator</code></a> method.
 For example, in the following code the <code>next_item</code> tensor will return a row from
 the <code>my_data</code> array on each <code>run</code> call:</p>
 <pre><code class="language-python">my_data = [
@@ -4283,7 +4283,7 @@ slices = tf.data.Dataset.from_tensor_slices(my_data)
 next_item = slices.make_one_shot_iterator().get_next()
 </code></pre>
 <p>Reaching the end of the data stream causes <code>Dataset</code> to throw an
-<a href="../api_docs/python/tf/errors/OutOfRangeError.md"><code>OutOfRangeError</code></a>. For example, the following code
+<a href="../api_docs/python/tf/errors/OutOfRangeError.html"><code>OutOfRangeError</code></a>. For example, the following code
 reads the <code>next_item</code> until there is no more data to read:</p>
 <pre><code class="language-python">while True:
   try:
@@ -4305,10 +4305,10 @@ while True:
   except tf.errors.OutOfRangeError:
     break
 </code></pre>
-<p>For more details on Datasets and Iterators see: <a href="../guide/datasets.md">Importing Data</a>.</p>
+<p>For more details on Datasets and Iterators see: <a href="../guide/datasets.html">Importing Data</a>.</p>
 <h2>Layers</h2>
 <p>A trainable model must modify the values in the graph to get new outputs with
-the same input.  <a href="../api_docs/python/tf/layers.md">Layers</a> are the preferred way to add trainable
+the same input.  <a href="../api_docs/python/tf/layers.html">Layers</a> are the preferred way to add trainable
 parameters to a graph.</p>
 <p>Layers package together both the variables and the operations that act
 on them. For example a
@@ -4318,7 +4318,7 @@ for each output and applies an optional
 <a href="https://developers.google.com/machine-learning/glossary/#activation_function">activation function</a>.
 The connection weights and biases are managed by the layer object.</p>
 <h3>Creating Layers</h3>
-<p>The following code creates a <a href="../api_docs/python/tf/layers/Dense.md"><code>Dense</code></a> layer that takes a
+<p>The following code creates a <a href="../api_docs/python/tf/layers/Dense.html"><code>Dense</code></a> layer that takes a
 batch of input vectors, and produces a single output value for each. To apply a
 layer to an input, call the layer as if it were a function. For example:</p>
 <pre><code class="language-python">x = tf.placeholder(tf.float32, shape=[None, 3])
@@ -4337,9 +4337,9 @@ initialize all the variables in a TensorFlow graph as follows:</p>
 <pre><code class="language-python">init = tf.global_variables_initializer()
 sess.run(init)
 </code></pre>
-<p>Important: Calling <a href="../api_docs/python/tf/global_variables_initializer.md"><code>tf.global_variables_initializer</code></a> only
+<p>Important: Calling <a href="../api_docs/python/tf/global_variables_initializer.html"><code>tf.global_variables_initializer</code></a> only
 creates and returns a handle to a TensorFlow operation. That op
-will initialize all the global variables when we run it with <a href="../api_docs/python/tf/InteractiveSession.md#run"><code>tf.Session.run</code></a>.</p>
+will initialize all the global variables when we run it with <a href="../api_docs/python/tf/InteractiveSession.html#run"><code>tf.Session.run</code></a>.</p>
 <p>Also note that this <code>global_variables_initializer</code> only initializes variables
 that existed in the graph when the  initializer was created. So the initializer
 should be one of the last things added during graph construction.</p>
@@ -4353,8 +4353,8 @@ tensor as we would any other tensor. For example, the following code:</p>
  [-9.14999008]]
 </code></pre>
 <h3>Layer Function shortcuts</h3>
-<p>For each layer class (like <a href="../api_docs/python/tf/layers/Dense.md"><code>tf.layers.Dense</code></a>) TensorFlow also supplies a
-shortcut function (like <a href="../api_docs/python/tf/layers/dense.md"><code>tf.layers.dense</code></a>). The only difference is that the
+<p>For each layer class (like <a href="../api_docs/python/tf/layers/Dense.html"><code>tf.layers.Dense</code></a>) TensorFlow also supplies a
+shortcut function (like <a href="../api_docs/python/tf/layers/dense.html"><code>tf.layers.dense</code></a>). The only difference is that the
 shortcut function versions create and run the layer in a single call. For
 example, the following code is equivalent to the earlier version:</p>
 <pre><code class="language-python">x = tf.placeholder(tf.float32, shape=[None, 3])
@@ -4365,15 +4365,15 @@ sess.run(init)
 
 print(sess.run(y, {x: [[1, 2, 3], [4, 5, 6]]}))
 </code></pre>
-<p>While convenient, this approach allows no access to the <a href="../api_docs/python/tf/layers/Layer.md"><code>tf.layers.Layer</code></a>
+<p>While convenient, this approach allows no access to the <a href="../api_docs/python/tf/layers/Layer.html"><code>tf.layers.Layer</code></a>
 object. This makes introspection and debugging more difficult,
 and layer reuse impossible.</p>
 <h2>Feature columns</h2>
 <p>The easiest way to experiment with feature columns is using the
-<a href="../api_docs/python/tf/feature_column/input_layer.md"><code>tf.feature_column.input_layer</code></a> function. This function only accepts
-<a href="../guide/feature_columns.md">dense columns</a> as inputs, so to view the result
+<a href="../api_docs/python/tf/feature_column/input_layer.html"><code>tf.feature_column.input_layer</code></a> function. This function only accepts
+<a href="../guide/feature_columns.html">dense columns</a> as inputs, so to view the result
 of a categorical column you must wrap it in an
-<a href="../api_docs/python/tf/feature_column/indicator_column.md"><code>tf.feature_column.indicator_column</code></a>. For example:</p>
+<a href="../api_docs/python/tf/feature_column/indicator_column.html"><code>tf.feature_column.indicator_column</code></a>. For example:</p>
 <pre><code class="language-python">features = {
     'sales' : [[5], [10], [8], [9]],
     'department': ['sports', 'sports', 'gardening', 'gardening']}
@@ -4391,16 +4391,16 @@ inputs = tf.feature_column.input_layer(features, columns)
 </code></pre>
 <p>Running the <code>inputs</code> tensor will parse the <code>features</code> into a batch of vectors.</p>
 <p>Feature columns can have internal state, like layers, so they often need to be
-initialized. Categorical columns use <a href="../api_docs/python/tf/contrib/lookup.md">lookup tables</a>
+initialized. Categorical columns use <a href="../api_docs/python/tf/contrib/lookup.html">lookup tables</a>
 internally and these require a separate initialization op,
-<a href="../api_docs/python/tf/tables_initializer.md"><code>tf.tables_initializer</code></a>.</p>
+<a href="../api_docs/python/tf/tables_initializer.html"><code>tf.tables_initializer</code></a>.</p>
 <pre><code class="language-python">var_init = tf.global_variables_initializer()
 table_init = tf.tables_initializer()
 sess = tf.Session()
 sess.run((var_init, table_init))
 </code></pre>
 <p>Once the internal state has been initialized you can run <code>inputs</code> like any
-other <a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a>:</p>
+other <a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a>:</p>
 <pre><code class="language-python">print(sess.run(inputs))
 </code></pre>
 <p>This shows how the feature columns have packed the input vectors, with the
@@ -4443,7 +4443,7 @@ good. Here’s what we got; your own output will almost certainly differ:</p>
 <p>To optimize a model, you first need to define the loss. We’ll use the mean
 square error, a standard loss for regression problems.</p>
 <p>While you could do this manually with lower level math operations,
-the <a href="../api_docs/python/tf/losses.md"><code>tf.losses</code></a> module provides a set of common loss functions. You can use it
+the <a href="../api_docs/python/tf/losses.html"><code>tf.losses</code></a> module provides a set of common loss functions. You can use it
 to calculate the mean square error as follows:</p>
 <pre><code class="language-python">loss = tf.losses.mean_squared_error(labels=y_true, predictions=y_pred)
 
@@ -4456,10 +4456,10 @@ print(sess.run(loss))
 <p>TensorFlow provides
 <a href="https://developers.google.com/machine-learning/glossary/#optimizer"><strong>optimizers</strong></a>
 implementing standard optimization algorithms. These are implemented as
-sub-classes of <a href="../api_docs/python/tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>. They incrementally change each
+sub-classes of <a href="../api_docs/python/tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>. They incrementally change each
 variable in order to minimize the loss. The simplest optimization algorithm is
 <a href="https://developers.google.com/machine-learning/glossary/#gradient_descent"><strong>gradient descent</strong></a>,
-implemented by <a href="../api_docs/python/tf/train/GradientDescentOptimizer.md"><code>tf.train.GradientDescentOptimizer</code></a>. It modifies each
+implemented by <a href="../api_docs/python/tf/train/GradientDescentOptimizer.html"><code>tf.train.GradientDescentOptimizer</code></a>. It modifies each
 variable according to the magnitude of the derivative of loss with respect to
 that variable. For example:</p>
 <pre><code class="language-python">optimizer = tf.train.GradientDescentOptimizer(0.01)
@@ -4512,7 +4512,7 @@ print(sess.run(y_pred))
 <h2>Next steps</h2>
 <p>To learn more about building models with TensorFlow consider the following:</p>
 <ul>
-<li><a href="../guide/custom_estimators.md">Custom Estimators</a>, to learn how to build
+<li><a href="../guide/custom_estimators.html">Custom Estimators</a>, to learn how to build
 customized models with TensorFlow. Your knowledge of TensorFlow Core will
 help you understand and debug your own models.</li>
 </ul>
@@ -4520,9 +4520,9 @@ help you understand and debug your own models.</li>
 following documents, which go into more depth on many of the topics discussed
 here:</p>
 <ul>
-<li><a href="../guide/graphs.md">Graphs and Sessions</a></li>
-<li><a href="../guide/tensors.md">Tensors</a></li>
-<li><a href="../guide/variables.md">Variables</a></li>
+<li><a href="../guide/graphs.html">Graphs and Sessions</a></li>
+<li><a href="../guide/tensors.html">Tensors</a></li>
+<li><a href="../guide/variables.html">Variables</a></li>
 </ul>
 
     </article>

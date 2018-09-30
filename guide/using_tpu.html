@@ -4095,12 +4095,12 @@ using an existing model.</li>
 run on Cloud TPUs</li>
 </ul>
 <h2>TPUEstimator</h2>
-<p><a href="../api_docs/python/tf/estimator/Estimator.md">Estimators</a> are TensorFlow’s model-level abstraction.
+<p><a href="../api_docs/python/tf/estimator/Estimator.html">Estimators</a> are TensorFlow’s model-level abstraction.
 Standard <code>Estimators</code> can drive models on CPU and GPUs. You must use
-<a href="../api_docs/python/tf/contrib/tpu/TPUEstimator.md"><code>tf.contrib.tpu.TPUEstimator</code></a> to drive a model on TPUs.</p>
+<a href="../api_docs/python/tf/contrib/tpu/TPUEstimator.html"><code>tf.contrib.tpu.TPUEstimator</code></a> to drive a model on TPUs.</p>
 <p>Refer to TensorFlow’s Getting Started section for an introduction to the basics
-of using a <a href="../guide/premade_estimators.md">pre-made <code>Estimator</code></a>, and
-<a href="../guide/custom_estimators.md">custom <code>Estimator</code>s</a>.</p>
+of using a <a href="../guide/premade_estimators.html">pre-made <code>Estimator</code></a>, and
+<a href="../guide/custom_estimators.html">custom <code>Estimator</code>s</a>.</p>
 <p>The <code>TPUEstimator</code> class differs somewhat from the <code>Estimator</code> class.</p>
 <p>The simplest way to maintain a model that can be run both on CPU/GPU or on a
 Cloud TPU is to define the model’s inference phase (from inputs to predictions)
@@ -4114,10 +4114,10 @@ example of this pattern compare the <code>mnist.py</code> and <code>mnist_tpu.py
 <pre><code>my_estimator = tf.estimator.Estimator(
   model_fn=my_model_fn)
 </code></pre>
-<p>The changes required to use a <a href="../api_docs/python/tf/contrib/tpu/TPUEstimator.md"><code>tf.contrib.tpu.TPUEstimator</code></a> on your local
+<p>The changes required to use a <a href="../api_docs/python/tf/contrib/tpu/TPUEstimator.html"><code>tf.contrib.tpu.TPUEstimator</code></a> on your local
 machine are relatively minor. The constructor requires two additional arguments.
 You should set the <code>use_tpu</code> argument to <code>False</code>, and pass a
-<a href="../api_docs/python/tf/contrib/tpu/RunConfig.md"><code>tf.contrib.tpu.RunConfig</code></a> as the <code>config</code> argument, as shown below:</p>
+<a href="../api_docs/python/tf/contrib/tpu/RunConfig.html"><code>tf.contrib.tpu.RunConfig</code></a> as the <code>config</code> argument, as shown below:</p>
 <pre><code class="language-python">my_tpu_estimator = tf.contrib.tpu.TPUEstimator(
     model_fn=my_model_fn,
     config=tf.contrib.tpu.RunConfig()
@@ -4173,7 +4173,7 @@ my_tpu_run_config = tf.contrib.tpu.RunConfig(
                                         FLAGS.num_shards),
 )
 </code></pre>
-<p>Then you must pass the <a href="../api_docs/python/tf/contrib/tpu/RunConfig.md"><code>tf.contrib.tpu.RunConfig</code></a> to the constructor:</p>
+<p>Then you must pass the <a href="../api_docs/python/tf/contrib/tpu/RunConfig.html"><code>tf.contrib.tpu.RunConfig</code></a> to the constructor:</p>
 <pre><code class="language-python">my_tpu_estimator = tf.contrib.tpu.TPUEstimator(
     model_fn=my_model_fn,
     config = my_tpu_run_config,
@@ -4183,12 +4183,12 @@ my_tpu_run_config = tf.contrib.tpu.RunConfig(
 training locally to training on a cloud TPU you would need to:</p>
 <ul>
 <li>Set <code>FLAGS.use_tpu</code> to <code>True</code></li>
-<li>Set <code>FLAGS.tpu_name</code> so the <a href="../api_docs/python/tf/contrib/cluster_resolver/TPUClusterResolver.md"><code>tf.contrib.cluster_resolver.TPUClusterResolver</code></a> can find it</li>
+<li>Set <code>FLAGS.tpu_name</code> so the <a href="../api_docs/python/tf/contrib/cluster_resolver/TPUClusterResolver.html"><code>tf.contrib.cluster_resolver.TPUClusterResolver</code></a> can find it</li>
 <li>Set <code>FLAGS.model_dir</code> to a Google Cloud Storage bucket url (<code>gs://</code>).</li>
 </ul>
 <h2>Optimizer</h2>
 <p>When training on a cloud TPU you <strong>must</strong> wrap the optimizer in a
-<a href="../api_docs/python/tf/contrib/tpu/CrossShardOptimizer.md"><code>tf.contrib.tpu.CrossShardOptimizer</code></a>, which uses an <code>allreduce</code> to aggregate
+<a href="../api_docs/python/tf/contrib/tpu/CrossShardOptimizer.html"><code>tf.contrib.tpu.CrossShardOptimizer</code></a>, which uses an <code>allreduce</code> to aggregate
 gradients and broadcast the result to each shard (each TPU core).</p>
 <p>The <code>CrossShardOptimizer</code> is not compatible with local training. So, to have
 the same code run both locally and on a Cloud TPU, add lines like the following:</p>
@@ -4210,17 +4210,17 @@ as follows:</p>
 (<code>model_fn()</code>) to make it <code>TPUEstimator</code> compatible.</p>
 <h3>Static shapes</h3>
 <p>During regular usage TensorFlow attempts to determine the shapes of each
-<a href="../api_docs/python/tf/Tensor.md"><code>tf.Tensor</code></a> during graph construction. During execution any unknown shape
+<a href="../api_docs/python/tf/Tensor.html"><code>tf.Tensor</code></a> during graph construction. During execution any unknown shape
 dimensions are determined dynamically,
-see <a href="../guide/tensors.md#shape">Tensor Shapes</a> for more details.</p>
-<p>To run on Cloud TPUs TensorFlow models are compiled using <a href="../performance/xla/index.md">XLA</a>.
+see <a href="../guide/tensors.html#shape">Tensor Shapes</a> for more details.</p>
+<p>To run on Cloud TPUs TensorFlow models are compiled using <a href="../performance/xla/index.html">XLA</a>.
 XLA uses a similar system for determining shapes at compile time. XLA requires
 that all tensor dimensions be statically defined at compile time. All shapes
 must evaluate to a constant, and not depend on external data, or stateful
 operations like variables or a random number generator.</p>
 <h3>Summaries</h3>
-<p>Remove any use of <a href="../api_docs/python/tf/summary.md"><code>tf.summary</code></a> from your model.</p>
-<p><a href="../guide/summaries_and_tensorboard.md">TensorBoard summaries</a> are a great way see inside
+<p>Remove any use of <a href="../api_docs/python/tf/summary.html"><code>tf.summary</code></a> from your model.</p>
+<p><a href="../guide/summaries_and_tensorboard.html">TensorBoard summaries</a> are a great way see inside
 your model. A minimal set of basic summaries are automatically recorded by the
 <code>TPUEstimator</code>, to <code>event</code> files in the <code>model_dir</code>. Custom summaries, however,
 are currently unsupported when training on a Cloud TPU. So while the
@@ -4231,7 +4231,7 @@ TPU.</p>
 <!-- TODO(markdaoust) link to guide/metrics when it exists -->
 <p>Evaluation metrics are an essential part of training a model. These are fully
 supported on Cloud TPUs, but with a slightly different syntax.</p>
-<p>A standard <a href="../api_docs/python/tf/metrics.md"><code>tf.metrics</code></a> returns two tensors. The first returns the running
+<p>A standard <a href="../api_docs/python/tf/metrics.html"><code>tf.metrics</code></a> returns two tensors. The first returns the running
 average of the metric value, while the second updates the running average and
 returns the value for this batch:</p>
 <pre><code>running_average, current_batch = tf.metrics.accuracy(labels, predictions)
@@ -4261,14 +4261,14 @@ some fields.</p>
 <p>An <code>Estimator</code>'s <code>model_fn</code> must return an <code>EstimatorSpec</code>. An <code>EstimatorSpec</code>
 is a simple structure of named fields containing all the <code>tf.Tensors</code> of the
 model that the <code>Estimator</code> may need to interact with.</p>
-<p><code>TPUEstimators</code> use a <a href="../api_docs/python/tf/contrib/tpu/TPUEstimatorSpec.md"><code>tf.contrib.tpu.TPUEstimatorSpec</code></a>. There are a few
-differences between it and a standard <a href="../api_docs/python/tf/estimator/EstimatorSpec.md"><code>tf.estimator.EstimatorSpec</code></a>:</p>
+<p><code>TPUEstimators</code> use a <a href="../api_docs/python/tf/contrib/tpu/TPUEstimatorSpec.html"><code>tf.contrib.tpu.TPUEstimatorSpec</code></a>. There are a few
+differences between it and a standard <a href="../api_docs/python/tf/estimator/EstimatorSpec.html"><code>tf.estimator.EstimatorSpec</code></a>:</p>
 <ul>
 <li>The <code>eval_metric_ops</code> must be wrapped into a <code>metrics_fn</code>, this field is
 renamed <code>eval_metrics</code> (<a href="#metrics">see above</a>).</li>
-<li>The <a href="../api_docs/python/tf/train/SessionRunHook.md">hooks</a> are unsupported, so these fields are
+<li>The <a href="../api_docs/python/tf/train/SessionRunHook.html">hooks</a> are unsupported, so these fields are
 omitted.</li>
-<li>The <a href="../api_docs/python/tf/train/Scaffold.md"><code>scaffold</code></a>, if used, must also be wrapped in a
+<li>The <a href="../api_docs/python/tf/train/Scaffold.html"><code>scaffold</code></a>, if used, must also be wrapped in a
 function. This field is renamed to <code>scaffold_fn</code>.</li>
 </ul>
 <p><code>Scaffold</code> and <code>Hooks</code> are for advanced usage, and can typically be omitted.</p>
@@ -4304,10 +4304,10 @@ TensorShape([Dimension(None), Dimension(None), Dimension(None)])
 &gt;&gt;&gt; x.set_shape([2,3,4])
 </code></pre>
 <p>In many cases the batch size is the only unknown dimension.</p>
-<p>A typical input pipeline, using <a href="../api_docs/python/tf/data.md"><code>tf.data</code></a>, will usually produce batches of a
+<p>A typical input pipeline, using <a href="../api_docs/python/tf/data.html"><code>tf.data</code></a>, will usually produce batches of a
 fixed size. The last batch of a finite <code>Dataset</code>, however, is typically smaller,
 containing just the remaining elements. Since a <code>Dataset</code> does not know its own
-length or finiteness, the standard <a href="../api_docs/python/tf/data/Dataset.md#batch"><code>batch</code></a> method
+length or finiteness, the standard <a href="../api_docs/python/tf/data/Dataset.html#batch"><code>batch</code></a> method
 cannot determine if all batches will have a fixed size batch on its own:</p>
 <pre><code>&gt;&gt;&gt; params = {'batch_size':32}
 &gt;&gt;&gt; ds = tf.data.Dataset.from_tensors([0, 1, 2])
@@ -4317,7 +4317,7 @@ cannot determine if all batches will have a fixed size batch on its own:</p>
 &lt;BatchDataset shapes: (?, 3), types: tf.int32&gt;
 </code></pre>
 <p>The most straightforward fix is to
-<a href="../api_docs/python/tf/data/Dataset.md#apply">apply</a> <a href="../api_docs/python/tf/contrib/data/batch_and_drop_remainder.md"><code>tf.contrib.data.batch_and_drop_remainder</code></a>
+<a href="../api_docs/python/tf/data/Dataset.html#apply">apply</a> <a href="../api_docs/python/tf/contrib/data/batch_and_drop_remainder.html"><code>tf.contrib.data.batch_and_drop_remainder</code></a>
 as follows:</p>
 <pre><code>&gt;&gt;&gt; params = {'batch_size':32}
 &gt;&gt;&gt; ds = tf.data.Dataset.from_tensors([0, 1, 2])
@@ -4333,24 +4333,24 @@ for an infinitely repeating dataset being used for training, but could be a
 problem if you want to train for an exact number of epochs.</p>
 <p>To do an exact 1-epoch of <em>evaluation</em> you can work around this by manually
 padding the length of the batches, and setting the padding entries to have zero
-weight when creating your <a href="../api_docs/python/tf/metrics.md"><code>tf.metrics</code></a>.</p>
+weight when creating your <a href="../api_docs/python/tf/metrics.html"><code>tf.metrics</code></a>.</p>
 <h2>Datasets</h2>
-<p>Efficient use of the <a href="../api_docs/python/tf/data/Dataset.md"><code>tf.data.Dataset</code></a> API is critical when using a Cloud
+<p>Efficient use of the <a href="../api_docs/python/tf/data/Dataset.html"><code>tf.data.Dataset</code></a> API is critical when using a Cloud
 TPU, as it is impossible to use the Cloud TPU’s unless you can feed it data
-quickly enough. See <a href="../performance/datasets_performance.md">Input Pipeline Performance Guide</a> for details on dataset performance.</p>
+quickly enough. See <a href="../performance/datasets_performance.html">Input Pipeline Performance Guide</a> for details on dataset performance.</p>
 <p>For all but the simplest experimentation (using
-<a href="../api_docs/python/tf/data/Dataset.md#from_tensor_slices"><code>tf.data.Dataset.from_tensor_slices</code></a> or other in-graph data) you will need to
+<a href="../api_docs/python/tf/data/Dataset.html#from_tensor_slices"><code>tf.data.Dataset.from_tensor_slices</code></a> or other in-graph data) you will need to
 store all data files read by the <code>TPUEstimator</code>'s <code>Dataset</code> in Google Cloud
 Storage Buckets.</p>
 <!--TODO(markdaoust): link to the `TFRecord` doc when it exists.-->
 <p>For most use-cases, we recommend converting your data into <code>TFRecord</code>
-format and using a <a href="../api_docs/python/tf/data/TFRecordDataset.md"><code>tf.data.TFRecordDataset</code></a> to read it. This, however, is not
+format and using a <a href="../api_docs/python/tf/data/TFRecordDataset.html"><code>tf.data.TFRecordDataset</code></a> to read it. This, however, is not
 a hard requirement and you can use other dataset readers
 (<code>FixedLengthRecordDataset</code> or <code>TextLineDataset</code>) if you prefer.</p>
 <p>Small datasets can be loaded entirely into memory using
-<a href="../api_docs/python/tf/data/Dataset.md#cache"><code>tf.data.Dataset.cache</code></a>.</p>
+<a href="../api_docs/python/tf/data/Dataset.html#cache"><code>tf.data.Dataset.cache</code></a>.</p>
 <p>Regardless of the data format used, it is strongly recommended that you
-<a href="../performance/performance_guide.md#use_large_files">use large files</a>, on the order of
+<a href="../performance/performance_guide.html#use_large_files">use large files</a>, on the order of
 100MB. This is especially important in this networked setting as the overhead
 of opening a file is significantly higher.</p>
 <p>It is also important, regardless of the type of reader used, to enable buffering
@@ -4375,7 +4375,7 @@ to make a Cloud TPU compatible model are the example models published in:</p>
 </ul>
 <p>For more information about tuning TensorFlow code for performance see:</p>
 <ul>
-<li>The <a href="../performance/index.md">Performance Section.</a></li>
+<li>The <a href="../performance/index.html">Performance Section.</a></li>
 </ul>
 
     </article>

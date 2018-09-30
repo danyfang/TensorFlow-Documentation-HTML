@@ -4118,43 +4118,43 @@
 <h1>tf.GraphKeys</h1>
 <h2>Class <code>GraphKeys</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/framework/ops.py"><code>tensorflow/python/framework/ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/framework.md#Graph_collections">Building Graphs &gt; Graph collections</a></p>
+<p>See the guide: <a href="../../../api_guides/python/framework.html#Graph_collections">Building Graphs &gt; Graph collections</a></p>
 <p>Standard names to use for graph collections.</p>
 <p>The standard library uses various well-known names to collect and
 retrieve values associated with a graph. For example, the
 <code>tf.Optimizer</code> subclasses default to optimizing the variables
-collected under <a href="../tf/GraphKeys.md#TRAINABLE_VARIABLES"><code>tf.GraphKeys.TRAINABLE_VARIABLES</code></a> if none is
+collected under <a href="../tf/GraphKeys.html#TRAINABLE_VARIABLES"><code>tf.GraphKeys.TRAINABLE_VARIABLES</code></a> if none is
 specified, but it is also possible to pass an explicit list of
 variables.</p>
 <p>The following standard keys are defined:</p>
 <ul>
 <li><code>GLOBAL_VARIABLES</code>: the default collection of <code>Variable</code> objects, shared
 across distributed environment (model variables are subset of these). See
-<a href="../tf/global_variables.md"><code>tf.global_variables</code></a>
+<a href="../tf/global_variables.html"><code>tf.global_variables</code></a>
 for more details.
 Commonly, all <code>TRAINABLE_VARIABLES</code> variables will be in <code>MODEL_VARIABLES</code>,
 and all <code>MODEL_VARIABLES</code> variables will be in <code>GLOBAL_VARIABLES</code>.</li>
 <li><code>LOCAL_VARIABLES</code>: the subset of <code>Variable</code> objects that are local to each
 machine. Usually used for temporarily variables, like counters.
-Note: use <a href="../tf/contrib/framework/local_variable.md"><code>tf.contrib.framework.local_variable</code></a> to add to this collection.</li>
+Note: use <a href="../tf/contrib/framework/local_variable.html"><code>tf.contrib.framework.local_variable</code></a> to add to this collection.</li>
 <li><code>MODEL_VARIABLES</code>: the subset of <code>Variable</code> objects that are used in the
 model for inference (feed forward). Note: use
-<a href="../tf/contrib/framework/model_variable.md"><code>tf.contrib.framework.model_variable</code></a> to add to this collection.</li>
+<a href="../tf/contrib/framework/model_variable.html"><code>tf.contrib.framework.model_variable</code></a> to add to this collection.</li>
 <li><code>TRAINABLE_VARIABLES</code>: the subset of <code>Variable</code> objects that will
 be trained by an optimizer. See
-<a href="../tf/trainable_variables.md"><code>tf.trainable_variables</code></a>
+<a href="../tf/trainable_variables.html"><code>tf.trainable_variables</code></a>
 for more details.</li>
 <li><code>SUMMARIES</code>: the summary <code>Tensor</code> objects that have been created in the
 graph. See
-<a href="../tf/summary/merge_all.md"><code>tf.summary.merge_all</code></a>
+<a href="../tf/summary/merge_all.html"><code>tf.summary.merge_all</code></a>
 for more details.</li>
 <li><code>QUEUE_RUNNERS</code>: the <code>QueueRunner</code> objects that are used to
 produce input for a computation. See
-<a href="../tf/train/start_queue_runners.md"><code>tf.train.start_queue_runners</code></a>
+<a href="../tf/train/start_queue_runners.html"><code>tf.train.start_queue_runners</code></a>
 for more details.</li>
 <li><code>MOVING_AVERAGE_VARIABLES</code>: the subset of <code>Variable</code> objects that will also
 keep moving averages.  See
-<a href="../tf/moving_average_variables.md"><code>tf.moving_average_variables</code></a>
+<a href="../tf/moving_average_variables.html"><code>tf.moving_average_variables</code></a>
 for more details.</li>
 <li><code>REGULARIZATION_LOSSES</code>: regularization losses collected during graph
 construction.</li>

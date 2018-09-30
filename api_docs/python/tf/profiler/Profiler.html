@@ -4094,7 +4094,7 @@
 <h2>Class <code>Profiler</code></h2>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/profiler/model_analyzer.py"><code>tensorflow/python/profiler/model_analyzer.py</code></a>.</p>
 <p>TensorFlow multi-step profiler.</p>
-<p><a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/README.md">https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/README.md</a></p>
+<p><a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/README.html">https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/README.html</a></p>
 <pre><code class="language-python">Typical use case:
   # Currently we are only allowed to create 1 profiler per process.
   profiler = Profiler(sess.graph)
@@ -4172,7 +4172,7 @@ id in the <code>options</code> to profile these <code>run_meta</code> together.<
 <p>Profile the statistics of graph nodes, organized by dataflow graph.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.md.</li>
+<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.html.</li>
 </ul>
 <h4>Returns:</h4>
 <p>a GraphNodeProto that records the results.</p>
@@ -4182,7 +4182,7 @@ id in the <code>options</code> to profile these <code>run_meta</code> together.<
 <p>Profile the statistics of graph nodes, organized by name scope.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.md.</li>
+<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.html.</li>
 </ul>
 <h4>Returns:</h4>
 <p>a GraphNodeProto that records the results.</p>
@@ -4192,7 +4192,7 @@ id in the <code>options</code> to profile these <code>run_meta</code> together.<
 <p>Profile the statistics of the Operation types (e.g. MatMul, Conv2D).</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.md.</li>
+<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.html.</li>
 </ul>
 <h4>Returns:</h4>
 <p>a MultiGraphNodeProto that records the results.</p>
@@ -4205,7 +4205,7 @@ redundant output, you may use options to filter as below
 options[‘show_name_regexes’] = [’.<em>my_code.py.</em>’]</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.md.</li>
+<li><b><code>options</code></b>: A dict of options. See core/profiler/g3doc/options.html.</li>
 </ul>
 <h4>Returns:</h4>
 <p>a MultiGraphNodeProto that records the results.</p>

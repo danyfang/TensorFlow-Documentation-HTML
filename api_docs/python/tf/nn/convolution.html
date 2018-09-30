@@ -4094,7 +4094,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/ops/nn_ops.py"><code>tensorflow/python/ops/nn_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../api_guides/python/nn.md#Convolution">Neural Network &gt; Convolution</a></p>
+<p>See the guide: <a href="../../../../api_guides/python/nn.html#Convolution">Neural Network &gt; Convolution</a></p>
 <p>Computes sums of N-D convolutions (actually cross-correlation).</p>
 <p>This also supports either output striding via the optional <code>strides</code> parameter
 or atrous convolution (also known as convolution with holes or dilated
@@ -4132,7 +4132,7 @@ input channel number, and z is the N-D spatial offset within the filter. Here,
 <code>padded_input</code> is obtained by zero padding the input using an effective
 spatial filter shape of <code>(spatial_filter_shape-1) * dilation_rate + 1</code> and
 output striding <code>strides</code> as described in the
-<a href="../../../../api_guides/python/nn.md#Convolution">comment here</a>.</p>
+<a href="../../../../api_guides/python/nn.html#Convolution">comment here</a>.</p>
 <p>In the case that <code>data_format</code> does start with <code>&quot;NC&quot;</code>, the <code>input</code> and output
 (but not the <code>filter</code>) are simply transposed as follows:</p>
 <p>convolution(input, data_format, **kwargs) =

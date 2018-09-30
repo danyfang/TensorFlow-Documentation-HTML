@@ -4096,7 +4096,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/python/debug/lib/debug_utils.py"><code>tensorflow/python/debug/lib/debug_utils.py</code></a>.</p>
-<p>See the guide: <a href="../../../api_guides/python/tfdbg.md#Functions_for_adding_debug_watches">TensorFlow Debugger &gt; Functions for adding debug watches</a></p>
+<p>See the guide: <a href="../../../api_guides/python/tfdbg.html#Functions_for_adding_debug_watches">TensorFlow Debugger &gt; Functions for adding debug watches</a></p>
 <p>Add debug tensor watches, blacklisting nodes and op types.</p>
 <p>This is similar to <code>watch_graph()</code>, but the node names and op types are
 blacklisted, instead of whitelisted.</p>
@@ -4105,9 +4105,9 @@ blacklisted, instead of whitelisted.</p>
 <li>Under certain circumstances, the <code>Tensor</code> may not get actually watched
 (e.g., if the node of the <code>Tensor</code> is constant-folded during runtime).</li>
 <li>For debugging purposes, the <code>parallel_iteration</code> attribute of all
-<a href="../tf/while_loop.md"><code>tf.while_loop</code></a>s in the graph are set to 1 to prevent any node from
+<a href="../tf/while_loop.html"><code>tf.while_loop</code></a>s in the graph are set to 1 to prevent any node from
 being executed multiple times concurrently. This change does not affect
-subsequent non-debugged runs of the same <a href="../tf/while_loop.md"><code>tf.while_loop</code></a>s.</li>
+subsequent non-debugged runs of the same <a href="../tf/while_loop.html"><code>tf.while_loop</code></a>s.</li>
 </ol>
 <h4>Args:</h4>
 <ul>

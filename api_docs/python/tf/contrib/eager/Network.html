@@ -4137,17 +4137,17 @@
 <p>Inherits From: <a href="../../../tf/layers/Layer.html"><code>Layer</code></a></p>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/eager/python/network.py"><code>tensorflow/contrib/eager/python/network.py</code></a>.</p>
 <p>Represents the composition of a set of Layers.</p>
-<p><em>Deprecated</em>. Please inherit from <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>, and see its documentation
-for details. <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> should be a drop-in replacement for
+<p><em>Deprecated</em>. Please inherit from <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>, and see its documentation
+for details. <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> should be a drop-in replacement for
 <code>tfe.Network</code> in most cases, but note that <code>track_layer</code> is no longer
 necessary or supported. Instead, <code>Layer</code> instances are tracked on attribute
-assignment (see the section of <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>’s documentation on
+assignment (see the section of <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>’s documentation on
 subclassing). Since the output of <code>track_layer</code> is often assigned to an
 attribute anyway, most code can be ported by simply removing the <code>track_layer</code>
 calls.</p>
-<p><a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> works with all TensorFlow <code>Layer</code> instances, including those
-from <a href="../../../tf/layers.md"><code>tf.layers</code></a>, but switching to the <a href="../../../tf/keras/layers.md"><code>tf.keras.layers</code></a> versions along with
-the migration to <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> is recommended, since it will preserve
+<p><a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> works with all TensorFlow <code>Layer</code> instances, including those
+from <a href="../../../tf/layers.html"><code>tf.layers</code></a>, but switching to the <a href="../../../tf/keras/layers.html"><code>tf.keras.layers</code></a> versions along with
+the migration to <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> is recommended, since it will preserve
 variable names.  Feel free to import it with an alias to avoid excess typing
 :).</p>
 <p><code>Network</code> implements the <code>Layer</code> interface and adds convenience methods for
@@ -4171,21 +4171,21 @@ output = net(tf.ones([1, 8]))
 print([v.name for v in net.variables])
 </code></pre>
 <p>This example prints variable names, one kernel and one bias per
-<a href="../../../tf/layers/Dense.md"><code>tf.layers.Dense</code></a> layer:</p>
+<a href="../../../tf/layers/Dense.html"><code>tf.layers.Dense</code></a> layer:</p>
 <pre><code>['net/dense/kernel:0',
  'net/dense/bias:0',
  'net/dense_1/kernel:0',
  'net/dense_1/bias:0']
 </code></pre>
-<p>These variables can be passed to a <code>Saver</code> (<a href="../../../tf/train/Saver.md"><code>tf.train.Saver</code></a>, or
-<a href="../../../tf/contrib/eager/Saver.md"><code>tf.contrib.eager.Saver</code></a> when executing eagerly) to save or restore the
-<code>Network</code>, typically alongside a global step and <a href="../../../tf/train/Optimizer.md"><code>tf.train.Optimizer</code></a>
+<p>These variables can be passed to a <code>Saver</code> (<a href="../../../tf/train/Saver.html"><code>tf.train.Saver</code></a>, or
+<a href="../../../tf/contrib/eager/Saver.html"><code>tf.contrib.eager.Saver</code></a> when executing eagerly) to save or restore the
+<code>Network</code>, typically alongside a global step and <a href="../../../tf/train/Optimizer.html"><code>tf.train.Optimizer</code></a>
 variables when checkpointing during training.</p>
 <p>Note that the semantics of calling a <code>Network</code> with graph execution (i.e. not
 executing eagerly) may change slightly in the future. Currently stateful ops
 are pruned from the graph unless they or something that depends on them is
 executed in a session, but this behavior is not consistent with eager
-execution (where stateful ops are executed eagerly). <code>Layer</code>s from <a href="../../../tf/layers.md"><code>tf.layers</code></a>
+execution (where stateful ops are executed eagerly). <code>Layer</code>s from <a href="../../../tf/layers.html"><code>tf.layers</code></a>
 do not depend on this pruning and so will not be affected, but <code>Network</code>s
 which rely on stateful ops being added to the graph but not executed (e.g. via
 custom <code>Layer</code>s which manage stateful ops) may break with this change.</p>
@@ -4306,8 +4306,8 @@ or if all outputs have the same shape.</p>
 <p>Configure the <code>Network</code>. (deprecated)</p>
 <p>THIS FUNCTION IS DEPRECATED. It will be removed in a future version.
 Instructions for updating:
-Please inherit from <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>, and see its documentation for details. <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> should be a drop-in replacement for <code>tfe.Network</code> in most cases, but note that <code>track_layer</code> is no longer necessary or supported. Instead, <code>Layer</code> instances are tracked on attribute assignment (see the section of <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a>’s documentation on subclassing). Since the output of <code>track_layer</code> is often assigned to an attribute anyway, most code can be ported by simply removing the <code>track_layer</code> calls.</p>
-<p><a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> works with all TensorFlow <code>Layer</code> instances, including those from <a href="../../../tf/layers.md"><code>tf.layers</code></a>, but switching to the <a href="../../../tf/keras/layers.md"><code>tf.keras.layers</code></a> versions along with the migration to <a href="../../../tf/keras/Model.md"><code>tf.keras.Model</code></a> is recommended, since it will preserve variable names. Feel free to import it with an alias to avoid excess typing :).</p>
+Please inherit from <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>, and see its documentation for details. <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> should be a drop-in replacement for <code>tfe.Network</code> in most cases, but note that <code>track_layer</code> is no longer necessary or supported. Instead, <code>Layer</code> instances are tracked on attribute assignment (see the section of <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a>’s documentation on subclassing). Since the output of <code>track_layer</code> is often assigned to an attribute anyway, most code can be ported by simply removing the <code>track_layer</code> calls.</p>
+<p><a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> works with all TensorFlow <code>Layer</code> instances, including those from <a href="../../../tf/layers.html"><code>tf.layers</code></a>, but switching to the <a href="../../../tf/keras/layers.html"><code>tf.keras.layers</code></a> versions along with the migration to <a href="../../../tf/keras/Model.html"><code>tf.keras.Model</code></a> is recommended, since it will preserve variable names. Feel free to import it with an alias to avoid excess typing :).</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>name</code></b>: The name to use for this <code>Network</code>. If specified, it must be unique
@@ -4468,20 +4468,20 @@ marked as non-trainable. <code>trainable</code> defaults to <code>True</code> un
 <li><b><code>use_resource</code></b>: Whether to use <code>ResourceVariable</code>.</li>
 <li><b><code>synchronization</code></b>: Indicates when a distributed a variable will be
 aggregated. Accepted values are constants defined in the class
-<a href="../../../tf/VariableSynchronization.md"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
+<a href="../../../tf/VariableSynchronization.html"><code>tf.VariableSynchronization</code></a>. By default the synchronization is set to
 <code>AUTO</code> and the current <code>DistributionStrategy</code> chooses
 when to synchronize. If <code>synchronization</code> is set to <code>ON_READ</code>,
 <code>trainable</code> must not be set to <code>True</code>.</li>
 <li><b><code>aggregation</code></b>: Indicates how a distributed variable will be aggregated.
 Accepted values are constants defined in the class
-<a href="../../../tf/VariableAggregation.md"><code>tf.VariableAggregation</code></a>.</li>
+<a href="../../../tf/VariableAggregation.html"><code>tf.VariableAggregation</code></a>.</li>
 <li><b><code>partitioner</code></b>: (optional) partitioner instance (callable).  If
 provided, when the requested variable is created it will be split
 into multiple partitions according to <code>partitioner</code>.  In this case,
 an instance of <code>PartitionedVariable</code> is returned.  Available
-partitioners include <a href="../../../tf/fixed_size_partitioner.md"><code>tf.fixed_size_partitioner</code></a> and
-<a href="../../../tf/variable_axis_size_partitioner.md"><code>tf.variable_axis_size_partitioner</code></a>.  For more details, see the
-documentation of <a href="../../../tf/get_variable.md"><code>tf.get_variable</code></a> and the  “Variable Partitioners
+partitioners include <a href="../../../tf/fixed_size_partitioner.html"><code>tf.fixed_size_partitioner</code></a> and
+<a href="../../../tf/variable_axis_size_partitioner.html"><code>tf.variable_axis_size_partitioner</code></a>.  For more details, see the
+documentation of <a href="../../../tf/get_variable.html"><code>tf.get_variable</code></a> and the  “Variable Partitioners
 and Sharding” section of the API guide.</li>
 </ul>
 <h4>Returns:</h4>
@@ -4657,7 +4657,7 @@ first time the layer was called.</li>
     index=None
 )
 </code></pre>
-<p>Get a contained <a href="../../../tf/layers/Layer.md"><code>tf.layers.Layer</code></a> either by name or index.</p>
+<p>Get a contained <a href="../../../tf/layers/Layer.html"><code>tf.layers.Layer</code></a> either by name or index.</p>
 <h4>Args:</h4>
 <ul>
 <li><b><code>name</code></b>: String matching one of the names of a contained <code>Layer</code>. Note that
@@ -4669,7 +4669,7 @@ name will be returned.</li>
 by the order they are added.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/layers/Layer.md"><code>tf.layers.Layer</code></a> object.</p>
+<p>A <a href="../../../tf/layers/Layer.html"><code>tf.layers.Layer</code></a> object.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If neither or both of ‘index’ or ‘name’ is specified, or the
@@ -4783,7 +4783,7 @@ layer’s specifications.</li>
 <code>Network</code> can export a complete list of variables.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>layer</code></b>: A <a href="../../../tf/layers/Layer.md"><code>tf.layers.Layer</code></a> object.</li>
+<li><b><code>layer</code></b>: A <a href="../../../tf/layers/Layer.html"><code>tf.layers.Layer</code></a> object.</li>
 </ul>
 <h4>Returns:</h4>
 <p>The passed in <code>layer</code>.</p>

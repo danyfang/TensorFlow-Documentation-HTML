@@ -4125,7 +4125,7 @@ manners.</p>
 retrieved.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a>. containing <a href="../../../tf/string.md"><code>tf.string</code></a> Tensors corresponding to all
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a>. containing <a href="../../../tf/string.html"><code>tf.string</code></a> Tensors corresponding to all
 of the row keys matching that prefix.</p>
 <h3 id="keys_by_range_dataset"><code>keys_by_range_dataset</code></h3>
 <pre><code class="language-python">keys_by_range_dataset(
@@ -4143,7 +4143,7 @@ will be retrieved.</li>
 be retrieved. If end is None, all subsequent row keys will be retrieved.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> containing <a href="../../../tf/string.md"><code>tf.string</code></a> Tensors corresponding to all
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> containing <a href="../../../tf/string.html"><code>tf.string</code></a> Tensors corresponding to all
 of the row keys between <code>start</code> and <code>end</code>.</p>
 <h3 id="lookup_columns"><code>lookup_columns</code></h3>
 <pre><code class="language-python">lookup_columns(
@@ -4181,7 +4181,7 @@ This list can change at any time.</li>
 <li><b><code>**kwargs</code></b>: Column families and</li>
 </ul>
 <h4>Returns:</h4>
-<p>A function that can be passed to <a href="../../../tf/data/Dataset.md#apply"><code>tf.data.Dataset.apply</code></a> to retrieve the
+<p>A function that can be passed to <a href="../../../tf/data/Dataset.html#apply"><code>tf.data.Dataset.apply</code></a> to retrieve the
 values of columns for the rows.</p>
 <h3 id="parallel_scan_prefix"><code>parallel_scan_prefix</code></h3>
 <pre><code class="language-python">parallel_scan_prefix(
@@ -4227,7 +4227,7 @@ column_families, and values can be either lists of strings, or strings
 that are treated as the column qualifier (column name).</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If the configured probability is unexpected.</li>
@@ -4280,7 +4280,7 @@ column_families, and values can be either lists of strings, or strings
 that are treated as the column qualifier (column name).</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If the configured probability is unexpected.</li>
@@ -4290,10 +4290,10 @@ that are treated as the column qualifier (column name).</li>
 </code></pre>
 <p>Retrieves a sampling of row keys from the Bigtable table.</p>
 <p>This dataset is most often used in conjunction with
-<a href="../../../tf/contrib/data/parallel_interleave.md"><code>tf.contrib.data.parallel_interleave</code></a> to construct a set of ranges for
+<a href="../../../tf/contrib/data/parallel_interleave.html"><code>tf.contrib.data.parallel_interleave</code></a> to construct a set of ranges for
 scanning in parallel.</p>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> returning string row keys.</p>
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> returning string row keys.</p>
 <h3 id="scan_prefix"><code>scan_prefix</code></h3>
 <pre><code class="language-python">scan_prefix(
     prefix,
@@ -4332,7 +4332,7 @@ column_families, and values can be either lists of strings, or strings
 that are treated as the column qualifier (column name).</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If the configured probability is unexpected.</li>
@@ -4376,7 +4376,7 @@ column_families, and values can be either lists of strings, or strings
 that are treated as the column qualifier (column name).</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
+<p>A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> returning the row keys and the cell contents.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If the configured probability is unexpected.</li>
@@ -4392,20 +4392,20 @@ that are treated as the column qualifier (column name).</li>
 <p>Writes a dataset to the table.</p>
 <h4>Args:</h4>
 <ul>
-<li><b><code>dataset</code></b>: A <a href="../../../tf/data/Dataset.md"><code>tf.data.Dataset</code></a> to be written to this table. It must produce
+<li><b><code>dataset</code></b>: A <a href="../../../tf/data/Dataset.html"><code>tf.data.Dataset</code></a> to be written to this table. It must produce
 a list of number-of-columns+1 elements, all of which must be strings.
 The first value will be used as the row key, and subsequent values will
 be used as cell values for the corresponding columns from the
 corresponding column_families and columns entries.</li>
-<li><b><code>column_families</code></b>: A <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> of <a href="../../../tf/string.md"><code>tf.string</code></a>s corresponding to the
+<li><b><code>column_families</code></b>: A <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> of <a href="../../../tf/string.html"><code>tf.string</code></a>s corresponding to the
 column names to store the dataset’s elements into.</li>
-<li><b><code>columns</code></b>: A <a href="../../../tf/Tensor.md"><code>tf.Tensor</code></a> of <a href="../../../tf/string.md"><code>tf.string</code></a>s corresponding to the column names
+<li><b><code>columns</code></b>: A <a href="../../../tf/Tensor.html"><code>tf.Tensor</code></a> of <a href="../../../tf/string.html"><code>tf.string</code></a>s corresponding to the column names
 to store the dataset’s elements into.</li>
 <li><b><code>timestamp</code></b>: (Optional.) An int64 timestamp to write all the values at.
 Leave as None to use server-provided timestamps.</li>
 </ul>
 <h4>Returns:</h4>
-<p>A <a href="../../../tf/Operation.md"><code>tf.Operation</code></a> that can be run to perform the write.</p>
+<p>A <a href="../../../tf/Operation.html"><code>tf.Operation</code></a> that can be run to perform the write.</p>
 <h4>Raises:</h4>
 <ul>
 <li><b><code>ValueError</code></b>: If there are unexpected or incompatible types, or if the

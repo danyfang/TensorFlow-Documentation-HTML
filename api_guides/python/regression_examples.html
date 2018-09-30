@@ -4086,22 +4086,22 @@ to implement regression in Estimators:</p>
   <tr> <th>Example</th> <th>Demonstrates How To...</th></tr>
   <tr>
     <td><a href="https://www.tensorflow.org/code/tensorflow/examples/get_started/regression/linear_regression.py">linear_regression.py</a></td>
-    <td>Use the <a href="../../api_docs/python/tf/estimator/LinearRegressor.md"><code>tf.estimator.LinearRegressor</code></a> Estimator to train a
+    <td>Use the <a href="../../api_docs/python/tf/estimator/LinearRegressor.html"><code>tf.estimator.LinearRegressor</code></a> Estimator to train a
         regression model on numeric data.</td>
   </tr>
   <tr>
     <td><a href="https://www.tensorflow.org/code/tensorflow/examples/get_started/regression/linear_regression_categorical.py">linear_regression_categorical.py</a></td>
-    <td>Use the <a href="../../api_docs/python/tf/estimator/LinearRegressor.md"><code>tf.estimator.LinearRegressor</code></a> Estimator to train a
+    <td>Use the <a href="../../api_docs/python/tf/estimator/LinearRegressor.html"><code>tf.estimator.LinearRegressor</code></a> Estimator to train a
         regression model on categorical data.</td>
   </tr>
   <tr>
     <td><a href="https://www.tensorflow.org/code/tensorflow/examples/get_started/regression/dnn_regression.py">dnn_regression.py</a></td>
-    <td>Use the <a href="../../api_docs/python/tf/estimator/DNNRegressor.md"><code>tf.estimator.DNNRegressor</code></a> Estimator to train a
+    <td>Use the <a href="../../api_docs/python/tf/estimator/DNNRegressor.html"><code>tf.estimator.DNNRegressor</code></a> Estimator to train a
         regression model on discrete data with a deep neural network.</td>
   </tr>
   <tr>
     <td><a href="https://www.tensorflow.org/code/tensorflow/examples/get_started/regression/custom_regression.py">custom_regression.py</a></td>
-    <td>Use <a href="../../api_docs/python/tf/estimator/Estimator.md"><code>tf.estimator.Estimator</code></a> to train a customized dnn
+    <td>Use <a href="../../api_docs/python/tf/estimator/Estimator.html"><code>tf.estimator.Estimator</code></a> to train a customized dnn
         regression model.</td>
   </tr>
 </table>
@@ -4129,7 +4129,7 @@ watch the following video:
 -->
 <p><a name="running"></a></p>
 <h2 id="Running_the_examples">Running the examples</h2>
-<p>You must <a href="../../install/index.md">install TensorFlow</a> prior to running these examples.
+<p>You must <a href="../../install/index.html">install TensorFlow</a> prior to running these examples.
 Depending on the way you’ve installed TensorFlow, you might also
 need to activate your TensorFlow environment.  Then, do the following:</p>
 <ol>
@@ -4250,13 +4250,13 @@ on a test set.</p>
 of a car based on mixed real-valued and categorical input features, described by
 feature_columns. Unlike <code>linear_regression_categorical.py</code>, and
 <code>dnn_regression.py</code> this example does not use a pre-made estimator, but defines
-a custom model using the base <a href="../../api_docs/python/tf/estimator/Estimator.md"><code>Estimator</code></a> class. The
+a custom model using the base <a href="../../api_docs/python/tf/estimator/Estimator.html"><code>Estimator</code></a> class. The
 custom model is quite similar to the model defined by <code>dnn_regression.py</code>.</p>
 <p>The custom model is defined by the <code>model_fn</code> argument to the constructor. The
 customization is made more reusable through <code>params</code> dictionary, which is later
 passed through to the <code>model_fn</code> when the <code>model_fn</code> is called.</p>
 <p>The <code>model_fn</code> returns an
-<a href="../../api_docs/python/tf/estimator/EstimatorSpec.md"><code>EstimatorSpec</code></a> which is a simple structure
+<a href="../../api_docs/python/tf/estimator/EstimatorSpec.html"><code>EstimatorSpec</code></a> which is a simple structure
 indicating to the <code>Estimator</code> which operations should be run to accomplish
 various tasks.</p>
 

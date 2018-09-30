@@ -4100,7 +4100,7 @@
 )
 </code></pre>
 <p>Defined in <a href="https://www.tensorflow.org/code/tensorflow/contrib/training/python/training/bucket_ops.py"><code>tensorflow/contrib/training/python/training/bucket_ops.py</code></a>.</p>
-<p>See the guide: <a href="../../../../../api_guides/python/contrib.training.md#Bucketing">Training (contrib) &gt; Bucketing</a></p>
+<p>See the guide: <a href="../../../../../api_guides/python/contrib.training.html#Bucketing">Training (contrib) &gt; Bucketing</a></p>
 <p>Lazy bucketing of input tensors according to <code>which_bucket</code>.</p>
 <p>The argument <code>tensors</code> can be a list or a dictionary of tensors.
 The value returned by the function will be of the same type
@@ -4113,7 +4113,7 @@ next minibatch from this top queue.</p>
 <p>This function is implemented using several queues. A <code>QueueRunner</code> for the
 queues is added to the current <code>Graph</code>'s <code>QUEUE_RUNNER</code> collection.</p>
 <p>As the returned tensors are the result of a dequeue operation, evaluating
-them will throw a <a href="../../../tf/errors/OutOfRangeError.md"><code>tf.errors.OutOfRangeError</code></a> when the input queue is
+them will throw a <a href="../../../tf/errors/OutOfRangeError.html"><code>tf.errors.OutOfRangeError</code></a> when the input queue is
 exhausted.  If these tensors are feeding another input queue, its queue runner
 will catch this exception, however, if they are used in your main thread
 you are responsible for catching this yourself.</p>
