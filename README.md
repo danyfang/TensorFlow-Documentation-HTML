@@ -7,6 +7,6 @@ broken links. If a link is broken, you may need to change the link manually, by 
 .md to .html.
 
 
-I've created an additional file tensorflow.html in directory tensorflow/api_guides/tensorflow.html,
-it is a duplicate of the index file in the same directory, you can just search the file 
+I've created an additional file tensorflow.html in directory tensorflow/api_guides/python/tensorflow.html,
+it is a duplicate of the index.html file in the same directory, you can just search the file 
 name to directly access the documentation.
